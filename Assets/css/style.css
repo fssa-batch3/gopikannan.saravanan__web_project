@@ -1,0 +1,270 @@
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --body-color: rgb(228, 233, 247);
+  --header-color: #fff;
+  --primary-color: #695cfe;
+  --primary-color-light: #f6f5ff;
+  --toggle-color: #ddd;
+  --text-color: #707070;
+  --body-text-color: #3f3a81;
+}
+
+body {
+  height: 100%;
+  background-color: var(--body-color);
+}
+
+header {
+  display: flex;
+  position: fixed;
+
+  top: 0;
+  width: 100%;
+  height: 90px;
+  padding: 10px 14px;
+  background-color: var(--header-color);
+  box-shadow: rgb(180, 193, 255) 4px 4px 4px;
+}
+
+.image-txt {
+  display: flex;
+}
+
+.name {
+  margin-top: 10px;
+  color: #3f3a81;
+  font-weight: bold;
+  margin-left: 10px;
+}
+.nav {
+  margin-top: 10px;
+  padding-left: 720px;
+}
+.nav-anchor {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #3f3a81;
+  font-weight: bold;
+
+  display: inline-block;
+}
+.nav a:hover {
+  color: var(--toggle-color);
+  background-color: var(--body-text-color);
+}
+.home {
+  border-bottom: 5px solid #695cfe;
+}
+.hero-sec {
+  margin-top: 80px;
+  z-index: -1;
+}
+.banner {
+  position: relative;
+}
+.login {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-top: -500px;
+}
+
+.side-head {
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  font-size: 30px;
+  color: #3f3a81;
+  border-bottom: 2px solid rgba(0, 0, 139, 0.224);
+
+  margin: 0px 190px;
+  font-weight: 600;
+}
+.search {
+  text-align: center;
+  padding-top: 20px;
+}
+input[type="text"] {
+  width: 500px;
+  height: 50px;
+  border-radius: 20px;
+  border: solid rgba(105, 105, 255, 0.411);
+}
+[type="submit"] {
+  border: solid rgba(105, 105, 255, 0.411);
+  border-radius: 5px;
+  width: 50px;
+  height: 50px;
+}
+.container {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr;
+
+  width: 1200px;
+  margin: 50px 150px;
+}
+
+.box {
+  width: 350px;
+  height: 500px;
+  background-color: white;
+
+  box-shadow: rgb(180, 193, 255) 4px 4px 4px;
+  border-radius: 10px;
+  /* box-sizing: border-box; */
+  cursor: pointer;
+
+  margin-bottom: 40px;
+}
+.linkspanner {
+  position: absolute;
+  z-index: 10;
+}
+.box:hover {
+  box-shadow: rgb(140, 159, 255) 4px 4px 4px;
+}
+.image {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 350px;
+}
+h3,
+h4 {
+  color: var(--body-text-color);
+  padding-left: 35px;
+  padding-bottom: 10px;
+}
+.progress-sec {
+  padding-left: 35px;
+
+  height: 90px;
+}
+progress {
+  width: 190px;
+  height: 30px;
+}
+.amount {
+  color: var(--body-text-color);
+}
+#cash {
+  font-weight: bold;
+}
+.like {
+  margin-left: 10px;
+  margin-top: -15px;
+}
+
+.count {
+  margin-left: 56px;
+}
+.user {
+  padding-left: 50px;
+  padding-top: 10px;
+  border-top: 2px solid #707070;
+  margin: 10px 40px;
+}
+.user2 {
+  padding-left: 50px;
+  padding-top: 10px;
+  border-top: 2px solid #707070;
+  margin: -5px 40px;
+}
+.user3 {
+  padding-left: 50px;
+  padding-top: 10px;
+  border-top: 2px solid #707070;
+  margin: -5px 40px;
+}
+.viewmore {
+  margin: 0px 580px;
+  margin-top: -60px;
+}
+.arrow {
+  padding-left: 100px;
+}
+.more {
+  padding-left: 50px;
+}
+.footer {
+  width: 100%;
+  height: 400px;
+  background-color: var(--body-text-color);
+
+  margin-top: 50px;
+}
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.foot-head {
+  color: white;
+  /* margin-left: 0px; */
+  margin-top: 50px;
+  border-bottom: 1px solid rgba(211, 211, 211, 0.484);
+
+  width: 350px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.footerpart {
+  margin-right: 10px;
+}
+
+ul {
+  list-style-type: none;
+}
+li {
+  padding-top: 10px;
+}
+li a {
+  color: rgb(211, 243, 253);
+  text-decoration: none;
+  font-size: 16px;
+}
+.foot-end {
+  display: flex;
+  gap: 20px;
+  z-index: -1;
+  margin-top: -100px;
+}
+#mail {
+  margin-top: -20px;
+}
+p {
+  color: white;
+}
+.subscribe {
+  color: var(--body-text-color);
+  font-weight: bold;
+  height: 20px;
+}
+.foot-logo {
+  display: flex;
+  gap: 20px;
+  z-index: -1;
+  margin-top: -70px;
+  margin-left: 1000px;
+}
+#logo-txt {
+  color: rgb(204, 204, 204);
+  opacity: 0.5;
+  margin-top: 10px;
+}
+.foot-last {
+  margin-left: 55px;
+}
+
+.logo-icon {
+  opacity: 0.3;
+  border: none;
+  background-color: none;
+}

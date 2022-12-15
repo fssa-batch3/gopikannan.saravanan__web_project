@@ -1,0 +1,204 @@
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--body-text-color);
+}
+
+:root {
+  --body-color: rgb(228, 233, 247);
+  --header-color: #fff;
+  --primary-color: #695cfe;
+  --primary-color-light: #f6f5ff;
+  --toggle-color: #ddd;
+  --text-color: #707070;
+  --body-text-color: #3f3a81;
+}
+
+body {
+  height: 100%;
+  background-color: var(--body-color);
+}
+
+header {
+  display: flex;
+  position: fixed;
+
+  top: 0;
+  width: 100%;
+  height: 90px;
+  padding: 10px 14px;
+  background-color: var(--header-color);
+  box-shadow: rgb(180, 193, 255) 4px 4px 4px;
+}
+
+.image-txt {
+  display: flex;
+}
+
+.name {
+  margin-top: 10px;
+  color: #3f3a81;
+  font-weight: bold;
+  margin-left: 10px;
+}
+.nav {
+  margin-top: 10px;
+  padding-left: 720px;
+}
+.nav-anchor {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #3f3a81;
+  font-weight: bold;
+
+  display: inline-block;
+}
+.nav a:hover {
+  color: var(--toggle-color);
+  background-color: var(--body-text-color);
+}
+
+.paymentpage {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+
+  color: var(--body-text-color);
+  border: 5px double#3f3a81;
+  margin: 150px 600px 60px 600px;
+}
+.container {
+  width: 700px;
+  height: 300px;
+  background-color: white;
+  margin: 0px 400px;
+
+  box-shadow: 8px 8px 4px rgb(180, 193, 255);
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+.amount {
+  padding: 80px 150px 50px 150px;
+}
+.currency {
+  width: 200px;
+  border-bottom: 2px solid #3f3a81;
+  background: transparent;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  text-align: center;
+  color: black;
+  outline: none;
+  font-weight: bold;
+  font-size: 18px;
+}
+.donate-sec {
+  margin: 0px 55px;
+}
+.donate-btn {
+  margin-right: 30px;
+  width: 240px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  color: var(--toggle-color);
+  background-color: var(--body-text-color);
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.donate-btn:hover {
+  background-color: var(--primary-color);
+}
+.banktransfer {
+  width: 310px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  color: var(--toggle-color);
+  background-color: var(--body-text-color);
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+.banktransfer:hover {
+  background-color: var(--primary-color);
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  width: 100%;
+  height: 400px;
+  background-color: var(--body-text-color);
+  margin-top: 50px;
+}
+.foot-head {
+  color: white;
+
+  margin-top: 50px;
+  border-bottom: 1px solid rgba(211, 211, 211, 0.484);
+
+  width: 350px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.footerpart {
+  margin-right: 10px;
+}
+
+ul {
+  list-style-type: none;
+}
+li {
+  padding-top: 10px;
+}
+li a {
+  color: rgb(211, 243, 253);
+  text-decoration: none;
+  font-size: 16px;
+}
+.foot-end {
+  display: flex;
+  gap: 20px;
+  z-index: -1;
+  margin-top: -100px;
+}
+#mail {
+  margin-top: -20px;
+}
+p {
+  color: white;
+}
+.subscribe {
+  color: var(--body-text-color);
+  font-weight: bold;
+  height: 20px;
+}
+.foot-logo {
+  display: flex;
+  gap: 20px;
+  z-index: -1;
+  margin-top: -70px;
+  margin-left: 1000px;
+}
+#logo-txt {
+  color: rgb(204, 204, 204);
+  opacity: 0.5;
+  margin-top: 10px;
+}
+.foot-last {
+  margin-left: 55px;
+}
+.logo-icon {
+  opacity: 0.3;
+  border: none;
+  background-color: none;
+}
