@@ -1,0 +1,1 @@
+My website is all about helping people , Like people will post their campaign for fundraise ,where donaters can donate their to help them as a crowdfunding website called PIN people in need 

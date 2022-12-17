@@ -19,54 +19,15 @@ body {
   height: 100%;
   background-color: var(--body-color);
 }
-
-header {
-  display: flex;
-  position: fixed;
-
-  top: 0;
-  width: 100%;
-  height: 90px;
-  padding: 10px 14px;
-  background-color: var(--header-color);
-  box-shadow: rgb(180, 193, 255) 4px 4px 4px;
-}
-
-.image-txt {
-  display: flex;
-}
-
-.name {
-  margin-top: 10px;
-  color: #3f3a81;
-  font-weight: bold;
-  margin-left: 10px;
-}
-.nav {
-  margin-top: 10px;
-  padding-left: 720px;
-}
-.nav-anchor {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #3f3a81;
-  font-weight: bold;
-
-  display: inline-block;
-}
-.nav a:hover {
-  color: var(--toggle-color);
-  background-color: var(--body-text-color);
-}
 .home {
   border-bottom: 5px solid #695cfe;
 }
 .hero-sec {
   margin-top: 80px;
-  z-index: -1;
 }
 .banner {
   position: relative;
+  z-index: -1;
 }
 .login {
   position: absolute;
@@ -191,80 +152,4 @@ progress {
 }
 .more {
   padding-left: 50px;
-}
-.footer {
-  width: 100%;
-  height: 400px;
-  background-color: var(--body-text-color);
-
-  margin-top: 50px;
-}
-.footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-.foot-head {
-  color: white;
-  /* margin-left: 0px; */
-  margin-top: 50px;
-  border-bottom: 1px solid rgba(211, 211, 211, 0.484);
-
-  width: 350px;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.footerpart {
-  margin-right: 10px;
-}
-
-ul {
-  list-style-type: none;
-}
-li {
-  padding-top: 10px;
-}
-li a {
-  color: rgb(211, 243, 253);
-  text-decoration: none;
-  font-size: 16px;
-}
-.foot-end {
-  display: flex;
-  gap: 20px;
-  z-index: -1;
-  margin-top: -100px;
-}
-#mail {
-  margin-top: -20px;
-}
-p {
-  color: white;
-}
-.subscribe {
-  color: var(--body-text-color);
-  font-weight: bold;
-  height: 20px;
-}
-.foot-logo {
-  display: flex;
-  gap: 20px;
-  z-index: -1;
-  margin-top: -70px;
-  margin-left: 1000px;
-}
-#logo-txt {
-  color: rgb(204, 204, 204);
-  opacity: 0.5;
-  margin-top: 10px;
-}
-.foot-last {
-  margin-left: 55px;
-}
-
-.logo-icon {
-  opacity: 0.3;
-  border: none;
-  background-color: none;
 }
