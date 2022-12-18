@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PIN(People In Need).in</title>
+    <link rel="stylesheet" href="../../Assets/css/donate.css" />
+    <link rel="stylesheet" href="../../Assets/css/header.css">
+    <link rel="stylesheet" href="../../Assets/css/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!-- header starts -->
+    <header>
+      <div class="image-txt">
+        <span
+          ><img
+            src="../../Assets/images/business-community.png"
+            alt="groupof people"
+            width="65"
+            height="65"
+        /></span>
+
+        <span class="name"
+          >PIN<br />
+          People In Need</span
+        >
+      </div>
+
+      <div class="nav">
+        <a href="../../index.html" class="nav-anchor">Home</a>
+        <a href="../donate/donate.html" class="nav-anchor donate">Donate</a>
+        <a href="../../webpage/fundraiser/fundraiser.html" class="nav-anchor">Fundraise</a>
+        <a href="../../webpage/header/about.html" class="nav-anchor">About</a>
+        <a href="../../webpage/header/contact.html" class="nav-anchor">Contact</a>
+        <a href="../../webpage/header/profile.html" class="nav-anchor"
+          ><img
+            class="profile"
+            src="../../Assets/images/profile.png"
+            alt="profile"
+            width="30"
+            title="profile"
+        /></a>
+      </div>
+    </header>
+
+    <!-- header end -->
+
+
+    <!-- search box sec -->
+    <div class="search">
+      <a href="../../webpage/donate/My donations.html"><button class="donation">My Donations</button></a>
+      <input
+        type="text"
+        placeholder="   Search by name,location,cause..."
+        name="search"
+      />
+      <button type="submit"><i class="fa fa-search" width="20px"></i></button>
+      <div class="abc">
+        <button class="dropbtn" onclick="myFunction()">
+          Refine Search
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content" id="myDropdown">
+          <a href="../../webpage/donate/donate-medical.html">Medical</a>
+          <a href="../../webpage/donate/donate-education.html">Education</a>
+          <a href="../../webpage/donate/donate-social.html">Social cause</a>
+        </div>
+      </div>
+    </div>
+    <!-- search box sec -->
+
+    <!-- script for refine search button -->
+    <script>
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+
+      window.onclick = function (e) {
+        if (!e.target.matches(".dropbtn")) {
+          var myDropdown = document.getElementById("myDropdown");
+          if (myDropdown.classList.contains("show")) {
+            myDropdown.classList.remove("show");
+          }
+        }
+      };
+    </script>
+    <!-- script ends -->
+
+    <!-- main container starts -->
+    <div class="container">
+      <div class="box"><a href="../../webpage/donate/story.html" style="text-decoration:none;"><span class="linkspanner">
+      <img class="image" src="../../Assets/images/education.jpg" alt="education" />
+        <h4>Help me study to win in life</h4>
+        <div class="progress-sec">
+          <b> 20%</b>
+          <progress id="file" value="20" max="100">20%</progress
+          > <span class="like"
+            ><a href="#"
+              ><img
+                src="../../Assets/images/icons8-favorite-50.png"
+                alt="Like"
+                class="icon-like"
+                width="30px" /><img
+                class="share"
+                src="../../Assets/images/share.png"
+                alt="share"
+                width="30px" /></a
+          ></span>
+
+          <div class="amount">
+            <span id="txt-amt"> Raised :</span>
+            <span id="cash"> Rs.6,00,000</span> <span class="count" >550</span>
+          </div>
+        </div>
+        <div class="user">
+          <span class="name-label">Created by</span
+          ><span class="name">Kumar </span>
+        </div>
+      
+   
+  </span>
+  </a>
+      </div>
+  
+  
+   
+ <div class="box"> <a href="../../webpage/donate/schoolsforspecialneeds.html"   style="text-decoration:none;"><span class="linkspanner"></span>
+        <img class="image" src="../../Assets/images/educationforspecialneeds.jpg" alt="education for special needs"  height="255" />
+        <h4>Schooling Special Needs Children With Custom Education</h4>
+        <div class="progress-sec">
+          <b> 90%</b>
+          <progress id="file" value="90" max="100">90%</progress
+          ><span class="like"
+            ><a href="#"
+              ><img
+                src="../../Assets/images/icons8-favorite-50.png"
+                alt="Like"
+                class="icon-like"
+                width="30px" /><img
+                class="share"
+                src="../../Assets/images/share.png"
+                alt="share"
+                width="30px" /></a
+          ></span>
+
+          <div class="amount">
+            <span id="txt-amt"> Raised :</span>
+            <span id="cash"> Rs.50,00,000</span> <span class="count" style="margin-left:40px;">2615</span>
+          </div>
+        </div>
+        <div class="user2">
+          <span class="name-label">Created by</span
+          ><span class="name">Shyam </span>
+        </div>
+      </a>
+      </div>
+    
+      <div class="box"><a href="../../webpage/donate/specialneeds.html" style="text-decoration:none;"><span class="linkspanner"></span>
+        <img class="image" src="../../Assets/images/specialneeds.jpg"  alt="specialneeds"  height="255" />
+        <h3>School For Special Needs</h3>
+        <div class="progress-sec">
+          <b> 45%</b>
+          <progress id="file" value="45" max="100">45%</progress
+          ><span class="like"
+            ><a href="#"
+              ><img
+                src="../../Assets/images/icons8-favorite-50.png"
+                alt="Like"
+                class="icon-like"
+                width="30px" /><img
+                class="share"
+                src="../../Assets/images/share.png"
+                alt="share"
+                width="30px" /></a
+          ></span>
+
+          <div class="amount">
+            <span id="txt-amt"> Raised :</span>
+            <span id="cash"> Rs.2,30,000</span> <span class="count">240</span>
+          </div>
+        </div>
+        <div class="user">
+          <span class="name-label">Created by</span
+          ><span class="name">Ram </span>
+        </div></a>
+      </div>
+      
+    
+    
+      <div class="box"><a href="../../webpage/donate/schoolforpositivechildhood.html" style="text-decoration:none;"><span class="linkspanner"></span>
+        <img class="image" src="../../Assets/images/schools for need.jpg" alt="school to make childhood positive"  height="255" />
+        <h4>
+          Enable access to positive Childhood experience        </h4>
+        <div class="progress-sec">
+          <b> 71%</b>
+          <progress id="file" value="71" max="100">71%</progress
+          ><span class="like"
+            ><a href="#"
+              ><img
+                src="../../Assets/images/icons8-favorite-50.png"
+                alt="Like"
+                class="icon-like"
+                width="30px" /><img
+                class="share"
+                src="../../Assets/images/share.png"
+                alt="share"
+                width="30px" /></a
+          ></span>
+
+          <div class="amount">
+            <span id="txt-amt"> Raised :</span>
+            <span id="cash"> Rs.7,12,054</span> <span class="count">482</span>
+          </div>
+        </div>
+        <div class="user3">
+          <span class="name-label">Created by</span
+          ><span class="name">Jack</span>
+        </div></a>
+      </div>
+    
+   <div class="box"><a href="../../webpage/donate/.html" alt="shelter for dogs" style="text-decoration:none;"><span class="linkspanner"></span>
+        <img class="image" src="../../Assets/images/institue for blind.jpg" alt="institue for blind" height="255" />
+        <h4>Support training and hostel for students with blindness</h4>
+        <div class="progress-sec">
+          <b> 15%</b>
+          <progress id="file" value="15" max="100">15%</progress
+          ><span class="like"
+            ><a href="#"
+              ><img
+                src="../../Assets/images/icons8-favorite-50.png"
+                alt="Like"
+                class="icon-like"
+                width="30px" /><img
+                class="share"
+                src="../../Assets/images/share.png"
+                alt="share"
+                width="30px" /></a
+          ></span>
+
+          <div class="amount">
+            <span id="txt-amt"> Raised :</span>
+            <span id="cash"> Rs.74,447</span> <span class="count" style="margin-left:70px;">103</span>
+          </div>
+        </div>
+        <div class="user2">
+          <span class="name-label">Created by</span
+          ><span class="name">Suraj </span>
+        </div>
+      </div>
+    </a>
+     <div class="box"><a href="../../webpage/donate/ngo-education.html" style="text-decoration:none;"><span class="linkspanner"></span>
+        <img class="image" src="../../Assets/images/groupeducation.jpg" alt="ngo education" height="255" />
+        <h4>Financial Support for<br> Underprivileged Children</h4>
+        <div class="progress-sec">
+          <b> 30%</b>
+          <progress id="file" value="30" max="100">30%</progress
+          ><span class="like"
+            ><a href="#"
+              ><img
+                src="../../Assets/images/icons8-favorite-50.png"
+                alt="Like"
+                class="icon-like"
+                width="30px" /><img
+                class="share"
+                src="../../Assets/images/share.png"
+                alt="share"
+                width="30px" /></a
+          ></span>
+
+          <div class="amount">
+            <span id="txt-amt"> Raised :</span>
+            <span id="cash"> Rs.3,00,000</span> <span class="count" style="margin-left:60px;">116</span>
+          </div>
+        </div>
+        <div class="user3" >
+          <span class="name-label">Created by</span
+          ><span class="name">Sundar </span>
+        </div></a>
+      </div>
+    
+    </div> 
+    <!-- end container -->
+   
+    <div class="viewmore">
+      <img src="../../Assets/images/arrow-down-sign-to-navigate.png" alt="arrow" class="arrow" />
+      <div><a href="#" class="more">View More Fundraisers</a></div>
+    </div>
+
+
+
+
+
+    <!-- Footer  -->
+    <div class="footer">
+      <div class="footerpart">
+        <div class="foot-head"> <p>Donate now</p></div>
+        <div class="foot-link">
+        
+          <ul>
+          <li><a href="../../webpage/donate/donate-medical.html">Medical </a></li>
+          <li><a href="../../webpage/donate/donate-education.html">Education</a></li>
+          <li><a href="../../webpage/donate/donate-social.html">Social causes </a></li>
+        </ul>
+      </div>
+      </div>
+      <div class="footerpart2">
+        <div class="foot-head"><p>How it works?</p></div>
+        <div class="foot-link">
+         <ul>
+          <li><a href="#">What is Crowdfunding?</a></li>
+          <li><a href="#">Fundraising Tips</a></li>
+          <li><a href="#">Browse fundraiser</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+      </div>
+      <div class="footerpart3">
+        <div class="foot-head"><p>Support</p></div>
+        <div class="foot-link">        
+          <ul>
+          <li><a href="#">FAQ's & Help Center</a></li>
+          <li><a href="#">Are Pin campaigns Genuine?</a></li>
+          <li><a href="#">Trust & Safety</a></li>
+          <li><a href="#">Featured In</a></li>      
+        </ul>
+      </div>
+      </div>
+    </div>
+    <div class="foot-last">
+    <div class="foot-end"><img id="mail" src="../../Assets/images/mail.png" alt="mail"><p>Sign Up for PIN News</p><button class="subscribe">Subscribe</button></div>
+  <div class="foot-logo"><p id="logo-txt">Follow PIN</p>
+    <a href="#"><img class="logo-icon"src="../../Assets/images/fb.png" alt="facebook" width="40"></img></a>
+    <a href="#"><img class="logo-icon"src="../../Assets/images/twitter.png" alt="twitter"  width="40"></img></a>
+    <a href="#"><img class="logo-icon"src="../../Assets/images/insta.png" alt="instagram"  width="50" height="45"></img></a>
+    <a href="#"><img class="logo-icon"src="../../Assets/images/youtube.png" alt="youtubr"  width="50" height="40"></img></a></div>
+    
+</div>
+<!-- footer end -->
+</body>
+</html>
+  

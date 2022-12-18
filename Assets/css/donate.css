@@ -120,8 +120,8 @@ button[type="submit"] {
   /* padding: 0px 50px; */
   gap: 20px;
   width: 1340px;
+  margin-top: 20px;
 
-  margin-top: 50px;
   margin-bottom: 50px;
   margin-left: 150px;
 }
@@ -136,6 +136,7 @@ button[type="submit"] {
   box-sizing: border-box;
   cursor: pointer;
   margin-left: 30px;
+  margin-top: 30px;
 }
 .box:hover {
   box-shadow: rgb(140, 159, 255) 4px 4px 4px;
@@ -168,7 +169,7 @@ progress {
 }
 
 .count {
-  margin-left: 56px;
+  margin-left: 55px;
 }
 .user {
   padding-left: 50px;
