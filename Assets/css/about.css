@@ -1,26 +1,4 @@
-* {
-  font-family: "Poppins", sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  color: var(--body-text-color);
-}
-
-:root {
-  --body-color: rgb(228, 233, 247);
-  --header-color: #fff;
-  --primary-color: #695cfe;
-  --primary-color-light: #f6f5ff;
-  --toggle-color: #ddd;
-  --text-color: #707070;
-  --body-text-color: #3f3a81;
-}
-
-body {
-  height: 100%;
-  background-color: var(--body-color);
-}
-
+/* main content style for about */
 .hero-sec {
   margin-top: 80px;
   z-index: -1;
@@ -46,6 +24,8 @@ body {
   font-weight: 500;
   padding: 40px 40px 0px 0px;
 }
+
+/* main content style for about ends */
 .about:not(.nav a:hover) {
   border-bottom: 5px solid #695cfe;
 }

@@ -1,3 +1,4 @@
+/* footer styling */
 .footer {
   display: flex;
   flex-direction: row;
@@ -72,3 +73,4 @@ p {
   border: none;
   background-color: none;
 }
+/* footer styling ends */

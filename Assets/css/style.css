@@ -1,27 +1,8 @@
-* {
-  font-family: "Poppins", sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --body-color: rgb(228, 233, 247);
-  --header-color: #fff;
-  --primary-color: #695cfe;
-  --primary-color-light: #f6f5ff;
-  --toggle-color: #ddd;
-  --text-color: #707070;
-  --body-text-color: #3f3a81;
-}
-
-body {
-  height: 100%;
-  background-color: var(--body-color);
-}
 .home {
   border-bottom: 5px solid #695cfe;
 }
+
+/* main content style starts */
 .hero-sec {
   margin-top: 80px;
 }
@@ -153,3 +134,4 @@ progress {
 .more {
   padding-left: 50px;
 }
+/* main content style ends */
