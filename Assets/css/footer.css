@@ -14,13 +14,15 @@
 }
 .footmain {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+
+  width: 100%;
 }
 .foot-head {
   color: white;
   margin-top: 50px;
   border-bottom: 1px solid rgba(211, 211, 211, 0.484);
-  width: 350px;
+  width: 100px;
   font-size: 24px;
   font-weight: bold;
 }
@@ -82,10 +84,12 @@ p {
 }
 /* footer styling ends */
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 480px) {
   .footer {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     width: 100%;
     height: fit-content;
@@ -99,8 +103,7 @@ p {
   .footmain {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    margin-left: 20px;
+    margin-left: 50px;
   }
   ul {
     list-style-type: none;
@@ -116,9 +119,6 @@ p {
 
   .foot-head {
     color: white;
-    /* margin-top: 50px; */
-    /* border-bottom: 1px solid rgba(211, 211, 211, 0.484); */
-
     font-size: 12px;
     font-weight: bold;
   }

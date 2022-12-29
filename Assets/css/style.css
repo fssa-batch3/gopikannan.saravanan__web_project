@@ -129,7 +129,7 @@ progress {
 }
 /* main content style ends */
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 480px) {
   .side-head {
     text-align: center;
     padding-top: 20px;
@@ -153,7 +153,8 @@ progress {
     display: grid;
     width: 350px;
     grid-template-columns: 1fr;
-    margin-left: 20px;
+    margin: auto;
+    margin-top: 40px;
   }
   .box {
     width: 350px;

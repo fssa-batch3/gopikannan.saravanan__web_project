@@ -84,7 +84,7 @@ button:hover {
   background: #6d44b8;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 480px) {
   body {
     height: 100%;
   }
