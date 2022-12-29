@@ -6,6 +6,8 @@
   text-align: center;
   padding-top: 20px;
   margin-top: 100px;
+  display: flex;
+  justify-content: center;
 }
 input[type="text"] {
   width: 500px;
@@ -49,7 +51,7 @@ button[type="submit"] {
 .dropbtn {
   margin-left: 20px;
   height: 50px;
-  width: 140px;
+  width: 120px;
   background-color: var(--body-text-color);
   color: var(--toggle-color);
   font-weight: bold;
@@ -96,13 +98,10 @@ button[type="submit"] {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  /* padding: 0px 50px; */
   gap: 20px;
   width: 1340px;
-  margin-top: 20px;
-
-  margin-bottom: 50px;
-  margin-left: 150px;
+  justify-content: center;
+  margin: auto;
 }
 
 .box {
@@ -174,16 +173,86 @@ progress {
   width: 350px;
 }
 .viewmore {
-  margin: 0px 580px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .arrow {
-  padding-left: 100px;
-}
-.more {
-  padding-left: 50px;
+  width: 50px;
 }
 
 button {
   height: 40px;
 }
 /* main content style ends */
+@media screen and (max-width: 400px) {
+  .search {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    padding-top: 20px;
+    margin-top: 100px;
+  }
+  input[type="text"] {
+    width: 200px;
+    height: 50px;
+    border-radius: 20px;
+    border: solid rgba(105, 105, 255, 0.411);
+  }
+  button[type="submit"] {
+    border: solid rgba(105, 105, 255, 0.411);
+    border-radius: 5px;
+    width: 50px;
+  }
+  .donation {
+    border: solid rgba(105, 105, 255, 0.411);
+    background-color: #3f3a81;
+    color: var(--toggle-color);
+    border-radius: 5px;
+    width: 70px;
+    height: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 12px;
+  }
+  .dropbtn {
+    height: 50px;
+    width: 50px;
+    background-color: var(--body-text-color);
+    color: var(--toggle-color);
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    z-index: -1;
+    text-align: center;
+    font-size: 12px;
+  }
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    background-color: var(--body-color);
+    margin-left: -60px;
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    width: 350px;
+  }
+}

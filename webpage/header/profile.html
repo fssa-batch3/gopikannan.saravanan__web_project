@@ -19,26 +19,32 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <script type="text/javascript">
+      function togglemenu() {
+       document.getElementById("sidebar").classList.toggle("active");
+     }
+   </script>
   </head>
   <body>
     <!--  header starts-->
     <header>
+      <span class="menudiv"> <a class="menulink" onclick="togglemenu()"><img class="menu" src="../../Assets/images/menu (2).png" alt="menu" width="25"></a></span></div>
       <div class="image-txt">
         <span
           ><img
             src="../../Assets/images/business-community.png"
             alt="groupof people"
-            width="65"
-            height="65"
+            class="logo"
         /></span>
 
         <span class="name"
-          >PIN<br />
-          People In Need</span
+          >People In Need</span
         >
+        
       </div>
 
       <div class="nav">
+        <div id="sidebar"  onclick="togglemenu()"> 
         <a href="../../webpage/header/home.html" class="nav-anchor">Home</a>
         <a href="../../webpage/donate/donate.html" class="nav-anchor donate">Donate</a>
         <a href="../../webpage/fundraiser/fundraiser.html" class="nav-anchor">Fundraise</a>
@@ -53,33 +59,35 @@
             title="profile"
         /></a>
       </div>
+      </div>
     </header>
     <!-- header ends -->
    <div class="profile-head">Profile Details</div>
 <!-- form -->
    <div class="container">
-    <div class="name-div"><label >Name:</label><input id="name" type="text" maxlength="20"></div>
-    <div class="phno"><label >Mobile Number:</label><input id="phno" type="text" maxlength="10"></div>
-    <div class="regemail"><label >Email:</label><input id="email-txt" id="phno" type="email" ></div>
-    <div class="adr-div"><label >Address:</label><input id="address" type="text"></div>
-    <div class="city-div"><label >City:</label><input id="city" type="text"></div>
-    <div class="state-div"><label >State:</label><input id="state" type="text"></div>
-    <div class="Cntry-div"><label >Country:</label><input id="country" type="text"></div>
-    <div class="pin-div"><label >Pincode:</label><input id="pin" type="text" maxlength="7"></div>
-    <div class="accno"><label >Account Number:</label><input id="acc" type="text"></div>
-    <div class="accname"><label >Bank Name:</label><input type="text" id="accname"></div>
-    <div class="ifc"><label > IFC Code:</label><input type="text" id="ifc"></div>
+    <div class="input-div"><label >Name:</label><input id="name" type="text" maxlength="20"></div>
+    <div class="input-div"><label >Mobile-Number:</label><input id="phno" type="text" maxlength="10"></div>
+    <div class="input-div"><label >Email:</label><input id="email-txt" id="phno" type="email" ></div>
+    <div class="input-div"><label >Address:</label><input id="address" type="text"></div>
+    <div class="input-div"><label >City:</label><input id="city" type="text"></div>
+    <div class="input-div"><label >State:</label><input id="state" type="text"></div>
+    <div class="input-div"><label >Country:</label><input id="country" type="text"></div>
+    <div class="input-div"><label >Pincode:</label><input id="pin" type="text" maxlength="7"></div>
+    <div class="input-div"><label >Account Number:</label><input id="acc" type="text"></div>
+    <div class="input-div"><label >Bank Name:</label><input type="text" id="accname"></div>
+    <div class="input-div"><label > IFC Code:</label><input type="text" id="ifc"></div>
 
 
 
 
-    <a href="#"><button class="save">Save</button></a>
+    <a class="save" href="#"><button class="save">Save</button></a>
     <!-- form ends -->
 
 
    </div>
     <!-- Footer  -->
-<div class="footer">
+  <div class="footer">
+  <div class="footmain">
     <div class="footerpart">
       <div class="foot-head"> <p>Donate now</p></div>
       <div class="foot-link">
@@ -91,7 +99,7 @@
       </ul>
     </div>
     </div>
-    <div class="footerpart2">
+    <div class="footerpart">
       <div class="foot-head"><p>How it works?</p></div>
       <div class="foot-link">
        <ul>
@@ -102,7 +110,7 @@
       </ul>
     </div>
     </div>
-    <div class="footerpart3">
+    <div class="footerpart">
       <div class="foot-head"><p>Support</p></div>
       <div class="foot-link">        
         <ul>
@@ -113,17 +121,19 @@
       </ul>
     </div>
     </div>
-  </div>
-  <div class="foot-last">
-  <div class="foot-end"><img id="mail" src="../../Assets/images/mail.png" alt="mail"><p>Sign Up for PIN News</p><button class="subscribe">Subscribe</button></div>
-<div class="foot-logo"><p id="logo-txt">Follow PIN</p>
-  <a href="#"><img class="logo-icon"src="../../Assets/images/fb.png" alt="facebook" width="40"></img></a>
-  <a href="#"><img class="logo-icon"src="../../Assets/images/twitter.png" alt="twitter"  width="40"></img></a>
-  <a href="#"><img class="logo-icon"src="../../Assets/images/insta.png" alt="instagram"  width="50" height="45"></img></a>
-  <a href="#"><img class="logo-icon"src="../../Assets/images/youtube.png" alt="youtubr"  width="50" height="40"></img></a></div>
+    </div>
   
-</div>  <!-- footer end -->
+<div class="foot-last">
+  <div class="foot-end"><img id="mail" src="../../Assets/images/mail.png" alt="mail"><p>Sign Up for PIN News</p><button class="subscribe">Subscribe</button></div>
+  <div class="foot-logo"><p id="logo-txt">Follow PIN</p>
+  <a href="#"><img class="logo-icon"src="../../Assets/images/fb.png" alt="facebook"></img></a>
+  <a href="#"><img class="logo-icon"src="../../Assets/images/twitter.png" alt="twitter"  ></img></a>
+  <a href="#"><img class="logo-icon"src="../../Assets/images/insta.png" alt="instagram" ></img></a>
+  <a href="#"><img class="logo-icon"src="../../Assets/images/youtube.png" alt="youtubr"  ></img></a></div>
+  </div> 
+</div>
+<!-- footer end -->
 
-  </body>
+</body>
 </html>
 

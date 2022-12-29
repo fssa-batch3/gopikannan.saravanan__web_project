@@ -17,6 +17,7 @@
 }
 
 body {
-  height: 100%;
+  height: fit-content;
   background-color: var(--body-color);
+  width: 100%;
 }

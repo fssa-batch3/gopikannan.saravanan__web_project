@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../../Assets/css/header.css">
     <link rel="stylesheet" href="../../Assets/css/footer.css">
     <link rel="stylesheet" href="../../Assets/css/universal.css">
+    <link rel="stylesheet" href="../../Assets/js/header.js">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,26 +20,33 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <script type="text/javascript">
+       function togglemenu() {
+        document.getElementById("sidebar").classList.toggle("active");
+      }
+    </script>
   </head>
   <body>
     <!--  header starts-->
     <header>
+              <span class="menudiv"> <a class="menulink" onclick="togglemenu()"><img class="menu" src="../../Assets/images/menu (2).png" alt="menu" width="25"></a></span>
       <div class="image-txt">
+
         <span
           ><img
+          class="logo"
             src="../../Assets/images/business-community.png"
             alt="groupof people"
-            width="65"
-            height="65"
+            
         /></span>
-
         <span class="name"
-          >PIN<br />
-          People In Need</span
-        >
-      </div>
-
+          >People In Need</span
+        > 
+       </div>
+      
       <div class="nav">
+      <div id="sidebar"  onclick="togglemenu()"> 
+      
         <a href="../../webpage/header/home.html" class="nav-anchor home">Home</a>
         <a href="../../webpage/donate/donate.html" class="nav-anchor">Donate</a>
         <a href="../../webpage/fundraiser/fundraiser.html" class="nav-anchor">Fundraise</a>
@@ -48,6 +56,8 @@
           ><img src="../../Assets/images/profile.png" alt="profile" width="30"
           title="profile"></a>
       </div>
+      </div>
+    
     </header>
     <!-- header ends -->
 
@@ -59,7 +69,7 @@
      <!-- hero section -->
 
 <!-- search box sec-->
-    <div class="side-head">Thousands are fundraising on Pin</div>
+    <div class="side-head">Thousands are fundraising on Pin </div>
     <div class="search">
       <input
         type="text"
@@ -258,7 +268,8 @@
       <div><a href="../../webpage/donate/donate.html" class="more">View More Fundraisers</a></div>
     </div>
     <!-- footer starts -->
-    <div class="footer">
+  <div class="footer">
+      <div class="footmain">
       <div class="footerpart">
         <div class="foot-head"> <p>Donate now</p></div>
         <div class="foot-link">
@@ -270,7 +281,7 @@
         </ul>
       </div>
       </div>
-      <div class="footerpart2">
+      <div class="footerpart">
         <div class="foot-head"><p>How it works?</p></div>
         <div class="foot-link">
          <ul>
@@ -281,7 +292,7 @@
         </ul>
       </div>
       </div>
-      <div class="footerpart3">
+      <div class="footerpart">
         <div class="foot-head"><p>Support</p></div>
         <div class="foot-link">        
           <ul>
@@ -290,17 +301,19 @@
           <li><a href="#">Trust & Safety</a></li>
           <li><a href="#">Featured In</a></li>      
         </ul>
-      </div>
+        </div>
       </div>
     </div>
-    <div class="foot-last">
+  
+  <div class="foot-last">
     <div class="foot-end"><img id="mail" src="../../Assets/images/mail.png" alt="mail"><p>Sign Up for PIN News</p><button class="subscribe">Subscribe</button></div>
-  <div class="foot-logo"><p id="logo-txt">Follow PIN</p>
-    <a href="#"><img class="logo-icon"src="../../Assets/images/fb.png" alt="facebook" width="40"></img></a>
-    <a href="#"><img class="logo-icon"src="../../Assets/images/twitter.png" alt="twitter"  width="40"></img></a>
-    <a href="#"><img class="logo-icon"src="../../Assets/images/insta.png" alt="instagram"  width="50" height="45"></img></a>
-    <a href="#"><img class="logo-icon"src="../../Assets/images/youtube.png" alt="youtubr"  width="50" height="40"></img></a></div>
+    <div class="foot-logo"><p id="logo-txt">Follow PIN</p>
+    <a href="#"><img class="logo-icon"src="../../Assets/images/fb.png" alt="facebook" ></img></a>
+    <a href="#"><img class="logo-icon"src="../../Assets/images/twitter.png" alt="twitter"  ></img></a>
+    <a href="#"><img class="logo-icon"src="../../Assets/images/insta.png" alt="instagram"  ></img></a>
+    <a href="#"><img class="logo-icon"src="../../Assets/images/youtube.png" alt="youtubr" ></img></a></div>
     
+  </div>
 </div>
 <!-- footer ends -->
 </body>

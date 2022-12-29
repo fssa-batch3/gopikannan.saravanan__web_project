@@ -19,6 +19,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <script type="text/javascript">
+      function togglemenu() {
+       document.getElementById("sidebar").classList.toggle("active");
+     }
+   </script>
   </head>
   <body>
 <!-- header part -->
@@ -28,17 +33,18 @@
           ><img
             src="../../Assets/images/business-community.png"
             alt="groupof people"
-            width="65"
-            height="65"
+            class="logo"
         /></span>
 
         <span class="name"
           >PIN<br />
           People In Need</span
         >
+        <span class="menudiv"> <a class="menulink" onclick="togglemenu()"><img class="menu" src="../../Assets/images/menu (2).png" alt="menu" width="25"></a></span></div>
       </div>
 
       <div class="nav">
+        <div id="sidebar"  onclick="togglemenu()"> 
         <a href="../../webpage/header/home.html" class="nav-anchor">Home</a>
         <a href="../../webpage/donate/donate.html" class="nav-anchor donate">Donate</a>
         <a href="../../webpage/fundraiser/fundraiser.html" class="nav-anchor">Fundraise</a>
@@ -52,6 +58,7 @@
             width="30"
             title="profile"
         /></a>
+      </div>
       </div>
     </header>
        <!-- end header part -->

@@ -102,7 +102,6 @@ button[type="submit"] {
   border-radius: 10px;
   box-sizing: border-box;
   cursor: pointer;
-  margin-left: 30px;
 }
 .box1:hover {
   box-shadow: rgb(140, 159, 255) 4px 4px 4px;
@@ -162,10 +161,12 @@ progress {
   width: 350px;
 }
 .container {
-  margin: 50px 200px;
+  margin: auto;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
-  /* background-color: #695cfe; */
+  justify-content: center;
+  align-items: center;
 }
 .box1-box2-container {
   display: flex;
@@ -178,7 +179,6 @@ progress {
   overflow-y: scroll;
   width: 600px;
   height: 250px;
-  /* height: fit-content; */
   background-color: white;
   box-shadow: rgb(180, 193, 255) 4px 4px 4px;
   border-radius: 10px;
@@ -186,10 +186,11 @@ progress {
 }
 .supporterhead {
   text-align: center;
-  margin: 10px 210px 10px 210px;
+  margin: auto;
   font-weight: bold;
   font-size: 18px;
   border-bottom: 2px solid #3f3a81;
+  width: 150px;
 }
 .supporter-name {
   font-weight: bold;
@@ -201,3 +202,85 @@ progress {
 }
 
 /* main content style ends */
+
+@media screen and (max-width: 400px) {
+  .search {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    padding-top: 20px;
+    margin-top: 100px;
+  }
+  input[type="text"] {
+    width: 200px;
+    height: 50px;
+    border-radius: 20px;
+    border: solid rgba(105, 105, 255, 0.411);
+  }
+  button[type="submit"] {
+    border: solid rgba(105, 105, 255, 0.411);
+    border-radius: 5px;
+    width: 50px;
+  }
+  .donation {
+    border: solid rgba(105, 105, 255, 0.411);
+    background-color: #3f3a81;
+    color: var(--toggle-color);
+    border-radius: 5px;
+    width: 70px;
+    height: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 12px;
+  }
+  .dropbtn {
+    height: 50px;
+    width: 50px;
+    background-color: var(--body-text-color);
+    color: var(--toggle-color);
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    z-index: -1;
+    text-align: center;
+    font-size: 12px;
+  }
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    background-color: var(--body-color);
+    margin-left: -60px;
+  }
+
+  .box1-box2-container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
+    justify-content: center;
+    align-items: center;
+  }
+  .supporters-box {
+    margin-top: 80px;
+    margin-left: -10px;
+    overflow-y: scroll;
+    width: 300px;
+    height: 250px;
+    background-color: white;
+    box-shadow: rgb(180, 193, 255) 4px 4px 4px;
+    border-radius: 10px;
+    padding: 0px 20px;
+  }
+}
