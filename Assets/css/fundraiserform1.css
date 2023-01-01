@@ -137,4 +137,7 @@ option {
   input[type="radio"] {
     margin-top: -17px;
   }
+  label {
+    font-size: 15px;
+  }
 }

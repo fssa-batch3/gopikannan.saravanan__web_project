@@ -134,7 +134,9 @@ progress {
 }
 
 .count {
-  margin-left: 56px;
+  position: absolute;
+  margin-top: -1px;
+  margin-left: 60px;
 }
 .user {
   padding-left: 50px;
@@ -209,6 +211,11 @@ progress {
     flex-direction: row;
     text-align: center;
     justify-content: center;
+  }
+  .count {
+    position: absolute;
+    margin-top: -1px;
+    margin-left: 70px;
   }
   input[type="text"] {
     width: 300px;
