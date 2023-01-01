@@ -4,8 +4,7 @@
 }
 .search {
   text-align: center;
-  padding-top: 20px;
-  margin-top: 100px;
+  margin-top: 40px;
 }
 input[type="text"] {
   width: 500px;
@@ -172,10 +171,11 @@ progress {
   display: flex;
   flex-direction: row;
   padding-bottom: 50px;
+  gap: 50px;
 }
 .supporters-box {
   margin-top: 80px;
-  margin-left: 50px;
+
   overflow-y: scroll;
   width: 600px;
   height: 250px;
@@ -203,17 +203,15 @@ progress {
 
 /* main content style ends */
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 1200px) {
   .search {
     display: flex;
     flex-direction: row;
     text-align: center;
     justify-content: center;
-    padding-top: 20px;
-    margin-top: 100px;
   }
   input[type="text"] {
-    width: 200px;
+    width: 300px;
     height: 50px;
     border-radius: 20px;
     border: solid rgba(105, 105, 255, 0.411);
@@ -221,14 +219,14 @@ progress {
   button[type="submit"] {
     border: solid rgba(105, 105, 255, 0.411);
     border-radius: 5px;
-    width: 50px;
+    width: 100px;
   }
   .donation {
     border: solid rgba(105, 105, 255, 0.411);
     background-color: #3f3a81;
     color: var(--toggle-color);
     border-radius: 5px;
-    width: 70px;
+    width: 90px;
     height: 50px;
     font-weight: bold;
     cursor: pointer;
@@ -236,7 +234,7 @@ progress {
   }
   .dropbtn {
     height: 50px;
-    width: 50px;
+    width: 100px;
     background-color: var(--body-text-color);
     color: var(--toggle-color);
     font-weight: bold;
@@ -267,20 +265,68 @@ progress {
 
   .box1-box2-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     padding-bottom: 50px;
     justify-content: center;
     align-items: center;
   }
   .supporters-box {
-    margin-top: 80px;
-    margin-left: -10px;
+    margin-top: -30px;
     overflow-y: scroll;
-    width: 300px;
+    width: 600px;
     height: 250px;
     background-color: white;
     box-shadow: rgb(180, 193, 255) 4px 4px 4px;
     border-radius: 10px;
     padding: 0px 20px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  input[type="text"] {
+    width: 200px;
+    height: 50px;
+    border-radius: 20px;
+    border: solid rgba(105, 105, 255, 0.411);
+  }
+  button[type="submit"] {
+    border: solid rgba(105, 105, 255, 0.411);
+    border-radius: 5px;
+    width: 50px;
+  }
+  .donation {
+    width: 70px;
+    height: 50px;
+  }
+  .dropbtn {
+    height: 50px;
+    width: 80px;
+  }
+  .supporters-box {
+    width: 400px;
+    height: 250px;
+  }
+}
+@media screen and (max-width: 780px) {
+  .donation {
+    width: 70px;
+    height: 50px;
+  }
+  .dropbtn {
+    width: 60px;
+  }
+  button[type="submit"] {
+    width: 30px;
+  }
+  .supporters-box {
+    width: 300px;
+    height: 250px;
+    margin-top: 30px;
+  }
+  .box1-box2-container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
+    justify-content: center;
+    align-items: center;
   }
 }

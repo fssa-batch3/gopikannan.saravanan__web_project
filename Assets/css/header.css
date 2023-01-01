@@ -15,28 +15,27 @@
   --text-color: #707070;
   --body-text-color: #3f3a81;
 }
-
 .logo {
   width: 65px;
   margin-left: 30px;
 }
 header {
   display: flex;
-  position: fixed;
-  top: 0;
+  justify-content: space-between;
+
   width: 100%;
   height: 90px;
   padding: 10px 14px;
   background-color: var(--header-color);
   box-shadow: rgb(180, 193, 255) 4px 4px 4px;
 }
-
 .image-txt {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+
   margin-top: -10px;
 }
-
 .name {
   margin-top: -10px;
   color: #3f3a81;
@@ -46,7 +45,6 @@ header {
 }
 .nav {
   margin-top: 10px;
-  margin-left: 650px;
 }
 .nav-anchor {
   margin-left: 20px;
@@ -62,13 +60,12 @@ header {
 .menudiv {
   display: none;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 1200px) {
   .logo {
     width: 50px;
     margin: auto;
     margin-top: 10px;
   }
-
   .name {
     margin-top: 6px;
     color: #3f3a81;
@@ -80,11 +77,8 @@ header {
   }
   .menudiv {
     display: flex;
-    margin: 20px 0px 0px 190px;
-    justify-content: left;
-  }
-  .menu {
-    margin-left: -190px;
+    margin-top: 10px;
+    justify-content: space-between;
   }
   .nav a {
     display: flex;
@@ -113,8 +107,9 @@ header {
   }
   header:not(.menudiv) {
     display: flex;
-    position: fixed;
-    margin-bottom: 40px;
+
+    justify-content: space-between;
+
     width: 100%;
     height: 70px;
     padding: 10px 14px;
@@ -126,7 +121,6 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: -60px;
     margin-top: -12px;
   }
 }

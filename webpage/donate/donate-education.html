@@ -32,6 +32,8 @@
   <body>
     <!-- header starts -->
     <header>
+      <span class="menudiv"> <a class="menulink" onclick="togglemenu()"><img class="menu" src="../../Assets/images/menu (2).png" alt="menu" width="25"></a></span>
+      
       <div class="image-txt">
         <span
           ><img
@@ -42,11 +44,10 @@
         /></span>
 
         <span class="name"
-          >PIN<br />
+          >
           People In Need</span
         >
-        <span class="menudiv"> <a class="menulink" onclick="togglemenu()"><img class="menu" src="../../Assets/images/menu (2).png" alt="menu" width="25"></a></span></div>
-      </div>
+       </div>
 
       <div class="nav">
         <div id="sidebar"  onclick="togglemenu()"> 
@@ -81,8 +82,8 @@
       <button type="submit"><i class="fa fa-search" width="20px"></i></button>
       <div class="abc">
         <button class="dropbtn" onclick="myFunction()">
-          Refine Search
-          <i class="fa fa-caret-down"></i>
+          Filter &nbsp;<i class="fa fa-caret-down" style=" color:#f9f9f9 ;"></i>
+         
         </button>
         <div class="dropdown-content" id="myDropdown">
           <a href="../../webpage/donate/donate-medical.html">Medical</a>
@@ -133,8 +134,9 @@
 
           <div class="amount">
             <span id="txt-amt"> Raised :</span>
-            <span id="cash"> Rs.6,00,000</span> <span class="count" >550</span>
+            <span id="cash"> Rs.6,00,000</span> 
           </div>
+          <span class="count" >550</span>
         </div>
         <div class="user">
           <span class="name-label">Created by</span
@@ -169,10 +171,11 @@
 
           <div class="amount">
             <span id="txt-amt"> Raised :</span>
-            <span id="cash"> Rs.50,00,000</span> <span class="count" style="margin-left:40px;">2615</span>
+            <span id="cash"> Rs.50,00,000</span> 
           </div>
+          <span class="count">2615</span>
         </div>
-        <div class="user2">
+        <div class="user">
           <span class="name-label">Created by</span
           ><span class="name">Shyam </span>
         </div>
@@ -181,7 +184,7 @@
     
       <div class="box"><a href="../../webpage/donate/specialneeds.html" style="text-decoration:none;"><span class="linkspanner"></span>
         <img class="image" src="../../Assets/images/specialneeds.jpg"  alt="specialneeds"  height="255" />
-        <h3>School For Special Needs</h3>
+        <h4>School For Special Needs</h4>
         <div class="progress-sec">
           <b> 45%</b>
           <progress id="file" value="45" max="100">45%</progress
@@ -200,8 +203,9 @@
 
           <div class="amount">
             <span id="txt-amt"> Raised :</span>
-            <span id="cash"> Rs.2,30,000</span> <span class="count">240</span>
+            <span id="cash"> Rs.2,30,000</span> 
           </div>
+          <span class="count">240</span>
         </div>
         <div class="user">
           <span class="name-label">Created by</span
@@ -214,7 +218,7 @@
       <div class="box"><a href="../../webpage/donate/schoolforpositivechildhood.html" style="text-decoration:none;"><span class="linkspanner"></span>
         <img class="image" src="../../Assets/images/schools for need.jpg" alt="school to make childhood positive"  height="255" />
         <h4>
-          Enable access to positive Childhood experience        </h4>
+          Enable access to positive Childhood experience</h4>
         <div class="progress-sec">
           <b> 71%</b>
           <progress id="file" value="71" max="100">71%</progress
@@ -233,10 +237,11 @@
 
           <div class="amount">
             <span id="txt-amt"> Raised :</span>
-            <span id="cash"> Rs.7,12,054</span> <span class="count">482</span>
+            <span id="cash"> Rs.7,12,054</span> 
           </div>
+          <span class="count">482</span>
         </div>
-        <div class="user3">
+        <div class="user">
           <span class="name-label">Created by</span
           ><span class="name">Jack</span>
         </div></a>
@@ -263,10 +268,11 @@
 
           <div class="amount">
             <span id="txt-amt"> Raised :</span>
-            <span id="cash"> Rs.74,447</span> <span class="count" style="margin-left:70px;">103</span>
+            <span id="cash"> Rs.74,447</span> 
           </div>
+          <span class="count">103</span>
         </div>
-        <div class="user2">
+        <div class="user">
           <span class="name-label">Created by</span
           ><span class="name">Suraj </span>
         </div>
@@ -293,10 +299,11 @@
 
           <div class="amount">
             <span id="txt-amt"> Raised :</span>
-            <span id="cash"> Rs.3,00,000</span> <span class="count" style="margin-left:60px;">116</span>
+            <span id="cash"> Rs.3,00,000</span> 
           </div>
+          <span class="count">116</span>
         </div>
-        <div class="user3" >
+        <div class="user" >
           <span class="name-label">Created by</span
           ><span class="name">Sundar </span>
         </div></a>
@@ -316,6 +323,7 @@
 
     <!-- Footer  -->
     <div class="footer">
+      <div class="footmain">
       <div class="footerpart">
         <div class="foot-head"> <p>Donate now</p></div>
         <div class="foot-link">
@@ -327,7 +335,7 @@
         </ul>
       </div>
       </div>
-      <div class="footerpart2">
+      <div class="footerpart">
         <div class="foot-head"><p>How it works?</p></div>
         <div class="foot-link">
          <ul>
@@ -338,7 +346,7 @@
         </ul>
       </div>
       </div>
-      <div class="footerpart3">
+      <div class="footerpart">
         <div class="foot-head"><p>Support</p></div>
         <div class="foot-link">        
           <ul>
@@ -353,10 +361,10 @@
     <div class="foot-last">
     <div class="foot-end"><img id="mail" src="../../Assets/images/mail.png" alt="mail"><p>Sign Up for PIN News</p><button class="subscribe">Subscribe</button></div>
   <div class="foot-logo"><p id="logo-txt">Follow PIN</p>
-    <a href="#"><img class="logo-icon"src="../../Assets/images/fb.png" alt="facebook" width="40"></img></a>
-    <a href="#"><img class="logo-icon"src="../../Assets/images/twitter.png" alt="twitter"  width="40"></img></a>
-    <a href="#"><img class="logo-icon"src="../../Assets/images/insta.png" alt="instagram"  width="50" height="45"></img></a>
-    <a href="#"><img class="logo-icon"src="../../Assets/images/youtube.png" alt="youtubr"  width="50" height="40"></img></a></div>
+    <a href="#"><img class="logo-icon"src="../../Assets/images/fb.png" alt="facebook" ></img></a>
+    <a href="#"><img class="logo-icon"src="../../Assets/images/twitter.png" alt="twitter" ></img></a>
+    <a href="#"><img class="logo-icon"src="../../Assets/images/insta.png" alt="instagram" ></img></a>
+    <a href="#"><img class="logo-icon"src="../../Assets/images/youtube.png" alt="youtubr"  ></img></a></div>
     
 </div>
 <!-- footer end -->

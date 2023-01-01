@@ -4,16 +4,18 @@
   text-align: center;
   font-size: 22px;
   font-weight: bold;
-
+  width: 200px;
   color: var(--body-text-color);
   border: 5px double#3f3a81;
-  margin: 110px 600px 60px 600px;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 .container {
   width: 800px;
   height: fit-content;
   background-color: white;
-  margin: 10px 350px 20px;
+  margin: auto;
   padding: 40px 50px;
   box-shadow: 8px 8px 4px rgb(180, 193, 255);
   border-radius: 10px;
@@ -23,18 +25,24 @@
 label {
   font-size: 18px;
   font-weight: 600;
+  margin-bottom: 10px;
 }
 .coverpic,
 .doc-div {
   display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+.input {
+  display: flex;
+  flex-direction: column;
 }
 .image-div {
   background-color: var(--body-text-color);
   width: 20px;
   height: 20px;
-
   text-align: center;
-  margin-left: 10px;
   border-radius: 2px;
   border: none;
 }
@@ -46,54 +54,51 @@ label {
 .document {
   margin-left: 20px;
 }
-
+input {
+  margin-bottom: 20px;
+}
 #title {
-  width: 595px;
-  margin-left: 10px;
+  width: 100%;
   font-size: 18px;
   border: none;
   outline: none;
   border-bottom: 2px solid #3f3a813c;
   color: black;
-  padding-top: 20px;
+  margin-bottom: 20px;
 }
 #name {
-  width: 580px;
-  margin-left: 10px;
+  width: 100%;
   font-size: 18px;
   border: none;
   outline: none;
   border-bottom: 2px solid #3f3a813c;
   color: black;
-  padding-top: 20px;
+  margin-bottom: 20px;
 }
 #location {
-  width: 560px;
-  margin-left: 10px;
+  width: 100%;
   font-size: 18px;
   border: none;
   outline: none;
   border-bottom: 2px solid #3f3a813c;
   color: black;
-  padding-top: 20px;
+  margin-bottom: 20px;
 }
-.stry-div,
-.doc-div {
-  margin-top: 20px;
-}
+
 #story {
-  width: 650px;
-  margin-left: 10px;
+  width: 100%;
   font-size: 18px;
   border: none;
   outline: none;
   border-bottom: 2px solid #3f3a8141;
   color: black;
-  padding-top: 20px;
+  margin-bottom: 20px;
 }
 .upload {
-  margin: 20px 300px 0px 300px;
-
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 120px;
   height: 50px;
   border-radius: 10px;
@@ -107,4 +112,31 @@ label {
 .upload:hover {
   background-color: var(--primary-color);
 }
+
 /* main content style ends */
+@media screen and (max-width: 800px) {
+  .container {
+    width: 80%;
+  }
+  .detailedinfo {
+    font-size: 16px;
+    width: 180px;
+  }
+  ::placeholder {
+    font-size: 16px;
+  }
+  label {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .container {
+    width: 90%;
+  }
+  ::placeholder {
+    font-size: 14px;
+  }
+  label {
+    font-size: 14px;
+  }
+}

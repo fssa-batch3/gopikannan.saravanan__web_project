@@ -14,6 +14,16 @@
   --text-color: #707070;
   --body-text-color: #3f3a81;
 }
+.mydonations {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--body-text-color);
+  border: 5px double#3f3a81;
+  margin: auto;
+  width: 250px;
+  text-align: center;
+  margin-top: 2rem;
+}
 
 body {
   height: 100%;
@@ -23,87 +33,87 @@ body {
   border-bottom: 5px solid #695cfe;
 }
 .overallcontainer {
-  margin: 150px 100px 0px 250px;
+  margin-top: 4rem;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .first-second-box-container {
   display: flex;
   flex-direction: row;
   padding-bottom: 100px;
+  justify-content: center;
+  gap: 49px;
 }
 .box {
   width: 350px;
   height: 400px;
   background-color: white;
-
   box-shadow: rgb(180, 193, 255) 4px 4px 4px;
   border-radius: 10px;
   box-sizing: border-box;
   cursor: pointer;
-  margin-left: 50px;
 }
 .box:hover {
   box-shadow: rgb(140, 159, 255) 4px 4px 4px;
 }
-h3,
-h4 {
+
+.box h4 {
   color: var(--body-text-color);
-  padding-left: 35px;
-  padding-bottom: 5px;
+  text-align: center;
   padding-top: 10px;
 }
-.amountdetails {
+.second-box {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+}
+.second-box .amountdetails {
   text-align: center;
   color: var(--body-text-color);
-  margin: 20px 160px;
+  width: 200px;
+  margin: auto;
+  margin-bottom: 0px;
   font-weight: bold;
   font-size: 16px;
   border-bottom: 2px solid #3f3a81;
 }
-progress {
+.second-box progress {
   width: 220px;
   height: 30px;
   margin-left: 60px;
 }
-.progress-sec {
-  margin-top: 20px;
-  margin: 50px 60px 20px 60px;
+.second-box .progress-sec {
+  margin: auto;
 }
-#percent {
+.second-box #percent {
   margin-bottom: -30px;
   color: #3f3a81;
 }
-.amount {
+.second-box .amount {
   color: var(--body-text-color);
 }
 
-.like {
+.second-box .like {
   margin-left: 40px;
   margin-top: -15px;
 }
 
 .count {
-  margin-left: 15px;
+  position: absolute;
+  margin-top: -16px;
+  margin-left: 320px;
 }
-.user {
-  padding-left: 50px;
-  padding-top: 10px;
+.box .user {
+  margin: auto;
   border-top: 2px solid #707070;
-  margin: 10px 40px;
-}
-.user2 {
-  padding-top: 10px;
   text-align: center;
-  border-top: 2px solid #707070;
-  margin: 20px 80px;
-}
-.user3 {
-  padding-left: 50px;
   padding-top: 10px;
-  border-top: 2px solid #707070;
-  margin: -5px 40px;
+  width: 250px;
+  margin-top: 1rem;
 }
+
 .image {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -113,39 +123,72 @@ progress {
   width: 500px;
   height: 320px;
   background-color: white;
-
   box-shadow: rgb(180, 193, 255) 4px 4px 4px;
   border-radius: 10px;
   box-sizing: border-box;
   margin-top: 40px;
-
-  margin-left: 40px;
 }
 
 .contribution {
   color: var(--body-text-color);
-  margin: 20px 300px 0px 20px;
-  padding-left: 15px;
+  width: 180px;
+  margin-left: 5%;
+  margin-top: 5%;
+  text-align: center;
   font-weight: bold;
   font-size: 16px;
   border-bottom: 2px solid #3f3a81;
 }
-
 .yourdetails {
   margin: 20px 20px 0px 30px;
 }
-
 .profile-name {
-  padding-top: 30px;
-  padding-left: 10px;
+  margin-top: 30px;
+  margin-left: 10px;
   color: var(--body-text-color);
   font-weight: bold;
   font-size: 18px;
-  /* float: right; */
 }
 .rs {
-  padding-top: 30px;
-  padding-left: 200px;
+  margin-top: 30px;
+  margin-left: 40%;
   font-weight: bold;
   font-size: 18px;
+}
+.contribution-box {
+  display: flex;
+}
+@media screen and (max-width: 1200px) {
+  .first-second-box-container {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 100px;
+    justify-content: center;
+    align-items: center;
+  }
+  .second-box {
+    width: 450px;
+    height: 320px;
+  }
+}
+@media screen and (max-width: 875px) {
+  .first-second-box-container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 100px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 450px) {
+  .second-box {
+    width: 400px;
+    height: 320px;
+  }
+  .rs {
+    margin-top: 30px;
+    margin-left: 29%;
+    font-weight: bold;
+    font-size: 18px;
+  }
 }

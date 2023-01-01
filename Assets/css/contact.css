@@ -1,60 +1,67 @@
-
 .contact:not(.nav a:hover) {
   border-bottom: 5px solid #695cfe;
 }
 
 /* main content */
-.hero-sec {
-  margin-top: 80px;
-  z-index: -1;
-}
+
 .pin,
 .add,
 .email,
 .phno {
   margin-bottom: 20px;
 }
-
+.address .pin {
+  width: 50px;
+  height: 50px;
+}
 .contain {
-  padding: 90px 150px 0px;
   display: flex;
   flex-direction: column;
 }
 .container {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
-.address {
+.contain .address {
   display: flex;
+  margin-top: 30px;
 }
-#address-head,
+.contain #address-head,
 #mail-head,
 #phno-head {
   font-size: 22px;
   font-weight: bold;
 }
-.main-txt {
-  font-size: 18px;
+.contain .main-txt {
   color: black;
   font-weight: 400;
 }
-.add,
+.contain .add,
 .email {
   margin-left: 55px;
 }
-.phno {
+.contain .phno {
   margin-top: 20px;
 }
 .map {
   margin: 40px;
 }
 .input {
-  margin: 10px 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.input .details {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
 }
 
 #name,
 #email {
-  width: 280px;
+  width: 100%;
   height: 50px;
   border-radius: 10px;
   border: 2px solid var(--primary-color);
@@ -67,18 +74,17 @@
   margin-left: 50px;
 }
 #msg {
-  width: 615px;
+  width: 50%;
   border: 2px solid var(--primary-color);
   text-align: center;
   outline: var(--body-text-color);
   color: black;
   font-size: 18px;
   border-radius: 10px;
+  margin-top: 20px;
 }
 .send {
-  margin: 20px 250px 0px 250px;
-
-  width: 120px;
+  width: 15%;
   height: 50px;
   border-radius: 10px;
   border: none;
@@ -92,3 +98,25 @@
   background-color: var(--primary-color);
 }
 /* main content ends */
+@media screen and (max-width: 1000px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 750px) {
+  iframe {
+    width: 500px;
+  }
+  ::placeholder {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 520px) {
+  iframe {
+    width: 320px;
+    height: 350px;
+  }
+}

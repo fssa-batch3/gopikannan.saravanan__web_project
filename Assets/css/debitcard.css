@@ -1,4 +1,3 @@
-
 /* main content */
 .paymentpage {
   text-align: center;
@@ -6,16 +5,22 @@
   font-weight: bold;
   color: var(--body-text-color);
   border: 5px double#3f3a81;
-  margin: 150px 600px 60px 600px;
+  margin: auto;
+  width: 250px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 .container {
-  width: 700px;
+  width: 47%;
   height: fit-content;
   background-color: white;
-  margin: 0px 400px;
+  margin: auto;
   box-shadow: 8px 8px 4px rgb(180, 193, 255);
   border-radius: 10px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .card-details {
   text-align: center;
@@ -23,19 +28,28 @@
   font-weight: bold;
   color: var(--body-text-color);
   border-bottom: 2px solid #3f3a81;
-  margin: 20px 250px;
+  margin: auto;
   padding-top: 20px;
+  width: fit-content;
 }
 .first-sec {
   display: flex;
-  gap: 40px;
+  flex-direction: row;
+  margin: auto;
+  justify-content: space-around;
+}
+input {
+  width: 100%;
 }
 .name-txt {
-  width: 350px;
   color: black;
   font-size: 16px;
   font-weight: 500;
 }
+.user-details {
+  width: 70%;
+}
+
 label {
   color: var(--body-text-color);
   font-size: 16px;
@@ -45,29 +59,31 @@ select {
   height: 30px;
 }
 .cvv {
-  width: 100px;
   color: black;
   font-size: 16px;
   font-weight: 500;
 }
 .first-sec,
 .second-sec,
-.third-sec,
 .donate-btn {
-  margin: 20px 100px;
+  margin: auto;
+  margin-bottom: 20px;
+  width: 90%;
 }
 .num {
   color: black;
   font-size: 16px;
   font-weight: 500;
 }
-.num,
+
 .donate-btn {
-  width: 490px;
+  width: 90%;
 }
 .third-sec {
   display: flex;
-  gap: 165px;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
 }
 .card-png {
   width: 50px;
@@ -84,8 +100,54 @@ select {
   background-color: var(--body-text-color);
   border: none;
   border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 40px;
 }
 .donate-btn:hover {
   background-color: var(--primary-color);
 }
 /* main content ends*/
+@media screen and (max-width: 750px) {
+  .container {
+    width: 50%;
+  }
+  .card-png {
+    width: 30px;
+    height: 30px;
+  }
+  .paymentpage {
+    font-size: 16px;
+    width: 200px;
+  }
+  .card-details {
+    font-size: 16px;
+  }
+  label {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 630px) {
+  .container {
+    width: 50%;
+  }
+  .card-png {
+    width: 30px;
+    height: 30px;
+  }
+  .first-sec {
+    display: flex;
+    flex-direction: column;
+  }
+  .third-sec {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .user-details {
+    width: 100%;
+  }
+}

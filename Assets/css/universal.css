@@ -4,6 +4,7 @@
   padding: 0;
   box-sizing: border-box;
   color: var(--body-text-color);
+  font-size: 102%;
 }
 
 :root {
@@ -20,4 +21,6 @@ body {
   height: fit-content;
   background-color: var(--body-color);
   width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
 }

@@ -28,6 +28,7 @@
   <body>
     <!--  header starts-->
     <header>
+      <span class="menudiv"> <a class="menulink" onclick="togglemenu()"><img class="menu" src="../../Assets/images/menu (2).png" alt="menu" width="25"></a></span>
       <div class="image-txt">
         <span
           ><img
@@ -37,10 +38,10 @@
         /></span>
 
         <span class="name"
-          >PIN<br />
+          >
           People In Need</span
         >
-        <span class="menudiv"> <a class="menulink" onclick="togglemenu()"><img class="menu" src="../../Assets/images/menu (2).png" alt="menu" width="25"></a></span></div>
+       
       </div>
 
       <div class="nav">
@@ -66,17 +67,21 @@
 
     <!-- mainform starts -->
     <div class="container">
-      <div class="coverpic"><label >Cover Picture:</label><img class="gallery" src="../../Assets/images/image-gallery.png" alt="gallery" width="20" height="20" ><div class="image-div"><input id="image"type="image" src="../../Assets/images/add.png" alt="Submit" width="15" height="18" >     </div></div>
-      <div class="title"><label >Title:</label><input id="title"type="text"></div>
-      <div class="name-div"><label >Name:</label><input id="name"type="text" placeholder="Hospital,School,organization name"></div>
-      <div class="location-div"><label >Location:</label><input id="location"type="text" placeholder="Hospital,School,organization location"></div>
-      <div class="stry-div"><label >Write Your Story:</label> <textarea name="story" id="story"  rows="5" placeholder="Write about who is this fundraiser for How/Why/When  do you need funds what is the purpose..."></textarea></div>
-      <div class="doc-div"><label >Upload Required Documents :</label><img class="document" src="../../Assets/images/document.png" alt="gallery" width="20" height="20" ><div class="image-div"><input id="image"type="image" src="../../Assets/images/add.png" alt="Submit" width="15" height="18" >     </div></div>
+      <div class="input">
+      <div class="coverpic"><label >Cover Picture:</label><img class="gallery" src="../../Assets/images/image-gallery.png" alt="gallery" width="20" height="20" ><div class="image-div"><input id="image"type="image" src="../../Assets/images/add.png" alt="Submit" width="15" height="18" ></div></div>
+      <label >Title:</label><input id="title"type="text">
+      <label >Name:</label><input id="name"type="text" placeholder="Hospital,School,organization name">
+      <label >Location:</label><input id="location"type="text" placeholder="Hospital,School,organization location">
+      <label >Write Your Story:</label> <textarea name="story" id="story"  rows="5" placeholder="Write about who is this fundraiser for How/Why/When  do you need funds what is the purpose..."></textarea></div>
+      <div class="doc-div"><label >Upload Required Documents :</label><img class="document" src="../../Assets/images/document.png" alt="gallery" width="20" height="20" ><div class="image-div"><input id="image"type="image" src="../../Assets/images/add.png" alt="Submit" width="15" height="18" ></div></div>
       <button class="upload">Upload</button>
 
-    </div><!-- mainform ends -->
+    </div>
+    </div>
+  </div><!-- mainform ends -->
     <!-- Footer  -->
 <div class="footer">
+  <div class="footmain">
     <div class="footerpart">
       <div class="foot-head"> <p>Donate now</p></div>
       <div class="foot-link">
@@ -88,7 +93,7 @@
       </ul>
     </div>
     </div>
-    <div class="footerpart2">
+    <div class="footerpart">
       <div class="foot-head"><p>How it works?</p></div>
       <div class="foot-link">
        <ul>
@@ -100,7 +105,7 @@
 
     </div>
     </div>
-    <div class="footerpart3">
+    <div class="footerpart">
       <div class="foot-head"><p>Support</p></div>
       <div class="foot-link">        
         <ul>
@@ -115,12 +120,14 @@
   <div class="foot-last">
   <div class="foot-end"><img id="mail" src="../../Assets/images/mail.png" alt="mail"><p>Sign Up for PIN News</p><button class="subscribe">Subscribe</button></div>
 <div class="foot-logo"><p id="logo-txt">Follow PIN</p>
-  <a href="#"><img class="logo-icon"src="../../Assets/images/fb.png" alt="facebook" width="40"></img></a>
-  <a href="#"><img class="logo-icon"src="../../Assets/images/twitter.png" alt="twitter"  width="40"></img></a>
-  <a href="#"><img class="logo-icon"src="../../Assets/images/insta.png" alt="instagram"  width="50" height="45"></img></a>
-  <a href="#"><img class="logo-icon"src="../../Assets/images/youtube.png" alt="youtubr"  width="50" height="40"></img></a></div>
+  <a href="#"><img class="logo-icon"src="../../Assets/images/fb.png" alt="facebook" ></img></a>
+  <a href="#"><img class="logo-icon"src="../../Assets/images/twitter.png" alt="twitter" ></img></a>
+  <a href="#"><img class="logo-icon"src="../../Assets/images/insta.png" alt="instagram"  ></img></a>
+  <a href="#"><img class="logo-icon"src="../../Assets/images/youtube.png" alt="youtubr" ></img></a></div>
   
-</div>  <!-- footer end -->
+</div>
+
+<!-- footer end -->
 
   </body>
 </html>

@@ -5,22 +5,28 @@
   font-weight: bold;
   color: var(--body-text-color);
   border: 5px double#3f3a81;
-  margin: 150px 600px 60px 600px;
+  margin: auto;
+  width: 200px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 .container {
-  width: 700px;
+  width: 50%;
   height: 300px;
   background-color: white;
-  margin: 0px 400px;
+  margin: auto;
   box-shadow: 8px 8px 4px rgb(180, 193, 255);
   border-radius: 10px;
   box-sizing: border-box;
 }
 .amount {
-  padding: 80px 150px 50px 150px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  padding-top: 80px;
 }
 .currency {
-  width: 200px;
+  width: 50%;
   border-bottom: 2px solid #3f3a81;
   background: transparent;
   border-top: none;
@@ -32,12 +38,20 @@
   font-weight: bold;
   font-size: 18px;
 }
+label {
+  font-weight: bold;
+  font-size: 16px;
+}
 .donate-sec {
-  margin: 0px 55px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 40px;
+  padding-bottom: 60px;
 }
 .donate-btn {
   margin-right: 30px;
-  width: 240px;
+  width: 100%;
   height: 50px;
   border-radius: 10px;
   border: none;
@@ -52,7 +66,7 @@
   background-color: var(--primary-color);
 }
 .banktransfer {
-  width: 310px;
+  width: 100%;
   height: 50px;
   border-radius: 10px;
   border: none;
@@ -67,3 +81,47 @@
 }
 
 /* main content style ends */
+@media screen and (max-width: 1200px) {
+  .container {
+    height: 240px;
+  }
+  .amount {
+    padding-top: 60px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .container {
+    height: 250px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .container {
+    width: 70%;
+    height: fit-content;
+  }
+  .donate-sec {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .banktransfer {
+    width: 100%;
+    font-size: 13px;
+    margin-top: 10px;
+  }
+  .donate-btn {
+    width: 100%;
+    font-size: 13px;
+  }
+  label {
+    font-weight: bold;
+    font-size: 14px;
+  }
+  ::placeholder {
+    font-size: 14px;
+  }
+  .paymentpage {
+    font-size: 16px;
+  }
+}

@@ -4,10 +4,9 @@
 }
 .search {
   text-align: center;
-  padding-top: 20px;
-  margin-top: 100px;
   display: flex;
   justify-content: center;
+  margin-top: 50px;
 }
 input[type="text"] {
   width: 500px;
@@ -58,8 +57,9 @@ button[type="submit"] {
   border-radius: 5px;
   border: none;
   cursor: pointer;
-  z-index: -1;
+  text-align: center;
 }
+
 .dropbtn:hover {
   background-color: #695cfe;
 }
@@ -95,12 +95,10 @@ button[type="submit"] {
   color: var(--toggle-color);
 }
 .container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: auto auto auto;
   gap: 20px;
-  width: 1340px;
-  justify-content: center;
+  width: 1200px;
   margin: auto;
 }
 
@@ -113,61 +111,53 @@ button[type="submit"] {
   border-radius: 10px;
   box-sizing: border-box;
   cursor: pointer;
-  margin-left: 30px;
   margin-top: 30px;
 }
 .box:hover {
   box-shadow: rgb(140, 159, 255) 4px 4px 4px;
 }
-h3,
-h4 {
+
+.box h4 {
   color: var(--body-text-color);
-  padding-left: 35px;
+  text-align: center;
   padding-bottom: 10px;
 }
-.progress-sec {
+.box .progress-sec {
   padding-left: 35px;
 
   height: 90px;
 }
-progress {
+.box progress {
   width: 170px;
   height: 30px;
   color: #695cfe;
 }
-.amount {
+.box .amount {
   color: var(--body-text-color);
+  display: flex;
 }
-#cash {
+.box #cash {
   font-weight: bold;
 }
-.like {
+.box .like {
   margin-left: 10px;
   margin-top: -15px;
 }
 
-.count {
-  margin-left: 55px;
+.box .count {
+  position: relative;
+  left: 70%;
+  top: -22%;
 }
-.user {
-  padding-left: 50px;
-  padding-top: 10px;
+.box .user {
+  margin: auto;
   border-top: 2px solid #707070;
-  margin: 10px 40px;
-}
-.user2 {
-  padding-left: 50px;
+  text-align: center;
   padding-top: 10px;
-  border-top: 2px solid #707070;
-  margin: -5px 40px;
+  width: 250px;
 }
-.user3 {
-  padding-left: 50px;
-  padding-top: 10px;
-  border-top: 2px solid #707070;
-  margin: -5px 40px;
-}
-.image {
+
+.box .image {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   width: 350px;
@@ -186,17 +176,15 @@ button {
   height: 40px;
 }
 /* main content style ends */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 1200px) {
   .search {
     display: flex;
     flex-direction: row;
     text-align: center;
     justify-content: center;
-    padding-top: 20px;
-    margin-top: 100px;
   }
   input[type="text"] {
-    width: 200px;
+    width: 300px;
     height: 50px;
     border-radius: 20px;
     border: solid rgba(105, 105, 255, 0.411);
@@ -204,14 +192,14 @@ button {
   button[type="submit"] {
     border: solid rgba(105, 105, 255, 0.411);
     border-radius: 5px;
-    width: 50px;
+    width: 100px;
   }
   .donation {
     border: solid rgba(105, 105, 255, 0.411);
     background-color: #3f3a81;
     color: var(--toggle-color);
     border-radius: 5px;
-    width: 70px;
+    width: 90px;
     height: 50px;
     font-weight: bold;
     cursor: pointer;
@@ -219,7 +207,7 @@ button {
   }
   .dropbtn {
     height: 50px;
-    width: 50px;
+    width: 100px;
     background-color: var(--body-text-color);
     color: var(--toggle-color);
     font-weight: bold;
@@ -248,11 +236,81 @@ button {
     margin-left: -60px;
   }
   .container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    align-items: center;
-    width: 350px;
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: auto;
+    width: 750px;
+  }
+
+  @media screen and (max-width: 750px) {
+    .container {
+      display: grid;
+      grid-template-columns: auto;
+      width: 350px;
+    }
+    input[type="text"] {
+      width: 200px;
+      height: 50px;
+      border-radius: 20px;
+      border: solid rgba(105, 105, 255, 0.411);
+    }
+    button[type="submit"] {
+      border: solid rgba(105, 105, 255, 0.411);
+      border-radius: 5px;
+      width: 50px;
+    }
+    .donation {
+      border: solid rgba(105, 105, 255, 0.411);
+      background-color: #3f3a81;
+      color: var(--toggle-color);
+      border-radius: 5px;
+      width: 70px;
+      height: 50px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    .dropbtn {
+      height: 50px;
+      width: 80px;
+      background-color: var(--body-text-color);
+      color: var(--toggle-color);
+      font-weight: bold;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      z-index: -1;
+      text-align: center;
+      font-size: 12px;
+    }
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      background-color: var(--body-color);
+      margin-left: -60px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .donation {
+      width: 70px;
+      height: 50px;
+    }
+    .dropbtn {
+      width: 60px;
+    }
+    button[type="submit"] {
+      width: 30px;
+    }
   }
 }

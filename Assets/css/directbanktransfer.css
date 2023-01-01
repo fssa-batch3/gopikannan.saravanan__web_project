@@ -3,20 +3,22 @@
   text-align: center;
   font-size: 22px;
   font-weight: bold;
-
+  width: 250px;
   color: var(--body-text-color);
   border: 5px double#3f3a81;
-  margin: 150px 600px 60px 600px;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 .container {
   display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 .bank-acc-details {
-  width: 700px;
-  height: 460px;
+  width: 50%;
+  height: fit-content;
   background-color: white;
-  margin: 0px 0px 0px 100px;
-
   box-shadow: 8px 8px 4px rgb(180, 193, 255);
   border-radius: 10px;
   box-sizing: border-box;
@@ -24,22 +26,22 @@
 }
 
 .receiver-details-acc {
-  width: 700px;
-  height: 310px;
+  width: 30%;
+  height: fit-content;
   background-color: white;
-  margin: 80px 100px;
   box-shadow: 8px 8px 4px rgb(180, 193, 255);
   border-radius: 10px;
   box-sizing: border-box;
   padding-top: 20px;
 }
 .receiver-details-acc-head {
-  text-align: center;
+  display: center;
   font-size: 18px;
   font-weight: bold;
   color: var(--body-text-color);
   border-bottom: 2px solid #3f3a81;
-  margin: 0px 80px 0px;
+  width: fit-content;
+  margin: auto;
   padding-top: 20px;
 }
 .receiver-acc {
@@ -55,18 +57,26 @@
   font-weight: bold;
   color: var(--body-text-color);
   border-bottom: 2px solid #3f3a81;
-  margin: 0px 250px 0px;
+  width: fit-content;
+  margin: auto;
   padding-top: 20px;
 }
-.bank-name,
-.acc-no,
-.ifc-no,
-.mob-no {
-  margin: 20px 50px 20px 50px;
+.input-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  align-items: center;
+}
+input {
+  width: 70%;
 }
 #Donate {
-  width: 300px;
-  margin: 20px 200px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
   height: 40px;
   border-radius: 10px;
   background-color: var(--body-text-color);
@@ -75,8 +85,15 @@
   font-weight: 600;
   font-size: 16px;
   border: none;
+  margin-bottom: 30px;
+  margin-top: 20px;
 }
 #Donate:hover {
   background-color: var(--primary-color);
 }
 /* main content style ends */
+@media screen and (max-width: 750px) {
+  .input-div input {
+    width: 50%;
+  }
+}
