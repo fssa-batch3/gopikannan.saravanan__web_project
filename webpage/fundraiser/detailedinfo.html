@@ -69,10 +69,10 @@
     <div class="container">
       <div class="input">
       <div class="coverpic"><label >Cover Picture:</label><img class="gallery" src="../../Assets/images/image-gallery.png" alt="gallery" width="20" height="20" ><div class="image-div"><input id="image"type="image" src="../../Assets/images/add.png" alt="Submit" width="15" height="18" ></div></div>
-      <label >Title:</label><input id="title"type="text">
-      <label >Name:</label><input id="name"type="text" placeholder="Hospital,School,organization name">
-      <label >Location:</label><input id="location"type="text" placeholder="Hospital,School,organization location">
-      <label >Write Your Story:</label> <textarea name="story" id="story"  rows="5" placeholder="Write about who is this fundraiser for How/Why/When  do you need funds what is the purpose..."></textarea></div>
+      <label >Title:</label><input id="title" value="Help me study to win in life" type="text">
+      <label >Name:</label><input id="name" value="TPKN schoool" type="text" placeholder="Hospital,School,organization name">
+      <label >Location:</label><input id="location2"  value="Dindugaul" type="text" placeholder="Hospital,School,organization location">
+      <label >Write Your Story:</label> <textarea value="Our school..." name="story" id="story"  rows="5" placeholder="Write about who is this fundraiser for How/Why/When  do you need funds what is the purpose..."></textarea></div>
       <div class="doc-div"><label >Upload Required Documents :</label><img class="document" src="../../Assets/images/document.png" alt="gallery" width="20" height="20" ><div class="image-div"><input id="image"type="image" src="../../Assets/images/add.png" alt="Submit" width="15" height="18" ></div></div>
       <button class="upload">Upload</button>
 
@@ -128,6 +128,22 @@
 </div>
 
 <!-- footer end -->
+<script>
+   const title2 = document.getElementById("title").value;
+   const name = document.getElementById("name").value;
+   const location2 = document.getElementById("location2").value;
+   const story= document.getElementById("story").value;
+
+    console.log(title2);
+    console.log(name);
+    console.log(location2);
+    console.log(story);
+
+
+   
+
+
+</script>
 
   </body>
 </html>

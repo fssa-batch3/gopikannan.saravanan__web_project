@@ -2,20 +2,34 @@
   border-bottom: 5px solid #695cfe;
 }
 /* main content style starts */
+.overall {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.content-supporter-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 .content {
-  margin-top: 110px;
-  margin-left: 200px;
-  width: 600px;
+  margin-top: 50px;
+  /* margin-left: 200px; */
+  width: 40%;
   height: fit-content;
   margin-bottom: 90px;
   background-color: #dddaff;
   border-radius: 10px;
 }
 .image {
-  width: 500px;
+  width: fit-content;
   box-shadow: #847bff 4px 4px 4px;
   margin-left: 50px;
   border-radius: 10px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 h4 {
   margin-left: 55px;
@@ -43,9 +57,7 @@ progress {
 .count {
   margin-left: 75px;
 }
-.overall {
-  display: flex;
-}
+
 .story-btn {
   font-weight: bold;
   margin-left: 250px;
@@ -61,7 +73,8 @@ progress {
 }
 .story {
   padding: 10px 40px;
-  width: 600px;
+  width: fit-content;
+
   height: auto;
   font-size: 18px;
   color: black;
@@ -103,19 +116,17 @@ progress {
 }
 .upi-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 .upi-box {
   background-color: #dddaff;
   display: inline-block;
-
   width: 500px;
   height: 640px;
   padding: 20px 50px;
   border-radius: 10px;
   text-align: center;
-
-  margin-top: 110px;
+  margin-top: 50px;
   margin-left: 50px;
 }
 .upi-head {
@@ -160,7 +171,7 @@ progress {
   height: fit-content;
   width: 500px;
   margin-left: 50px;
-  margin-top: 30px;
+  margin-top: -150px;
   overflow-y: scroll;
   overflow-x: hidden;
   border-radius: 10px;
@@ -180,13 +191,10 @@ progress {
   height: 500px;
   padding: 8px 24px;
 }
-.content-supporter-container {
-  display: flex;
-  flex-direction: column;
-}
+
 .supporters-box {
   margin-top: -60px;
-  margin-left: 200px;
+  /* margin-left: 200px; */
   overflow-y: scroll;
   width: 600px;
   height: 250px;
@@ -220,3 +228,9 @@ progress {
 }
 
 /* main content style ends */
+
+@media screen and(max-width:1200px) {
+  .content-supporter-container {
+    display: flex;
+  }
+}

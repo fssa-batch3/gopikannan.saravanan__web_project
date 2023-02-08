@@ -38,10 +38,7 @@
             class="logo"
         /></span>
 
-        <span class="name"
-          >
-          People In Need</span
-        >
+        <span class="name">People In Need</span>
       </div>
 
       <div class="nav">
@@ -72,34 +69,40 @@
 
       <!-- form start -->
 
+
+<form >
+
 <div class="input-div">
     <label >Name:</label>
     <input type="text" id="name" placeholder="Enter your name">
 </div>
 <div class="input-div">
     <label >Email ID:</label>
-    <input type="email" id="mail-input" placeholder="Enter your email id">
+    <input type="email" id="email" placeholder="Enter your email id">
 </div>
 <div class="input-div">
     <label >Phone Number:</label>
-    <input type="tel" id="phno" placeholder="Enter your Ph no">
+    <input type="tel" id="mobileno" placeholder="Enter your Ph no">
 </div>
 <div class="input-div">
     <label >I am raising fund for:</label>
    <select name="cause" id="cause">
     <option value="Medical">Medical</option>
     <option value="Educational">Educational</option>
-
     <option value="Socialcause">Social Cause</option>
-
    </select>
 </div>
 <div class="input-div">
     <label>OTP sent to mobile no:</label><br>
-    <input type="text" id="otp" placeholder="Enter your OTP" maxlength="4" >
+    <input type="text" id="otp"  placeholder="Enter your OTP" maxlength="4" >
 </div>
-<a href="../fundraiser/Fundraiserdetailsform1.html"> <button class="continue">Continue</button></a> <!-- form ends -->
-    </div> <!-- container ends --> 
+<!-- <a href="../fundraiser/Fundraiserdetailsform1.html">  -->
+  <button onclick="getinfo()" class="continue">Continue</button>
+</form>
+<!-- </a>  -->
+<!-- form ends -->
+    </div>
+ <!-- container ends --> 
 <!-- Footer  -->
 <div class="footer">
   <div class="footmain">
@@ -138,15 +141,55 @@
     </div>
   </div>
   <div class="foot-last">
-  <div class="foot-end"><img id="mail" src="../../Assets/images/mail.png" alt="mail"><p>Sign Up for PIN News</p><button class="subscribe">Subscribe</button></div>
+  <div class="foot-end">
+    <img id="mail" src="../../Assets/images/mail.png" alt="mail">
+    <p>Sign Up for PIN News</p>
+    <button class="subscribe">Subscribe</button>
+  </div>
 <div class="foot-logo"><p id="logo-txt">Follow PIN</p>
-  <a href="#"><img class="logo-icon"src="../../Assets/images/fb.png" alt="facebook" width="40"></img></a>
-  <a href="#"><img class="logo-icon"src="../../Assets/images/twitter.png" alt="twitter"  width="40"></img></a>
-  <a href="#"><img class="logo-icon"src="../../Assets/images/insta.png" alt="instagram"  width="50" height="45"></img></a>
-  <a href="#"><img class="logo-icon"src="../../Assets/images/youtube.png" alt="youtubr"  width="50" height="40"></img></a></div>
+  <a href="#"><img class="logo-icon"src="../../Assets/images/fb.png" alt="facebook" ></img></a>
+  <a href="#"><img class="logo-icon"src="../../Assets/images/twitter.png" alt="twitter" ></img></a>
+  <a href="#"><img class="logo-icon"src="../../Assets/images/insta.png" alt="instagram" ></img></a>
+  <a href="#"><img class="logo-icon"src="../../Assets/images/youtube.png" alt="youtubr"  ></img></a>
+</div>
   
 </div> 
 </div> <!-- footer end -->
+
+<script>
+  function getinfo(){
+    let arr =[]
+    const name = document.getElementById("name").value;
+    const mail = document.getElementById("email").value;
+    const dropDown = document.getElementById("cause").value
+    const mobileno = document.getElementById("mobileno").value;
+    const otp = document.getElementById("otp").value;
+
+    // console.log(dropDown)
+    // console.log(name);
+    // console.log(mail);
+    // console.log(mobileno);
+    // console.log(otp);
+
+    let object ={
+
+    }
+   object["name"]=name
+   object["mail"]=mail
+   object["drop"]=dropDown
+   object["phno"]=mobileno
+   object["pinotp"]=otp
+   
+   arr.push(object)
+
+   let string = JSON.stringify(arr)
+  
+  console.log(string)
+
+    window.location.href ="http://127.0.0.1:5500/webpage/fundraiser/Fundraiserdetailsform1.html?"+string
+  }
+</script>
+
 
   </body>
 </html>

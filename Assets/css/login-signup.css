@@ -14,6 +14,7 @@ body {
   flex-direction: column;
   justify-content: center;
 } */
+
 .h1 {
   color: white;
   font-size: 50px;
@@ -54,7 +55,7 @@ label {
 }
 input {
   width: 60%;
-  height: 20px;
+  height: 30px;
   background: #e0dede;
   justify-content: center;
   display: flex;

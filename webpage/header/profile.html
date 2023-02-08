@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../../Assets/css/footer.css">
     <link rel="stylesheet" href="../../Assets/css/universal.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="../../webpage/login-signup/login-signup.html">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
@@ -37,9 +38,7 @@
             class="logo"
         /></span>
 
-        <span class="name"
-          >People In Need</span
-        >
+        <span class="name">People In Need</span>
         
       </div>
 
@@ -66,20 +65,13 @@
 <!-- form -->
    <div class="container">
     <div class="input-div"><label >Name:</label><input id="name" type="text" maxlength="20"></div>
-    <div class="input-div"><label >Mobile-Number:</label><input id="phno" type="text" maxlength="10"></div>
-    <div class="input-div"><label >Email:</label><input id="email-txt" id="phno" type="email" ></div>
+    <div class="input-div"><label >Mobile-Number:</label><input id="phno"  type="text" maxlength="10"></div>
+    <div class="input-div"><label >Email:</label><input id="email"  type="email" ></div>
+    <div class="input-div"><label >Password:</label><input id="password"  type="text" ></div>
     <div class="input-div"><label >Address:</label><input id="address" type="text"></div>
-    <div class="input-div"><label >City:</label><input id="city" type="text"></div>
-    <div class="input-div"><label >State:</label><input id="state" type="text"></div>
-    <div class="input-div"><label >Country:</label><input id="country" type="text"></div>
-    <div class="input-div"><label >Pincode:</label><input id="pin" type="text" maxlength="7"></div>
     <div class="input-div"><label >Account Number:</label><input id="acc" type="text"></div>
-    <div class="input-div"><label >Bank Name:</label><input type="text" id="accname"></div>
-    <div class="input-div"><label > IFC Code:</label><input type="text" id="ifc"></div>
-
-
-
-
+    <div class="input-div"><label >Bank Name:</label><input type="text"  id="accname"></div>
+    <div class="input-div"><label > IFC Code:</label><input type="text"  id="ifc"></div>
     <a class="save" href="#"><button class="save">Save</button></a>
     <!-- form ends -->
 
@@ -133,6 +125,28 @@
   </div> 
 </div>
 <!-- footer end -->
+
+<script >
+
+  
+    let profilevalue = JSON.parse(window.localStorage.getItem("login_user"));
+    console.log(profilevalue);
+    document.getElementById("name").value=profilevalue[0]["user_name"];    
+    document.getElementById("phno").value=profilevalue[0]["user_phno"];
+    document.getElementById("email").value=profilevalue[0]["user_mail"];
+    document.getElementById("password").value=profilevalue[0]["user_pwd"];
+    document.getElementById("address").value=profilevalue[0]["user_address"];
+    document.getElementById("acc").value=profilevalue[0]["user_acc"];
+    document.getElementById("accname").value=profilevalue[0]["user_accname"];
+    document.getElementById("ifc").value=profilevalue[0]["user_ifsc"];
+
+
+
+    
+
+  </script>
+    
+ 
 
 </body>
 </html>

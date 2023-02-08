@@ -1,6 +1,6 @@
 /* main content style starts */
 .container {
-  width: 850px;
+  width: 55%;
   height: fit-content;
   background-color: white;
   margin: auto;
@@ -32,7 +32,7 @@ label {
   flex-direction: column;
   align-items: flex-start;
 }
-#name {
+input {
   width: 100%;
   font-size: 18px;
   border: none;
@@ -40,88 +40,7 @@ label {
   border-bottom: 2px solid #3f3a813c;
   color: black;
 }
-#phno {
-  width: 100%;
-  font-size: 18px;
-  border: none;
-  outline: none;
-  border-bottom: 2px solid #3f3a813c;
-  color: black;
-}
-#email-txt {
-  width: 100%;
 
-  font-size: 18px;
-  border: none;
-  outline: none;
-  border-bottom: 2px solid #3f3a813c;
-  color: black;
-}
-#address {
-  width: 100%;
-
-  font-size: 18px;
-  border: none;
-  outline: none;
-  border-bottom: 2px solid #3f3a813c;
-  color: black;
-}
-#city {
-  width: 100%;
-  font-size: 18px;
-  border: none;
-  outline: none;
-  border-bottom: 2px solid #3f3a813c;
-  color: black;
-}
-#state {
-  width: 100%;
-  font-size: 18px;
-  border: none;
-  outline: none;
-  border-bottom: 2px solid #3f3a813c;
-  color: black;
-}
-#country {
-  width: 100%;
-  font-size: 18px;
-  border: none;
-  outline: none;
-  border-bottom: 2px solid #3f3a813c;
-  color: black;
-}
-#pin {
-  width: 100%;
-  font-size: 18px;
-  border: none;
-  outline: none;
-  border-bottom: 2px solid #3f3a813c;
-  color: black;
-}
-#acc {
-  width: 100%;
-  font-size: 18px;
-  border: none;
-  outline: none;
-  border-bottom: 2px solid #3f3a813c;
-  color: black;
-}
-#accname {
-  width: 100%;
-  font-size: 18px;
-  border: none;
-  outline: none;
-  border-bottom: 2px solid #3f3a813c;
-  color: black;
-}
-#ifc {
-  width: 100%;
-  font-size: 18px;
-  border: none;
-  outline: none;
-  border-bottom: 2px solid #3f3a813c;
-  color: black;
-}
 .save {
   display: flex;
   justify-content: center;
@@ -146,19 +65,6 @@ label {
 }
 /* main content style ends */
 @media screen and (max-width: 1200px) {
-  .container {
-    width: 750px;
-    height: fit-content;
-    background-color: white;
-    margin: auto;
-    padding: 40px 30px;
-    margin-top: 30px;
-    box-shadow: 8px 8px 4px rgb(180, 193, 255);
-    border-radius: 10px;
-    box-sizing: border-box;
-    font-size: 18px;
-  }
-
   .profile-head {
     display: flex;
     justify-content: center;
@@ -190,16 +96,7 @@ label {
   }
   @media screen and (max-width: 750px) {
     .container {
-      width: 350px;
-      height: fit-content;
-      background-color: white;
-      margin: auto;
-      padding: 40px 30px;
-      margin-top: 30px;
-      box-shadow: 8px 8px 4px rgb(180, 193, 255);
-      border-radius: 10px;
-      box-sizing: border-box;
-      font-size: 18px;
+      width: 80%;
     }
   }
 }

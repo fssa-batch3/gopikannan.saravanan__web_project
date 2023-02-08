@@ -40,11 +40,14 @@ input[type="text"] {
   background-color: #e4e2ff;
   cursor: pointer;
 }
-.container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  width: 1200px;
-  gap: 20px;
+.donation-container {
+  /* display: grid;
+  grid-template-columns: auto auto auto; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 80%;
+  gap: 30px;
   margin: auto;
   margin-top: 40px;
 }
@@ -69,6 +72,7 @@ input[type="text"] {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   width: 350px;
+  height: 270px;
 }
 .box h4 {
   color: var(--body-text-color);
@@ -138,10 +142,7 @@ input[type="text"] {
     height: 38px;
   }
   .container {
-    display: grid;
-    width: 750px;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 30px;
     margin: auto;
     margin-top: 40px;
   }
@@ -161,10 +162,6 @@ input[type="text"] {
       top: 0;
     }
     .container {
-      display: grid;
-      width: 350px;
-      grid-template-columns: 1fr;
-      gap: 10px;
       margin: auto;
       margin-top: 40px;
     }

@@ -28,6 +28,8 @@
   <body>
 <!-- header part -->
     <header>
+      <span class="menudiv"> <a class="menulink" onclick="togglemenu()"><img class="menu" src="../../Assets/images/menu (2).png" alt="menu" width="25"></a></span>
+      
       <div class="image-txt">
         <span
           ><img
@@ -36,12 +38,8 @@
             class="logo"
         /></span>
 
-        <span class="name"
-          >PIN<br />
-          People In Need</span
-        >
-        <span class="menudiv"> <a class="menulink" onclick="togglemenu()"><img class="menu" src="../../Assets/images/menu (2).png" alt="menu" width="25"></a></span></div>
-      </div>
+        <span class="name">People In Need</span>
+        </div>
 
       <div class="nav">
         <div id="sidebar"  onclick="togglemenu()"> 
@@ -136,32 +134,12 @@
           <span class="name-label">Created by</span
           ><span class="name">Kumar </span>
         </div>
-      </div>  <!-- end main -->
+      </div> 
+       <!-- end main -->
 
       
-      <!-- supporter contribution section -->
-      <div class="supporters-box">
-        <div class="supporterhead">Supporters</div>
-       <div><span class="supporter-name">Nithi</span> <span class="contribution">Rs.10000</span> <hr></div>
-       <div><span class="supporter-name">Babu</span> <span class="contribution">Rs.1000</span> </div><hr>
-       <div><span class="supporter-name">Revi</span> <span class="contribution">Rs.500</span> <hr></div>
-       <div><span class="supporter-name">Aksay</span> <span class="contribution">Rs.25000</span> <hr></div>
-       <div><span class="supporter-name">Saras</span> <span class="contribution">Rs.7000</span> <hr></div>
-       <div><span class="supporter-name">Nivi</span> <span class="contribution">Rs.23000</span> <hr></div>
-       
-       
-       <div><span class="supporter-name">Kumar</span> <span class="contribution">Rs.18000</span> <hr></div>
-       <div><span class="supporter-name">Monish</span> <span class="contribution">Rs.50000</span> <hr></div>
-       <div><span class="supporter-name">Ram</span> <span class="contribution">Rs.15000</span> <hr></div>
-       <div><span class="supporter-name">Vishak</span> <span class="contribution">Rs.5000</span> <hr></div>
-      </div>
-      </div>
-        <!-- end supporter contribution section -->
-
-     <!-- upi container section -->
-
-      <div class="upi-container">
-        <div class="upi-box">
+     
+      <div class="upi-box">
           <div class="upi-head">
             <span id="first-head">Donate</span>
             <span
@@ -199,7 +177,31 @@
               
             />
           </div>
-        </div><!-- end upi container section -->
+     
+      </div>
+      </div>
+
+      
+        <!-- end supporter contribution section -->
+
+     <!-- upi container section -->
+
+      <div class="upi-container">
+         <div class="supporters-box">
+        <div class="supporterhead">Supporters</div>
+       <div><span class="supporter-name">Nithi</span> <span class="contribution">Rs.10000</span> <hr></div>
+       <div><span class="supporter-name">Babu</span> <span class="contribution">Rs.1000</span> </div><hr>
+       <div><span class="supporter-name">Revi</span> <span class="contribution">Rs.500</span> <hr></div>
+       <div><span class="supporter-name">Aksay</span> <span class="contribution">Rs.25000</span> <hr></div>
+       <div><span class="supporter-name">Saras</span> <span class="contribution">Rs.7000</span> <hr></div>
+       <div><span class="supporter-name">Nivi</span> <span class="contribution">Rs.23000</span> <hr></div>
+       <div><span class="supporter-name">Kumar</span> <span class="contribution">Rs.18000</span> <hr></div>
+       <div><span class="supporter-name">Monish</span> <span class="contribution">Rs.50000</span> <hr></div>
+       <div><span class="supporter-name">Ram</span> <span class="contribution">Rs.15000</span> <hr></div>
+       <div><span class="supporter-name">Vishak</span> <span class="contribution">Rs.5000</span> <hr></div>
+      </div>
+        
+       <!-- end upi container section -->
 
 
          <!-- chat box container -->
@@ -361,16 +363,18 @@
               </div> <!-- end chat -->
           
             </div> <!-- end live-chat -->
-          
-        </div>
+          </div>
+        
       </div>
-    </div><!-- chat box container -->
+    </div>
+    </div>
   </div>
   <!-- end overall div -->
 
   
 <!-- Footer  -->
     <div class="footer">
+      <div class="footmain">
       <div class="footerpart">
         <div class="foot-head"> <p>Donate now</p></div>
         <div class="foot-link">
@@ -382,7 +386,7 @@
         </ul>
       </div>
       </div>
-      <div class="footerpart2">
+      <div class="footerpart">
         <div class="foot-head"><p>How it works?</p></div>
         <div class="foot-link">
          <ul>
@@ -393,7 +397,7 @@
         </ul>
       </div>
       </div>
-      <div class="footerpart3">
+      <div class="footerpart">
         <div class="foot-head"><p>Support</p></div>
         <div class="foot-link">        
           <ul>
@@ -413,7 +417,8 @@
     <a href="#"><img class="logo-icon"src="../../Assets/images/insta.png" alt="instagram"  width="50" height="45"></img></a>
     <a href="#"><img class="logo-icon"src="../../Assets/images/youtube.png" alt="youtubr"  width="50" height="40"></img></a></div>
     
-</div>  <!-- footer end -->
+</div> 
+</div> <!-- footer end -->
     <script>
       function myFunction() {
         document.getElementById("more").style.display = "inline";

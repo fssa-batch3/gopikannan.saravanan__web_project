@@ -26,21 +26,72 @@
     <title>PIN login page</title>
   </head>
   <body>
+    <a href="./webpage/login-signup/login-signup.html"></a>
     <div class="h1">Welcome To PIN (People in Need)</div>
     <div class="h1-txt">India's No 1 Crowdfunding Platform</div>
 
     <div class="main" style="height: 450px">
       <div class="login">
-        <label>Login</label>
-        <input type="email" name="email" placeholder="Email" />
-        <input type="password" name="pswd" placeholder="Password" />
-        <a href="./webpage/header/home.html"> <button>Login</button></a>
-        <a
-          href="./webpage/login-signup/login-signup.html"
-          style="padding-left: 30px; color: blueviolet; text-decoration: none"
-          >Don't have an account register here</a
-        >
+        <form id="form">
+          <label>Login</label>
+          <input id="email" type="email" placeholder="Email" required />
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            required
+          />
+          <!-- <a href="./webpage/header/home.html">  -->
+          <button type="button" onclick="check_getinfo()">Login</button>
+          <!-- </a> -->
+          <a
+            href="./webpage/login-signup/login-signup.html"
+            style="padding-left: 30px; color: blueviolet; text-decoration: none"
+            >Don't have an account register here</a
+          >
+        </form>
       </div>
     </div>
+    <script>
+      const form = document.getElementById("form");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        check_getinfo();
+      });
+
+      function check_getinfo() {
+        let user_arr = [];
+
+        let loginvalue = JSON.parse(localStorage.getItem("userdetails"));
+        console.log(loginvalue);
+        let useremail = document.getElementById("email").value;
+        let userpwd = document.getElementById("password").value;
+
+        let match = false;
+
+        for (let i = 0; i < loginvalue.length; i++) {
+          if (
+            useremail == loginvalue[i].user_mail &&
+            userpwd == loginvalue[i].user_pwd
+          ) {
+            match = true;
+            user_arr.push(loginvalue[i]);
+            window.localStorage.setItem("login_user", JSON.stringify(user_arr));
+            break;
+          } else {
+            match = false;
+          }
+        }
+
+        if (match == true) {
+          alert("SUCCESS");
+          window.location.href = "./webpage/header/home.html";
+        } else {
+          alert("FAILED");
+          window.location.href = "./webpage/login-signup/login-signup.html";
+        }
+      }
+    </script>
   </body>
 </html>

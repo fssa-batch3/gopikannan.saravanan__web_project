@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -19,26 +18,112 @@
     <title>Document</title>
   </head>
   <body>
+    <a href="../header/home.html"></a>
     <div class="main">
       <div class="signup">
         <label>Sign up</label>
-        <input type="text" name="txt" placeholder="User name" />
-        <input
-          type="text"
-          name="txt"
-          placeholder="Mobile number"
-          maxlength="10"
-        />
+        <form action="" id="form">
+          <input type="text" id="name" placeholder="User name" />
+          <input
+            type="text"
+            id="mobileno"
+            placeholder="Mobile number"
+            maxlength="10"
+          />
 
-        <input type="email" name="email" placeholder="Email" />
-        <input type="password" name="pswd" placeholder="Password" />
-        <input id="address" type="text" placeholder="Address" />
-        <input id="acc" type="text" placeholder="Account Number" />
-        <input type="text" id="accname" placeholder="Bank Name" />
-        <input type="text" id="ifc" placeholder="IFC code" />
+          <input type="email" id="email" placeholder="Email" required />
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            required
+          />
+          <input id="address" type="text" placeholder="Address" required />
+          <input id="acc" type="text" placeholder="Account Number" required />
+          <input type="text" id="accname" placeholder="Bank Name" required />
+          <input type="text" id="ifc" placeholder="IFSC code" required />
 
-        <a href="../../index.html"> <button>Sign up</button></a>
+          <button id="log-in">Sign up</button>
+        </form>
       </div>
     </div>
+    <script>
+      // let form = document.getElementById("form");
+      let user = [];
+      // declaring array outside a
+
+      document.getElementById("log-in").onclick = function () {
+        const name = document.getElementById("name").value;
+        const mobileno = document.getElementById("mobileno").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const address = document.getElementById("address").value;
+        const accnum = document.getElementById("acc").value;
+        const accname = document.getElementById("accname").value;
+        const ifc = document.getElementById("ifc").value;
+
+        let objuser = new Object();
+        objuser["user_name"] = name;
+        objuser["user_phno"] = mobileno;
+        objuser["user_mail"] = email;
+        objuser["user_pwd"] = password;
+        objuser["user_address"] = address;
+        objuser["user_acc"] = accnum;
+        objuser["user_accname"] = accname;
+        objuser["user_ifsc"] = ifc;
+
+        user.push(objuser);
+
+        if (window.localStorage.getItem("userdetails") === null) {
+          window.localStorage.setItem("userdetails", JSON.stringify(user));
+          console.log(window.localStorage.getItem("userdetails"));
+        } else {
+          let user_local = window.localStorage.getItem("userdetails");
+          let user_json = JSON.parse(user_local);
+          user_json.push(objuser);
+
+          window.localStorage.setItem("userdetails", JSON.stringify(user_json));
+        }
+
+        window.location.href = "../header/home.html";
+      };
+
+      // const jsonuser = JSON.stringify(objuser);
+      // console.log(jsonuser);
+
+      // localStorage.setItem("user", JSON.stringify(user));
+      // console.log(user);
+      // window.location.href = "../header/home.html";
+
+      // function getinfo() {
+      // const name = document.getElementById("name").value;
+      // const mobileno = document.getElementById("mobileno").value;
+      // const email = document.getElementById("email").value;
+      // const password = document.getElementById("password").value;
+      // const address = document.getElementById("address").value;
+      // const acc = document.getElementById("acc").value;
+      // const accname = document.getElementById("accname").value;
+      // const ifc = document.getElementById("ifc").value;
+
+      //   console.log(name);
+      //   console.log(mobileno);
+      //   console.log(email);
+      //   console.log(password);
+      //   console.log(address);
+      //   console.log(acc);
+      //   console.log(accname);
+      //   console.log(ifc);
+
+      //   localStorage.setItem("user_name", name);
+      //   localStorage.setItem("user_mobno", mobileno);
+      //   localStorage.setItem("user_mail", email);
+      //   localStorage.setItem("user_pwd", password);
+      //   localStorage.setItem("user_address", address);
+      //   localStorage.setItem("user_acc", acc);
+      //   localStorage.setItem("user_accname", accname);
+      //   localStorage.setItem("user_ifc", ifc);
+
+      // }
+    </script>
   </body>
 </html>
