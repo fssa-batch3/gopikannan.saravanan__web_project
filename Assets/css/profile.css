@@ -43,7 +43,9 @@ input {
 
 .save {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+
   align-items: center;
   width: 120px;
   height: 50px;

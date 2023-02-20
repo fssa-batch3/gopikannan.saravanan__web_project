@@ -15,6 +15,35 @@ body {
   justify-content: center;
 } */
 
+input[type="text"]:valid {
+  border: solid 2px green;
+}
+input[type="text"]:focus:invalid {
+  border: solid 2px red;
+}
+input[type="email"]:valid {
+  border: solid 2px green;
+}
+input[type="email"]:focus:invalid {
+  border: solid 2px red;
+}
+input[type="password"]:valid {
+  border: solid 2px green;
+}
+input[type="password"]:focus:invalid {
+  border: solid 2px red;
+}
+input:valid,
+select:valid {
+  border-width: 3px;
+  border-color: green;
+}
+input:invalid,
+select:invalid {
+  border-width: 3px;
+  border-color: red;
+}
+
 .h1 {
   color: white;
   font-size: 50px;
@@ -53,6 +82,13 @@ label {
   margin: 60px;
   font-weight: bold;
 }
+span {
+  color: red;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
 input {
   width: 60%;
   height: 30px;

@@ -2,15 +2,20 @@
   border-bottom: 5px solid #695cfe;
 }
 /* main content style starts */
-.overall {
+/* .overall {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
+  width: fit-content;
+} */
 .content-supporter-container {
   display: flex;
+  flex-wrap: nowrap;
+  /* width: fit-content; */
   flex-direction: row;
   justify-content: center;
+  /* width: 1200px; */
+  /* background-color: #695cfe; */
 }
 .content {
   margin-top: 50px;
@@ -22,7 +27,7 @@
   border-radius: 10px;
 }
 .image {
-  width: fit-content;
+  width: 50%;
   box-shadow: #847bff 4px 4px 4px;
   margin-left: 50px;
   border-radius: 10px;
@@ -32,38 +37,50 @@
   align-items: center;
 }
 h4 {
-  margin-left: 55px;
-  font-size: 25px;
-  /* margin-bottom: 20px; */
-  padding: 20px 0px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 23px;
+
+  text-align: center;
+
   color: var(--body-text-color);
 }
 .progress-sec {
   margin-top: 20px;
   margin-left: 60px;
 }
-#percent {
+/* #percent {
   margin-bottom: -30px;
+} */
+.progressdiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 }
 progress {
-  width: 280px;
+  width: 40%;
   height: 30px;
-  margin-left: 60px;
+  margin-left: 10px;
 }
 .like {
-  margin-left: 100px;
+  margin-left: 10px;
   cursor: pointer;
 }
 .count {
-  margin-left: 75px;
+  position: absolute;
+  /* margin-left: 75px; */
+  left: 70%;
+  display: none;
 }
 
 .story-btn {
   font-weight: bold;
-  margin-left: 250px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 18px;
-
-  display: inline-block;
   color: var(--body-text-color);
   width: 100px;
   padding: 0px 10px;
@@ -73,14 +90,22 @@ progress {
 }
 .story {
   padding: 10px 40px;
-  width: fit-content;
-
+  /* width: fit-content; */
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
   height: auto;
   font-size: 18px;
   color: black;
+  text-align: center;
 }
 .viewmore {
   text-align: center;
+}
+.name-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #mybtn {
   background-color: var(--primary-color);
@@ -101,28 +126,35 @@ progress {
 .amount {
   font-size: 18px;
   padding-top: 10px;
+  display: flex;
+  justify-content: center;
 }
 .user {
   text-align: center;
   padding-top: 20px;
   border-top: 2px solid #3f3a81;
-  margin: 20px 200px;
+  /* margin: 20px 200px; */
+  width: 150px;
+  margin: auto;
+  margin-top: 20px;
 }
-.more {
-  display: inline;
+#more {
+  display: none;
+  color: black;
+  font-size: 18px;
 }
 .view {
   display: none;
 }
-.upi-container {
+/* .upi-container {
   display: flex;
   flex-direction: row;
-}
+} */
 .upi-box {
   background-color: #dddaff;
   display: inline-block;
-  width: 500px;
-  height: 640px;
+  width: 30%;
+  height: fit-content;
   padding: 20px 50px;
   border-radius: 10px;
   text-align: center;
@@ -133,10 +165,13 @@ progress {
   font-size: 18px;
   color: var(--body-text-color);
   text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 #first-head {
   font-weight: bold;
-  padding-right: 170px;
+  /* padding-right: 170px; */
 }
 .donate-btn-sec {
   margin: 30px 0px 20px 0px;
@@ -144,7 +179,7 @@ progress {
 .donate-btn {
   background-color: var(--primary-color);
   border: none;
-  width: 150px;
+  width: 80%;
   height: 40px;
   color: var(--toggle-color);
   font-weight: bold;
@@ -169,16 +204,20 @@ progress {
 .chat-box {
   background-color: #dddaff;
   height: fit-content;
-  width: 500px;
-  margin-left: 50px;
-  margin-top: -150px;
+  width: 30%;
+  /* margin-left: 50px;
+  margin-top: -150px; */
   overflow-y: scroll;
   overflow-x: hidden;
   border-radius: 10px;
 }
 .chat-head {
   text-align: center;
-  margin: 10px 180px 0px 180px;
+
+  width: 100px;
+
+  margin: auto;
+  margin-top: 30px;
   font-weight: bold;
   font-size: 18px;
   border-bottom: 2px solid #3f3a81;
@@ -193,15 +232,17 @@ progress {
 }
 
 .supporters-box {
-  margin-top: -60px;
+  /* margin-top: -60px; */
   /* margin-left: 200px; */
   overflow-y: scroll;
-  width: 600px;
+  width: 40%;
   height: 250px;
   /* height: 200px; */
   background-color: #dddaff;
   border-radius: 10px;
   padding: 0px 20px;
+  /* justify-content: center;
+  margin: auto; */
 }
 .supporterhead {
   text-align: center;
@@ -226,11 +267,108 @@ progress {
 .gpay {
   margin-top: 25px;
 }
+#qr {
+  width: 50%;
+  height: 50%;
+}
 
+.second-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: -200px;
+  gap: 50px;
+}
+
+fieldset {
+  width: 100%;
+  margin: 0px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input {
+  width: 90%;
+  text-align: center;
+  height: 40px;
+}
 /* main content style ends */
-
-@media screen and(max-width:1200px) {
+@media screen and (max-width: 1200px) {
   .content-supporter-container {
-    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .content {
+    width: 60%;
+  }
+  .upi-box {
+    width: 50%;
+    margin: 0px;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+  }
+  h4 {
+    font-size: 18px;
+  }
+  .second-container {
+    flex-direction: column;
+    margin: 0px;
+    margin-top: 50px;
+  }
+  .chat-box {
+    width: 50%;
+  }
+  .supporters-box {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .content-supporter-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .content {
+    width: 80%;
+  }
+  .upi-box {
+    width: 70%;
+    margin: 0px;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+  }
+  #qr {
+    width: 58%;
+  }
+  h4 {
+    font-size: 16px;
+  }
+  .chat-box {
+    width: 60%;
+  }
+  .supporters-box {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #qr {
+    width: 60%;
+  }
+  .content {
+    width: 90%;
+  }
+  .upi-box {
+    width: 90%;
+  }
+  .chat-box {
+    width: 90%;
+  }
+  .supporters-box {
+    width: 90%;
   }
 }

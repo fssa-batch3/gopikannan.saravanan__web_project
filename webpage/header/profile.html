@@ -64,6 +64,9 @@
    <div class="profile-head">Profile Details</div>
 <!-- form -->
    <div class="container">
+    <form id="profile_form">
+
+
     <div class="input-div"><label >Name:</label><input id="name" type="text" maxlength="20"></div>
     <div class="input-div"><label >Mobile-Number:</label><input id="phno"  type="text" maxlength="10"></div>
     <div class="input-div"><label >Email:</label><input id="email"  type="email" ></div>
@@ -72,8 +75,10 @@
     <div class="input-div"><label >Account Number:</label><input id="acc" type="text"></div>
     <div class="input-div"><label >Bank Name:</label><input type="text"  id="accname"></div>
     <div class="input-div"><label > IFC Code:</label><input type="text"  id="ifc"></div>
-    <a class="save" href="#"><button class="save">Save</button></a>
+    <button type="submit" class="save"  >Save</button>
+    <button type="submit" class="save" id="delete"> Delete</button>
     <!-- form ends -->
+  </form>
 
 
    </div>
@@ -114,7 +119,7 @@
     </div>
     </div>
     </div>
-  
+  <a href="/index.html"></a>
 <div class="foot-last">
   <div class="foot-end"><img id="mail" src="../../Assets/images/mail.png" alt="mail"><p>Sign Up for PIN News</p><button class="subscribe">Subscribe</button></div>
   <div class="foot-logo"><p id="logo-txt">Follow PIN</p>
@@ -128,17 +133,185 @@
 
 <script >
 
-  
-    let profilevalue = JSON.parse(window.localStorage.getItem("login_user"));
-    console.log(profilevalue);
-    document.getElementById("name").value=profilevalue[0]["user_name"];    
-    document.getElementById("phno").value=profilevalue[0]["user_phno"];
-    document.getElementById("email").value=profilevalue[0]["user_mail"];
-    document.getElementById("password").value=profilevalue[0]["user_pwd"];
-    document.getElementById("address").value=profilevalue[0]["user_address"];
-    document.getElementById("acc").value=profilevalue[0]["user_acc"];
-    document.getElementById("accname").value=profilevalue[0]["user_accname"];
-    document.getElementById("ifc").value=profilevalue[0]["user_ifsc"];
+
+let email_check =JSON.parse(window.localStorage.getItem("login_user"))
+let details = JSON.parse(window.localStorage.getItem("userdetails"))
+
+let user_ob = details.find(function(objuser){
+  let mailcheck = objuser["user_mail"];
+  if (email_check===mailcheck){
+    return true;
+  }
+
+});
+console.log(user_ob);
+
+
+
+
+
+
+    let username = document.getElementById("name").value =user_ob ["user_name"];
+    let userphno = document.getElementById("phno").value =user_ob ["user_phno"];
+    let usermail = document.getElementById("email").value = user_ob ["user_mail"];
+    let userpwd =  document.getElementById("password").value =user_ob ["user_repwd"];
+
+    
+
+
+
+    
+    let form = document.getElementById("profile_form");
+
+    form.addEventListener("submit", function(event){
+      event.preventDefault()
+      
+    let user_name = document.getElementById("name").value
+    let user_phno = document.getElementById("phno").value
+    let user_mail = document.getElementById("email").value
+    let user_pwd =  document.getElementById("password").value
+    let useraddress=document.getElementById("address").value
+    let useracco=document.getElementById("acc").value
+    let userbankname=document.getElementById("accname").value
+    let userifsc=document.getElementById("ifc").value
+
+    let newobj ={
+      user_name,
+      user_phno,
+      user_mail,
+      user_pwd,
+      useraddress,
+      useracco,
+      userbankname,
+      userifsc
+
+    }
+
+    let merge =Object.assign(user_ob,newobj);
+    
+
+    // if (details.user_mail !=usermail ){
+    //   alert("Cant change the email")
+    //   return
+    // }
+   
+
+    let userindex  = details.indexOf(user_ob)
+
+    details[userindex] = merge;
+
+    window.localStorage.setItem("updateuser",JSON.stringify(details))
+    alert ("Successfully updated your profile !!!")
+    });
+
+    let check = true;
+    const profile_details = JSON.parse(window.localStorage.getItem("updateuser"))
+    let profile = profile_details.find(function(objuser){
+    let mailcheck = objuser["user_mail"];
+    if (email_check===mailcheck){
+
+    
+    let username = document.getElementById("name").value =objuser ["user_name"];
+    let userphno = document.getElementById("phno").value =objuser ["user_phno"];
+    let usermail = document.getElementById("email").value = objuser ["user_mail"];
+    let userpwd =  document.getElementById("password").value =objuser ["user_repwd"];
+    let useraddress=document.getElementById("address").value=objuser ["useraddress"];
+    let useracco=document.getElementById("acc").value=objuser ["useracco"];
+    let userbankname=document.getElementById("accname").value=objuser ["userbankname"];
+    let userifsc=document.getElementById("ifc").value=objuser ["userifsc"];
+
+
+  }
+
+    });
+
+    let delete_profile = document.getElementById("delete")
+    delete_profile.addEventListener("click",function(event){
+      event.preventDefault()
+      let index = details.indexOf(user_ob)
+      let txt_confirm =  confirm ("Are you sure you want to delete this account")
+      if (txt_confirm!==true)
+      {
+        return
+       }
+       else {
+        details.splice(index,1)
+        window.localStorage.setItem("userdetails",JSON.stringify(details))
+        // window.location.href="/index.html"
+
+       }
+
+
+    })
+
+
+
+    
+
+
+
+
+//     let store =  JSON.parse(window.localStorage.getItem("updateuser"))
+
+// let username = document.getElementById("name").value =updateuser ["user_name"];
+// let userphno = document.getElementById("phno").value =updateuser ["user_phno"];
+// let usermail = document.getElementById("email").value = updateuser ["user_mail"];
+// let userpwd =  document.getElementById("password").value =updateuser ["user_repwd"];    
+// let user_address=document.getElementById("address").value= updateuser ["useraddress"];    
+// let user_acco=document.getElementById("acc").value= updateuser ["useracco"];  
+// let user_bankname=document.getElementById("accname").value= updateuser ["userbankname"];
+// let user_ifsc=document.getElementById("ifc").value= updateuser ["userifsc"];
+    
+
+    
+
+
+
+
+
+
+
+   
+
+
+
+      
+// let profilevalue = JSON.parse(window.localStorage.getItem("login_user"));
+//     console.log(profilevalue);
+//     document.getElementById("name").value=profilevalue[0]["user_name"];    
+//     document.getElementById("phno").value=profilevalue[0]["user_phno"];
+//     document.getElementById("email").value=profilevalue[0]["user_mail"];
+//     document.getElementById("password").value=profilevalue[0]["user_repwd"];
+
+
+
+//     function save(){
+    
+//         let is = false;
+//         for (let i = 0; i < profilevalue.length; i++) {
+//           if (email != profilevalue[i].user_mail) {
+           
+//             is =false;
+           
+//           }
+          
+//         }
+        
+//         if(is ==false){
+//           alert("email not exist")
+//           return
+//         }
+//         else{
+//           alert ('mail')
+//         }
+        
+
+//       }
+
+
+
+
+
 
 
 
