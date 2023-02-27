@@ -10,3 +10,16 @@ User flow: https://drive.google.com/drive/folders/11ypZUPewWczeGxdwT-OqPPCUQzaJz
 Wire Frame: https://drive.google.com/drive/folders/1S7fsqLL22TnEX0UxDrs3clE4ZJsUPb4k
 
 Sonar cloud:https://sonarcloud.io/project/configuration?id=fssa-batch3_gopikannan.saravanan__web_project
+
+// My Progress Table
+CRUD For User signning page
+=> Create user account,regiterand login page [completed]
+=> Read User Data For Profile Page [completed]
+=> Update user details For Edit Page [completed]
+=> Delete user details For deactivate [completed]
+
+CRUD For User Features page
+=> Create products card/list [completed]
+=> Read Product Data For card [completed]
+=> Update user details For card [working]
+=> Deactivate Product details For Card [working]
