@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -34,7 +35,7 @@
             type="text"
             id="mobileno"
             placeholder="Mobile number"
-            pattern="[0-9]{1,8}"
+            pattern="[0-9]{1,10}"
             title=" Phone number must have 10 digits"
             maxlength="10"
             required
@@ -50,7 +51,7 @@
           <input
             type="password"
             id="password"
-            pattern="[a-z A-Z ]{0-9}"
+            pattern="[a-zA-Z0-9]{0,9}"
             title="Password must have(UpperCase, LowerCase, Number/SpecialChar and min 8 Chars)"
             placeholder="Password"
             maxlength="8"
@@ -60,7 +61,7 @@
             id="confirmpwd"
             type="password"
             placeholder="Confirm password"
-            pattern="[a-z A-Z]{0-9}"
+            pattern="[a-zA-Z0-9]{0,9}"
             maxlength="8"
             required
           />
@@ -81,68 +82,42 @@
       // let form = document.getElementById("form");
       let user = [];
       // declaring array outside a
-      let check = true;
 
       document.getElementById("log-in").onclick = function () {
+        if (localStorage.getItem("userDetails") !== null) {
+          user = JSON.parse(localStorage.getItem("userDetails"));
+        }
+
         const name = document.getElementById("name").value.trim();
         const mobileno = document.getElementById("mobileno").value.trim();
         const email = document.getElementById("email").value.trim();
         const password = document.getElementById("password").value;
         const conpwd = document.getElementById("confirmpwd").value;
-        // const accnum = document.getElementById("acc").value;
-        // const accname = document.getElementById("accname").value;
-        // const ifc = document.getElementById("ifc").value;
+        const user_id = Date.now();
 
-        let valid = JSON.parse(window.localStorage.getItem("userdetails"));
-        let is = false;
-        for (let i = 0; i < valid.length; i++) {
-          if (email === valid[i].user_mail) {
+        for (let i = 0; i < user.length; i++) {
+          if (email === user[i]["user_mail"]) {
             alert("Email is already in use");
-            is = true;
             return;
           }
         }
 
         if (password != conpwd) {
-          check = false;
-          // alert("Password does not match");
-        }
-        if (check === false) {
-          alert("Password does not match");
+          alert("password doesn't match");
+          return;
         } else {
-          let objuser = new Object();
-          objuser["user_name"] = name;
-          objuser["user_phno"] = mobileno;
-          objuser["user_mail"] = email;
-          objuser["user_pwd"] = password;
-          objuser["user_repwd"] = conpwd;
-          // objuser["user_acc"] = accnum;
-          // objuser["user_accname"] = accname;
-          // objuser["user_ifsc"] = ifc;
+          let objuser = {
+            user_name: name,
+            user_phno: mobileno,
+            user_mail: email,
+            user_pwd: password,
+            userid: user_id,
+          };
 
-          // user.push(objuser);
-          // let info = JSON.prase(window.localStorage.getItem("user"))
-          // let correct = false;
-          // for(let i=0;i<info.length;i++){
-          //   if()
+          user.push(objuser);
 
-          // }
-
-          if (window.localStorage.getItem("userdetails") === null) {
-            window.localStorage.setItem("userdetails", JSON.stringify(user));
-            console.log(window.localStorage.getItem("userdetails"));
-          } else {
-            let user_local = window.localStorage.getItem("userdetails");
-            let user_json = JSON.parse(user_local);
-            user_json.push(objuser);
-
-            window.localStorage.setItem(
-              "userdetails",
-              JSON.stringify(user_json)
-            );
-            alert("User Added");
-            window.location.href = "../header/home.html";
-          }
+          localStorage.setItem("userDetails", JSON.stringify(user));
+          alert("User Added");
         }
       };
     </script>

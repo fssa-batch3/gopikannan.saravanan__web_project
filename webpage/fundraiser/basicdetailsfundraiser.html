@@ -5,10 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PIN(People In Need) My donations</title>
-    <link rel="stylesheet" href="../../Assets/css/basicdetailsfunddraiser.css" />
-    <link rel="stylesheet" href="../../Assets/css/header.css">
-    <link rel="stylesheet" href="../../Assets/css/footer.css">
-    <link rel="stylesheet" href="../../Assets/css/universal.css">
+    <link
+      rel="stylesheet"
+      href="../../Assets/css/basicdetailsfunddraiser.css"
+    />
+    <link rel="stylesheet" href="../../Assets/css/header.css" />
+    <link rel="stylesheet" href="../../Assets/css/footer.css" />
+    <link rel="stylesheet" href="../../Assets/css/universal.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,16 +24,22 @@
     />
     <script type="text/javascript">
       function togglemenu() {
-       document.getElementById("sidebar").classList.toggle("active");
-     }
-   </script>
+        document.getElementById("sidebar").classList.toggle("active");
+      }
+    </script>
   </head>
   <body>
     <!--  header starts-->
     <header>
-      <span class="menudiv"> <a class="menulink" onclick="togglemenu()"><img class="menu" src="../../Assets/images/menu (2).png" alt="menu" width="25"></a></span></div>
+      <span class="menudiv">
+        <a class="menulink" onclick="togglemenu()"
+          ><img
+            class="menu"
+            src="../../Assets/images/menu (2).png"
+            alt="menu"
+            width="25" /></a
+      ></span>
       <div class="image-txt">
-
         <span
           ><img
             src="../../Assets/images/business-community.png"
@@ -42,154 +51,250 @@
       </div>
 
       <div class="nav">
-        <div id="sidebar"  onclick="togglemenu()"> 
-        <a href="../../webpage/header/home.html" class="nav-anchor">Home</a>
-        <a href="../../webpage/donate/donate.html" class="nav-anchor donate">Donate</a>
-        <a href="../../webpage/fundraiser/fundraiser.html" class="nav-anchor">Fundraise</a>
-        <a href="../../webpage/header/about.html" class="nav-anchor">About</a>
-        <a href="../../webpage/header/contact.html" class="nav-anchor">Contact</a>
-        <a href="../../webpage/header/profile.html" class="nav-anchor"
-          ><img
-            class="profile"
-            src="../../Assets/images/profile.png"
-            alt="profile"
-            width="30"
-            title="profile"
-        /></a>
-      </div>
+        <div id="sidebar" onclick="togglemenu()">
+          <a href="../../webpage/header/home.html" class="nav-anchor">Home</a>
+          <a href="../../webpage/donate/donate.html" class="nav-anchor donate"
+            >Donate</a
+          >
+          <a href="../../webpage/fundraiser/fundraiser.html" class="nav-anchor"
+            >Fundraise</a
+          >
+          <a href="../../webpage/header/about.html" class="nav-anchor">About</a>
+          <a href="../../webpage/header/contact.html" class="nav-anchor"
+            >Contact</a
+          >
+          <a href="../../webpage/header/profile.html" class="nav-anchor"
+            ><img
+              class="profile"
+              src="../../Assets/images/profile.png"
+              alt="profile"
+              width="30"
+              title="profile"
+          /></a>
+        </div>
       </div>
     </header>
     <!-- header ends -->
     <div class="details-head">Fundraiser Basic Details</div>
 
-
     <!-- container starts -->
     <div class="container">
-
-
       <!-- form start -->
 
+      <form>
+        <div class="input-div">
+          <label>Name:</label>
+          <input type="text" id="name" placeholder="Enter your name" />
+        </div>
+        <div class="input-div">
+          <label>Email ID:</label>
+          <input type="email" id="email" placeholder="Enter your email id" />
+        </div>
+        <div class="input-div">
+          <label>Phone Number:</label>
+          <input type="tel" id="mobileno" placeholder="Enter your Ph no" />
+        </div>
+        <div class="input-div">
+          <label>I am raising fund for:</label>
+          <select name="cause" id="cause">
+            <option value="Medical">Medical</option>
+            <option value="Educational">Educational</option>
+            <option value="Socialcause">Social Cause</option>
+          </select>
+        </div>
+        <div class="input-div">
+          <label>Address:</label><input id="address" type="text" />
+        </div>
 
-<form >
+        <div class="input-div">
+          <label>Cover Picture:</label>
+          <input id="image" type="text" placeholder="place your image url" />
+        </div>
+        <div class="input-div">
+          <label>Title:</label>
+          <input id="title" type="text" />
+        </div>
+        <div class="input-div">
+          <label>Name:</label>
+          <input
+            id="name_hos"
+            type="text"
+            placeholder="Hospital,School,organization name"
+          />
+        </div>
+        <div class="input-div">
+          <label>Location:</label>
+          <input
+            id="location2"
+            type="text"
+            placeholder="Hospital,School,organization location"
+          />
+        </div>
+        <div class="input-div">
+          <label>Write Your Story:</label>
+          <textarea
+            value="Our school..."
+            name="story"
+            id="story"
+            rows="5"
+            placeholder="Write about who is this fundraiser for How/Why/When  do you need funds what is the purpose..."
+          ></textarea>
+        </div>
+        <div class="input-div">
+          <label>Upload Required Documents :</label>
+          <input id="image_doc" type="text" />
+        </div>
+        <div class="input-div">
+          <label>I want to raise the amount Rs:</label>
+          <input id="amount" type="text" />
+        </div>
+        <div class="input-div">
+          <label>I want to raise the amount Rs:</label>
+          <input id="amount_raised" type="text" placeholder="amount_raised" />
+        </div>
 
-<div class="input-div">
-    <label >Name:</label>
-    <input type="text" id="name" placeholder="Enter your name">
-</div>
-<div class="input-div">
-    <label >Email ID:</label>
-    <input type="email" id="email" placeholder="Enter your email id">
-</div>
-<div class="input-div">
-    <label >Phone Number:</label>
-    <input type="tel" id="mobileno" placeholder="Enter your Ph no">
-</div>
-<div class="input-div">
-    <label >I am raising fund for:</label>
-   <select name="cause" id="cause">
-    <option value="Medical">Medical</option>
-    <option value="Educational">Educational</option>
-    <option value="Socialcause">Social Cause</option>
-   </select>
-</div>
-<div class="input-div">
-    <label>OTP sent to mobile no:</label><br>
-    <input type="text" id="otp"  placeholder="Enter your OTP" maxlength="4" >
-</div>
-<!-- <a href="../fundraiser/Fundraiserdetailsform1.html">  -->
-  <button onclick="getinfo()" class="continue">Continue</button>
-</form>
-<!-- </a>  -->
-<!-- form ends -->
+        <!-- <a href="../fundraiser/Fundraiserdetailsform1.html">  -->
+        <button onclick="getinfo()" class="continue">Continue</button>
+      </form>
+      <!-- </a>  -->
+      <!-- form ends -->
     </div>
- <!-- container ends --> 
-<!-- Footer  -->
-<div class="footer">
-  <div class="footmain">
-    <div class="footerpart">
-      <div class="foot-head"> <p>Donate now</p></div>
-      <div class="foot-link">
-      
-        <ul>
-        <li><a href="../../webpage/donate/donate-medical.html">Medical </a></li>
-        <li><a href="../../webpage/donate/donate-education.html">Education</a></li>
-        <li><a href="../../webpage/donate/donate-social.html">Social causes </a></li>
-      </ul>
+    <!-- container ends -->
+    <!-- Footer  -->
+    <div class="footer">
+      <div class="footmain">
+        <div class="footerpart">
+          <div class="foot-head"><p>Donate now</p></div>
+          <div class="foot-link">
+            <ul>
+              <li>
+                <a href="../../webpage/donate/donate-medical.html">Medical </a>
+              </li>
+              <li>
+                <a href="../../webpage/donate/donate-education.html"
+                  >Education</a
+                >
+              </li>
+              <li>
+                <a href="../../webpage/donate/donate-social.html"
+                  >Social causes
+                </a>
+              </li>
+              `
+            </ul>
+          </div>
+        </div>
+        <div class="footerpart">
+          <div class="foot-head"><p>How it works?</p></div>
+          <div class="foot-link">
+            <ul>
+              <li><a href="#">What is Crowdfunding?</a></li>
+              <li><a href="#">Fundraising Tips</a></li>
+              <li><a href="#">Browse fundraiser</a></li>
+              <li><a href="#">Careers</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footerpart">
+          <div class="foot-head"><p>Support</p></div>
+          <div class="foot-link">
+            <ul>
+              <li><a href="#">FAQ's & Help Center</a></li>
+              <li><a href="#">Are Pin campaigns Genuine?</a></li>
+              <li><a href="#">Trust & Safety</a></li>
+              <li><a href="#">Featured In</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="foot-last">
+        <div class="foot-end">
+          <img id="mail" src="../../Assets/images/mail.png" alt="mail" />
+          <p>Sign Up for PIN News</p>
+          <button class="subscribe">Subscribe</button>
+        </div>
+        <div class="foot-logo">
+          <p id="logo-txt">Follow PIN</p>
+          <a href="#"
+            ><img
+              class="logo-icon"
+              src="../../Assets/images/fb.png"
+              alt="facebook"
+          /></a>
+          <a href="#"
+            ><img
+              class="logo-icon"
+              src="../../Assets/images/twitter.png"
+              alt="twitter"
+          /></a>
+          <a href="#"
+            ><img
+              class="logo-icon"
+              src="../../Assets/images/insta.png"
+              alt="instagram"
+          /></a>
+          <a href="#"
+            ><img
+              class="logo-icon"
+              src="../../Assets/images/youtube.png"
+              alt="youtube"
+          /></a>
+        </div>
+      </div>
     </div>
-    </div>
-    <div class="footerpart">
-      <div class="foot-head"><p>How it works?</p></div>
-      <div class="foot-link">
-       <ul>
-        <li><a href="#">What is Crowdfunding?</a></li>
-        <li><a href="#">Fundraising Tips</a></li>
-        <li><a href="#">Browse fundraiser</a></li>
-        <li><a href="#">Careers</a></li>
-      </ul>
-    </div>
-    </div>
-    <div class="footerpart">
-      <div class="foot-head"><p>Support</p></div>
-      <div class="foot-link">        
-        <ul>
-        <li><a href="#">FAQ's & Help Center</a></li>
-        <li><a href="#">Are Pin campaigns Genuine?</a></li>
-        <li><a href="#">Trust & Safety</a></li>
-        <li><a href="#">Featured In</a></li>      
-      </ul>
-    </div>
-    </div>
-  </div>
-  <div class="foot-last">
-  <div class="foot-end">
-    <img id="mail" src="../../Assets/images/mail.png" alt="mail">
-    <p>Sign Up for PIN News</p>
-    <button class="subscribe">Subscribe</button>
-  </div>
-<div class="foot-logo"><p id="logo-txt">Follow PIN</p>
-  <a href="#"><img class="logo-icon"src="../../Assets/images/fb.png" alt="facebook" ></img></a>
-  <a href="#"><img class="logo-icon"src="../../Assets/images/twitter.png" alt="twitter" ></img></a>
-  <a href="#"><img class="logo-icon"src="../../Assets/images/insta.png" alt="instagram" ></img></a>
-  <a href="#"><img class="logo-icon"src="../../Assets/images/youtube.png" alt="youtubr"  ></img></a>
-</div>
-  
-</div> 
-</div> <!-- footer end -->
 
-<script>
-  function getinfo(){
-    let arr =[]
-    const name = document.getElementById("name").value;
-    const mail = document.getElementById("email").value;
-    const dropDown = document.getElementById("cause").value
-    const mobileno = document.getElementById("mobileno").value;
-    const otp = document.getElementById("otp").value;
+    <!-- footer end -->
 
-    // console.log(dropDown)
-    // console.log(name);
-    // console.log(mail);
-    // console.log(mobileno);
-    // console.log(otp);
+    <script>
+      function getinfo() {
+        let arr = [];
 
-    let object ={
+        if (localStorage.getItem("carddetails") != null) {
+          arr = JSON.parse(localStorage.getItem("carddetails"));
+        }
 
-    }
-   object["name"]=name
-   object["mail"]=mail
-   object["drop"]=dropDown
-   object["phno"]=mobileno
-   object["pinotp"]=otp
-   
-   arr.push(object)
+        const name = document.getElementById("name").value;
+        const mail = document.getElementById("email").value;
+        const dropDown = document.getElementById("cause").value;
+        const mobileno = document.getElementById("mobileno").value;
+        const address = document.getElementById("address").value;
+        const image = document.getElementById("image").value;
+        const title = document.getElementById("title").value;
+        const name_hosp = document.getElementById("name_hos").value;
+        const location = document.getElementById("location2").value;
+        const story = document.getElementById("story").value;
+        const image_doc = document.getElementById("image_doc").value;
+        const amount = document.getElementById("amount").value;
+        const amount_raised = document.getElementById("amount_raised").value;
+        const product_id = Date.now();
 
-   let string = JSON.stringify(arr)
-  
-  console.log(string)
+        if (name == "" || name == null) {
+          return;
+        } else {
+          let object = {
+            fundraiser: name,
+            mail: mail,
+            drop: dropDown,
+            phno: mobileno,
+            address: address,
+            img: image,
+            title: title,
+            alt: name_hosp,
+            location: location,
+            story: story,
+            image_doc: image_doc,
+            expected_amt: amount,
+            amount_raised: amount_raised,
+            product_id: product_id,
+          };
 
-    window.location.href ="http://127.0.0.1:5500/webpage/fundraiser/Fundraiserdetailsform1.html?"+string
-  }
-</script>
+          console.log(object);
 
+          arr.push(object);
 
+          window.localStorage.setItem("carddetails", JSON.stringify(arr));
+        }
+      }
+    </script>
   </body>
 </html>

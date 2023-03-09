@@ -58,6 +58,11 @@ h4 {
   align-items: center;
   margin: auto;
 }
+#percent {
+  color: var(--body-text-color);
+  font-weight: bolder;
+  font-size: 18px;
+}
 progress {
   width: 40%;
   height: 30px;
@@ -277,7 +282,7 @@ progress {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: -200px;
+  margin-top: -50px;
   gap: 50px;
 }
 

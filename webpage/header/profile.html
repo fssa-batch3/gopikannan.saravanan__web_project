@@ -6,11 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PIN(People In Need) My donations</title>
     <link rel="stylesheet" href="../../Assets/css/profile.css" />
-    <link rel="stylesheet" href="../../Assets/css/header.css">
-    <link rel="stylesheet" href="../../Assets/css/footer.css">
-    <link rel="stylesheet" href="../../Assets/css/universal.css">
+    <link rel="stylesheet" href="../../Assets/css/header.css" />
+    <link rel="stylesheet" href="../../Assets/css/footer.css" />
+    <link rel="stylesheet" href="../../Assets/css/universal.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="stylesheet" href="../../webpage/login-signup/login-signup.html">
+    <link
+      rel="stylesheet"
+      href="../../webpage/login-signup/login-signup.html"
+    />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
@@ -22,14 +25,21 @@
     />
     <script type="text/javascript">
       function togglemenu() {
-       document.getElementById("sidebar").classList.toggle("active");
-     }
-   </script>
+        document.getElementById("sidebar").classList.toggle("active");
+      }
+    </script>
   </head>
   <body>
     <!--  header starts-->
     <header>
-      <span class="menudiv"> <a class="menulink" onclick="togglemenu()"><img class="menu" src="../../Assets/images/menu (2).png" alt="menu" width="25"></a></span>
+      <span class="menudiv">
+        <a class="menulink" onclick="togglemenu()"
+          ><img
+            class="menu"
+            src="../../Assets/images/menu (2).png"
+            alt="menu"
+            width="25" /></a
+      ></span>
       <div class="image-txt">
         <span
           ><img
@@ -39,288 +49,288 @@
         /></span>
 
         <span class="name">People In Need</span>
-        
       </div>
 
       <div class="nav">
-        <div id="sidebar"  onclick="togglemenu()"> 
-        <a href="../../webpage/header/home.html" class="nav-anchor">Home</a>
-        <a href="../../webpage/donate/donate.html" class="nav-anchor donate">Donate</a>
-        <a href="../../webpage/fundraiser/fundraiser.html" class="nav-anchor">Fundraise</a>
-        <a href="../../webpage/header/about.html" class="nav-anchor">About</a>
-        <a href="../../webpage/header/contact.html" class="nav-anchor">Contact</a>
-        <a href="../../webpage/header/profile.html" class="nav-anchor"
-          ><img
-            class="profile"
-            src="../../Assets/images/profile.png"
-            alt="profile"
-            width="30"
-            title="profile"
-        /></a>
-      </div>
+        <div id="sidebar" onclick="togglemenu()">
+          <a href="../../webpage/header/home.html" class="nav-anchor">Home</a>
+          <a href="../../webpage/donate/donate.html" class="nav-anchor donate"
+            >Donate</a
+          >
+          <a href="../../webpage/fundraiser/fundraiser.html" class="nav-anchor"
+            >Fundraise</a
+          >
+          <a href="../../webpage/header/about.html" class="nav-anchor">About</a>
+          <a href="../../webpage/header/contact.html" class="nav-anchor"
+            >Contact</a
+          >
+          <a href="../../webpage/header/profile.html" class="nav-anchor"
+            ><img
+              class="profile"
+              src="../../Assets/images/profile.png"
+              alt="profile"
+              width="30"
+              title="profile"
+          /></a>
+        </div>
       </div>
     </header>
     <!-- header ends -->
-   <div class="profile-head">Profile Details</div>
-<!-- form -->
-   <div class="container">
-    <form id="profile_form">
-
-
-    <div class="input-div"><label >Name:</label><input id="name" type="text" maxlength="20"></div>
-    <div class="input-div"><label >Mobile-Number:</label><input id="phno"  type="text" maxlength="10"></div>
-    <div class="input-div"><label >Email:</label><input id="email"  type="email" ></div>
-    <div class="input-div"><label >Password:</label><input id="password"  type="text" ></div>
-    <div class="input-div"><label >Address:</label><input id="address" type="text"></div>
-    <div class="input-div"><label >Account Number:</label><input id="acc" type="text"></div>
-    <div class="input-div"><label >Bank Name:</label><input type="text"  id="accname"></div>
-    <div class="input-div"><label > IFC Code:</label><input type="text"  id="ifc"></div>
-    <button type="submit" class="save"  >Save</button>
-    <button type="submit" class="save" id="delete"> Delete</button>
-    <!-- form ends -->
-  </form>
-
-
-   </div>
+    <div class="profile-head">Profile Details</div>
+    <!-- form -->
+    <div class="container">
+      <form id="profile_form">
+        <div class="input-div">
+          <label>Name:</label><input id="name" type="text" maxlength="20" />
+        </div>
+        <div class="input-div">
+          <label>Mobile-Number:</label
+          ><input id="phno" type="text" maxlength="10" />
+        </div>
+        <div class="input-div">
+          <label>Email:</label><input id="email" type="email" />
+        </div>
+        <div class="input-div">
+          <label>Password:</label><input id="password" type="text" />
+        </div>
+        <div class="input-div">
+          <label>Address:</label><input id="address" type="text" />
+        </div>
+        <div class="input-div">
+          <label>Account Number:</label><input id="acc" type="text" />
+        </div>
+        <div class="input-div">
+          <label>Bank Name:</label><input type="text" id="accname" />
+        </div>
+        <div class="input-div">
+          <label> IFC Code:</label><input type="text" id="ifc" />
+        </div>
+        <button type="submit" class="save">Save</button>
+        <button type="submit" class="save" id="delete">Delete</button>
+        <!-- form ends -->
+      </form>
+    </div>
     <!-- Footer  -->
-  <div class="footer">
-  <div class="footmain">
-    <div class="footerpart">
-      <div class="foot-head"> <p>Donate now</p></div>
-      <div class="foot-link">
-      
-        <ul>
-        <li><a href="../../webpage/donate/donate-medical.html">Medical </a></li>
-        <li><a href="../../webpage/donate/donate-education.html">Education</a></li>
-        <li><a href="../../webpage/donate/donate-social.html">Social causes </a></li>
-      </ul>
+    <div class="footer">
+      <div class="footmain">
+        <div class="footerpart">
+          <div class="foot-head"><p>Donate now</p></div>
+          <div class="foot-link">
+            <ul>
+              <li>
+                <a href="../../webpage/donate/donate-medical.html">Medical </a>
+              </li>
+              <li>
+                <a href="../../webpage/donate/donate-education.html"
+                  >Education</a
+                >
+              </li>
+              <li>
+                <a href="../../webpage/donate/donate-social.html"
+                  >Social causes
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footerpart">
+          <div class="foot-head"><p>How it works?</p></div>
+          <div class="foot-link">
+            <ul>
+              <li><a href="#">What is Crowdfunding?</a></li>
+              <li><a href="#">Fundraising Tips</a></li>
+              <li><a href="#">Browse fundraiser</a></li>
+              <li><a href="#">Careers</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footerpart">
+          <div class="foot-head"><p>Support</p></div>
+          <div class="foot-link">
+            <ul>
+              <li><a href="#">FAQ's & Help Center</a></li>
+              <li><a href="#">Are Pin campaigns Genuine?</a></li>
+              <li><a href="#">Trust & Safety</a></li>
+              <li><a href="#">Featured In</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <a href="/index.html"></a>
+      <div class="foot-last">
+        <div class="foot-end">
+          <img id="mail" src="../../Assets/images/mail.png" alt="mail" />
+          <p>Sign Up for PIN News</p>
+          <button class="subscribe">Subscribe</button>
+        </div>
+        <div class="foot-logo">
+          <p id="logo-txt">Follow PIN</p>
+          <a href="#"
+            ><img
+              class="logo-icon"
+              src="../../Assets/images/fb.png"
+              alt="facebook"
+          /></a>
+          <a href="#"
+            ><img
+              class="logo-icon"
+              src="../../Assets/images/twitter.png"
+              alt="twitter"
+          /></a>
+          <a href="#"
+            ><img
+              class="logo-icon"
+              src="../../Assets/images/insta.png"
+              alt="instagram"
+          /></a>
+          <a href="#"
+            ><img
+              class="logo-icon"
+              src="../../Assets/images/youtube.png"
+              alt="youtubr"
+          /></a>
+        </div>
+      </div>
     </div>
-    </div>
-    <div class="footerpart">
-      <div class="foot-head"><p>How it works?</p></div>
-      <div class="foot-link">
-       <ul>
-        <li><a href="#">What is Crowdfunding?</a></li>
-        <li><a href="#">Fundraising Tips</a></li>
-        <li><a href="#">Browse fundraiser</a></li>
-        <li><a href="#">Careers</a></li>
-      </ul>
-    </div>
-    </div>
-    <div class="footerpart">
-      <div class="foot-head"><p>Support</p></div>
-      <div class="foot-link">        
-        <ul>
-        <li><a href="#">FAQ's & Help Center</a></li>
-        <li><a href="#">Are Pin campaigns Genuine?</a></li>
-        <li><a href="#">Trust & Safety</a></li>
-        <li><a href="#">Featured In</a></li>      
-      </ul>
-    </div>
-    </div>
-    </div>
-  <a href="/index.html"></a>
-<div class="foot-last">
-  <div class="foot-end"><img id="mail" src="../../Assets/images/mail.png" alt="mail"><p>Sign Up for PIN News</p><button class="subscribe">Subscribe</button></div>
-  <div class="foot-logo"><p id="logo-txt">Follow PIN</p>
-  <a href="#"><img class="logo-icon"src="../../Assets/images/fb.png" alt="facebook"></img></a>
-  <a href="#"><img class="logo-icon"src="../../Assets/images/twitter.png" alt="twitter"  ></img></a>
-  <a href="#"><img class="logo-icon"src="../../Assets/images/insta.png" alt="instagram" ></img></a>
-  <a href="#"><img class="logo-icon"src="../../Assets/images/youtube.png" alt="youtubr"  ></img></a></div>
-  </div> 
-</div>
-<!-- footer end -->
-
-<script >
-
-
-let email_check =JSON.parse(window.localStorage.getItem("login_user"))
-let details = JSON.parse(window.localStorage.getItem("userdetails"))
-
-let user_ob = details.find(function(objuser){
-  let mailcheck = objuser["user_mail"];
-  if (email_check===mailcheck){
-    return true;
-  }
-
-});
-console.log(user_ob);
-
-
-
-
-
-
-    let username = document.getElementById("name").value =user_ob ["user_name"];
-    let userphno = document.getElementById("phno").value =user_ob ["user_phno"];
-    let usermail = document.getElementById("email").value = user_ob ["user_mail"];
-    let userpwd =  document.getElementById("password").value =user_ob ["user_repwd"];
-
-    
-
-
-
-    
-    let form = document.getElementById("profile_form");
-
-    form.addEventListener("submit", function(event){
-      event.preventDefault()
-      
-    let user_name = document.getElementById("name").value
-    let user_phno = document.getElementById("phno").value
-    let user_mail = document.getElementById("email").value
-    let user_pwd =  document.getElementById("password").value
-    let useraddress=document.getElementById("address").value
-    let useracco=document.getElementById("acc").value
-    let userbankname=document.getElementById("accname").value
-    let userifsc=document.getElementById("ifc").value
-
-    let newobj ={
-      user_name,
-      user_phno,
-      user_mail,
-      user_pwd,
-      useraddress,
-      useracco,
-      userbankname,
-      userifsc
-
-    }
-
-    let merge =Object.assign(user_ob,newobj);
-    
-
-    // if (details.user_mail !=usermail ){
-    //   alert("Cant change the email")
-    //   return
-    // }
-   
-
-    let userindex  = details.indexOf(user_ob)
-
-    details[userindex] = merge;
-
-    window.localStorage.setItem("updateuser",JSON.stringify(details))
-    alert ("Successfully updated your profile !!!")
-    });
-
-    let check = true;
-    const profile_details = JSON.parse(window.localStorage.getItem("updateuser"))
-    let profile = profile_details.find(function(objuser){
-    let mailcheck = objuser["user_mail"];
-    if (email_check===mailcheck){
-
-    
-    let username = document.getElementById("name").value =objuser ["user_name"];
-    let userphno = document.getElementById("phno").value =objuser ["user_phno"];
-    let usermail = document.getElementById("email").value = objuser ["user_mail"];
-    let userpwd =  document.getElementById("password").value =objuser ["user_repwd"];
-    let useraddress=document.getElementById("address").value=objuser ["useraddress"];
-    let useracco=document.getElementById("acc").value=objuser ["useracco"];
-    let userbankname=document.getElementById("accname").value=objuser ["userbankname"];
-    let userifsc=document.getElementById("ifc").value=objuser ["userifsc"];
-
-
-  }
-
-    });
-
-    let delete_profile = document.getElementById("delete")
-    delete_profile.addEventListener("click",function(event){
-      event.preventDefault()
-      let index = details.indexOf(user_ob)
-      let txt_confirm =  confirm ("Are you sure you want to delete this account")
-      if (txt_confirm!==true)
-      {
-        return
-       }
-       else {
-        details.splice(index,1)
-        window.localStorage.setItem("userdetails",JSON.stringify(details))
-        // window.location.href="/index.html"
-
-       }
-
-
-    })
-
-
-
-    
-
-
-
-
-//     let store =  JSON.parse(window.localStorage.getItem("updateuser"))
-
-// let username = document.getElementById("name").value =updateuser ["user_name"];
-// let userphno = document.getElementById("phno").value =updateuser ["user_phno"];
-// let usermail = document.getElementById("email").value = updateuser ["user_mail"];
-// let userpwd =  document.getElementById("password").value =updateuser ["user_repwd"];    
-// let user_address=document.getElementById("address").value= updateuser ["useraddress"];    
-// let user_acco=document.getElementById("acc").value= updateuser ["useracco"];  
-// let user_bankname=document.getElementById("accname").value= updateuser ["userbankname"];
-// let user_ifsc=document.getElementById("ifc").value= updateuser ["userifsc"];
-    
-
-    
-
-
-
-
-
-
-
-   
-
-
-
-      
-// let profilevalue = JSON.parse(window.localStorage.getItem("login_user"));
-//     console.log(profilevalue);
-//     document.getElementById("name").value=profilevalue[0]["user_name"];    
-//     document.getElementById("phno").value=profilevalue[0]["user_phno"];
-//     document.getElementById("email").value=profilevalue[0]["user_mail"];
-//     document.getElementById("password").value=profilevalue[0]["user_repwd"];
-
-
-
-//     function save(){
-    
-//         let is = false;
-//         for (let i = 0; i < profilevalue.length; i++) {
-//           if (email != profilevalue[i].user_mail) {
-           
-//             is =false;
-           
-//           }
-          
-//         }
-        
-//         if(is ==false){
-//           alert("email not exist")
-//           return
-//         }
-//         else{
-//           alert ('mail')
-//         }
-        
-
-//       }
-
-
-
-
-
-
-
-
-    
-
-  </script>
-    
- 
-
-</body>
+    <!-- footer end -->
+
+    <script>
+      let email_check = JSON.parse(window.localStorage.getItem("login_user"));
+      let details = JSON.parse(window.localStorage.getItem("userDetails"));
+
+      let user_ob = details.find(function (objuser) {
+        let mailcheck = objuser["user_mail"];
+        if (email_check === mailcheck) {
+          return true;
+        }
+      });
+      console.log(user_ob);
+
+      let username = (document.getElementById("name").value =
+        user_ob["user_name"]);
+      let userphno = (document.getElementById("phno").value =
+        user_ob["user_phno"]);
+      let usermail = (document.getElementById("email").value =
+        user_ob["user_mail"]);
+      let userpwd = (document.getElementById("password").value =
+        user_ob["user_pwd"]);
+
+      let form = document.getElementById("profile_form");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        let user_name = document.getElementById("name").value;
+        let user_phno = document.getElementById("phno").value;
+        let user_mail = document.getElementById("email").value;
+        let user_pwd = document.getElementById("password").value;
+        let useraddress = document.getElementById("address").value;
+        let useracco = document.getElementById("acc").value;
+        let userbankname = document.getElementById("accname").value;
+        let userifsc = document.getElementById("ifc").value;
+
+        let newobj = {
+          user_name,
+          user_phno,
+          user_mail,
+          user_pwd,
+          useraddress,
+          useracco,
+          userbankname,
+          userifsc,
+        };
+
+        let merge = Object.assign(user_ob, newobj);
+
+        let userindex = details.indexOf(user_ob);
+
+        details[userindex] = merge;
+
+        window.localStorage.setItem("updateuser", JSON.stringify(details));
+        alert("Successfully updated your profile !!!");
+      });
+
+      let check = true;
+      const profile_details = JSON.parse(
+        window.localStorage.getItem("updateuser")
+      );
+      let profile = profile_details.find(function (objuser) {
+        let mailcheck = objuser["user_mail"];
+        if (email_check === mailcheck) {
+          let username = (document.getElementById("name").value =
+            objuser["user_name"]);
+          let userphno = (document.getElementById("phno").value =
+            objuser["user_phno"]);
+          let usermail = (document.getElementById("email").value =
+            objuser["user_mail"]);
+          let userpwd = (document.getElementById("password").value =
+            objuser["user_pwd"]);
+          let useraddress = (document.getElementById("address").value =
+            objuser["useraddress"]);
+          let useracco = (document.getElementById("acc").value =
+            objuser["useracco"]);
+          let userbankname = (document.getElementById("accname").value =
+            objuser["userbankname"]);
+          let userifsc = (document.getElementById("ifc").value =
+            objuser["userifsc"]);
+        }
+      });
+
+      let delete_profile = document.getElementById("delete");
+      delete_profile.addEventListener("click", function (event) {
+        event.preventDefault();
+        let index = details.indexOf(user_ob);
+        let txt_confirm = confirm(
+          "Are you sure you want to delete this account"
+        );
+        if (txt_confirm !== true) {
+          return;
+        } else {
+          details.splice(index, 1);
+          window.localStorage.setItem("userDetails", JSON.stringify(details));
+          // window.location.href="/index.html"
+        }
+      });
+
+      //     let store =  JSON.parse(window.localStorage.getItem("updateuser"))
+
+      // let username = document.getElementById("name").value =updateuser ["user_name"];
+      // let userphno = document.getElementById("phno").value =updateuser ["user_phno"];
+      // let usermail = document.getElementById("email").value = updateuser ["user_mail"];
+      // let userpwd =  document.getElementById("password").value =updateuser ["user_repwd"];
+      // let user_address=document.getElementById("address").value= updateuser ["useraddress"];
+      // let user_acco=document.getElementById("acc").value= updateuser ["useracco"];
+      // let user_bankname=document.getElementById("accname").value= updateuser ["userbankname"];
+      // let user_ifsc=document.getElementById("ifc").value= updateuser ["userifsc"];
+
+      // let profilevalue = JSON.parse(window.localStorage.getItem("login_user"));
+      //     console.log(profilevalue);
+      //     document.getElementById("name").value=profilevalue[0]["user_name"];
+      //     document.getElementById("phno").value=profilevalue[0]["user_phno"];
+      //     document.getElementById("email").value=profilevalue[0]["user_mail"];
+      //     document.getElementById("password").value=profilevalue[0]["user_repwd"];
+
+      //     function save(){
+
+      //         let is = false;
+      //         for (let i = 0; i < profilevalue.length; i++) {
+      //           if (email != profilevalue[i].user_mail) {
+
+      //             is =false;
+
+      //           }
+
+      //         }
+
+      //         if(is ==false){
+      //           alert("email not exist")
+      //           return
+      //         }
+      //         else{
+      //           alert ('mail')
+      //         }
+
+      //       }
+    </script>
+  </body>
 </html>
-

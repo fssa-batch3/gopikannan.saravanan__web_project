@@ -40,7 +40,7 @@ input[type="text"] {
   background-color: #e4e2ff;
   cursor: pointer;
 }
-.donation-container {
+.container {
   /* display: grid;
   grid-template-columns: auto auto auto; */
   display: flex;
@@ -119,6 +119,9 @@ input[type="text"] {
   align-items: center;
 }
 
+.icon-like {
+  z-index: 5;
+}
 /* main content style ends */
 
 @media screen and (max-width: 1200px) {
