@@ -113,6 +113,9 @@ button[type="submit"] {
   cursor: pointer;
   margin-top: 30px;
 }
+#content:disabled {
+  background-color: #707070;
+}
 .box:hover {
   box-shadow: rgb(140, 159, 255) 4px 4px 4px;
 }
@@ -162,6 +165,10 @@ button[type="submit"] {
   border-top-right-radius: 10px;
   width: 350px;
   height: 260px;
+}
+
+.box .nameFundraiser {
+  font-weight: bold;
 }
 .viewmore {
   display: flex;

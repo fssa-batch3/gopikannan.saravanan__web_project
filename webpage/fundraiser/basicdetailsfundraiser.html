@@ -131,7 +131,15 @@
           />
         </div>
         <div class="input-div">
-          <label>Write Your Story:</label>
+          <label>Summary of your story:</label>
+          <input
+            id="storySum"
+            type="text"
+            placeholder="Write your summary of your story"
+          />
+        </div>
+        <div class="input-div">
+          <label>Write Your Detail Story:</label>
           <textarea
             value="Our school..."
             name="story"
@@ -151,6 +159,10 @@
         <div class="input-div">
           <label>I want to raise the amount Rs:</label>
           <input id="amount_raised" type="text" placeholder="amount_raised" />
+        </div>
+        <div class="input-div">
+          <label>Your UPI url:</label>
+          <input id="upi" type="text" placeholder="paste your upi url" />
         </div>
 
         <!-- <a href="../fundraiser/Fundraiserdetailsform1.html">  -->
@@ -262,10 +274,12 @@
         const title = document.getElementById("title").value;
         const name_hosp = document.getElementById("name_hos").value;
         const location = document.getElementById("location2").value;
+        const storySum = document.getElementById("storySum").value;
         const story = document.getElementById("story").value;
         const image_doc = document.getElementById("image_doc").value;
         const amount = document.getElementById("amount").value;
         const amount_raised = document.getElementById("amount_raised").value;
+        const upi = document.getElementById("upi").value;
         const product_id = Date.now();
 
         if (name == "" || name == null) {
@@ -281,11 +295,14 @@
             title: title,
             alt: name_hosp,
             location: location,
+            storySum: storySum,
             story: story,
             image_doc: image_doc,
             expected_amt: amount,
             amount_raised: amount_raised,
             product_id: product_id,
+            upiUrl: upi,
+            amout: "unreach",
           };
 
           console.log(object);

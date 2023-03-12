@@ -406,19 +406,6 @@
 
         amount_sec.append(cash);
 
-        let plus;
-        plus = document.createElement("i");
-        plus.setAttribute("class", "fa fa-plus");
-        plus.setAttribute("style", "font-size:22px");
-        plus.innerHTML = "&nbsp" + "&nbsp";
-        amount_sec.append(plus);
-
-        let minus;
-        minus = document.createElement("i");
-        minus.setAttribute("class", "fa fa-minus");
-        minus.setAttribute("style", "font-size:22px");
-        amount_sec.append(minus);
-
         // // <span class="count"></span>
         // count = document.createElement("span");
         // count.setAttribute("class", "count");
@@ -464,7 +451,8 @@
       }
 
       function redirect() {
-        window.location.href = "../../webpage/donate/story.html";
+        window.location.href =
+          "../../webpage/donate/story.html?product_id" + json[i]["product_id"];
       }
     </script>
     <!-- footer ends -->
