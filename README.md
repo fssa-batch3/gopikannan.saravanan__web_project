@@ -12,14 +12,14 @@ Wire Frame: https://drive.google.com/drive/folders/1S7fsqLL22TnEX0UxDrs3clE4ZJsU
 Sonar cloud:https://sonarcloud.io/project/configuration?id=fssa-batch3_gopikannan.saravanan__web_project
 
 // My Progress Table
-CRUD For User signning page
+CRUD For User module
 => Create user account,regiterand login page [completed]
-=> Read User Data For Profile Page [completed]
-=> Update user details For Edit Page [completed]
-=> Delete user details For deactivate [completed]
+=> Read User details [completed]
+=> Update user details [completed]
+=> Delete user details [completed]
 
-CRUD For User Features page
-=> Create products card/list [completed]
-=> Read Product Data For card [completed]
-=> Update user details For card [working]
-=> Deactivate Product details For Card [working]
+CRUD For fundraise module
+=> Create fundraise card/list [completed]
+=> Read fundraise Data card [completed]
+=> Update fundraise card [completed]
+=> Deactivate fundraise Card [completed]
