@@ -317,9 +317,6 @@ for (let i = 0; i < json.length; i++) {
     // console.log(json);
     document.querySelector(".container").append(card_div);
   }
-  // else{
-
-  // }
 }
 
 function editCard(e) {
