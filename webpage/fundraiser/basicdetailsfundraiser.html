@@ -264,6 +264,7 @@
         if (localStorage.getItem("carddetails") != null) {
           arr = JSON.parse(localStorage.getItem("carddetails"));
         }
+        console.log(arr);
 
         const name = document.getElementById("name").value;
         const mail = document.getElementById("email").value;
@@ -280,6 +281,9 @@
         const amount = document.getElementById("amount").value;
         const amount_raised = document.getElementById("amount_raised").value;
         const upi = document.getElementById("upi").value;
+        const userId = JSON.parse(window.localStorage.getItem("userID"));
+        console.log(userId);
+
         const product_id = Date.now();
 
         if (name == "" || name == null) {
@@ -302,6 +306,7 @@
             amount_raised: amount_raised,
             product_id: product_id,
             upiUrl: upi,
+            userId: userId,
             amout: "unreach",
           };
 

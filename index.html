@@ -67,7 +67,7 @@
       });
 
       function check_getinfo() {
-        // let arr = [];
+        let userid = [];
 
         let loginvalue = JSON.parse(localStorage.getItem("userDetails"));
         console.log(loginvalue);
@@ -87,6 +87,11 @@
               "login_user",
               JSON.stringify(loginvalue[i].user_mail)
             );
+            window.localStorage.setItem(
+              "userID",
+              JSON.stringify(loginvalue[i]["userid"])
+            );
+
             break;
           } else {
             match = false;

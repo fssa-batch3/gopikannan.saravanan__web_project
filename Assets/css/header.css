@@ -44,7 +44,8 @@ header {
 .nav {
   margin-top: 10px;
 }
-.nav-anchor {
+.nav-anchor,
+.profile {
   margin-left: 20px;
   text-decoration: none;
   color: #3f3a81;

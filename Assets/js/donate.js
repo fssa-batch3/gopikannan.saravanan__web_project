@@ -1,58 +1,58 @@
 let json = [
-  {
-    img: "https://cimages.milaap.org/milaap/image/upload/c_fill,h_452,w_603/v1667841206/production/images/campaign/587864/IMG20221009062455_ovmi0x_1667842343.jpg",
-    alt: "education",
-    title: "Help me study to win in life",
-    amount_raised: 600000,
-    expected_amt: 3000000,
-    supporters: 550,
-    fundraiser: "Kumar",
-  },
-  {
-    img: "https://cimages.milaap.org/milaap/image/upload/c_fill,h_452,w_603/v1663057048/production/images/campaign/562956/Divyam_4_luynfw_1663057051.jpg",
-    alt: "baby",
-    title: "Help Divyam Fight From Leukaemia",
-    amount_raised: 1300000,
-    expected_amt: 5000000,
-    supporters: 350,
-    fundraiser: "Ajay",
-  },
-  {
-    img: "https://kettocdn.gumlet.io/media/campaign/625000/625122/image/627fff291f29d.png?w=768&dpr=1.5",
-    alt: "school for special needs ",
-    title: "School For Special Needs",
-    amount_raised: 463521,
-    expected_amt: 1000000,
-    supporters: 240,
-    fundraiser: "Ram",
-  },
-  {
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSowM5xzcQl9XbrUJsI29z-cEaJK-BXh69GSA&usqp=CAU",
-    alt: "babyemerg",
-    title: "My Baby Battles For His Life And We Need Your Support To Save Him",
-    amount_raised: 363521,
-    expected_amt: 500000,
-    supporters: 482,
-    fundraiser: "Somu",
-  },
-  {
-    img: "https://cdn.shopify.com/s/files/1/0086/0795/7054/files/street_dog_5.jpg?v=1645437822",
-    alt: "shelter for dog",
-    title: "HELP US BUILD A SHELTER HOME",
-    amount_raised: 158152,
-    expected_amt: 700000,
-    supporters: 50,
-    fundraiser: "Veera",
-  },
-  {
-    img: "https://kettocdn.gumlet.io/media/campaign/180000/180773/image/6089ceb85c0bd.jpeg?w=768&dpr=1.5",
-    alt: "food distribution",
-    title: "Feeding From Far-Ration Distribution Amid Lockdown",
-    amount_raised: 8000000,
-    expected_amt: 10000000,
-    supporters: 9716,
-    fundraiser: "Pooja",
-  },
+  // {
+  //   img: "https://cimages.milaap.org/milaap/image/upload/c_fill,h_452,w_603/v1667841206/production/images/campaign/587864/IMG20221009062455_ovmi0x_1667842343.jpg",
+  //   alt: "education",
+  //   title: "Help me study to win in life",
+  //   amount_raised: 600000,
+  //   expected_amt: 3000000,
+  //   supporters: 550,
+  //   fundraiser: "Kumar",
+  // },
+  // {
+  //   img: "https://cimages.milaap.org/milaap/image/upload/c_fill,h_452,w_603/v1663057048/production/images/campaign/562956/Divyam_4_luynfw_1663057051.jpg",
+  //   alt: "baby",
+  //   title: "Help Divyam Fight From Leukaemia",
+  //   amount_raised: 1300000,
+  //   expected_amt: 5000000,
+  //   supporters: 350,
+  //   fundraiser: "Ajay",
+  // },
+  // {
+  //   img: "https://kettocdn.gumlet.io/media/campaign/625000/625122/image/627fff291f29d.png?w=768&dpr=1.5",
+  //   alt: "school for special needs ",
+  //   title: "School For Special Needs",
+  //   amount_raised: 463521,
+  //   expected_amt: 1000000,
+  //   supporters: 240,
+  //   fundraiser: "Ram",
+  // },
+  // {
+  //   img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSowM5xzcQl9XbrUJsI29z-cEaJK-BXh69GSA&usqp=CAU",
+  //   alt: "babyemerg",
+  //   title: "My Baby Battles For His Life And We Need Your Support To Save Him",
+  //   amount_raised: 363521,
+  //   expected_amt: 500000,
+  //   supporters: 482,
+  //   fundraiser: "Somu",
+  // },
+  // {
+  //   img: "https://cdn.shopify.com/s/files/1/0086/0795/7054/files/street_dog_5.jpg?v=1645437822",
+  //   alt: "shelter for dog",
+  //   title: "HELP US BUILD A SHELTER HOME",
+  //   amount_raised: 158152,
+  //   expected_amt: 700000,
+  //   supporters: 50,
+  //   fundraiser: "Veera",
+  // },
+  // {
+  //   img: "https://kettocdn.gumlet.io/media/campaign/180000/180773/image/6089ceb85c0bd.jpeg?w=768&dpr=1.5",
+  //   alt: "food distribution",
+  //   title: "Feeding From Far-Ration Distribution Amid Lockdown",
+  //   amount_raised: 8000000,
+  //   expected_amt: 10000000,
+  //   supporters: 9716,
+  //   fundraiser: "Pooja",
+  // },
 ];
 let create_card = JSON.parse(localStorage.getItem("carddetails"));
 console.log(create_card);
@@ -153,17 +153,14 @@ anchorSocial.innerText = "Social";
 dropdowncontentDiv.append(anchorSocial);
 
 for (let i = 0; i < json.length; i++) {
-  let container_div;
   let card_div;
   let anchor;
-  let span;
   let image;
   let h4_tag;
   let progress_div;
   let b_tag;
   let progress_tag;
   let progress_span_tag;
-  let a_span_like;
   let image_like;
   let a_span_share;
   let image_share;
@@ -209,7 +206,10 @@ for (let i = 0; i < json.length; i++) {
     a = document.createElement("a");
     a.setAttribute(
       "href",
-      "../../webpage/donate/story.html?product_id=" + json[i]["product_id"]
+      "../../webpage/donate/story.html?product_id=" +
+        json[i]["product_id"] +
+        "&userid=" +
+        json[i]["userId"]
     );
     anchor.append(a);
 
@@ -251,23 +251,23 @@ for (let i = 0; i < json.length; i++) {
 
     // img
 
-    image_like = document.createElement("img");
-    image_like.setAttribute("id", json[i]["product_id"]);
-    image_like.setAttribute("onclick", "editCard(this.id)");
-    image_like.setAttribute(
-      "src",
-      "../../Assets/images/icons8-edit-60-removebg-preview.png"
-    );
+    // image_like = document.createElement("img");
+    // image_like.setAttribute("id", json[i]["product_id"]);
+    // image_like.setAttribute("onclick", "editCard(this.id)");
+    // image_like.setAttribute(
+    //   "src",
+    //   "../../Assets/images/icons8-edit-60-removebg-preview.png"
+    // );
 
-    image_like.setAttribute("alt", "Like");
-    image_like.setAttribute("class", "icon-like");
-    image_like.setAttribute("width", "30px");
-    progress_span_tag.append(image_like);
+    // image_like.setAttribute("alt", "Like");
+    // image_like.setAttribute("class", "icon-like");
+    // image_like.setAttribute("width", "30px");
+    // progress_span_tag.append(image_like);
 
     // a
-    a_span_share = document.createElement("a");
-    a_span_share.setAttribute("href", "#");
-    progress_span_tag.append(a_span_share);
+    // a_span_share = document.createElement("a");
+    // a_span_share.setAttribute("href", "#");
+    // progress_span_tag.append(a_span_share);
 
     // img
     image_share = document.createElement("img");
@@ -275,7 +275,7 @@ for (let i = 0; i < json.length; i++) {
     image_share.setAttribute("class", "share");
     image_share.setAttribute("alt", "share");
     image_share.setAttribute("width", "30px");
-    a_span_share.append(image_share);
+    progress_span_tag.append(image_share);
 
     // <div class="amount">
     amount_sec = document.createElement("div");
@@ -319,19 +319,19 @@ for (let i = 0; i < json.length; i++) {
   }
 }
 
-function editCard(e) {
-  window.location.href = "../../webpage/header/edit.html";
-  let editArray = [];
-  let eId = e;
-  console.log(eId);
-  let editObject = {
-    product_id: eId,
-  };
+// function editCard(e) {
+//   window.location.href = "../../webpage/header/edit.html";
+//   let editArray = [];
+//   let eId = e;
+//   console.log(eId);
+//   let editObject = {
+//     product_id: eId,
+//   };
 
-  console.log(editObject);
+//   console.log(editObject);
 
-  editArray.push(editObject);
+//   editArray.push(editObject);
 
-  console.log(editArray);
-  localStorage.setItem("updateData", JSON.stringify(editArray));
-}
+//   console.log(editArray);
+//   localStorage.setItem("updateData", JSON.stringify(editArray));
+// }

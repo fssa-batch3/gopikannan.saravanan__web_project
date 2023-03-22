@@ -31,55 +31,15 @@
   </head>
   <body>
     <!--  header starts-->
-    <header>
-      <span class="menudiv">
-        <a class="menulink" onclick="togglemenu()"
-          ><img
-            class="menu"
-            src="../../Assets/images/menu (2).png"
-            alt="menu"
-            width="25" /></a
-      ></span>
-      <div class="image-txt">
-        <span
-          ><img
-            src="../../Assets/images/business-community.png"
-            alt="groupof people"
-            class="logo"
-        /></span>
-
-        <span class="name">People In Need</span>
-      </div>
-
-      <div class="nav">
-        <div id="sidebar" onclick="togglemenu()">
-          <a href="../../webpage/header/home.html" class="nav-anchor">Home</a>
-          <a href="../../webpage/donate/donate.html" class="nav-anchor donate"
-            >Donate</a
-          >
-          <a href="../../webpage/fundraiser/fundraiser.html" class="nav-anchor"
-            >Fundraise</a
-          >
-          <a href="../../webpage/header/about.html" class="nav-anchor">About</a>
-          <a href="../../webpage/header/contact.html" class="nav-anchor"
-            >Contact</a
-          >
-          <a href="../../webpage/header/profile.html" class="nav-anchor"
-            ><img
-              class="profile"
-              src="../../Assets/images/profile.png"
-              alt="profile"
-              width="30"
-              title="profile"
-          /></a>
-        </div>
-      </div>
-    </header>
+    <header></header>
     <!-- header ends -->
     <div class="profile-head">Profile Details</div>
     <!-- form -->
     <div class="container">
       <form id="profile_form">
+        <div class="input-div">
+          <label>ProfilePic:</label><input id="pic" type="text" />
+        </div>
         <div class="input-div">
           <label>Name:</label><input id="name" type="text" maxlength="20" />
         </div>
@@ -194,6 +154,8 @@
     </div>
     <!-- footer end -->
 
+    <script src="../../Assets/js/header.js"></script>
+
     <script>
       let email_check = JSON.parse(window.localStorage.getItem("login_user"));
       let details = JSON.parse(window.localStorage.getItem("userDetails"));
@@ -219,7 +181,7 @@
 
       form.addEventListener("submit", function (event) {
         event.preventDefault();
-
+        let user_pic = document.getElementById("pic").value;
         let user_name = document.getElementById("name").value;
         let user_phno = document.getElementById("phno").value;
         let user_mail = document.getElementById("email").value;
@@ -230,6 +192,7 @@
         let userifsc = document.getElementById("ifc").value;
 
         let newobj = {
+          user_pic,
           user_name,
           user_phno,
           user_mail,
@@ -246,17 +209,19 @@
 
         details[userindex] = merge;
 
-        window.localStorage.setItem("updateuser", JSON.stringify(details));
+        window.localStorage.setItem("userDetails", JSON.stringify(details));
         alert("Successfully updated your profile !!!");
       });
 
       let check = true;
       const profile_details = JSON.parse(
-        window.localStorage.getItem("updateuser")
+        window.localStorage.getItem("userDetails")
       );
-      let profile = profile_details.find(function (objuser) {
+      let profile_ = profile_details.find(function (objuser) {
         let mailcheck = objuser["user_mail"];
         if (email_check === mailcheck) {
+          let profilepic = (document.getElementById("pic").value =
+            objuser["user_pic"]);
           let username = (document.getElementById("name").value =
             objuser["user_name"]);
           let userphno = (document.getElementById("phno").value =

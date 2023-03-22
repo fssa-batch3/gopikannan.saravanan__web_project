@@ -87,6 +87,10 @@
         if (localStorage.getItem("userDetails") !== null) {
           user = JSON.parse(localStorage.getItem("userDetails"));
         }
+        // else {
+        //   alert("Fill in the details");
+        //   return;
+        // }
 
         const name = document.getElementById("name").value.trim();
         const mobileno = document.getElementById("mobileno").value.trim();
