@@ -19,7 +19,27 @@ CRUD For User signning page
 => Delete user details For deactivate [completed]
 
 CRUD For User Features page
-=> Create products card/list [completed]
-=> Read Product Data For card [completed]
-=> Update user details For card [completed]
-=> Deactivate Product details For Card [completed]
+=> Create fundraise card/list [completed]
+=> Read fundraise Data For card [completed]
+=> Update fundraise details For card [completed]
+=> Deactivate fundraise Card [completed]
+=> Details page for fundraise Card [completed]
+
+CRUD For donater comment module
+=> Create comment [completed]
+=> Read comment [completed]
+=> Update comment [completed]
+=> delete comment [completed]
+
+My donation module 
+=> Create donation [completed]
+=> Read donation [completed]
+=> Update donation [completed]
+=> delete donation [completed]
+
+Payment module
+=> Create paymnet [yet to finish]
+=> Read donation [[yet to finish]
+=> Update donation [[yet to finish]
+=> delete donation [[yet to finish]
+
