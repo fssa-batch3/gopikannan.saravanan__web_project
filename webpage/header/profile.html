@@ -37,6 +37,7 @@
     <!-- form -->
     <div class="container">
       <form id="profile_form">
+        <img id="profile" />
         <div class="input-div">
           <label>ProfilePic:</label><input id="pic" type="text" />
         </div>
@@ -177,6 +178,9 @@
       let userpwd = (document.getElementById("password").value =
         user_ob["user_pwd"]);
 
+      let profile_pic = document.getElementById("profile");
+      profile_pic.setAttribute("src", user_ob["user_pic"]);
+
       let form = document.getElementById("profile_form");
 
       form.addEventListener("submit", function (event) {
@@ -239,6 +243,10 @@
           let userifsc = (document.getElementById("ifc").value =
             objuser["userifsc"]);
         }
+        // if (typeof myValue === "undefined") {
+        //   // alert("Please fill in your details on your profile page.");
+        //   useraddress.innerText = "fill in the details";
+        // }
       });
 
       let delete_profile = document.getElementById("delete");

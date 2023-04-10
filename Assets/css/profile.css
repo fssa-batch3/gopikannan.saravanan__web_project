@@ -65,6 +65,13 @@ input {
   outline: none;
   border: none;
 }
+#profile {
+  float: center;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+}
 /* main content style ends */
 @media screen and (max-width: 1200px) {
   .profile-head {

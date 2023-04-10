@@ -12,6 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
       rel="stylesheet"
     />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -99,12 +100,22 @@
         const conpwd = document.getElementById("confirmpwd").value;
         const user_id = Date.now();
 
+        // to not to store null values
+        if (name == null || name == "") {
+          alert("Input field can't be left empty");
+          return;
+        }
+
+        // mail check
+
         for (let i = 0; i < user.length; i++) {
           if (email === user[i]["user_mail"]) {
             alert("Email is already in use");
             return;
           }
         }
+
+        // confirm password check
 
         if (password != conpwd) {
           alert("password doesn't match");
@@ -121,8 +132,8 @@
           user.push(objuser);
 
           localStorage.setItem("userDetails", JSON.stringify(user));
-          alert("User Added");
-          // window.location.href = "/index.html";
+
+          window.location.href = "/index.html";
         }
       };
     </script>

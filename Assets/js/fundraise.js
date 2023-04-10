@@ -28,7 +28,7 @@ for (let i = 0; i < json.length; i++) {
 
     let box;
     box = document.createElement("div");
-    box.setAttribute("class", "box1");
+    box.setAttribute("class", "box");
     box1andbox2.append(box);
 
     let anchorDonate;
@@ -144,10 +144,27 @@ for (let i = 0; i < json.length; i++) {
 
     document.querySelector(".container").append(box1andbox2);
 
-    // function redirect() {
-    //   window.location.href =
-    //     "../../webpage/donate/story.html?product_id=" + json[i]["product_id"];
-    // }
+    // searchbar feature function to query search
+
+    let inputSearch = document.getElementById("search");
+    const cards = document.getElementsByClassName("box");
+    let container_div = document.getElementById("container");
+    inputSearch.addEventListener("input", () => {
+      for (let i = 0; i < cards.length; i++) {
+        const element = cards[i];
+        if (
+          element.innerHTML
+            .toLowerCase()
+            .includes(inputSearch.value.toLowerCase())
+        ) {
+          element.style.display = "block";
+        } else {
+          element.style.display = "none";
+          // container_div.innerHTML = "No Items Found";
+        }
+      }
+    });
+    // searchbar feature function to query search
   }
 
   function editCard(e) {

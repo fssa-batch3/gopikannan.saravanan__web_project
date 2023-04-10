@@ -90,16 +90,16 @@ inputSearch.setAttribute("placeholder", "Search by name,location,cause...");
 inputSearch.setAttribute("name", "search");
 document.querySelector(".search").append(inputSearch);
 
-let sumbitBtn;
-sumbitBtn = document.createElement("button");
-sumbitBtn.setAttribute("type", "submit");
-document.querySelector(".search").append(sumbitBtn);
+// let sumbitBtn;
+// sumbitBtn = document.createElement("button");
+// sumbitBtn.setAttribute("type", "submit");
+// document.querySelector(".search").append(sumbitBtn);
 
-let searchIcon;
-searchIcon = document.createElement("i");
-searchIcon.setAttribute("class", "fa fa-search");
-searchIcon.setAttribute("width", "20px");
-sumbitBtn.append(searchIcon);
+// let searchIcon;
+// searchIcon = document.createElement("i");
+// searchIcon.setAttribute("class", "fa fa-search");
+// searchIcon.setAttribute("width", "20px");
+// sumbitBtn.append(searchIcon);
 
 let dropDiv;
 dropDiv = document.createElement("div");
@@ -161,13 +161,10 @@ for (let i = 0; i < json.length; i++) {
   let b_tag;
   let progress_tag;
   let progress_span_tag;
-  let image_like;
-  let a_span_share;
   let image_share;
   let amount_sec;
   let txt_amount;
   let cash;
-  let count;
   let user_div;
   let user_name;
   let nameFundraise;
@@ -250,26 +247,6 @@ for (let i = 0; i < json.length; i++) {
     progress_div.append(progress_span_tag);
 
     // img
-
-    // image_like = document.createElement("img");
-    // image_like.setAttribute("id", json[i]["product_id"]);
-    // image_like.setAttribute("onclick", "editCard(this.id)");
-    // image_like.setAttribute(
-    //   "src",
-    //   "../../Assets/images/icons8-edit-60-removebg-preview.png"
-    // );
-
-    // image_like.setAttribute("alt", "Like");
-    // image_like.setAttribute("class", "icon-like");
-    // image_like.setAttribute("width", "30px");
-    // progress_span_tag.append(image_like);
-
-    // a
-    // a_span_share = document.createElement("a");
-    // a_span_share.setAttribute("href", "#");
-    // progress_span_tag.append(a_span_share);
-
-    // img
     image_share = document.createElement("img");
     image_share.setAttribute("src", "../../Assets/images/share.png");
     image_share.setAttribute("class", "share");
@@ -316,6 +293,24 @@ for (let i = 0; i < json.length; i++) {
 
     // console.log(json);
     document.querySelector(".container").append(card_div);
+
+    const cards = document.getElementsByClassName("box");
+    let container_div = document.getElementById("container");
+    inputSearch.addEventListener("input", () => {
+      for (let i = 0; i < cards.length; i++) {
+        const element = cards[i];
+        if (
+          element.innerHTML
+            .toLowerCase()
+            .includes(inputSearch.value.toLowerCase())
+        ) {
+          element.style.display = "block";
+        } else {
+          element.style.display = "none";
+          // container_div.innerHTML = "No Items Found";
+        }
+      }
+    });
   }
 }
 

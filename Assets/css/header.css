@@ -52,6 +52,9 @@ header {
   font-weight: bold;
   display: inline-block;
 }
+.profile {
+  cursor: pointer;
+}
 .nav a:hover {
   color: var(--toggle-color);
   background-color: var(--body-text-color);

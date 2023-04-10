@@ -157,7 +157,9 @@ body {
 }
 .rs {
   margin-top: 30px;
-  margin-left: 40%;
+  /* margin-left: 40%; */
+  position: relative;
+  left: 30%;
   font-weight: bold;
   font-size: 18px;
 }
@@ -185,6 +187,12 @@ body {
     justify-content: center;
     align-items: center;
   }
+  .rs {
+    margin-top: 30px;
+    left: 20%;
+    font-weight: bold;
+    font-size: 18px;
+  }
 }
 @media screen and (max-width: 450px) {
   .second-box {
@@ -193,7 +201,7 @@ body {
   }
   .rs {
     margin-top: 30px;
-    margin-left: 29%;
+    left: 20%;
     font-weight: bold;
     font-size: 18px;
   }

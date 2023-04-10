@@ -462,6 +462,7 @@ for (let i = 0; i < comment.length; i++) {
 //   document.getElementById("editfieldset").classList.toggle("active");
 // }
 
+// to edit the comment
 function edit(id) {
   console.log(id);
   window.localStorage.setItem("commentId", JSON.stringify(id));
@@ -553,6 +554,7 @@ function sendedit() {
   location.reload();
 }
 
+// to delete the comment
 function del(commentid) {
   let commentINdex = userallComments.indexOf(Com);
 
@@ -835,5 +837,7 @@ function del(commentid) {
 // document.querySelector(".second-container").append(supporterbox);
 
 function paymentpage() {
-  window.location.href = "../../webpage/donate/payment1stpage.html";
+  window.location.href =
+    "../../webpage/donate/payment1stpage.html?product_id=" +
+    fundraiseDetails["product_id"];
 }

@@ -38,7 +38,7 @@
   <body>
     <!-- header starts -->
     <header>
-      <span class="menudiv">
+      <!-- <span class="menudiv">
         <a class="menulink" onclick="togglemenu()"
           ><img
             class="menu"
@@ -78,7 +78,7 @@
               title="profile"
           /></a>
         </div>
-      </div>
+      </div> -->
     </header>
 
     <!-- header end -->
@@ -423,61 +423,61 @@
 
     <script>
       let json = [
-        {
-          img: "https://cimages.milaap.org/milaap/image/upload/c_fill,h_452,w_603/v1667841206/production/images/campaign/587864/IMG20221009062455_ovmi0x_1667842343.jpg",
-          alt: "education",
-          title: "Help me study to win in life",
-          amount_raised: 600000,
-          expected_amt: 3000000,
-          supporters: 550,
-          fundraiser: "Kumar",
-        },
-        {
-          img: "https://cimages.milaap.org/milaap/image/upload/c_fill,h_452,w_603/v1663057048/production/images/campaign/562956/Divyam_4_luynfw_1663057051.jpg",
-          alt: "baby",
-          title: "Help Divyam Fight From Leukaemia",
-          amount_raised: 1300000,
-          expected_amt: 5000000,
-          supporters: 350,
-          fundraiser: "Ajay",
-        },
-        {
-          img: "https://kettocdn.gumlet.io/media/campaign/625000/625122/image/627fff291f29d.png?w=768&dpr=1.5",
-          alt: "school for special needs ",
-          title: "School For Special Needs",
-          amount_raised: 463521,
-          expected_amt: 1000000,
-          supporters: 240,
-          fundraiser: "Ram",
-        },
-        {
-          img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSowM5xzcQl9XbrUJsI29z-cEaJK-BXh69GSA&usqp=CAU",
-          alt: "babyemerg",
-          title:
-            "My Baby Battles For His Life And We Need Your Support To Save Him",
-          amount_raised: 363521,
-          expected_amt: 500000,
-          supporters: 482,
-          fundraiser: "Somu",
-        },
-        {
-          img: "https://cdn.shopify.com/s/files/1/0086/0795/7054/files/street_dog_5.jpg?v=1645437822",
-          alt: "shelter for dog",
-          title: "HELP US BUILD A SHELTER HOME",
-          amount_raised: 158152,
-          expected_amt: 700000,
-          supporters: 50,
-          fundraiser: "Veera",
-        },
-        {
-          img: "https://kettocdn.gumlet.io/media/campaign/180000/180773/image/6089ceb85c0bd.jpeg?w=768&dpr=1.5",
-          alt: "food distribution",
-          title: "Feeding From Far-Ration Distribution Amid Lockdown",
-          amount_raised: 8000000,
-          expected_amt: 10000000,
-          supporters: 9716,
-          fundraiser: "Pooja",
-        },
+        // {
+        //   img: "https://cimages.milaap.org/milaap/image/upload/c_fill,h_452,w_603/v1667841206/production/images/campaign/587864/IMG20221009062455_ovmi0x_1667842343.jpg",
+        //   alt: "education",
+        //   title: "Help me study to win in life",
+        //   amount_raised: 600000,
+        //   expected_amt: 3000000,
+        //   supporters: 550,
+        //   fundraiser: "Kumar",
+        // },
+        // {
+        //   img: "https://cimages.milaap.org/milaap/image/upload/c_fill,h_452,w_603/v1663057048/production/images/campaign/562956/Divyam_4_luynfw_1663057051.jpg",
+        //   alt: "baby",
+        //   title: "Help Divyam Fight From Leukaemia",
+        //   amount_raised: 1300000,
+        //   expected_amt: 5000000,
+        //   supporters: 350,
+        //   fundraiser: "Ajay",
+        // },
+        // {
+        //   img: "https://kettocdn.gumlet.io/media/campaign/625000/625122/image/627fff291f29d.png?w=768&dpr=1.5",
+        //   alt: "school for special needs ",
+        //   title: "School For Special Needs",
+        //   amount_raised: 463521,
+        //   expected_amt: 1000000,
+        //   supporters: 240,
+        //   fundraiser: "Ram",
+        // },
+        // {
+        //   img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSowM5xzcQl9XbrUJsI29z-cEaJK-BXh69GSA&usqp=CAU",
+        //   alt: "babyemerg",
+        //   title:
+        //     "My Baby Battles For His Life And We Need Your Support To Save Him",
+        //   amount_raised: 363521,
+        //   expected_amt: 500000,
+        //   supporters: 482,
+        //   fundraiser: "Somu",
+        // },
+        // {
+        //   img: "https://cdn.shopify.com/s/files/1/0086/0795/7054/files/street_dog_5.jpg?v=1645437822",
+        //   alt: "shelter for dog",
+        //   title: "HELP US BUILD A SHELTER HOME",
+        //   amount_raised: 158152,
+        //   expected_amt: 700000,
+        //   supporters: 50,
+        //   fundraiser: "Veera",
+        // },
+        // {
+        //   img: "https://kettocdn.gumlet.io/media/campaign/180000/180773/image/6089ceb85c0bd.jpeg?w=768&dpr=1.5",
+        //   alt: "food distribution",
+        //   title: "Feeding From Far-Ration Distribution Amid Lockdown",
+        //   amount_raised: 8000000,
+        //   expected_amt: 10000000,
+        //   supporters: 9716,
+        //   fundraiser: "Pooja",
+        // },
       ];
       let create_card = JSON.parse(localStorage.getItem("carddetails"));
       console.log(create_card);
@@ -768,5 +768,6 @@
         localStorage.setItem("updateData", JSON.stringify(editArray));
       }
     </script>
+    <script src="../../Assets/js/header.js"></script>
   </body>
 </html>

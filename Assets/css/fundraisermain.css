@@ -92,7 +92,7 @@ button[type="submit"] {
   color: var(--toggle-color);
 }
 
-.box1 {
+.box {
   width: 350px;
   height: 470px;
   background-color: white;

@@ -1,5 +1,15 @@
+let allarray = JSON.parse(window.localStorage.getItem("userDetails"));
 let userId = JSON.parse(window.localStorage.getItem("userID"));
-console.log(userId);
+console.log(allarray);
+let user = allarray.find(function (profile) {
+  let user_profile = profile["userid"];
+  console.log(user_profile);
+  if (user_profile == userId) {
+    return true;
+  }
+});
+
+console.log(user);
 
 let spanMenu;
 spanMenu = document.createElement("span");
@@ -94,7 +104,7 @@ divSidebar.append(contact);
 let imgProfile;
 imgProfile = document.createElement("img");
 imgProfile.setAttribute("class", "profile");
-imgProfile.setAttribute("src", "../../Assets/images/profile.png");
+imgProfile.setAttribute("src", user["user_pic"]);
 imgProfile.setAttribute("alt", "Profile");
 imgProfile.setAttribute("width", "30");
 imgProfile.setAttribute("title", "profile");
