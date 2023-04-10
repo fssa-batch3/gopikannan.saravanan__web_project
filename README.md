@@ -31,7 +31,7 @@ CRUD For donater comment module
 => Update comment [completed]
 => delete comment [completed]
 
-My donation module 
+My donation module
 => Create donation [completed]
 => Read donation [completed]
 => Update donation [completed]
@@ -39,7 +39,6 @@ My donation module
 
 Payment module
 => Create paymnet [yet to finish]
-=> Read donation [[yet to finish]
-=> Update donation [[yet to finish]
-=> delete donation [[yet to finish]
-
+=> Read donation [yet to finish]
+=> Update donation [yet to finish]
+=> delete donation [yet to finish]
