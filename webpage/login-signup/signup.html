@@ -24,19 +24,19 @@
     <div class="main">
       <div class="signup">
         <label>Sign up</label>
-        <form id="form">
+        <form id="form" action="/index.html">
           <input
             type="text"
             id="name"
             placeholder="User name"
-            pattern="[A-Za-z]{1,20}"
+            pattern="[A-Za-z]{3,20}"
             required
           />
           <input
             type="text"
             id="mobileno"
             placeholder="Mobile number"
-            pattern="[0-9]{1,10}"
+            pattern="[0-9]{10}"
             title=" Phone number must have 10 digits"
             maxlength="10"
             required
@@ -52,8 +52,8 @@
           <input
             type="password"
             id="password"
-            pattern="[a-zA-Z0-9]{0,9}"
-            title="Password must have(UpperCase, LowerCase, Number/SpecialChar and min 8 Chars)"
+            pattern="[A-Za-z0-9]{8,12}"
+            title="Password must have(UpperCase, LowerCase, Number and min 8 Chars)"
             placeholder="Password"
             maxlength="8"
             required
@@ -62,37 +62,16 @@
             id="confirmpwd"
             type="password"
             placeholder="Confirm password"
-            pattern="[a-zA-Z0-9]{0,9}"
-            maxlength="8"
+            pattern="[A-Za-z0-9]{8,12}"
             required
           />
-          <!-- <input
-            id="acc"
-            type="text"
-            placeholder="Account Number"
-            required="true"
-          />
-          <input type="text" id="accname" placeholder="Bank Name" required />
-          <input type="text" id="ifc" placeholder="IFSC code" required /> -->
-
-          <button id="log-in">Sign up</button>
+          <button id="log-in" onclick="login()">Sign up</button>
         </form>
       </div>
     </div>
     <script>
-      // let form = document.getElementById("form");
-      let user = [];
-      // declaring array outside a
-
-      document.getElementById("log-in").onclick = function () {
-        if (localStorage.getItem("userDetails") !== null) {
-          user = JSON.parse(localStorage.getItem("userDetails"));
-        }
-        // else {
-        //   alert("Fill in the details");
-        //   return;
-        // }
-
+      function login() {
+        // e.preventDefault();
         const name = document.getElementById("name").value.trim();
         const mobileno = document.getElementById("mobileno").value.trim();
         const email = document.getElementById("email").value.trim();
@@ -107,35 +86,42 @@
         }
 
         // mail check
-
-        for (let i = 0; i < user.length; i++) {
-          if (email === user[i]["user_mail"]) {
-            alert("Email is already in use");
-            return;
-          }
-        }
-
+        let user = [];
         // confirm password check
 
         if (password != conpwd) {
           alert("password doesn't match");
           return;
         } else {
+          for (let i = 0; i < user.length; i++) {
+            if (email === user[i]["user_mail"]) {
+              alert("Email is already in use");
+              return;
+            }
+          }
+          if (localStorage.getItem("userDetails") !== null) {
+            user = JSON.parse(localStorage.getItem("userDetails"));
+          }
+
           let objuser = {
             user_name: name,
             user_phno: mobileno,
             user_mail: email,
             user_pwd: password,
             userid: user_id,
+            user_pic: "fill in the details",
+            useraddress: "fill in the details",
+            useracco: "fill in the details",
+            userbankname: "fill in the details",
+            userifsc: "fill in the details",
           };
 
           user.push(objuser);
-
           localStorage.setItem("userDetails", JSON.stringify(user));
-
+          alert("User Added");
           window.location.href = "/index.html";
         }
-      };
+      }
     </script>
   </body>
 </html>

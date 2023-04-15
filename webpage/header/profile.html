@@ -163,6 +163,7 @@
 
       let user_ob = details.find(function (objuser) {
         let mailcheck = objuser["user_mail"];
+        console.log(mailcheck);
         if (email_check === mailcheck) {
           return true;
         }
@@ -215,6 +216,7 @@
 
         window.localStorage.setItem("userDetails", JSON.stringify(details));
         alert("Successfully updated your profile !!!");
+        location.reload();
       });
 
       let check = true;
@@ -246,6 +248,7 @@
         // if (typeof myValue === "undefined") {
         //   // alert("Please fill in your details on your profile page.");
         //   useraddress.innerText = "fill in the details";
+
         // }
       });
 

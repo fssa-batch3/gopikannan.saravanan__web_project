@@ -84,15 +84,34 @@
       <form>
         <div class="input-div">
           <label>Name:</label>
-          <input type="text" id="name" placeholder="Enter your name" />
+          <input
+            type="text"
+            id="name"
+            placeholder="Enter your name"
+            pattern="[A-Za-z]{3,20}"
+            maxlength="20"
+            required
+          />
         </div>
         <div class="input-div">
           <label>Email ID:</label>
-          <input type="email" id="email" placeholder="Enter your email id" />
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your email id"
+            title="Enter the correct email"
+          />
         </div>
         <div class="input-div">
           <label>Phone Number:</label>
-          <input type="tel" id="mobileno" placeholder="Enter your Ph no" />
+          <input
+            type="text"
+            id="mobileno"
+            placeholder="Enter your Ph no"
+            pattern="[0-9]{10}"
+            maxlength="10"
+            title=" Phone number must have 10 digits"
+          />
         </div>
         <div class="input-div">
           <label>I am raising fund for:</label>
@@ -103,7 +122,13 @@
           </select>
         </div>
         <div class="input-div">
-          <label>Address:</label><input id="address" type="text" />
+          <label>Address:</label
+          ><input
+            id="address"
+            type="text"
+            pattern="[a-zA-Z0-9]{8,200}"
+            maxlength="200"
+          />
         </div>
 
         <div class="input-div">
@@ -112,7 +137,12 @@
         </div>
         <div class="input-div">
           <label>Title:</label>
-          <input id="title" type="text" />
+          <input
+            id="title"
+            type="text"
+            pattern="[a-zA-Z0-9]{8,100}"
+            maxlength="100"
+          />
         </div>
         <div class="input-div">
           <label>Name:</label>
@@ -120,6 +150,8 @@
             id="name_hos"
             type="text"
             placeholder="Hospital,School,organization name"
+            pattern="[a-zA-Z0-9]{8,100}"
+            maxlength="100"
           />
         </div>
         <div class="input-div">
@@ -128,6 +160,8 @@
             id="location2"
             type="text"
             placeholder="Hospital,School,organization location"
+            pattern="[a-zA-Z0-9]{8,100}"
+            maxlength="100"
           />
         </div>
         <div class="input-div">
@@ -135,6 +169,7 @@
           <input
             id="storySum"
             type="text"
+            maxlength="100"
             placeholder="Write your summary of your story"
           />
         </div>
@@ -144,6 +179,7 @@
             value="Our school..."
             name="story"
             id="story"
+            maxlength="500"
             rows="5"
             placeholder="Write about who is this fundraiser for How/Why/When  do you need funds what is the purpose..."
           ></textarea>
@@ -154,11 +190,27 @@
         </div>
         <div class="input-div">
           <label>I want to raise the amount Rs:</label>
-          <input id="amount" type="text" />
+          <input
+            id="amount"
+            type="text"
+            placeholder="Expected amount"
+            title="Enter only the amount only in numbers"
+            pattern="[0-9]{5,20}"
+            maxlength="20"
+            required
+          />
         </div>
         <div class="input-div">
           <label>I want to raise the amount Rs:</label>
-          <input id="amount_raised" type="text" placeholder="amount_raised" />
+          <input
+            id="amount_raised"
+            type="text"
+            pattern="[0-9]{5,20}"
+            maxlength="20"
+            title="Enter only the amount only in numbers"
+            placeholder="amount_raised"
+            required
+          />
         </div>
         <div class="input-div">
           <label>Your UPI url:</label>

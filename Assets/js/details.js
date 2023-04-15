@@ -1,21 +1,4 @@
-let support_arr;
-
-let json = [
-  {
-    img: "https://cimages.milaap.org/milaap/image/upload/c_fill,h_452,w_603/v1667841206/production/images/campaign/587864/IMG20221009062455_ovmi0x_1667842343.jpg",
-    alt: "education",
-    title: "Help me study to win in life",
-    percent: 20,
-    story_txt:
-      "Pavneeta and Sumeet are supporting an NGO called Shishu Mangal Orphanage in Tellapur, Hyderabad.\n Its run by Dr Sreenivas, a courageous young yoga teacher who manages to light up the life of 37 young minds\n",
-    story_more:
-      "Despite having hardly any resources and is now struggling to pay their school fees.\n Most of the children are girls from nursery to Class X.\n\nThere are so many needs of these children that go unfulfilled and our heart goes out to the solo effort of of one man.\n\n We believe if privileged citizens can fund their school fee, then few of us can work on their health, living hygiene and overall wellbeing.\n\nThey study in a school in Lingampally.\n Average fee per child is INR 36,000/- per annum.\n While any financial support is welcome, We would prefer if you can sponsor one child for a period of two years.\n However, any help is welcome at the stage they are in.\nAttached is the list of children, with names.\n Once you donate, you can write to me the name of child you wish to support and interest to meet up periodically.\n\n Would be happy to organize.\nThank you and God bless,",
-    amount_raised: 600000,
-    expected_amt: 3000000,
-    supporters: 550,
-    fundraiser: "Kumar",
-  },
-];
+let json = [];
 
 const Pid = window.location.search;
 const idParams = new URLSearchParams(Pid);
@@ -173,22 +156,22 @@ btnview.setAttribute("onclick", "myFunction()");
 btnview.innerText = "View More";
 viewmoreBtn.append(btnview);
 
-let user;
-user = document.createElement("div");
-user.setAttribute("class", "user");
-content.append(user);
+let user1;
+user1 = document.createElement("div");
+user1.setAttribute("class", "user");
+content.append(user1);
 
 let nameLabel;
 nameLabel = document.createElement("span");
 nameLabel.setAttribute("class", "name-label");
 nameLabel.innerHTML = "Created by" + "&nbsp";
-user.append(nameLabel);
+user1.append(nameLabel);
 
 let userName;
 userName = document.createElement("span");
 userName.setAttribute("class", "name");
 userName.innerText = fundraiseDetails["fundraiser"];
-user.append(userName);
+user1.append(userName);
 
 // document.querySelector(".content-supporter-container").append(content);
 

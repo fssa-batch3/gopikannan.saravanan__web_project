@@ -26,13 +26,12 @@
     <title>PIN login page</title>
   </head>
   <body>
-    <a href="./webpage/login-signup/login-signup.html"></a>
     <div class="h1">Welcome To PIN (People in Need)</div>
     <div class="h1-txt">India's No 1 Crowdfunding Platform</div>
 
     <div class="main" style="height: 580px">
       <div class="login">
-        <form id="form">
+        <form id="form" action="./webpage/login-signup/signup.html">
           <label>Login</label>
           <input id="email" type="email" placeholder="Email" required />
 
@@ -51,7 +50,7 @@
           <!-- </a> -->
           <br /><br />
           <a
-            href="./webpage/login-signup/login-signup.html"
+            href="./webpage/login-signup/signup.html"
             style="padding-left: 30px; color: blueviolet; text-decoration: none"
             >Don't have an account register here</a
           >
@@ -103,9 +102,10 @@
           window.location.href = "./webpage/header/home.html";
         } else {
           alert("User credential does not match");
-          window.location.href = "./webpage/login-signup/login-signup.html";
+          window.location.href = "./webpage/login-signup/signup.html";
         }
       }
     </script>
   </body>
 </html>
+<a href="./webpage/login-signup/signup.html"></a>

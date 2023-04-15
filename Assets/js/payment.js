@@ -37,9 +37,6 @@ console.log(userdetailsfind);
 let paymentarr = [];
 
 function debitcard() {
-  if (localStorage.getItem("donerDonatedetails") !== null) {
-    paymentarr = JSON.parse(localStorage.getItem("donerDonatedetails"));
-  }
   const fundraiseimg = fundraiseDetails["img"];
   const fundraiseTitle = fundraiseDetails["title"];
   const fundraiseName = fundraiseDetails["fundraiser"];
@@ -52,6 +49,10 @@ function debitcard() {
   const donaterContribution = document.getElementById("Contribution").value;
   const paymentThrough = "debitcard";
   const paymentId = Date.now();
+
+  if (donaterContribution == "" || donaterContribution == null) {
+    return;
+  }
 
   let paymentContri = {
     fundraiseimg: fundraiseimg,
@@ -67,12 +68,28 @@ function debitcard() {
     paymentThrough: paymentThrough,
     paymentId: paymentId,
   };
+
   if (window.localStorage.getItem("donerDonatedetails") !== null) {
     paymentarr = JSON.parse(localStorage.getItem("donerDonatedetails"));
   }
   paymentarr.push(paymentContri);
 
   window.localStorage.setItem("donerDonatedetails", JSON.stringify(paymentarr));
+}
+function el() {
+  let payment = JSON.parse(localStorage.getItem("donerDonatedetails"));
+  console.log(payment);
+  for (let i = 0; i < payment.length; i++) {
+    const element = payment[payment.length - 1]["paymentId"];
+    console.log(element);
+    window.localStorage.setItem("paymentid", JSON.stringify(element));
+  }
+  const donaterContribution = document.getElementById("Contribution").value;
+  if (donaterContribution == "" || donaterContribution == null) {
+    alert("Fill your contribution for the next process");
+    return;
+  }
+  window.location.href = "../../webpage/fundraiser/debitcard.html";
 }
 
 function dirdectbank() {
