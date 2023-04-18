@@ -17,7 +17,7 @@ for (let i = 0; i < json.length; i++) {
   let expected_amount = json[i]["expected_amt"];
   let percentage = Math.floor((amount_raised / expected_amount) * 100);
 
-  if (amount_raised == expected_amount || amount >= expected_amount) {
+  if (amount_raised == expected_amount || amount_raised >= expected_amount) {
     json[i]["amout"] = "reached";
   }
 
