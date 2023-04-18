@@ -91,10 +91,17 @@
 
       <!-- Buttons-sec -->
       <div class="donate-sec">
-        <button id="debit" onclick="debitcard(),el()" class="donate-btn">
+        <button
+          id="debit"
+          onclick="debitcard(),paymentid(),addAmount()"
+          class="donate-btn"
+        >
           Donate Using Debit Card
         </button>
-        <button onclick="dirdectbank()" class="banktransfer">
+        <button
+          onclick="dirdectbank(),paymentDBid(),addAmount()"
+          class="banktransfer"
+        >
           Donate Using Direct Bank Transfer
         </button>
       </div>
@@ -177,6 +184,7 @@
             ><img
               class="logo-icon"
               src="../../Assets/images/youtube.png"
+              0
               alt="youtubr"
           /></a>
         </div>

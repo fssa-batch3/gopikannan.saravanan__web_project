@@ -36,11 +36,13 @@ console.log(userdetailsfind);
 
 let paymentarr = [];
 
+// function to store the donor donate details
 function debitcard() {
   const fundraiseimg = fundraiseDetails["img"];
   const fundraiseTitle = fundraiseDetails["title"];
   const fundraiseName = fundraiseDetails["fundraiser"];
   const fundraiseId = fundraiseDetails["product_id"];
+  const fundraiserUserid = fundraiseDetails["userId"];
   const fundraiseAmountraise = fundraiseDetails["amount_raised"];
   const fundraiseExpectedamount = fundraiseDetails["expected_amt"];
   const donaterName = userdetailsfind["user_name"];
@@ -49,6 +51,8 @@ function debitcard() {
   const donaterContribution = document.getElementById("Contribution").value;
   const paymentThrough = "debitcard";
   const paymentId = Date.now();
+
+  console.log(fundraiserUserid);
 
   if (donaterContribution == "" || donaterContribution == null) {
     return;
@@ -59,6 +63,7 @@ function debitcard() {
     fundraiseTitle: fundraiseTitle,
     fundraiseName: fundraiseName,
     fundraiseId: fundraiseId,
+    fundraiserUserid: fundraiserUserid,
     fundraiseAmountraise: fundraiseAmountraise,
     fundraiseExpectedamount: fundraiseExpectedamount,
     donaterName: donaterName,
@@ -76,7 +81,120 @@ function debitcard() {
 
   window.localStorage.setItem("donerDonatedetails", JSON.stringify(paymentarr));
 }
-function el() {
+
+// function to store the payment id
+function paymentid() {
+  let payment = JSON.parse(localStorage.getItem("donerDonatedetails"));
+
+  for (let i = 0; i < payment.length; i++) {
+    const element = payment[payment.length - 1]["paymentId"];
+
+    window.localStorage.setItem("paymentid", JSON.stringify(element));
+  }
+
+  const donaterContribution = document.getElementById("Contribution").value;
+  if (donaterContribution == "" || donaterContribution == null) {
+    alert("Fill your contribution for the next process");
+    return;
+  }
+
+  // window.location.href = "../../webpage/fundraiser/debitcard.html";
+}
+
+// function to add the contribution in the card after each contribution by the donater
+function addAmount() {
+  let card = JSON.parse(window.localStorage.getItem("carddetails"));
+  let donerdetails = JSON.parse(localStorage.getItem("donerDonatedetails"));
+  let paymentid = JSON.parse(localStorage.getItem("paymentid"));
+  // console.log(paymentid);
+  let donaorgetdetails = donerdetails.find(function (id) {
+    let payment = id["paymentId"];
+    if (paymentid == payment) {
+      return true;
+    }
+  });
+  console.log(donaorgetdetails);
+
+  let carddetails = card.find(function (details) {
+    let cardid = details["product_id"];
+    let donor_fundraiseid = donaorgetdetails["fundraiseId"];
+    if (cardid == donor_fundraiseid) {
+      return true;
+    }
+  });
+  //original object
+  let wholecard = card.find(function (details) {
+    let cardid = details["product_id"];
+    let donor_fundraiseid = donaorgetdetails["fundraiseId"];
+    if (cardid == donor_fundraiseid) {
+      return true;
+    }
+  });
+  console.log(wholecard);
+
+  const amountraise = parseInt(carddetails["amount_raised"]);
+  const donorcontribution = parseInt(donaorgetdetails["donaterContribution"]);
+  carddetails["amount_raised"] = donorcontribution + amountraise;
+
+  let detailscard = Object.assign(wholecard, carddetails);
+  console.log(detailscard);
+
+  console.log(carddetails["amount_raised"]);
+  console.log(carddetails);
+  let details = card.indexOf(wholecard);
+  console.log(details);
+  card[details] = detailscard;
+
+  localStorage.setItem("carddetails", JSON.stringify(card));
+}
+
+// function to store the donor donate details
+function dirdectbank() {
+  const fundraiseimg = fundraiseDetails["img"];
+  const fundraiseTitle = fundraiseDetails["title"];
+  const fundraiseName = fundraiseDetails["fundraiser"];
+  const fundraiseId = fundraiseDetails["product_id"];
+  const fundraiserUserid = fundraiseDetails["userId"];
+  const fundraiseAmountraise = fundraiseDetails["amount_raised"];
+  const fundraiseExpectedamount = fundraiseDetails["expected_amt"];
+  const donaterName = userdetailsfind["user_name"];
+  const donaterpic = userdetailsfind["user_pic"];
+  const donaterid = userdetailsfind["userid"];
+  const donaterContribution = document.getElementById("Contribution").value;
+  const paymentThrough = "Direct_bank_transfer";
+  const paymentId = Date.now();
+  console.log(fundraiserUserid);
+
+  if (donaterContribution == "" || donaterContribution == null) {
+    return;
+  }
+
+  let paymentContri = {
+    fundraiseimg: fundraiseimg,
+    fundraiseTitle: fundraiseTitle,
+    fundraiseName: fundraiseName,
+    fundraiseId: fundraiseId,
+    fundraiserUserid: fundraiserUserid,
+    fundraiseAmountraise: fundraiseAmountraise,
+    fundraiseExpectedamount: fundraiseExpectedamount,
+    donaterName: donaterName,
+    donaterid: donaterid,
+    donaterpic: donaterpic,
+    donaterContribution: donaterContribution,
+    paymentThrough: paymentThrough,
+    paymentId: paymentId,
+  };
+
+  if (window.localStorage.getItem("donerDonatedetails") !== null) {
+    paymentarr = JSON.parse(localStorage.getItem("donerDonatedetails"));
+  }
+  paymentarr.push(paymentContri);
+  window.localStorage.setItem("donerDonatedetails", JSON.stringify(paymentarr));
+}
+
+// function to store the paymentid
+
+function paymentDBid() {
   let payment = JSON.parse(localStorage.getItem("donerDonatedetails"));
   console.log(payment);
   for (let i = 0; i < payment.length; i++) {
@@ -89,41 +207,9 @@ function el() {
     alert("Fill your contribution for the next process");
     return;
   }
-  window.location.href = "../../webpage/fundraiser/debitcard.html";
-}
-
-function dirdectbank() {
-  const fundraiseimg = fundraiseDetails["img"];
-  const fundraiseTitle = fundraiseDetails["title"];
-  const fundraiseName = fundraiseDetails["fundraiser"];
-  const fundraiseId = fundraiseDetails["product_id"];
-  const fundraiseAmountraise = fundraiseDetails["amount_raised"];
-  const fundraiseExpectedamount = fundraiseDetails["expected_amt"];
-  const donaterName = userdetailsfind["user_name"];
-  const donaterpic = userdetailsfind["user_pic"];
-  const donaterid = userdetailsfind["userid"];
-  const donaterContribution = document.getElementById("Contribution").value;
-  const paymentThrough = "Direct_bank_transfer";
-  const paymentId = Date.now();
-
-  let paymentContri = {
-    fundraiseimg: fundraiseimg,
-    fundraiseTitle: fundraiseTitle,
-    fundraiseName: fundraiseName,
-    fundraiseId: fundraiseId,
-    fundraiseAmountraise: fundraiseAmountraise,
-    fundraiseExpectedamount: fundraiseExpectedamount,
-    donaterName: donaterName,
-    donaterid: donaterid,
-    donaterpic: donaterpic,
-    donaterContribution: donaterContribution,
-    paymentThrough: paymentThrough,
-    paymentId: paymentId,
-  };
-
-  if (window.localStorage.getItem("donerDonatedetails") !== null) {
-    paymentarr = JSON.parse(localStorage.getItem("donerDonatedetails"));
-  }
-  paymentarr.push(paymentContri);
-  window.localStorage.setItem("donerDonatedetails", JSON.stringify(paymentarr));
+  window.location.href =
+    "../../webpage/fundraiser/directbanktransfer.html?fundraiseUserID=" +
+    fundraiseDetails["userId"] +
+    "&donaterUserId=" +
+    userdetailsfind["userid"];
 }

@@ -170,9 +170,10 @@ for (let i = 0; i < json.length; i++) {
   let nameFundraise;
 
   // TO GET PERCENTAGE OF A CARD
-  let amount = json[i]["amount_raised"];
+  let amount = parseInt(json[i]["amount_raised"]);
 
-  let expected_amount = json[i]["expected_amt"];
+  let expected_amount = parseInt(json[i]["expected_amt"]);
+  // console.log(expected_amount);
 
   let jsonCause = json[i]["drop"];
   console.log(jsonCause);
@@ -180,7 +181,7 @@ for (let i = 0; i < json.length; i++) {
   let percentage = Math.floor((amount / expected_amount) * 100);
 
   // TO CLOSE A CARD WHEN ITS EXPECTED AMOUNT REACHED
-  if (amount == expected_amount) {
+  if (amount == expected_amount || amount >= expected_amount) {
     json[i]["amout"] = "reached";
   }
   // console.log(json[i]["amout"]);

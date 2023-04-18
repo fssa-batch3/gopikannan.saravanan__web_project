@@ -126,7 +126,7 @@
           ><input
             id="address"
             type="text"
-            pattern="[a-zA-Z0-9]{8,200}"
+            pattern="[a-zA-Z0-9]{4,200}"
             maxlength="200"
           />
         </div>
@@ -140,7 +140,7 @@
           <input
             id="title"
             type="text"
-            pattern="[a-zA-Z0-9]{8,100}"
+            pattern="[a-zA-Z0-9]{4,100}"
             maxlength="100"
           />
         </div>
@@ -150,7 +150,7 @@
             id="name_hos"
             type="text"
             placeholder="Hospital,School,organization name"
-            pattern="[a-zA-Z0-9]{8,100}"
+            pattern="[a-zA-Z0-9]{4,100}"
             maxlength="100"
           />
         </div>
@@ -160,7 +160,7 @@
             id="location2"
             type="text"
             placeholder="Hospital,School,organization location"
-            pattern="[a-zA-Z0-9]{8,100}"
+            pattern="[a-zA-Z0-9]{4,100}"
             maxlength="100"
           />
         </div>
@@ -200,7 +200,7 @@
             required
           />
         </div>
-        <div class="input-div">
+        <!-- <div class="input-div">
           <label>I want to raise the amount Rs:</label>
           <input
             id="amount_raised"
@@ -211,7 +211,7 @@
             placeholder="amount_raised"
             required
           />
-        </div>
+        </div> -->
         <div class="input-div">
           <label>Your UPI url:</label>
           <input id="upi" type="text" placeholder="paste your upi url" />
@@ -331,7 +331,7 @@
         const story = document.getElementById("story").value;
         const image_doc = document.getElementById("image_doc").value;
         const amount = document.getElementById("amount").value;
-        const amount_raised = document.getElementById("amount_raised").value;
+        // const amount_raised = document.getElementById("amount_raised").value;
         const upi = document.getElementById("upi").value;
         const userId = JSON.parse(window.localStorage.getItem("userID"));
         console.log(userId);
@@ -355,7 +355,7 @@
             story: story,
             image_doc: image_doc,
             expected_amt: amount,
-            amount_raised: amount_raised,
+            amount_raised: "0",
             product_id: product_id,
             upiUrl: upi,
             userId: userId,
