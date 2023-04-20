@@ -59,6 +59,18 @@ Payment module
   - Expected Result:
     - The user is redirected to the user profile page.
 
+### View Profile details
+
+- Scenario 1: Successfully profile details shown to the user
+  - Steps:
+    1. After the User login.
+    2. Navigate to the Home page.
+    3. Click the "profile" button in the nav.
+    4. Navigate to the profile page.
+    5. User can view and edit their profile details here.
+  - Expected Result:
+    - The user's account details are shown in the profile page.
+
 ### Edit Profile details
 
 - Scenario 1: Successfully edit account details
@@ -97,15 +109,59 @@ Payment module
   - Expected Result:
     - The user as a donator can view the list of fundraise card to donate.
 
-### Edit product details
+### Edit fundraise details
 
 - Scenario 1: Successfully edit fundraise details
   - Steps:
     1. Log in as a seller.
-    2. Navigate to the products page.
-    3. Select a product to edit.
-    4. Click the "Edit Product" button.
-    5. Update the product details.
-    6. Click the "Save Changes" button.
+    2. Navigate to the my fundraise page.
+    3. Select a fundraise card to edit.
+    4. Edit option will be shown only for the user who created the fundraise card or the page will be empty
+    5. Click the "Edit" pencil button.
+    6. Update the fundraise details in the edit form page.
+    7. Click the "Save Changes" button.
   - Expected Result:
-    - The product details are updated.
+    - The fundraise details are updated.
+
+### View details page of the fundraise card
+
+- Scenario 1: Successfully view the details of fundraise card in the details page
+  - Steps:
+    1. Log in as a user role as a donator.
+    2. Navigate to the donate page.
+    3. View the list of fundraise cards.
+    4. Click the card wish to donate
+    5. Redirect to the details of the fundraise card
+  - Expected Result:
+    - The user as a donator can view the details of fundraise card to donate.
+
+### Donater donate the card
+
+- Scenario 1: Successfully donated to the fundraise card
+  - Steps:
+    1. Log in as a user role as a donator.
+    2. Navigate to the donate page.
+    3. View the list of fundraise cards.
+    4. Click the card wish to donate
+    5. Redirect to the details of the fundraise card
+    6. View the details and click donate button in the page
+    7. Redirect to the payment process page and put your contribution then click how you want to donate using
+       card or direct bank transfer as per the donater wish
+  - Expected Result:
+    - The user as a donator can view the details of fundraise card to donate and successfully donated.
+
+### Payment using debit card
+
+- Scenario 1: Successfully donated to the fundraise card
+  - Steps:
+    1. Log in as a user role as a donator.
+    2. Navigate to the donate page.
+    3. View the list of fundraise cards.
+    4. Click the card wish to donate
+    5. Redirect to the details of the fundraise card
+    6. View the details and click donate button in the page
+    7. Redirect to the payment process page and put your contribution and if the donater click debit card
+    8. It redirects to the card payment page
+    9. Fill the donater card details and donate
+  - Expected Result:
+    - The user as a donater successfully donated using debit card.

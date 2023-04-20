@@ -220,6 +220,17 @@
           anchor = document.createElement("div");
           card_div.append(anchor);
 
+          let a;
+          a = document.createElement("a");
+          a.setAttribute(
+            "href",
+            "../../webpage/donate/story.html?product_id=" +
+              json[i]["product_id"] +
+              "&userid=" +
+              json[i]["userId"]
+          );
+          anchor.append(a);
+
           //   <span class="linkspanner"></span>
           // span = document.createElement("span");
           // span.setAttribute("class", "linkspanner");
@@ -231,7 +242,7 @@
           image.setAttribute("src", json[i]["img"]);
           image.setAttribute("onclick", "redirect()");
           image.setAttribute("alt", "education");
-          anchor.append(image);
+          a.append(image);
 
           //   <h4></h4>
           h4_tag = document.createElement("h4");

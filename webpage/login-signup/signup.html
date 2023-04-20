@@ -55,7 +55,7 @@
             pattern="[A-Za-z0-9]{8,12}"
             title="Password must have(UpperCase, LowerCase, Number and min 8 Chars)"
             placeholder="Password"
-            maxlength="8"
+            maxlength="12"
             required
           />
           <input
@@ -63,6 +63,8 @@
             type="password"
             placeholder="Confirm password"
             pattern="[A-Za-z0-9]{8,12}"
+            title="Confirm Password must smae as the password"
+            maxlength="12"
             required
           />
           <button id="log-in" onclick="login()">Sign up</button>

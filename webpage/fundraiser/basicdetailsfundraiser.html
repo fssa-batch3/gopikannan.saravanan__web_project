@@ -31,7 +31,7 @@
   <body>
     <!--  header starts-->
     <header>
-      <span class="menudiv">
+      <!-- <span class="menudiv">
         <a class="menulink" onclick="togglemenu()"
           ><img
             class="menu"
@@ -72,7 +72,7 @@
               title="profile"
           /></a>
         </div>
-      </div>
+      </div> -->
     </header>
     <!-- header ends -->
     <div class="details-head">Fundraiser Basic Details</div>
@@ -81,14 +81,14 @@
     <div class="container">
       <!-- form start -->
 
-      <form>
+      <form action="../../webpage/fundraiser/fundraiser.html">
         <div class="input-div">
           <label>Name:</label>
           <input
             type="text"
             id="name"
             placeholder="Enter your name"
-            pattern="[A-Za-z]{3,20}"
+            pattern="[A-Za-z\s]{3,20}"
             maxlength="20"
             required
           />
@@ -126,7 +126,7 @@
           ><input
             id="address"
             type="text"
-            pattern="[a-zA-Z0-9]{4,200}"
+            pattern="[a-zA-Z0-9\s]{4,200}"
             maxlength="200"
           />
         </div>
@@ -140,7 +140,7 @@
           <input
             id="title"
             type="text"
-            pattern="[a-zA-Z0-9]{4,100}"
+            pattern="[a-zA-Z0-9\s]{4,100}"
             maxlength="100"
           />
         </div>
@@ -150,7 +150,7 @@
             id="name_hos"
             type="text"
             placeholder="Hospital,School,organization name"
-            pattern="[a-zA-Z0-9]{4,100}"
+            pattern="[a-zA-Z0-9\s]{4,100}"
             maxlength="100"
           />
         </div>
@@ -160,7 +160,7 @@
             id="location2"
             type="text"
             placeholder="Hospital,School,organization location"
-            pattern="[a-zA-Z0-9]{4,100}"
+            pattern="[a-zA-Z0-9\s]{4,100}"
             maxlength="100"
           />
         </div>
@@ -367,8 +367,11 @@
           arr.push(object);
 
           window.localStorage.setItem("carddetails", JSON.stringify(arr));
+          alert("Successfully Added your fundraise card");
+          window.location.href = "../../webpage/fundraiser/fundraiser.html";
         }
       }
     </script>
+    <script src="../../Assets/js/header.js"></script>
   </body>
 </html>
