@@ -28,6 +28,7 @@
           <input
             type="text"
             id="name"
+            title="Use only alphabets"
             placeholder="User name"
             pattern="[A-Za-z]{3,20}"
             required
@@ -72,8 +73,8 @@
       </div>
     </div>
     <script>
-      function login() {
-        // e.preventDefault();
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
         const name = document.getElementById("name").value.trim();
         const mobileno = document.getElementById("mobileno").value.trim();
         const email = document.getElementById("email").value.trim();
@@ -94,36 +95,35 @@
         if (password != conpwd) {
           alert("password doesn't match");
           return;
-        } else {
-          for (let i = 0; i < user.length; i++) {
-            if (email === user[i]["user_mail"]) {
-              alert("Email is already in use");
-              return;
-            }
-          }
-          if (localStorage.getItem("userDetails") !== null) {
-            user = JSON.parse(localStorage.getItem("userDetails"));
-          }
-
-          let objuser = {
-            user_name: name,
-            user_phno: mobileno,
-            user_mail: email,
-            user_pwd: password,
-            userid: user_id,
-            user_pic: "fill in the details",
-            useraddress: "fill in the details",
-            useracco: "fill in the details",
-            userbankname: "fill in the details",
-            userifsc: "fill in the details",
-          };
-
-          user.push(objuser);
-          localStorage.setItem("userDetails", JSON.stringify(user));
-          alert("User Added");
-          window.location.href = "/index.html";
         }
-      }
+        for (let i = 0; i < user.length; i++) {
+          if (email === user[i]["user_mail"]) {
+            alert("Email is already in use");
+            return;
+          }
+        }
+        if (localStorage.getItem("userDetails") !== null) {
+          user = JSON.parse(localStorage.getItem("userDetails"));
+        }
+
+        let objuser = {
+          user_name: name,
+          user_phno: mobileno,
+          user_mail: email,
+          user_pwd: password,
+          userid: user_id,
+          user_pic: "fill in the details",
+          useraddress: "fill in the details",
+          useracco: "fill in the details",
+          userbankname: "fill in the details",
+          userifsc: "fill in the details",
+        };
+
+        user.push(objuser);
+        localStorage.setItem("userDetails", JSON.stringify(user));
+        alert("User Added");
+        window.location.href = "/index.html";
+      });
     </script>
   </body>
 </html>

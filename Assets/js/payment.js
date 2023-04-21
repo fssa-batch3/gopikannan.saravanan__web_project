@@ -98,7 +98,7 @@ function paymentid() {
     return;
   }
 
-  // window.location.href = "../../webpage/fundraiser/debitcard.html";
+  window.location.href = "../../webpage/fundraiser/debitcard.html";
 }
 
 // function to add the contribution in the card after each contribution by the donater
