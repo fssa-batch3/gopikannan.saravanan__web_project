@@ -4,6 +4,7 @@ let userId = JSON.parse(window.localStorage.getItem("userID"));
 let donationdetails = JSON.parse(
   window.localStorage.getItem("donerDonatedetails")
 );
+let create_card = JSON.parse(localStorage.getItem("carddetails"));
 
 for (let i = 0; i < donationdetails.length; i++) {
   details.push(donationdetails[i]);
@@ -48,7 +49,7 @@ for (let i = 0; i < details.length; i++) {
     let amount = details[i]["fundraiseAmountraise"];
     console.log(amount);
 
-    let expected_amount = details[i]["fundraiseExpectedamount"];
+    let expected_amount = parseInt(details[i]["fundraiseExpectedamount"]);
     console.log(expected_amount);
 
     let percentage = Math.floor((amount / expected_amount) * 100);

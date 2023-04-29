@@ -42,4 +42,5 @@ function donate() {
   }
   carddetails.push(carddetailsobj);
   window.localStorage.setItem("debitcarddetails", JSON.stringify(carddetails));
+  window.location.href = "../../webpage/donate/My donations.html";
 }

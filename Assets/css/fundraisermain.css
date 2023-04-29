@@ -140,6 +140,11 @@ progress {
   margin-top: -1px;
   margin-left: 60px;
 }
+.textAmt {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
 .user {
   padding-left: 50px;
   padding-top: 10px;

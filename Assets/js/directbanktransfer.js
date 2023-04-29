@@ -110,4 +110,5 @@ function donate() {
     "Directbankdetails",
     JSON.stringify(donaterbankdetailsArr)
   );
+  window.location.href = "../../webpage/donate/My donations.html";
 }

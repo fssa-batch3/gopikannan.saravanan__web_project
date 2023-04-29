@@ -81,7 +81,7 @@
     <div class="container">
       <!-- form start -->
 
-      <form action="../../webpage/fundraiser/fundraiser.html">
+      <form id="form" action="../../webpage/fundraiser/fundraiser.html">
         <div class="input-div">
           <label>Name:</label>
           <input
@@ -97,6 +97,7 @@
           <label>Email ID:</label>
           <input
             type="email"
+            required
             id="email"
             placeholder="Enter your email id"
             title="Enter the correct email"
@@ -109,6 +110,7 @@
             id="mobileno"
             placeholder="Enter your Ph no"
             pattern="[0-9]{10}"
+            required
             maxlength="10"
             title=" Phone number must have 10 digits"
           />
@@ -125,21 +127,30 @@
           <label>Address:</label
           ><input
             id="address"
+            required
             type="text"
             pattern="[a-zA-Z0-9\s]{4,200}"
+            required
             maxlength="200"
           />
         </div>
 
         <div class="input-div">
           <label>Cover Picture:</label>
-          <input id="image" type="text" placeholder="place your image url" />
+
+          <input
+            id="image"
+            type="text"
+            placeholder="place your image url"
+            required
+          />
         </div>
         <div class="input-div">
           <label>Title:</label>
           <input
             id="title"
             type="text"
+            required
             pattern="[a-zA-Z0-9\s]{4,100}"
             maxlength="100"
           />
@@ -149,6 +160,7 @@
           <input
             id="name_hos"
             type="text"
+            required
             placeholder="Hospital,School,organization name"
             pattern="[a-zA-Z0-9\s]{4,100}"
             maxlength="100"
@@ -159,6 +171,7 @@
           <input
             id="location2"
             type="text"
+            required
             placeholder="Hospital,School,organization location"
             pattern="[a-zA-Z0-9\s]{4,100}"
             maxlength="100"
@@ -169,6 +182,7 @@
           <input
             id="storySum"
             type="text"
+            required
             maxlength="100"
             placeholder="Write your summary of your story"
           />
@@ -181,6 +195,7 @@
             id="story"
             maxlength="500"
             rows="5"
+            required
             placeholder="Write about who is this fundraiser for How/Why/When  do you need funds what is the purpose..."
           ></textarea>
         </div>
@@ -218,7 +233,7 @@
         </div>
 
         <!-- <a href="../fundraiser/Fundraiserdetailsform1.html">  -->
-        <button onclick="getinfo()" class="continue">Continue</button>
+        <button type="submit" class="continue">Continue</button>
       </form>
       <!-- </a>  -->
       <!-- form ends -->
@@ -310,7 +325,10 @@
     <!-- footer end -->
 
     <script>
-      function getinfo() {
+      const form = document.getElementById("form");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
         let arr = [];
 
         if (localStorage.getItem("carddetails") != null) {
@@ -370,7 +388,7 @@
           alert("Successfully Added your fundraise card");
           window.location.href = "../../webpage/fundraiser/fundraiser.html";
         }
-      }
+      });
     </script>
     <script src="../../Assets/js/header.js"></script>
   </body>

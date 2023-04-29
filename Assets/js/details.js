@@ -454,9 +454,11 @@ function edit(id) {
 
 let form;
 form = document.createElement("form");
+// form.setAttribute("onsubmit", "send()");
 
 let form2;
 form2 = document.createElement("form");
+// form2.setAttribute("onsubmit", "sendedit()");
 form.prepend(form2);
 
 let fieldset2;
@@ -501,6 +503,7 @@ sendIcon.setAttribute("src", "../../Assets/images/send-message.png");
 sendIcon.setAttribute("alt", "send");
 sendIcon.setAttribute("class", "send");
 sendIcon.setAttribute("onclick", "send()");
+
 sendIcon.setAttribute("width", "20");
 sendIcon.setAttribute("height", "20");
 sendIcon.setAttribute("style", "padding-top: 5px");

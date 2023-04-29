@@ -30,7 +30,7 @@
             id="name"
             title="Use only alphabets"
             placeholder="User name"
-            pattern="[A-Za-z]{3,20}"
+            pattern="[A-Za-z\s]{3,20}"
             required
           />
           <input
@@ -112,11 +112,11 @@
           user_mail: email,
           user_pwd: password,
           userid: user_id,
-          user_pic: "fill in the details",
-          useraddress: "fill in the details",
-          useracco: "fill in the details",
-          userbankname: "fill in the details",
-          userifsc: "fill in the details",
+          user_pic: "",
+          useraddress: "",
+          useracco: "",
+          userbankname: "",
+          userifsc: "",
         };
 
         user.push(objuser);

@@ -680,18 +680,18 @@
 
           // img
 
-          image_like = document.createElement("img");
-          image_like.setAttribute("id", json[i]["product_id"]);
-          image_like.setAttribute("onclick", "editCard(this.id)");
-          image_like.setAttribute(
-            "src",
-            "../../Assets/images/icons8-edit-60-removebg-preview.png"
-          );
+          // image_like = document.createElement("img");
+          // image_like.setAttribute("id", json[i]["product_id"]);
+          // image_like.setAttribute("onclick", "editCard(this.id)");
+          // image_like.setAttribute(
+          //   "src",
+          //   "../../Assets/images/icons8-edit-60-removebg-preview.png"
+          // );
 
-          image_like.setAttribute("alt", "Like");
-          image_like.setAttribute("class", "icon-like");
-          image_like.setAttribute("width", "30px");
-          progress_span_tag.append(image_like);
+          // image_like.setAttribute("alt", "Like");
+          // image_like.setAttribute("class", "icon-like");
+          // image_like.setAttribute("width", "30px");
+          // progress_span_tag.append(image_like);
 
           // a
           a_span_share = document.createElement("a");
@@ -751,22 +751,22 @@
         // }
       }
 
-      function editCard(e) {
-        window.location.href = "../../webpage/header/edit.html";
-        let editArray = [];
-        let eId = e;
-        console.log(eId);
-        let editObject = {
-          product_id: eId,
-        };
+      // function editCard(e) {
+      //   window.location.href = "../../webpage/header/edit.html";
+      //   let editArray = [];
+      //   let eId = e;
+      //   console.log(eId);
+      //   let editObject = {
+      //     product_id: eId,
+      //   };
 
-        console.log(editObject);
+      //   console.log(editObject);
 
-        editArray.push(editObject);
+      //   editArray.push(editObject);
 
-        console.log(editArray);
-        localStorage.setItem("updateData", JSON.stringify(editArray));
-      }
+      //   console.log(editArray);
+      //   localStorage.setItem("updateData", JSON.stringify(editArray));
+      // }
     </script>
     <script src="../../Assets/js/header.js"></script>
   </body>
