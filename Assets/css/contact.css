@@ -47,18 +47,35 @@
 .map {
   margin: 40px;
 }
+/* .input {
+  width: fit-content;
+} */
+.input .details {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  width: 100%;
+}
 .input {
+  width: 50%;
+  height: 320px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  box-shadow: 8px 8px 4px rgb(180, 193, 255);
+}
+
+form {
+  width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.input .details {
-  display: flex;
-  flex-direction: row;
-  width: 50%;
-}
-
 #name,
 #email {
   width: 100%;
@@ -74,7 +91,8 @@
   margin-left: 50px;
 }
 #msg {
-  width: 50%;
+  width: 100%;
+  height: 50%;
   border: 2px solid var(--primary-color);
   text-align: center;
   outline: var(--body-text-color);
@@ -84,7 +102,12 @@
   margin-top: 20px;
 }
 .send {
-  width: 15%;
+  width: 40%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  align-items: center;
   height: 50px;
   border-radius: 10px;
   border: none;

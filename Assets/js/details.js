@@ -445,13 +445,6 @@ for (let i = 0; i < comment.length; i++) {
 //   document.getElementById("editfieldset").classList.toggle("active");
 // }
 
-// to edit the comment
-function edit(id) {
-  console.log(id);
-  window.localStorage.setItem("commentId", JSON.stringify(id));
-  document.getElementById("editfieldset").classList.toggle("active");
-}
-
 let form;
 form = document.createElement("form");
 // form.setAttribute("onsubmit", "send()");
@@ -511,12 +504,20 @@ fieldset.append(sendIcon);
 
 document.querySelector(".chat-history").append(form);
 
+// to edit the comment
+function edit(id) {
+  console.log(id);
+  window.localStorage.setItem("commentId", JSON.stringify(id));
+  document.getElementById("editfieldset").classList.toggle("active");
+}
+
 let userCommentId = JSON.parse(window.localStorage.getItem("commentId"));
 console.log(userCommentId);
 let userallComments = JSON.parse(window.localStorage.getItem("commentmain"));
 
 let Com = userallComments.find(function (comment) {
-  let Comment = comment["commentId"];
+  let Comment = parseInt(comment["commentId"]);
+  console.log(Comment);
 
   if (userCommentId == Comment) {
     return true;
