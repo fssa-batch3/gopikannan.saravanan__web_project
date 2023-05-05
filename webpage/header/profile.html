@@ -77,90 +77,13 @@
       </form>
     </div>
     <!-- Footer  -->
-    <div class="footer">
-      <div class="footmain">
-        <div class="footerpart">
-          <div class="foot-head"><p>Donate now</p></div>
-          <div class="foot-link">
-            <ul>
-              <li>
-                <a href="../../webpage/donate/donate-medical.html">Medical </a>
-              </li>
-              <li>
-                <a href="../../webpage/donate/donate-education.html"
-                  >Education</a
-                >
-              </li>
-              <li>
-                <a href="../../webpage/donate/donate-social.html"
-                  >Social causes
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="footerpart">
-          <div class="foot-head"><p>How it works?</p></div>
-          <div class="foot-link">
-            <ul>
-              <li><a href="#">What is Crowdfunding?</a></li>
-              <li><a href="#">Fundraising Tips</a></li>
-              <li><a href="#">Browse fundraiser</a></li>
-              <li><a href="#">Careers</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="footerpart">
-          <div class="foot-head"><p>Support</p></div>
-          <div class="foot-link">
-            <ul>
-              <li><a href="#">FAQ's & Help Center</a></li>
-              <li><a href="#">Are Pin campaigns Genuine?</a></li>
-              <li><a href="#">Trust & Safety</a></li>
-              <li><a href="#">Featured In</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <a href="/index.html"></a>
-      <div class="foot-last">
-        <div class="foot-end">
-          <img id="mail" src="../../Assets/images/mail.png" alt="mail" />
-          <p>Sign Up for PIN News</p>
-          <button class="subscribe">Subscribe</button>
-        </div>
-        <div class="foot-logo">
-          <p id="logo-txt">Follow PIN</p>
-          <a href="#"
-            ><img
-              class="logo-icon"
-              src="../../Assets/images/fb.png"
-              alt="facebook"
-          /></a>
-          <a href="#"
-            ><img
-              class="logo-icon"
-              src="../../Assets/images/twitter.png"
-              alt="twitter"
-          /></a>
-          <a href="#"
-            ><img
-              class="logo-icon"
-              src="../../Assets/images/insta.png"
-              alt="instagram"
-          /></a>
-          <a href="#"
-            ><img
-              class="logo-icon"
-              src="../../Assets/images/youtube.png"
-              alt="youtubr"
-          /></a>
-        </div>
-      </div>
-    </div>
+
+    <div class="footer"></div>
+
     <!-- footer end -->
 
     <script src="../../Assets/js/header.js"></script>
+    <script src="../../Assets/js/footer.js"></script>
 
     <script>
       let email_check = JSON.parse(window.localStorage.getItem("login_user"));
@@ -219,6 +142,7 @@
 
         details[userindex] = merge;
 
+       
         window.localStorage.setItem("userDetails", JSON.stringify(details));
         alert("Successfully updated your profile !!!");
         location.reload();
@@ -229,26 +153,13 @@
         window.localStorage.getItem("userDetails")
       );
       let profile_ = profile_details.find(function (objuser) {
-        let mailcheck = objuser["user_mail"];
-        if (email_check === mailcheck) {
-          let profilepic = (document.getElementById("pic").value =
-            objuser["user_pic"]);
-          let username = (document.getElementById("name").value =
-            objuser["user_name"]);
-          let userphno = (document.getElementById("phno").value =
-            objuser["user_phno"]);
-          let usermail = (document.getElementById("email").value =
-            objuser["user_mail"]);
-          let userpwd = (document.getElementById("password").value =
-            objuser["user_pwd"]);
-          let useraddress = (document.getElementById("address").value =
-            objuser["useraddress"]);
-          let useracco = (document.getElementById("acc").value =
-            objuser["useracco"]);
-          let userbankname = (document.getElementById("accname").value =
-            objuser["userbankname"]);
-          let userifsc = (document.getElementById("ifc").value =
-            objuser["userifsc"]);
+        let mailcheck;
+        mailcheck = objuser["user_mail"];
+        console.log(mailcheck);
+        console.log(email_check);
+
+        if (email_check == mailcheck) {
+          return true;
         }
         // if (typeof myValue === "undefined") {
         //   // alert("Please fill in your details on your profile page.");
@@ -256,6 +167,21 @@
 
         // }
       });
+
+      profilepic = document.getElementById("pic").value = profile_["user_pic"];
+      username = document.getElementById("name").value = profile_["user_name"];
+      userphno = document.getElementById("phno").value = profile_["user_phno"];
+      usermail = document.getElementById("email").value = profile_["user_mail"];
+      userpwd = document.getElementById("password").value =
+        profile_["user_pwd"];
+      useraddress = document.getElementById("address").value =
+        profile_["useraddress"];
+      useracco = document.getElementById("acc").value = profile_["useracco"];
+      userbankname = document.getElementById("accname").value =
+        profile_["userbankname"];
+      userifsc = document.getElementById("ifc").value = profile_["userifsc"];
+
+      console.log(profile_);
 
       let delete_profile = document.getElementById("delete");
       delete_profile.addEventListener("click", function (event) {

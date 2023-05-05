@@ -125,5 +125,42 @@
         window.location.href = "/index.html";
       });
     </script>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+      import {
+        getDatabase,
+        set,
+        ref,
+        onValue,
+        push,
+      } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyAFavGe1P5EaPjR95kh540C0XppIph65xE",
+        authDomain: "pin-crowdfunding-website.firebaseapp.com",
+        projectId: "pin-crowdfunding-website",
+        storageBucket: "pin-crowdfunding-website.appspot.com",
+        messagingSenderId: "1067440776850",
+        appId: "1:1067440776850:web:732dde4b9cf1e4a855284b",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+
+      // get the databse we created in firebase
+      let database = getDatabase();
+      console.log(database);
+
+      // getting refference to the "key" name we created in the database
+      const starCountRef = ref(database, "name/");
+
+      // refer the reference we created and use callback function and get the current value
+      onValue(starCountRef, (snapshot) => {
+        const data = snapshot.val();
+        console.log(data);
+      });
+    </script>
   </body>
 </html>

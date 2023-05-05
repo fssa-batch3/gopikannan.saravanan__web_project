@@ -1,3 +1,6 @@
+let path = window.location.origin;
+// let homepath= path +
+
 let allarray = JSON.parse(window.localStorage.getItem("userDetails"));
 let userId = JSON.parse(window.localStorage.getItem("userID"));
 console.log(allarray);
@@ -70,12 +73,12 @@ home.setAttribute("class", "nav-anchor");
 home.innerText = "Home";
 divSidebar.append(home);
 
-let donate;
-donate = document.createElement("a");
-donate.setAttribute("href", "../../webpage/donate/donate.html");
-donate.setAttribute("class", "nav-anchor donate");
-donate.innerText = "Donate";
-divSidebar.append(donate);
+let donate1;
+donate1 = document.createElement("a");
+donate1.setAttribute("href", "../../webpage/donate/donate.html");
+donate1.setAttribute("class", "nav-anchor donate");
+donate1.innerText = "Donate";
+divSidebar.append(donate1);
 
 let fundraise;
 fundraise = document.createElement("a");
@@ -106,8 +109,8 @@ imgProfile = document.createElement("img");
 imgProfile.setAttribute("class", "profile");
 imgProfile.setAttribute("src", user["user_pic"]);
 imgProfile.setAttribute("alt", "Profile");
-imgProfile.setAttribute("width", "30");
 imgProfile.setAttribute("title", "profile");
+
 imgProfile.setAttribute("onclick", "profile()");
 divSidebar.append(imgProfile);
 

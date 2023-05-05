@@ -46,7 +46,7 @@ header {
 }
 .nav-anchor,
 .profile {
-  margin-left: 20px;
+  margin-right: 20px;
   text-decoration: none;
   color: #3f3a81;
   font-weight: bold;
@@ -54,6 +54,8 @@ header {
 }
 .profile {
   cursor: pointer;
+  width: 55px;
+  margin: auto;
 }
 .nav a:hover {
   color: var(--toggle-color);
