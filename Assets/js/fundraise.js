@@ -2,9 +2,6 @@ json = [];
 
 let create_card = JSON.parse(localStorage.getItem("carddetails"));
 
-let donors = JSON.parse(localStorage.getItem("donerDonatedetails"));
-console.log(donors);
-
 for (let i = 0; i < create_card.length; i++) {
   json.push(create_card[i]);
 }
@@ -21,9 +18,11 @@ for (let i = 0; i < json.length; i++) {
   let expected_amount = json[i]["expected_amt"];
   let percentage = Math.floor((amount_raised / expected_amount) * 100);
 
+  let donors = JSON.parse(localStorage.getItem("donerDonatedetails"));
+
   if (
-    amount_raised == expected_amount ||
-    (amount_raised >= expected_amount && json[i]["userId"] == userfundraiseId)
+    (amount_raised == expected_amount || amount_raised >= expected_amount) &&
+    json[i]["userId"] == userfundraiseId
   ) {
     json[i]["amout"] = "reached";
 
@@ -331,18 +330,28 @@ for (let i = 0; i < json.length; i++) {
     let cardfundraiseid = json[i]["product_id"];
     console.log(cardfundraiseid);
 
-    for (let i = 0; i < donors.length; i++) {
-      if (cardfundraiseid == donors[i]["fundraiseId"]) {
-        let supporter = document.createElement("div");
-        supporter.innerHTML = ` 
+    console.log(donors);
+    if (donors !== null) {
+      for (let i = 0; i < donors.length; i++) {
+        if (cardfundraiseid == donors[i]["fundraiseId"]) {
+          let supporter = document.createElement("div");
+          supporter.innerHTML = ` 
       <span class="supporter-name">${donors[i]["donaterName"]}</span>
       <span class="contribution">${donors[i]["donaterContribution"]} RS</span>
     
     <hr />`;
-        supporterbox.append(supporter);
+          supporterbox.append(supporter);
+        }
       }
+    } else {
+      let supporter = document.createElement("div");
+      supporter.innerHTML = ` 
+      <span class="supporter-name"></span>
+      <span class="contribution"></span>
+    
+    <hr />`;
+      supporterbox.append(supporter);
     }
-
     box1andbox2.append(supporterbox);
 
     document.querySelector(".container").append(box1andbox2);

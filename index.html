@@ -39,8 +39,8 @@
             type="password"
             id="password"
             placeholder="Password"
-            pattern="[A-Za-z0-9]{8,12}"
-            maxlength="12"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!]).{8,}"
+            title="Please include at least 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character (@#$%^&+=!)"
             required
           />
 

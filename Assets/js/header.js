@@ -112,7 +112,7 @@ imgProfile.setAttribute("alt", "Profile");
 imgProfile.setAttribute("title", "profile");
 
 imgProfile.setAttribute("onclick", "profile()");
-divSidebar.append(imgProfile);
+headerNav.append(imgProfile);
 
 function profile() {
   window.location.href = "../../webpage/header/profile.html";

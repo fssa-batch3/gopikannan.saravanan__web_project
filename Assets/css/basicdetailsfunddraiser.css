@@ -63,6 +63,10 @@ select {
   border: 2px solid #3f3a813c;
   color: black;
 } */
+textarea {
+  border: transparent;
+  outline: gray;
+}
 .continue {
   display: flex;
   justify-content: center;
@@ -81,10 +85,22 @@ select {
 .continue:hover {
   background-color: var(--primary-color);
 }
+textarea:focus:valid {
+  border: solid 2px green;
+}
+textarea:focus:invalid {
+  border: solid 2px red;
+}
 input[type="text"]:focus:valid {
   border: solid 2px green;
 }
 input[type="text"]:focus:invalid {
+  border: solid 2px red;
+}
+input[type="url"]:focus:valid {
+  border: solid 2px green;
+}
+input[type="url"]:focus:invalid {
   border: solid 2px red;
 }
 input[type="email"]:focus:valid {

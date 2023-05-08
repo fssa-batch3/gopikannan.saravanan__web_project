@@ -45,8 +45,8 @@
             type="text"
             id="name"
             placeholder="Enter your name"
-            pattern="[A-Za-z\s]{3,20}"
-            maxlength="20"
+            pattern="^(?=.{2,50}$)[A-Za-z]+(?:\s[A-Za-z]+){0,3}$"
+            title="Name must be only in alphabets and First name last name both can be added optional"
             required
           />
         </div>
@@ -68,7 +68,6 @@
             placeholder="Enter your Ph no"
             pattern="[0-9]{10}"
             required
-            maxlength="10"
             title=" Phone number must have 10 digits"
           />
         </div>
@@ -86,9 +85,9 @@
             id="address"
             required
             type="text"
-            pattern="[a-zA-Z0-9\s]{4,200}"
+            title="Enter your full address where you live"
+            pattern="^(?=.{0,200}$)[A-Za-z0-9!@#$%^&*()_+-={}[\]|\\;:'>,.?/]+[A-Za-z0-9]+(?:\s[A-Za-z0-9\s!@#$%^&*()_+-={}[\]|\\;:'>,.?/]+[A-Za-z0-9]+){0,10}$"
             required
-            maxlength="200"
           />
         </div>
 
@@ -97,8 +96,9 @@
 
           <input
             id="image"
-            type="text"
+            type="url"
             placeholder="place your image url"
+            title="enter only image urls"
             required
           />
         </div>
@@ -107,9 +107,9 @@
           <input
             id="title"
             type="text"
+            title="Enter the title of your card with only alphabets"
             required
-            pattern="[a-zA-Z0-9\s]{4,100}"
-            maxlength="100"
+            pattern="^(?=.{4,100}$)[A-Za-z]+(?:\s[A-Za-z]+){0,10}$"
           />
         </div>
         <div class="input-div">
@@ -119,8 +119,8 @@
             type="text"
             required
             placeholder="Hospital,School,organization name"
-            pattern="[a-zA-Z0-9\s]{4,100}"
-            maxlength="100"
+            title="Enter the input with only alphabets with spaces optional"
+            pattern="^(?=.{4,100}$)[A-Za-z]+(?:\s[A-Za-z]+){0,10}$"
           />
         </div>
         <div class="input-div">
@@ -130,8 +130,8 @@
             type="text"
             required
             placeholder="Hospital,School,organization location"
-            pattern="[a-zA-Z0-9\s]{4,100}"
-            maxlength="100"
+            title="Enter the input with only alphabets with spaces optional"
+            pattern="^(?=.{4,100}$)[A-Za-z]+(?:\s[A-Za-z]+){0,10}$"
           />
         </div>
         <div class="input-div">
@@ -140,7 +140,8 @@
             id="storySum"
             type="text"
             required
-            maxlength="100"
+            title="Enter the summary of your story with alphabets,numbers,special characters"
+            pattern="^(?=.{10,300}$)[A-Za-z0-9!@#$%^&*()_+-={}[\]|\\;:'>,.?/]+[A-Za-z0-9]+(?:\s[A-Za-z0-9\s!@#$%^&*()_+-={}[\]|\\;:'>,.?/]+[A-Za-z0-9]+){0,50}$"
             placeholder="Write your summary of your story"
           />
         </div>
@@ -150,15 +151,16 @@
             value="Our school..."
             name="story"
             id="story"
-            maxlength="500"
+            pattern="^(?=.{10,500}$)[A-Za-z0-9!@#$%^&*()_+-={}[\]|\\;:'>,.?/]+[A-Za-z0-9]+(?:\s[A-Za-z0-9\s!@#$%^&*()_+-={}[\]|\\;:'>,.?/]+[A-Za-z0-9]+){0,50}$"
             rows="5"
             required
+            title="Enter the details of your story with alphabets,numbers,special characters"
             placeholder="Write about who is this fundraiser for How/Why/When  do you need funds what is the purpose..."
           ></textarea>
         </div>
         <div class="input-div">
           <label>Upload Required Documents :</label>
-          <input id="image_doc" type="text" />
+          <input id="image_doc" type="url" title="enter only image urls" />
         </div>
         <div class="input-div">
           <label>I want to raise the amount Rs:</label>
@@ -186,7 +188,12 @@
         </div> -->
         <div class="input-div">
           <label>Your UPI url:</label>
-          <input id="upi" type="text" placeholder="paste your upi url" />
+          <input
+            id="upi"
+            type="url"
+            placeholder="paste your upi url"
+            title="enter only image urls"
+          />
         </div>
 
         <!-- <a href="../fundraiser/Fundraiserdetailsform1.html">  -->
@@ -206,6 +213,7 @@
 
       form.addEventListener("submit", function (event) {
         event.preventDefault();
+        let userid = JSON.parse(window.localStorage.getItem("userID"));
         let arr = [];
 
         if (localStorage.getItem("carddetails") != null) {
@@ -213,29 +221,37 @@
         }
         console.log(arr);
 
-        const name = document.getElementById("name").value;
-        const mail = document.getElementById("email").value;
+        const name = document.getElementById("name").value.trim();
+        const mail = document.getElementById("email").value.trim();
         const dropDown = document.getElementById("cause").value;
-        const mobileno = document.getElementById("mobileno").value;
-        const address = document.getElementById("address").value;
+        const mobileno = document.getElementById("mobileno").value.trim();
+        const address = document.getElementById("address").value.trim();
         const image = document.getElementById("image").value;
-        const title = document.getElementById("title").value;
-        const name_hosp = document.getElementById("name_hos").value;
-        const location = document.getElementById("location2").value;
-        const storySum = document.getElementById("storySum").value;
-        const story = document.getElementById("story").value;
+        const title = document.getElementById("title").value.trim();
+        const name_hosp = document.getElementById("name_hos").value.trim();
+        const location = document.getElementById("location2").value.trim();
+        const storySum = document.getElementById("storySum").value.trim();
+        const story = document.getElementById("story").value.trim();
         const image_doc = document.getElementById("image_doc").value;
-        const amount = document.getElementById("amount").value;
+        const amount = document.getElementById("amount").value.trim();
         // const amount_raised = document.getElementById("amount_raised").value;
-        const upi = document.getElementById("upi").value;
+        const upi = document.getElementById("upi").value.trim();
         const userId = JSON.parse(window.localStorage.getItem("userID"));
         console.log(userId);
 
         const product_id = Date.now();
 
-        if (name == "" || name == null) {
+        let match = false;
+
+        if (story === "") {
+          alert("Detail of your story can't be left empty");
           return;
         } else {
+          match = true;
+        }
+
+        if (match == true) {
+          // return;
           let object = {
             fundraiser: name,
             mail: mail,
@@ -263,7 +279,11 @@
 
           window.localStorage.setItem("carddetails", JSON.stringify(arr));
           alert("Successfully Added your fundraise card");
-          window.location.href = "../../webpage/fundraiser/fundraiser.html";
+          window.location.href =
+            "../../webpage/fundraiser/fundraiser.html?userid=" + userid;
+        } else {
+          alert("Your input might doesn't match the pattern");
+          return;
         }
       });
     </script>

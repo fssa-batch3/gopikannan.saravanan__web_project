@@ -1,10 +1,9 @@
 .bannersec {
   width: 100%;
-  height: 100%;
   display: flex;
-  /* justify-content: center; */
-  /* margin-top: -250px; */
-  position: fixed;
+  justify-content: center;
+  margin-top: -400px;
+  /* position: fixed; */
 }
 body {
   margin: 0;
@@ -22,7 +21,8 @@ body {
   flex-direction: row;
   gap: 50px;
   width: 40%;
-  /* margin-top: -150px; */
+  margin-top: -150px;
+  margin-right: 35pc;
 }
 #log-in {
   width: 100%;

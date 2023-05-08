@@ -73,6 +73,36 @@ input {
   border-radius: 50%;
   width: 250px;
 }
+input[type="email"]:focus:valid {
+  border: solid 2px green;
+}
+input[type="email"]:focus:invalid {
+  border: solid 2px red;
+}
+input[type="text"]:focus:valid {
+  border: solid 2px green;
+}
+input[type="text"]:focus:invalid {
+  border: solid 2px red;
+}
+input[type="text"]:focus:valid {
+  border: solid 2px green;
+}
+input[type="text"]:focus:invalid {
+  border: solid 2px red;
+}
+input[type="number"]:focus:valid {
+  border: solid 2px green;
+}
+input[type="number"]:focus:invalid {
+  border: solid 2px red;
+}
+input[type="url"]:focus:valid {
+  border: solid 2px green;
+}
+input[type="url"]:focus:invalid {
+  border: solid 2px red;
+}
 /* main content style ends */
 @media screen and (max-width: 1200px) {
   .profile-head {

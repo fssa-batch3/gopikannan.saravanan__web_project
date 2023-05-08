@@ -28,9 +28,9 @@
           <input
             type="text"
             id="name"
-            title="Use only alphabets"
+            title="Use only alphabets for your name"
             placeholder="User name"
-            pattern="[A-Za-z\s]{3,20}"
+            pattern="^(?=.{0,50}$)[A-Za-z]+(?:\s[A-Za-z]+){0,3}$"
             required
           />
           <input
@@ -53,22 +53,20 @@
           <input
             type="password"
             id="password"
-            pattern="[A-Za-z0-9]{8,12}"
-            title="Password must have(UpperCase, LowerCase, Number and min 8 Chars)"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!]).{8,}"
+            title="Please include at least 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character (@#$%^&+=!)"
             placeholder="Password"
-            maxlength="12"
             required
           />
           <input
             id="confirmpwd"
             type="password"
             placeholder="Confirm password"
-            pattern="[A-Za-z0-9]{8,12}"
-            title="Confirm Password must smae as the password"
-            maxlength="12"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!]).{8,}"
+            title="Please include at least 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character (@#$%^&+=!)"
             required
           />
-          <button id="log-in" onclick="login()">Sign up</button>
+          <button id="log-in" type="submit">Sign up</button>
         </form>
       </div>
     </div>
@@ -83,7 +81,7 @@
         const user_id = Date.now();
 
         // to not to store null values
-        if (name == null || name == "") {
+        if (name == "") {
           alert("Input field can't be left empty");
           return;
         }
@@ -96,33 +94,56 @@
           alert("password doesn't match");
           return;
         }
-        for (let i = 0; i < user.length; i++) {
-          if (email === user[i]["user_mail"]) {
-            alert("Email is already in use");
-            return;
+        let userdetails = JSON.parse(
+          window.localStorage.getItem("userDetails")
+        );
+        if (userdetails == null) {
+          let objuser = {
+            user_name: name,
+            user_phno: mobileno,
+            user_mail: email,
+            user_pwd: password,
+            userid: user_id,
+            user_pic: "",
+            useraddress: "",
+            useracco: "",
+            userbankname: "",
+            userifsc: "",
+          };
+
+          user.push(objuser);
+          localStorage.setItem("userDetails", JSON.stringify(user));
+          alert("User Added");
+          window.location.href = "/index.html";
+        } else {
+          for (let i = 0; i < userdetails.length; i++) {
+            if (email === userdetails[i]["user_mail"]) {
+              alert("Email is already in use");
+              return;
+            }
           }
-        }
-        if (localStorage.getItem("userDetails") !== null) {
-          user = JSON.parse(localStorage.getItem("userDetails"));
-        }
+          if (localStorage.getItem("userDetails") !== null) {
+            user = JSON.parse(localStorage.getItem("userDetails"));
+          }
 
-        let objuser = {
-          user_name: name,
-          user_phno: mobileno,
-          user_mail: email,
-          user_pwd: password,
-          userid: user_id,
-          user_pic: "",
-          useraddress: "",
-          useracco: "",
-          userbankname: "",
-          userifsc: "",
-        };
+          let objuser = {
+            user_name: name,
+            user_phno: mobileno,
+            user_mail: email,
+            user_pwd: password,
+            userid: user_id,
+            user_pic: "",
+            useraddress: "",
+            useracco: "",
+            userbankname: "",
+            userifsc: "",
+          };
 
-        user.push(objuser);
-        localStorage.setItem("userDetails", JSON.stringify(user));
-        alert("User Added");
-        window.location.href = "/index.html";
+          user.push(objuser);
+          localStorage.setItem("userDetails", JSON.stringify(user));
+          alert("User Added");
+          window.location.href = "/index.html";
+        }
       });
     </script>
     <script type="module">

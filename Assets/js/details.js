@@ -511,21 +511,29 @@ function edit(id) {
   document.getElementById("editfieldset").classList.toggle("active");
 }
 
-let userCommentId = JSON.parse(window.localStorage.getItem("commentId"));
-console.log(userCommentId);
-let userallComments = JSON.parse(window.localStorage.getItem("commentmain"));
+// let Com = userallComments.find(function (comment) {
+//   let Comment = parseInt(comment["commentId"]);
+//   console.log(Comment);
 
-let Com = userallComments.find(function (comment) {
-  let Comment = parseInt(comment["commentId"]);
-  console.log(Comment);
-
-  if (userCommentId == Comment) {
-    return true;
-  }
-});
-console.log(Com);
+//   if (userCommentId == Comment) {
+//     return true;
+//   }
+// });
+// console.log(Com);
 
 function sendedit() {
+  let userallComments = JSON.parse(window.localStorage.getItem("commentmain"));
+  let userCommentId = JSON.parse(window.localStorage.getItem("commentId"));
+  console.log(userCommentId);
+  let Com = userallComments.find(function (comment) {
+    let Comment = parseInt(comment["commentId"]);
+    console.log(Comment);
+
+    if (userCommentId == Comment) {
+      return true;
+    }
+  });
+  console.log(Com);
   let msg = document.getElementById("editinput").value;
 
   let neweditObj = {
@@ -543,6 +551,19 @@ function sendedit() {
 
 // to delete the comment
 function del(commentid) {
+  let userallComments = JSON.parse(window.localStorage.getItem("commentmain"));
+  let userCommentId = JSON.parse(window.localStorage.getItem("commentId"));
+  console.log(userCommentId);
+  let Com = userallComments.find(function (comment) {
+    let Comment = parseInt(comment["commentId"]);
+    console.log(Comment);
+
+    if (userCommentId == Comment) {
+      return true;
+    }
+  });
+  console.log(Com);
+
   let commentINdex = userallComments.indexOf(Com);
 
   let alertComfirm = confirm("Are you sure you want to delete this comment");

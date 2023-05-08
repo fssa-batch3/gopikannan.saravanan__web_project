@@ -42,7 +42,9 @@ header {
   width: fit-content;
 }
 .nav {
-  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .nav-anchor,
 .profile {
@@ -54,8 +56,8 @@ header {
 }
 .profile {
   cursor: pointer;
-  width: 55px;
-  margin: auto;
+  width: 50px;
+  border-radius: 50%;
 }
 .nav a:hover {
   color: var(--toggle-color);

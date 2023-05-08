@@ -40,36 +40,78 @@
         <img id="profile" />
         <div class="input-div">
           <label>ProfilePic:</label
-          ><input id="pic" type="text" placeholder="Fill in the details" />
+          ><input
+            id="pic"
+            type="url"
+            placeholder="Fill in the details"
+            title="Enter only url of your image"
+          />
         </div>
         <div class="input-div">
-          <label>Name:</label><input id="name" type="text" maxlength="20" />
+          <label>Name:</label
+          ><input
+            id="name"
+            type="text"
+            pattern="^(?=.{2,50}$)[A-Za-z]+(?:\s[A-Za-z]+){0,3}$"
+            title="Name must be only in alphabets and First name last name both can be added optional"
+          />
         </div>
         <div class="input-div">
           <label>Mobile-Number:</label
-          ><input id="phno" type="text" maxlength="10" />
+          ><input
+            id="phno"
+            type="text"
+            pattern="[0-9]{10}"
+            required
+            title=" Phone number must have 10 digits"
+          />
         </div>
         <div class="input-div">
-          <label>Email:</label><input id="email" type="email" />
+          <label>Email:</label><input id="email" type="email" required />
         </div>
         <div class="input-div">
-          <label>Password:</label><input id="password" type="password" />
+          <label>Password:</label
+          ><input id="password" type="password" required />
         </div>
         <div class="input-div">
           <label>Address:</label
-          ><input id="address" type="text" placeholder="Fill in the details" />
+          ><input
+            id="address"
+            type="text"
+            placeholder="Fill in the details"
+            title="Enter your full address where you live"
+            pattern="^(?=.{0,200}$)[A-Za-z0-9!@#$%^&*()_+-={}[\]|\\;:'>,.?/]+[A-Za-z0-9]+(?:\s[A-Za-z0-9\s!@#$%^&*()_+-={}[\]|\\;:'>,.?/]+[A-Za-z0-9]+){0,10}$"
+          />
         </div>
         <div class="input-div">
           <label>Account Number:</label
-          ><input id="acc" type="text" placeholder="Fill in the details" />
+          ><input
+            id="acc"
+            type="text"
+            placeholder="Fill in the details"
+            pattern="[0-9]{10,}"
+            title="Enter your valid account number"
+          />
         </div>
         <div class="input-div">
           <label>Bank Name:</label
-          ><input type="text" id="accname" placeholder="Fill in the details" />
+          ><input
+            type="text"
+            id="accname"
+            placeholder="Fill in the details"
+            pattern="^(?=.{2,50}$)[A-Za-z]+(?:\s[A-Za-z]+){0,3}$"
+            title="Enter your bank name where you have the account"
+          />
         </div>
         <div class="input-div">
           <label> IFC Code:</label
-          ><input type="text" id="ifc" placeholder="Fill in the details" />
+          ><input
+            type="text"
+            id="ifc"
+            pattern="[A-Z|a-z]{4}[0][0-9|A-Z|a-z]{6}"
+            title="Enter valid IFSC code"
+            placeholder="Fill in the details"
+          />
         </div>
         <button type="submit" class="save">Save</button>
         <button type="submit" class="save" id="delete">Delete</button>
@@ -142,7 +184,6 @@
 
         details[userindex] = merge;
 
-       
         window.localStorage.setItem("userDetails", JSON.stringify(details));
         alert("Successfully updated your profile !!!");
         location.reload();

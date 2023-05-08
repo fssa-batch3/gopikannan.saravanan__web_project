@@ -1,6 +1,6 @@
 let details = [];
 
-let userId = JSON.parse(window.localStorage.getItem("userID"));
+let userid = JSON.parse(window.localStorage.getItem("userID"));
 let donationdetails = JSON.parse(
   window.localStorage.getItem("donerDonatedetails")
 );
@@ -45,8 +45,10 @@ let donater_name;
 let donater_contribution;
 
 for (let i = 0; i < details.length; i++) {
-  if (userId == details[i]["donaterid"]) {
-    let amount = details[i]["fundraiseAmountraise"];
+  if (userid == details[i]["donaterid"]) {
+    let amount =
+      parseInt(details[i]["fundraiseAmountraise"]) +
+      parseInt(details[i]["donaterContribution"]);
     console.log(amount);
 
     let expected_amount = parseInt(details[i]["fundraiseExpectedamount"]);
@@ -128,7 +130,7 @@ for (let i = 0; i < details.length; i++) {
     //<p id="percent"> 30%</p>
     p_tag = document.createElement("p");
     p_tag.setAttribute("id", "percent");
-    p_tag.innerText = percentage;
+    p_tag.innerText = percentage + "%";
     progress_div.append(p_tag);
 
     //<progress id="file" value="45" max="100">45%</progress>
@@ -188,7 +190,9 @@ for (let i = 0; i < details.length; i++) {
     // <span id="cash"></span>
     cash = document.createElement("span");
     cash.setAttribute("id", "cash");
-    cash.innerText = details[i]["fundraiseAmountraise"];
+    cash.innerText =
+      parseInt(details[i]["fundraiseAmountraise"]) +
+      parseInt(details[i]["donaterContribution"]);
     amount_sec.append(cash);
 
     // <span class="count"></span>
