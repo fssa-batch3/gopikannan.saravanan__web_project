@@ -167,10 +167,6 @@
           <label>Your UPI url:</label>
           <input id="upi" type="text" placeholder="paste your upi url" />
         </div>
-        <!-- <div class="input-div">
-          <label>I want to raise the amount Rs:</label>
-          <input id="amount_raised" type="text" placeholder="amount_raised" />
-        </div> -->
 
         <!-- <a href="../fundraiser/Fundraiserdetailsform1.html">  -->
         <button onclick="getinfo()" class="continue">SAVE</button>
@@ -212,9 +208,7 @@
       const image_doc = document.getElementById("image_doc");
       const amount = document.getElementById("amount");
       const upi = document.getElementById("upi");
-      // const amount_raised = document.getElementById("amount_raised");
 
-      // amount_raised.value = card_ob["amount_raised"];
       fundraisename.value = card_ob["fundraiser"];
       mail.value = card_ob["mail"];
       dropDown.value = card_ob["drop"];
@@ -249,7 +243,6 @@
         const image_doc = document.getElementById("image_doc").value.trim();
         const amount = document.getElementById("amount").value.trim();
         const upi = document.getElementById("upi").value.trim();
-        // const amount_raised = document.getElementById("amount_raised").value;
 
         let match = false;
 
@@ -260,10 +253,7 @@
           match = true;
         }
 
-        if (match == false) {
-          alert("input can't be left null");
-          return;
-        } else {
+        if (match == true) {
           let newObject = {
             fundraiser: fundraisename,
             mail: mail,
@@ -279,15 +269,10 @@
             image_doc: image_doc,
             expected_amt: amount,
             upiUrl: upi,
-            // amount_raised: amount_raised,
           };
           let assign = Object.assign(card_ob, newObject);
-          console.log(assign);
-
-          console.log(card_ob);
 
           let cardDesign = carddetails.indexOf(card_ob);
-          // console.log(cardDesign);
 
           carddetails[cardDesign] = assign;
 
@@ -298,6 +283,9 @@
           console.log(cardedit);
           alert("Successfully updated your card !!!");
           window.location.href = "../../webpage/fundraiser/fundraiser.html";
+        } else {
+          alert("input can't be left null");
+          return;
         }
       }
     </script>

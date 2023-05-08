@@ -67,7 +67,6 @@
 
       form.addEventListener("submit", function (event) {
         event.preventDefault();
-        let userid = [];
 
         let loginvalue = JSON.parse(localStorage.getItem("userDetails"));
         console.log(loginvalue);
@@ -88,7 +87,7 @@
             userpwd == loginvalue[i].user_pwd
           ) {
             match = true;
-            // arr.push(loginvalue[i]);
+
             window.localStorage.setItem(
               "login_user",
               JSON.stringify(loginvalue[i].user_mail)
@@ -109,7 +108,6 @@
           window.location.href = "./webpage/header/home.html";
         } else {
           alert("User credential does not match");
-          // window.location.href = "./webpage/login-signup/signup.html";
         }
       });
     </script>

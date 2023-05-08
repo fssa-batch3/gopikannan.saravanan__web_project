@@ -145,7 +145,6 @@
         let progress_tag;
         let progress_span_tag;
         let a_span_like;
-        let image_like;
         let a_span_share;
         let image_share;
         let amount_sec;
@@ -292,23 +291,6 @@
               }
             }
           });
-        }
-
-        function editCard(e) {
-          window.location.href = "../../webpage/header/edit.html";
-          let editArray = [];
-          let eId = e;
-          console.log(eId);
-          let editObject = {
-            product_id: eId,
-          };
-
-          console.log(editObject);
-
-          editArray.push(editObject);
-
-          console.log(editArray);
-          localStorage.setItem("updateData", JSON.stringify(editArray));
         }
       }
 
