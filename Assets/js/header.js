@@ -1,6 +1,3 @@
-let path = window.location.origin;
-// let homepath= path +
-
 let allarray = JSON.parse(window.localStorage.getItem("userDetails"));
 let userId = JSON.parse(window.localStorage.getItem("userID"));
 console.log(allarray);
@@ -112,7 +109,7 @@ imgProfile.setAttribute("alt", "Profile");
 imgProfile.setAttribute("title", "profile");
 
 imgProfile.setAttribute("onclick", "profile()");
-headerNav.append(imgProfile);
+divSidebar.append(imgProfile);
 
 function profile() {
   window.location.href = "../../webpage/header/profile.html";

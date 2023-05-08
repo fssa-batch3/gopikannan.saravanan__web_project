@@ -57,9 +57,6 @@
         id="search"
       />
       <i class="fa fa-search" width="20px"></i>
-      <!-- <a href="#"
-        ><button type="submit"><i class="fa fa-search" width="20px"></i></button
-      ></a> -->
     </div>
     <!-- search box sec ens -->
 
@@ -164,14 +161,6 @@
 
         let percentage = Math.floor((amount / expected_amount) * 100);
 
-        // console.log("Percentage " + percentage)
-
-        //  const percentage =
-
-        //   <div class="container">..</div>
-        // container_div = document.createElement("div");
-        // container_div.setAttribute("class", "container");
-
         // TO CLOSE A CARD WHEN ITS EXPECTED AMOUNT REACHED
         if (amount == expected_amount || amount >= expected_amount) {
           json[i]["amout"] = "reached";
@@ -196,11 +185,6 @@
               json[i]["userId"]
           );
           anchor.append(a);
-
-          //   <span class="linkspanner"></span>
-          // span = document.createElement("span");
-          // span.setAttribute("class", "linkspanner");
-          // anchor.append(span);
 
           //   <img class="image" src="../../Assets/images/education.jpg" alt="education" />
           image = document.createElement("img");
@@ -238,21 +222,6 @@
           progress_span_tag.setAttribute("class", "like");
           progress_div.append(progress_span_tag);
 
-          // img
-
-          // image_like = document.createElement("img");
-          // image_like.setAttribute("id", json[i]["product_id"]);
-          // image_like.setAttribute("onclick", "editCard(this.id)");
-          // image_like.setAttribute(
-          //   "src",
-          //   "../../Assets/images/icons8-edit-60-removebg-preview.png"
-          // );
-
-          // image_like.setAttribute("alt", "Like");
-          // image_like.setAttribute("class", "icon-like");
-          // image_like.setAttribute("width", "30px");
-          // progress_span_tag.append(image_like);
-
           // a
           a_span_share = document.createElement("a");
           a_span_share.setAttribute("href", "#");
@@ -284,12 +253,6 @@
           cash.innerHTML = "RS." + json[i]["amount_raised"] + "&nbsp" + "&nbsp";
 
           amount_sec.append(cash);
-
-          // // <span class="count"></span>
-          // count = document.createElement("span");
-          // count.setAttribute("class", "count");
-          // count.innerText = json[i]["supporters"];
-          // progress_div.append(count);
 
           // <div class="user"></div>
           user_div = document.createElement("div");

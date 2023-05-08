@@ -37,7 +37,7 @@
     <!-- form -->
     <div class="container">
       <form id="profile_form">
-        <img id="profile" />
+        <img alt="userprofile" id="profile" />
         <div class="input-div">
           <label>ProfilePic:</label
           ><input
@@ -202,25 +202,27 @@
         if (email_check == mailcheck) {
           return true;
         }
-        // if (typeof myValue === "undefined") {
-        //   // alert("Please fill in your details on your profile page.");
-        //   useraddress.innerText = "fill in the details";
-
-        // }
+      
       });
 
-      profilepic = document.getElementById("pic").value = profile_["user_pic"];
-      username = document.getElementById("name").value = profile_["user_name"];
-      userphno = document.getElementById("phno").value = profile_["user_phno"];
-      usermail = document.getElementById("email").value = profile_["user_mail"];
-      userpwd = document.getElementById("password").value =
-        profile_["user_pwd"];
-      useraddress = document.getElementById("address").value =
-        profile_["useraddress"];
-      useracco = document.getElementById("acc").value = profile_["useracco"];
-      userbankname = document.getElementById("accname").value =
-        profile_["userbankname"];
-      userifsc = document.getElementById("ifc").value = profile_["userifsc"];
+      const profilepic = (document.getElementById("pic").value =
+        profile_["user_pic"]);
+      const user_name = (document.getElementById("name").value =
+        profile_["user_name"]);
+      const user_phno = (document.getElementById("phno").value =
+        profile_["user_phno"]);
+      const user_mail = (document.getElementById("email").value =
+        profile_["user_mail"]);
+      const user_pwd = (document.getElementById("password").value =
+        profile_["user_pwd"]);
+      const useraddress = (document.getElementById("address").value =
+        profile_["useraddress"]);
+      const useracco = (document.getElementById("acc").value =
+        profile_["useracco"]);
+      const userbankname = (document.getElementById("accname").value =
+        profile_["userbankname"]);
+      const userifsc = (document.getElementById("ifc").value =
+        profile_["userifsc"]);
 
       console.log(profile_);
 
@@ -240,45 +242,7 @@
         }
       });
 
-      //     let store =  JSON.parse(window.localStorage.getItem("updateuser"))
 
-      // let username = document.getElementById("name").value =updateuser ["user_name"];
-      // let userphno = document.getElementById("phno").value =updateuser ["user_phno"];
-      // let usermail = document.getElementById("email").value = updateuser ["user_mail"];
-      // let userpwd =  document.getElementById("password").value =updateuser ["user_repwd"];
-      // let user_address=document.getElementById("address").value= updateuser ["useraddress"];
-      // let user_acco=document.getElementById("acc").value= updateuser ["useracco"];
-      // let user_bankname=document.getElementById("accname").value= updateuser ["userbankname"];
-      // let user_ifsc=document.getElementById("ifc").value= updateuser ["userifsc"];
-
-      // let profilevalue = JSON.parse(window.localStorage.getItem("login_user"));
-      //     console.log(profilevalue);
-      //     document.getElementById("name").value=profilevalue[0]["user_name"];
-      //     document.getElementById("phno").value=profilevalue[0]["user_phno"];
-      //     document.getElementById("email").value=profilevalue[0]["user_mail"];
-      //     document.getElementById("password").value=profilevalue[0]["user_repwd"];
-
-      //     function save(){
-
-      //         let is = false;
-      //         for (let i = 0; i < profilevalue.length; i++) {
-      //           if (email != profilevalue[i].user_mail) {
-
-      //             is =false;
-
-      //           }
-
-      //         }
-
-      //         if(is ==false){
-      //           alert("email not exist")
-      //           return
-      //         }
-      //         else{
-      //           alert ('mail')
-      //         }
-
-      //       }
     </script>
   </body>
 </html>

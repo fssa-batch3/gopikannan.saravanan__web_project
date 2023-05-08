@@ -29,43 +29,14 @@
 input {
   width: 100%;
   font-size: 18px;
-  border: none;
   outline: none;
   border: 2px solid #3f3a813c;
   color: black;
 }
-/* #email {
-  width: 100%;
-  font-size: 18px;
-  border: none;
-  outline: none;
-  border-bottom: 2px solid #3f3a813c;
-  color: black;
-}
-#mobileno {
-  width: 100%;
-  font-size: 18px;
-  border: none;
-  outline: none;
-  border-bottom: 2px solid #3f3a813c;
-  color: black;
-}
-select {
-  font-size: 18px;
-  width: 100%;
-  color: black;
-}
-#otp {
-  width: 50%;
-  margin: auto;
-  font-size: 18px;
-  text-align: center;
-  border: 2px solid #3f3a813c;
-  color: black;
-} */
+
 textarea {
-  border: transparent;
-  outline: gray;
+  border: 2px solid #3f3a813c;
+  outline: none;
 }
 .continue {
   display: flex;

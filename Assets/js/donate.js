@@ -90,17 +90,6 @@ inputSearch.setAttribute("placeholder", "Search by name,location,cause...");
 inputSearch.setAttribute("name", "search");
 document.querySelector(".search").append(inputSearch);
 
-// let sumbitBtn;
-// sumbitBtn = document.createElement("button");
-// sumbitBtn.setAttribute("type", "submit");
-// document.querySelector(".search").append(sumbitBtn);
-
-// let searchIcon;
-// searchIcon = document.createElement("i");
-// searchIcon.setAttribute("class", "fa fa-search");
-// searchIcon.setAttribute("width", "20px");
-// sumbitBtn.append(searchIcon);
-
 let dropDiv;
 dropDiv = document.createElement("div");
 dropDiv.setAttribute("class", "abc");
@@ -314,20 +303,3 @@ for (let i = 0; i < json.length; i++) {
     });
   }
 }
-
-// function editCard(e) {
-//   window.location.href = "../../webpage/header/edit.html";
-//   let editArray = [];
-//   let eId = e;
-//   console.log(eId);
-//   let editObject = {
-//     product_id: eId,
-//   };
-
-//   console.log(editObject);
-
-//   editArray.push(editObject);
-
-//   console.log(editArray);
-//   localStorage.setItem("updateData", JSON.stringify(editArray));
-// }

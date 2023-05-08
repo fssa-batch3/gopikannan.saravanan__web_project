@@ -1,5 +1,5 @@
 let details = [];
-
+console.log(details);
 let userid = JSON.parse(window.localStorage.getItem("userID"));
 let donationdetails = JSON.parse(
   window.localStorage.getItem("donerDonatedetails")
@@ -68,7 +68,13 @@ for (let i = 0; i < details.length; i++) {
     //<a href="./Divyam.html" style="text-decoration: none">
 
     anchor = document.createElement("a");
-    anchor.setAttribute("href", "./Divyam.html");
+    anchor.setAttribute(
+      "href",
+      "../../webpage/donate/story.html?product_id=" +
+        details[i]["fundraiseId"] +
+        "&userid=" +
+        details[i]["fundraiserUserid"]
+    );
     anchor.setAttribute("style", "text-decoration: none");
     box.append(anchor);
 

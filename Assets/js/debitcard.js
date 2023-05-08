@@ -33,10 +33,6 @@ function donate() {
     paymentId: debitcarddetails["paymentId"],
   };
 
-  if ((cardname = "" || cardname == null)) {
-    return;
-  }
-
   if (window.localStorage.getItem("carddetails") !== null) {
     carddetails = JSON.parse(localStorage.getItem("carddetails"));
   }

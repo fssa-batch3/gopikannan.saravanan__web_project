@@ -1,4 +1,4 @@
-json = [];
+const json = [];
 
 let create_card = JSON.parse(localStorage.getItem("carddetails"));
 
@@ -41,17 +41,6 @@ for (let i = 0; i < json.length; i++) {
     anchorDonate.setAttribute("style", "text-decoration: none");
     anchorDonate.innerHTML = `<span class="textAmt">Expected Amount reached</span>`;
     box.append(anchorDonate);
-
-    // let anchorimg;
-    // anchorimg = document.createElement("a");
-    // anchorimg.setAttribute(
-    //   "href",
-    //   "../../webpage/donate/story.html?product_id=" +
-    //     json[i]["product_id"] +
-    //     "&userid=" +
-    //     json[i]["userId"]
-    // );
-    // anchorDonate.append(anchorimg);
 
     let coverimg;
     coverimg = document.createElement("img");
@@ -102,11 +91,6 @@ for (let i = 0; i < json.length; i++) {
     );
     image_like.setAttribute("width", "30px");
     progress_span_tag.append(image_like);
-
-    // let a_span_share;
-    // a_span_share = document.createElement("a");
-    // a_span_share.setAttribute("href", "#");
-    // progress_span_tag.append(a_span_share);
 
     let shareImg;
     shareImg = document.createElement("img");
@@ -192,7 +176,6 @@ for (let i = 0; i < json.length; i++) {
           element.style.display = "block";
         } else {
           element.style.display = "none";
-          // container_div.innerHTML = "No Items Found";
         }
       }
     });
@@ -230,7 +213,6 @@ for (let i = 0; i < json.length; i++) {
     coverimg.setAttribute("height", "270px");
     coverimg.setAttribute("src", json[i]["img"]);
     coverimg.setAttribute("onclick", "redirect()");
-    // coverimg.innerHTML = "Amount reached";
     coverimg.setAttribute("alt", "wsa we save animals");
     anchorimg.append(coverimg);
 
@@ -272,11 +254,6 @@ for (let i = 0; i < json.length; i++) {
     );
     image_like.setAttribute("width", "30px");
     progress_span_tag.append(image_like);
-
-    // let a_span_share;
-    // a_span_share = document.createElement("a");
-    // a_span_share.setAttribute("href", "#");
-    // progress_span_tag.append(a_span_share);
 
     let shareImg;
     shareImg = document.createElement("img");

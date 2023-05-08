@@ -79,12 +79,7 @@ input[type="email"]:focus:valid {
 input[type="email"]:focus:invalid {
   border: solid 2px red;
 }
-input[type="text"]:focus:valid {
-  border: solid 2px green;
-}
-input[type="text"]:focus:invalid {
-  border: solid 2px red;
-}
+
 input[type="text"]:focus:valid {
   border: solid 2px green;
 }
