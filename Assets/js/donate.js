@@ -172,9 +172,9 @@ for (let i = 0; i < json.length; i++) {
   if (amount == expected_amount || amount >= expected_amount) {
     json[i]["amout"] = "reached";
   }
-  // console.log(json[i]["amout"]);
+
   if (json[i]["amout"] == "unreach") {
-    // console.log(expected_amount);
+ 
 
     // search div &dropdown
 
@@ -276,7 +276,6 @@ for (let i = 0; i < json.length; i++) {
     // <span class="name"></span>
     nameFundraise = document.createElement("span");
     nameFundraise.setAttribute("class", "nameFundraiser");
-    // name.setAttribute("style", "font-weight:bold");
     nameFundraise.innerText = json[i]["fundraiser"];
     user_div.append(nameFundraise);
 

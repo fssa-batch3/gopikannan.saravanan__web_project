@@ -27,7 +27,7 @@ console.log(percentage);
 let content;
 content = document.createElement("div");
 content.setAttribute("class", "content");
-// container.append(content);
+
 
 let heading;
 heading = document.createElement("h4");
@@ -54,7 +54,6 @@ progress.append(progress_div);
 let para;
 para = document.createElement("p");
 para.setAttribute("id", "percent");
-// para.innerText = percentage + "%";
 progress_div.append(para);
 
 let b_tag;
@@ -173,7 +172,7 @@ userName.setAttribute("class", "name");
 userName.innerText = fundraiseDetails["fundraiser"];
 user1.append(userName);
 
-// document.querySelector(".content-supporter-container").append(content);
+
 
 // UPI box
 
