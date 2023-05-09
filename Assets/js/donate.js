@@ -162,7 +162,6 @@ for (let i = 0; i < json.length; i++) {
   let amount = parseInt(json[i]["amount_raised"]);
 
   let expected_amount = parseInt(json[i]["expected_amt"]);
-  // console.log(expected_amount);
 
   let jsonCause = json[i]["drop"];
   console.log(jsonCause);
@@ -297,7 +296,6 @@ for (let i = 0; i < json.length; i++) {
           element.style.display = "block";
         } else {
           element.style.display = "none";
-          // container_div.innerHTML = "No Items Found";
         }
       }
     });

@@ -337,7 +337,7 @@ for (let i = 0; i < json.length; i++) {
 
     let inputSearch = document.getElementById("search");
     const cards = document.getElementsByClassName("box1-box2-container");
-    let container_div = document.getElementById("container");
+
     inputSearch.addEventListener("input", () => {
       for (let i = 0; i < cards.length; i++) {
         const element = cards[i];
@@ -349,7 +349,6 @@ for (let i = 0; i < json.length; i++) {
           element.style.display = "block";
         } else {
           element.style.display = "none";
-          // container_div.innerHTML = "No Items Found";
         }
       }
     });

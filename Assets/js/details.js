@@ -446,6 +446,7 @@ form = document.createElement("form");
 
 let form2;
 form2 = document.createElement("form");
+
 form.prepend(form2);
 
 let fieldset2;
@@ -552,13 +553,13 @@ function del(commentid) {
 
   let alertComfirm = confirm("Are you sure you want to delete this comment");
 
-  if (alertComfirm != true) {
-    return;
-  } else {
+  if (alertComfirm) {
     window.localStorage.setItem("commentId", JSON.stringify(commentid));
     userallComments.splice(commentINdex, 1);
     window.localStorage.setItem("commentmain", JSON.stringify(userallComments));
     location.reload();
+  } else {
+    return;
   }
 }
 
