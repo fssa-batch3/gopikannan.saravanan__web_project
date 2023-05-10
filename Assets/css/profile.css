@@ -71,7 +71,20 @@ input {
   display: flex;
   justify-content: center;
   border-radius: 50%;
-  width: 250px;
+  width: 200px;
+}
+.buttons {
+  display: flex;
+  width: 345px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.logout {
+  cursor: pointer;
+}
+.logout:hover {
+  background-color: var(--primary-color);
 }
 input[type="email"]:focus:valid {
   border: solid 2px green;

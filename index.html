@@ -60,11 +60,7 @@
     <script>
       let form = document.getElementById("form");
 
-      // form.addEventListener("submit", (e) => {
-      //   e.preventDefault();
-      //   check_getinfo();
-      // });
-
+      // form addeventlistener
       form.addEventListener("submit", function (event) {
         event.preventDefault();
 
@@ -72,15 +68,14 @@
         console.log(loginvalue);
         let useremail = document.getElementById("email").value;
         let userpwd = document.getElementById("password").value;
-
+        //  if the value is null return the function
         if (useremail == "" || userpwd == "") {
-          // return;
           alert("User input cat't be left empty");
           return;
         }
-
+        // variable to store the false boolean value
         let match = false;
-
+        // loop and if condition to match the email and password in the signup localstorage make the match true else make the match false
         for (let i = 0; i < loginvalue.length; i++) {
           if (
             useremail == loginvalue[i].user_mail &&
@@ -102,7 +97,7 @@
             match = false;
           }
         }
-
+        // if match is true give alert and navigate to home page else give alert
         if (match == true) {
           alert("SUCCESS");
           window.location.href = "./webpage/header/home.html";

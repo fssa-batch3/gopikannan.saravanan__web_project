@@ -10,10 +10,7 @@
     <link rel="stylesheet" href="../../Assets/css/footer.css" />
     <link rel="stylesheet" href="../../Assets/css/universal.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      rel="stylesheet"
-      href="../../webpage/login-signup/login-signup.html"
-    />
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
@@ -113,8 +110,19 @@
             placeholder="Fill in the details"
           />
         </div>
-        <button type="submit" class="save">Save</button>
-        <button type="submit" class="save" id="delete">Delete</button>
+
+        <div class="buttons">
+          <button type="submit" class="save">Save</button>
+          <button type="submit" class="save" id="delete">Delete</button>
+          <img
+            onclick="logout()"
+            src="../../Assets/images/logout (1).png"
+            alt="logout"
+            class="logout"
+            width="50pc"
+          />
+        </div>
+
         <!-- form ends -->
       </form>
     </div>
@@ -202,7 +210,6 @@
         if (email_check == mailcheck) {
           return true;
         }
-      
       });
 
       const profilepic = (document.getElementById("pic").value =
@@ -242,7 +249,11 @@
         }
       });
 
-
+      function logout() {
+        window.localStorage.removeItem("login_user");
+        window.localStorage.removeItem("userID");
+        window.location.href = "/index.html";
+      }
     </script>
   </body>
 </html>

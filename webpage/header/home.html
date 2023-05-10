@@ -164,7 +164,7 @@
         if (amount == expected_amount || amount >= expected_amount) {
           json[i]["amout"] = "reached";
         }
-        if (json[i]["amout"] == "unreach") {
+        if (json[i]["amout"] == "unreach" && percentage >= 30) {
           //   <div class="box"></div>
           card_div = document.createElement("div");
           card_div.setAttribute("class", "box");
