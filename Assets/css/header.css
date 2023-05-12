@@ -64,6 +64,11 @@ header {
 .menudiv {
   display: none;
 }
+@media print {
+  header {
+    display: none;
+  }
+}
 @media screen and (max-width: 1200px) {
   .logo {
     width: 50px;

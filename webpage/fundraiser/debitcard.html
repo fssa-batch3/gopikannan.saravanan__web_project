@@ -35,11 +35,24 @@
       <div class="first-sec">
         <div class="user-details">
           <label>Card Holder Name</label><br />
-          <input id="cardname" type="text" class="name-txt" maxlength="20" />
+          <input
+            id="cardname"
+            type="text"
+            class="name-txt"
+            pattern="^(?=.{3,50}$)[A-Za-z]+(?:\s[A-Za-z]+){0,3}$"
+            title="Enter only name with alphabets"
+            required
+          />
         </div>
         <div class="cvv-details">
           <label>CVV </label><br />
-          <input type="text" id="cvv" class="cvv" maxlength="3" />
+          <input
+            type="password"
+            id="cvv"
+            class="cvv"
+            pattern="[0-9]{3}"
+            maxlength="3"
+          />
         </div>
       </div>
       <!-- first-sec end -->
@@ -47,7 +60,15 @@
       <!-- second-sec -->
       <div class="second-sec">
         <label>Card Number</label><br />
-        <input id="cardnum" class="num" type="text" maxlength="16" />
+        <input
+          id="cardnum"
+          class="num"
+          type="text"
+          required
+          pattern="(\d{4}\s?){4}"
+          placeholder="&#8226;&#8226;&#8226;&#8226; &#8226;&#8226;&#8226;&#8226; &#8226;&#8226;&#8226;&#8226; &#8226;&#8226;&#8226;&#8226;"
+          maxlength="19"
+        />
       </div>
       <!-- sec-sec-ends -->
 
@@ -56,7 +77,7 @@
       <div class="third-sec">
         <div class="expirydate">
           <label>Expiry Date</label><br />
-          <select name="months" id="months">
+          <select required name="months" id="months">
             <option value="Jan">Jan</option>
             <option value="Feb">Feb</option>
             <option value="Mar">Mar</option>
@@ -70,7 +91,7 @@
             <option value="Nov">Nov</option>
             <option value="Dec">Dec</option>
           </select>
-          <select name="years" id="years">
+          <select required name="years" id="years">
             <option value="2022">2022</option>
             <option value="2023">2023</option>
             <option value="2024">2024</option>

@@ -51,6 +51,12 @@ function debitcard() {
   const donaterContribution = document.getElementById("Contribution").value;
   const paymentThrough = "debitcard";
   const paymentId = Date.now();
+  // to get the current date
+  const date = new Date();
+  const day = date.getDate();
+  const month = date.getMonth() + 1;
+  const year = date.getFullYear();
+  const currentDate = `${day}-${month}-${year}`;
 
   console.log(fundraiserUserid);
 
@@ -72,6 +78,7 @@ function debitcard() {
     donaterContribution: donaterContribution,
     paymentThrough: paymentThrough,
     paymentId: paymentId,
+    dateofdonation: currentDate,
   };
 
   if (window.localStorage.getItem("donerDonatedetails") !== null) {
@@ -163,6 +170,12 @@ function dirdectbank() {
   const donaterContribution = document.getElementById("Contribution").value;
   const paymentThrough = "Direct_bank_transfer";
   const paymentId = Date.now();
+  // to get the current date
+  const date = new Date();
+  const day = date.getDate();
+  const month = date.getMonth() + 1;
+  const year = date.getFullYear();
+  const currentDate = `${day}-${month}-${year}`;
   console.log(fundraiserUserid);
 
   if (donaterContribution == "" || donaterContribution == null) {
@@ -183,6 +196,7 @@ function dirdectbank() {
     donaterContribution: donaterContribution,
     paymentThrough: paymentThrough,
     paymentId: paymentId,
+    dateofdonation: currentDate,
   };
 
   if (window.localStorage.getItem("donerDonatedetails") !== null) {

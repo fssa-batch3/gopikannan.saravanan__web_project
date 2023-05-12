@@ -40,6 +40,8 @@
 }
 input {
   width: 100%;
+  border: gray solid 2px;
+  outline: none;
 }
 .name-txt {
   color: black;
@@ -108,6 +110,18 @@ select {
 }
 .donate-btn:hover {
   background-color: var(--primary-color);
+}
+input[type="text"]:focus:valid {
+  border: solid 2px green;
+}
+input[type="text"]:focus:invalid {
+  border: solid 2px red;
+}
+input[type="password"]:focus:valid {
+  border: solid 2px green;
+}
+input[type="password"]:focus:invalid {
+  border: solid 2px red;
 }
 /* main content ends*/
 @media screen and (max-width: 750px) {

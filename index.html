@@ -33,7 +33,13 @@
       <div class="login">
         <form id="form" action="./webpage/login-signup/signup.html">
           <label>Login</label>
-          <input id="email" type="email" placeholder="Email" required />
+          <input
+            id="email"
+            type="email"
+            placeholder="Email"
+            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+            required
+          />
 
           <input
             type="password"

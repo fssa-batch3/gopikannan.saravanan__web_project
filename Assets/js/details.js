@@ -28,7 +28,6 @@ let content;
 content = document.createElement("div");
 content.setAttribute("class", "content");
 
-
 let heading;
 heading = document.createElement("h4");
 heading.innerText = fundraiseDetails["title"];
@@ -128,6 +127,12 @@ story_more.setAttribute("id", "more");
 story_more.innerText = fundraiseDetails["story"];
 story.append(story_more);
 
+let img_document;
+img_document = document.createElement("img");
+img_document.setAttribute("id", "document");
+img_document.setAttribute("src", fundraiseDetails["image_doc"]);
+story.append(img_document);
+
 let viewmore;
 viewmore = document.createElement("div");
 viewmore.setAttribute("class", "viewmore");
@@ -171,8 +176,6 @@ userName = document.createElement("span");
 userName.setAttribute("class", "name");
 userName.innerText = fundraiseDetails["fundraiser"];
 user1.append(userName);
-
-
 
 // UPI box
 
@@ -222,7 +225,7 @@ upibox.append(qrimg);
 
 let imageqr;
 imageqr = document.createElement("img");
-imageqr.setAttribute("src", "../../Assets/images/qr.jpg");
+imageqr.setAttribute("src", fundraiseDetails["upiUrl"]);
 imageqr.setAttribute("alt", "Qr");
 imageqr.setAttribute("id", "qr");
 qrimg.append(imageqr);

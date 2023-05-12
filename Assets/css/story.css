@@ -95,8 +95,6 @@ progress {
 }
 .story {
   padding: 10px 40px;
-  /* width: fit-content; */
-  /* display: flex; */
   justify-content: center;
   align-items: center;
   height: auto;
@@ -148,13 +146,17 @@ progress {
   color: black;
   font-size: 18px;
 }
+#document {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  display: none;
+}
 .view {
   display: none;
 }
-/* .upi-container {
-  display: flex;
-  flex-direction: row;
-} */
+
 .upi-box {
   background-color: #dddaff;
   display: inline-block;

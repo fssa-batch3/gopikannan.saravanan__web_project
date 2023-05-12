@@ -200,12 +200,15 @@ for (let i = 0; i < details.length; i++) {
       parseInt(details[i]["fundraiseAmountraise"]) +
       parseInt(details[i]["donaterContribution"]);
     amount_sec.append(cash);
+    // button
+    let download_button;
+    download_button = document.createElement("button");
+    download_button.setAttribute("class", "download");
+    download_button.innerText = "Donation Reciept";
 
-    // <span class="count"></span>
-    // count = document.createElement("span");
-    // count.setAttribute("class", "count");
-    // count.innerText = details[i]["supporters"];
-    // progress_div.append(count);
+    download_button.setAttribute("id", details[i]["paymentId"]);
+    download_button.setAttribute("onclick", "download(this.id)");
+    progress_div.append(download_button);
 
     //hrtag
     hr_tag = document.createElement("hr");
@@ -246,5 +249,12 @@ for (let i = 0; i < details.length; i++) {
     div_class.append(donater_contribution);
 
     document.querySelector(".overallcontainer").append(container);
+  }
+
+  function download(e) {
+    let donaterId = e;
+    console.log(donaterId);
+    window.location.href =
+      "../../webpage/donate/donationdownload.html?donaterId=" + donaterId;
   }
 }

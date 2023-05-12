@@ -166,6 +166,27 @@ body {
 .contribution-box {
   display: flex;
 }
+.download {
+  background-color: #3f3a81;
+  border: none;
+  color: var(--toggle-color);
+  font-weight: bold;
+  font-size: 12px;
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.download:hover {
+  background-color: var(--primary-color);
+}
+
 @media screen and (max-width: 1200px) {
   .first-second-box-container {
     display: flex;

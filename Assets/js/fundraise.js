@@ -78,6 +78,7 @@ for (let i = 0; i < json.length; i++) {
     let progress_span_tag;
     progress_span_tag = document.createElement("span");
     progress_span_tag.setAttribute("class", "like");
+
     progress_div.append(progress_span_tag);
 
     let image_like;
