@@ -111,6 +111,7 @@ h4 {
   display: flex;
   justify-content: center;
   margin: auto;
+  text-align: center;
   /* padding-left: 35px;
   padding-bottom: 10px; */
 }

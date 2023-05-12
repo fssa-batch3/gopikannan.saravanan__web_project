@@ -197,7 +197,7 @@ upihead.append(spanFirsthead);
 let spanSecondhead;
 spanSecondhead = document.createElement("span");
 spanSecondhead.setAttribute("id", "sec-head");
-spanSecondhead.innerHTML = "550" + "&nbsp" + "Supporters";
+spanSecondhead.innerHTML = "Support";
 upihead.append(spanSecondhead);
 
 let donateBtn;

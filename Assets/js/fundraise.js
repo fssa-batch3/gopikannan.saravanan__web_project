@@ -81,18 +81,6 @@ for (let i = 0; i < json.length; i++) {
 
     progress_div.append(progress_span_tag);
 
-    let image_like;
-    image_like = document.createElement("img");
-    image_like.setAttribute("id", json[i]["product_id"]);
-    image_like.setAttribute("class", "icon-like");
-    image_like.setAttribute("onclick", "editCard(this.id)");
-    image_like.setAttribute(
-      "src",
-      "../../Assets/images/icons8-edit-60-removebg-preview.png"
-    );
-    image_like.setAttribute("width", "30px");
-    progress_span_tag.append(image_like);
-
     let shareImg;
     shareImg = document.createElement("img");
     shareImg.setAttribute("src", "../../Assets/images/share.png");

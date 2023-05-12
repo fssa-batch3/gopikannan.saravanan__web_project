@@ -152,6 +152,7 @@ progress {
   align-items: center;
   margin: auto;
   display: none;
+  width: 100%;
 }
 .view {
   display: none;
