@@ -185,13 +185,15 @@
       let product_id = JSON.parse(window.localStorage.getItem("updateData"));
       // card details data
       let carddetails = JSON.parse(window.localStorage.getItem("carddetails"));
+      //
+      let user_Id = JSON.parse(window.localStorage.getItem("userCheckdetails"));
+      console.log(user_Id);
       let card_ob = carddetails.find(function (object) {
         let id_check = object["product_id"];
         if (id_check == product_id[0]["product_id"]) {
           return true;
         }
       });
-      console.log(card_ob);
 
       const fundraisename = document.getElementById("name");
       const mail = document.getElementById("email");
@@ -225,7 +227,7 @@
 
       let form = document.getElementById("form");
 
-      form.addEventListener(function (event) {
+      form.addEventListener("submit", function (event) {
         const fundraisename = document.getElementById("name").value.trim();
         const mail = document.getElementById("email").value.trim();
         const dropDown = document.getElementById("cause").value;
@@ -277,14 +279,15 @@
 
           carddetails[cardDesign] = assign;
 
-          let cardedit = window.localStorage.setItem(
+          window.localStorage.setItem(
             "carddetails",
             JSON.stringify(carddetails)
           );
-          console.log(cardedit);
           alert("Successfully updated your card !!!");
+
           window.location.href =
-            "../../webpage/fundraiser/fundraiser.html?userid=" + userid;
+            "../../webpage/fundraiser/fundraiser.html?userid=" +
+            user_Id["userid"];
         } else {
           alert("input can't be left null");
           return;

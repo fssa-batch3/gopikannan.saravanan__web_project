@@ -267,182 +267,234 @@ const getuserID = idParams.get("userid");
 
 // check and userid and userid in the url
 let userdetails = JSON.parse(window.localStorage.getItem("userDetails"));
-let userid = JSON.parse(window.localStorage.getItem("userID"));
-let user_id = userdetails.find(function (user) {
-  let id_user = user["userid"];
-  console.log(id_user);
-  if (userid == id_user) {
-    return true;
+let userid = JSON.parse(window.localStorage.getItem("userCheckdetails"));
+
+if (userid == null) {
+  let commentArr = JSON.parse(window.localStorage.getItem("commentmain"));
+  let commentNewarr = [];
+
+  for (let i = 0; i < commentArr.length; i++) {
+    if (getIDdetails == commentArr[i]["fundraiseId"]) {
+      commentNewarr.push(commentArr[i]);
+    }
   }
-});
-console.log(user_id);
 
-let commentArr = [];
+  window.localStorage.setItem("comment", JSON.stringify(commentNewarr));
 
-// function to send comment and to set in the local storage
-function send() {
-  const msginput = document.getElementById("msg").value;
-  const coverpic = user_id["user_pic"];
-  const hours = new Date().getHours();
-  const minutes = new Date().getMinutes();
-  const currentTime = `${hours}:${minutes}`;
+  let comment = JSON.parse(window.localStorage.getItem("comment"));
 
-  const Userid = user_id["userid"];
-
-  const username = user_id["user_name"];
-
-  const fundraiseid = fundraiseDetails["product_id"];
-
-  const commentid = Date.now();
-
-  if (msginput == "" || msginput == null) {
-    alert("You can't send empty comment");
-    return;
-  } else {
-    let commentObj = {
-      userpic: coverpic,
-      userName: username,
-      user_ID: Userid,
-      fundraiseId: fundraiseid,
-      commentId: commentid,
-      time: currentTime,
-      msg: msginput,
-    };
-    console.log(commentObj);
-    commentArr.push(commentObj);
-    window.localStorage.setItem("commentmain", JSON.stringify(commentArr));
+  for (let i = 0; i < comment.length; i++) {
+    if (comment[i]["user_ID"] != null) {
+      let commentMsg = document.createElement("div");
+      commentMsg.setAttribute("class", "chat-message");
+      let userImg;
+      userImg = document.createElement("img");
+      userImg.setAttribute("src", comment[i]["userpic"]);
+      userImg.setAttribute("alt", "profile");
+      userImg.setAttribute("width", "32");
+      userImg.setAttribute("height", "32");
+      userImg.setAttribute("style", "border-radius: 50%");
+      commentMsg.append(userImg);
+      let msgcontent;
+      msgcontent = document.createElement("div");
+      msgcontent.setAttribute("class", "chat-message-content");
+      commentMsg.append(msgcontent);
+      let spanTime;
+      spanTime = document.createElement("div");
+      spanTime.setAttribute("class", "chat-time");
+      spanTime.innerText = comment[i]["time"];
+      msgcontent.append(spanTime);
+      let heading_user;
+      heading_user = document.createElement("h5");
+      heading_user.innerText = comment[i]["userName"];
+      msgcontent.append(heading_user);
+      let msg;
+      msg = document.createElement("p");
+      msg.setAttribute("style", "color: black");
+      msg.innerText = comment[i]["msg"];
+      msgcontent.append(msg);
+      let hr;
+      hr = document.createElement("hr");
+      document.querySelector(".chat-history").append(commentMsg, hr);
+    }
   }
-  location.reload();
-}
+  function send() {
+    alert("You don't have an account to send a comment");
+    window.location.href = "../../webpage/login-signup/login.html";
+  }
+} else {
+  let user_id = userdetails.find(function (user) {
+    let id_user = user["userid"];
+    console.log(id_user);
+    if (userid["userid"] == id_user) {
+      return true;
+    }
+  });
+  console.log(user_id);
 
-// not to get value replace in the comment main array in the local storage
-if (localStorage.getItem("commentmain") !== null) {
-  commentArr = JSON.parse(window.localStorage.getItem("commentmain"));
-}
-console.log(commentArr);
+  let commentArr = [];
 
-let commentNewarr = [];
-let commentnewob = {};
+  // function to send comment and to set in the local storage
+  function send() {
+    const msginput = document.getElementById("msg").value;
+    const coverpic = user_id["user_pic"];
+    const hours = new Date().getHours();
+    const minutes = new Date().getMinutes();
+    const currentTime = `${hours}:${minutes}`;
 
-// to show the appropriate fundraise card comment
-// loop to assignit to a new object then push it into the new array and store it in a localstorage
-for (let i = 0; i < commentArr.length; i++) {
-  if (getIDdetails == commentArr[i]["fundraiseId"]) {
-    commentNewarr.push(commentArr[i]);
+    const Userid = user_id["userid"];
+
+    const username = user_id["user_name"];
+
+    const fundraiseid = fundraiseDetails["product_id"];
+
+    const commentid = Date.now();
+
+    if (msginput == "" || msginput == null) {
+      alert("You can't send empty comment");
+      return;
+    } else {
+      let commentObj = {
+        userpic: coverpic,
+        userName: username,
+        user_ID: Userid,
+        fundraiseId: fundraiseid,
+        commentId: commentid,
+        time: currentTime,
+        msg: msginput,
+      };
+      console.log(commentObj);
+      commentArr.push(commentObj);
+      window.localStorage.setItem("commentmain", JSON.stringify(commentArr));
+    }
+    location.reload();
+  }
+
+  // not to get value replace in the comment main array in the local storage
+  if (localStorage.getItem("commentmain") !== null) {
+    commentArr = JSON.parse(window.localStorage.getItem("commentmain"));
+  }
+  console.log(commentArr);
+
+  let commentNewarr = [];
+  let commentnewob = {};
+
+  // to show the appropriate fundraise card comment
+  // loop to assignit to a new object then push it into the new array and store it in a localstorage
+  for (let i = 0; i < commentArr.length; i++) {
+    if (getIDdetails == commentArr[i]["fundraiseId"]) {
+      commentNewarr.push(commentArr[i]);
+    }
+  }
+
+  window.localStorage.setItem("comment", JSON.stringify(commentNewarr));
+
+  let comment = JSON.parse(window.localStorage.getItem("comment"));
+
+  // to read the comment by the donater
+
+  for (let i = 0; i < comment.length; i++) {
+    if (comment[i]["user_ID"] == user_id["userid"]) {
+      let commentMsg = document.createElement("div");
+      commentMsg.setAttribute("class", "chat-message");
+
+      let userImg;
+      userImg = document.createElement("img");
+      userImg.setAttribute("src", comment[i]["userpic"]);
+      userImg.setAttribute("alt", "profile");
+      userImg.setAttribute("width", "32");
+      userImg.setAttribute("height", "32");
+      userImg.setAttribute("style", "border-radius: 50%");
+      commentMsg.append(userImg);
+
+      let msgcontent;
+      msgcontent = document.createElement("div");
+      msgcontent.setAttribute("class", "chat-message-content");
+      commentMsg.append(msgcontent);
+
+      let spanTime;
+      spanTime = document.createElement("div");
+      spanTime.setAttribute("class", "chat-time");
+      spanTime.innerText = comment[i]["time"];
+      msgcontent.append(spanTime);
+
+      let heading_user;
+      heading_user = document.createElement("h5");
+      heading_user.innerText = comment[i]["userName"];
+      msgcontent.append(heading_user);
+
+      let msg;
+      msg = document.createElement("p");
+      msg.setAttribute("style", "color: black");
+      msg.innerText = comment[i]["msg"];
+      msg.setAttribute("id", "msg_content");
+      msgcontent.append(msg);
+
+      let editDeldiv;
+      editDeldiv = document.createElement("div");
+      editDeldiv.setAttribute("class", "editdeldiv");
+      commentMsg.append(editDeldiv);
+
+      let edit;
+      edit = document.createElement("img");
+      edit.setAttribute("src", "../../Assets/images/draw.png");
+      edit.setAttribute("width", "20");
+      edit.setAttribute("height", "20");
+      edit.setAttribute("onclick", "edit(this.id)");
+      edit.setAttribute("id", comment[i]["commentId"]);
+      edit.setAttribute("class", "edit");
+      edit.setAttribute("style", "cursor:pointer");
+      editDeldiv.append(edit);
+
+      let del;
+      del = document.createElement("img");
+      del.setAttribute("src", "../../Assets/images/delete.png");
+      del.setAttribute("width", "20");
+      del.setAttribute("height", "20");
+      del.setAttribute("id", comment[i]["commentId"]);
+      del.setAttribute("onclick", "deleted(this.id),del()");
+      del.setAttribute("style", "cursor:pointer");
+      editDeldiv.append(del);
+
+      let hr;
+      hr = document.createElement("hr");
+
+      document.querySelector(".chat-history").append(commentMsg, hr);
+    } else {
+      let commentMsg = document.createElement("div");
+      commentMsg.setAttribute("class", "chat-message");
+      let userImg;
+      userImg = document.createElement("img");
+      userImg.setAttribute("src", comment[i]["userpic"]);
+      userImg.setAttribute("alt", "profile");
+      userImg.setAttribute("width", "32");
+      userImg.setAttribute("height", "32");
+      userImg.setAttribute("style", "border-radius: 50%");
+      commentMsg.append(userImg);
+      let msgcontent;
+      msgcontent = document.createElement("div");
+      msgcontent.setAttribute("class", "chat-message-content");
+      commentMsg.append(msgcontent);
+      let spanTime;
+      spanTime = document.createElement("div");
+      spanTime.setAttribute("class", "chat-time");
+      spanTime.innerText = comment[i]["time"];
+      msgcontent.append(spanTime);
+      let heading_user;
+      heading_user = document.createElement("h5");
+      heading_user.innerText = comment[i]["userName"];
+      msgcontent.append(heading_user);
+      let msg;
+      msg = document.createElement("p");
+      msg.setAttribute("style", "color: black");
+      msg.innerText = comment[i]["msg"];
+      msgcontent.append(msg);
+      let hr;
+      hr = document.createElement("hr");
+      document.querySelector(".chat-history").append(commentMsg, hr);
+    }
   }
 }
-console.log(commentNewarr);
-window.localStorage.setItem("comment", JSON.stringify(commentNewarr));
-
-let comment = JSON.parse(window.localStorage.getItem("comment"));
-console.log(comment);
-
-// to read the comment by the donater
-
-for (let i = 0; i < comment.length; i++) {
-  console.log(comment[i]["user_ID"]);
-  console.log(user_id["userid"]);
-  if (comment[i]["user_ID"] == user_id["userid"]) {
-    let commentMsg = document.createElement("div");
-    commentMsg.setAttribute("class", "chat-message");
-
-    let userImg;
-    userImg = document.createElement("img");
-    userImg.setAttribute("src", comment[i]["userpic"]);
-    userImg.setAttribute("alt", "profile");
-    userImg.setAttribute("width", "32");
-    userImg.setAttribute("height", "32");
-    userImg.setAttribute("style", "border-radius: 50%");
-    commentMsg.append(userImg);
-
-    let msgcontent;
-    msgcontent = document.createElement("div");
-    msgcontent.setAttribute("class", "chat-message-content");
-    commentMsg.append(msgcontent);
-
-    let spanTime;
-    spanTime = document.createElement("div");
-    spanTime.setAttribute("class", "chat-time");
-    spanTime.innerText = comment[i]["time"];
-    msgcontent.append(spanTime);
-
-    let heading_user;
-    heading_user = document.createElement("h5");
-    heading_user.innerText = comment[i]["userName"];
-    msgcontent.append(heading_user);
-
-    let msg;
-    msg = document.createElement("p");
-    msg.setAttribute("style", "color: black");
-    msg.innerText = comment[i]["msg"];
-    msg.setAttribute("id", "msg_content");
-    msgcontent.append(msg);
-
-    let editDeldiv;
-    editDeldiv = document.createElement("div");
-    editDeldiv.setAttribute("class", "editdeldiv");
-    commentMsg.append(editDeldiv);
-
-    let edit;
-    edit = document.createElement("img");
-    edit.setAttribute("src", "../../Assets/images/draw.png");
-    edit.setAttribute("width", "20");
-    edit.setAttribute("height", "20");
-    edit.setAttribute("onclick", "edit(this.id)");
-    edit.setAttribute("id", comment[i]["commentId"]);
-    edit.setAttribute("class", "edit");
-    edit.setAttribute("style", "cursor:pointer");
-    editDeldiv.append(edit);
-
-    let del;
-    del = document.createElement("img");
-    del.setAttribute("src", "../../Assets/images/delete.png");
-    del.setAttribute("width", "20");
-    del.setAttribute("height", "20");
-    del.setAttribute("id", comment[i]["commentId"]);
-    del.setAttribute("onclick", "del(this.id)");
-    del.setAttribute("style", "cursor:pointer");
-    editDeldiv.append(del);
-
-    let hr;
-    hr = document.createElement("hr");
-
-    document.querySelector(".chat-history").append(commentMsg, hr);
-  } else {
-    let commentMsg = document.createElement("div");
-    commentMsg.setAttribute("class", "chat-message");
-    let userImg;
-    userImg = document.createElement("img");
-    userImg.setAttribute("src", comment[i]["userpic"]);
-    userImg.setAttribute("alt", "profile");
-    userImg.setAttribute("width", "32");
-    userImg.setAttribute("height", "32");
-    userImg.setAttribute("style", "border-radius: 50%");
-    commentMsg.append(userImg);
-    let msgcontent;
-    msgcontent = document.createElement("div");
-    msgcontent.setAttribute("class", "chat-message-content");
-    commentMsg.append(msgcontent);
-    let spanTime;
-    spanTime = document.createElement("div");
-    spanTime.setAttribute("class", "chat-time");
-    spanTime.innerText = comment[i]["time"];
-    msgcontent.append(spanTime);
-    let heading_user;
-    heading_user = document.createElement("h5");
-    heading_user.innerText = comment[i]["userName"];
-    msgcontent.append(heading_user);
-    let msg;
-    msg = document.createElement("p");
-    msg.setAttribute("style", "color: black");
-    msg.innerText = comment[i]["msg"];
-    msgcontent.append(msg);
-    let hr;
-    hr = document.createElement("hr");
-    document.querySelector(".chat-history").append(commentMsg, hr);
-  }
-}
-
 let form;
 form = document.createElement("form");
 
@@ -508,6 +560,12 @@ function edit(id) {
   document.getElementById("editfieldset").classList.toggle("active");
 }
 
+function deleted(commentid) {
+  let commentId = commentid;
+
+  window.localStorage.setItem("delId", JSON.stringify(commentId));
+}
+
 function sendedit() {
   let userallComments = JSON.parse(window.localStorage.getItem("commentmain"));
   let userCommentId = JSON.parse(window.localStorage.getItem("commentId"));
@@ -537,9 +595,10 @@ function sendedit() {
 }
 
 // to delete the comment
+
 function del(commentid) {
   let userallComments = JSON.parse(window.localStorage.getItem("commentmain"));
-  let userCommentId = JSON.parse(window.localStorage.getItem("commentId"));
+  let userCommentId = JSON.parse(window.localStorage.getItem("delId"));
   console.log(userCommentId);
   let Com = userallComments.find(function (comment) {
     let Comment = parseInt(comment["commentId"]);

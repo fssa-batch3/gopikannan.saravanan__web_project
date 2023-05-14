@@ -204,7 +204,9 @@
 
       form.addEventListener("submit", function (event) {
         event.preventDefault();
-        let userid = JSON.parse(window.localStorage.getItem("userID"));
+        let userid = JSON.parse(
+          window.localStorage.getItem("userCheckdetails")
+        );
         let arr = [];
 
         if (localStorage.getItem("carddetails") != null) {
@@ -227,8 +229,6 @@
         const amount = document.getElementById("amount").value.trim();
         // const amount_raised = document.getElementById("amount_raised").value;
         const upi = document.getElementById("upi").value.trim();
-        const userId = JSON.parse(window.localStorage.getItem("userID"));
-        console.log(userId);
 
         const product_id = Date.now();
 
@@ -260,7 +260,7 @@
             amount_raised: "0",
             product_id: product_id,
             upiUrl: upi,
-            userId: userId,
+            userId: userid["userid"],
             amout: "unreach",
           };
 
@@ -271,7 +271,8 @@
           window.localStorage.setItem("carddetails", JSON.stringify(arr));
           alert("Successfully Added your fundraise card");
           window.location.href =
-            "../../webpage/fundraiser/fundraiser.html?userid=" + userid;
+            "../../webpage/fundraiser/fundraiser.html?userid=" +
+            userid["userid"];
         } else {
           alert("Your input might doesn't match the pattern");
           return;

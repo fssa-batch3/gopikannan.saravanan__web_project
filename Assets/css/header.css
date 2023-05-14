@@ -17,7 +17,7 @@
 }
 .logo {
   width: 65px;
-  margin-left: 30px;
+  margin-left: 40px;
 }
 header {
   display: flex;
@@ -36,13 +36,15 @@ header {
 }
 .name {
   margin-top: -10px;
+  margin-left: 20px;
+
   color: #3f3a81;
   font-weight: bold;
   text-align: center;
   width: fit-content;
 }
 .nav {
-  margin-top: 10px;
+  margin-top: 25px;
 }
 .nav-anchor {
   margin-right: 20px;
@@ -54,8 +56,11 @@ header {
 .profile {
   cursor: pointer;
   width: 45px;
-  margin-top: -9px;
+  margin-top: -25px;
   border-radius: 50%;
+  border: 2px solid #3f3a81;
+  position: relative;
+  top: 10px;
 }
 .nav a:hover {
   color: var(--toggle-color);

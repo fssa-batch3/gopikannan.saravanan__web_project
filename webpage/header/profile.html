@@ -142,7 +142,10 @@
     <script src="../../Assets/js/footer.js"></script>
 
     <script>
-      let email_check = JSON.parse(window.localStorage.getItem("login_user"));
+      let Check = JSON.parse(window.localStorage.getItem("userCheckdetails"));
+      let email_check = Check.user_mail;
+      console.log(email_check);
+      console.log(Check);
       let details = JSON.parse(window.localStorage.getItem("userDetails"));
 
       let user_ob = details.find(function (objuser) {
@@ -251,13 +254,14 @@
         } else {
           details.splice(index, 1);
           window.localStorage.setItem("userDetails", JSON.stringify(details));
+          window.localStorage.removeItem("userCheckdetails");
           window.location.href = "/index.html";
         }
       });
 
       function logout() {
-        window.localStorage.removeItem("login_user");
-        window.localStorage.removeItem("userID");
+        window.localStorage.removeItem("userCheckdetails");
+
         window.location.href = "/index.html";
       }
     </script>
