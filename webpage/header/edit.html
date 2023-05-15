@@ -283,11 +283,10 @@
             "carddetails",
             JSON.stringify(carddetails)
           );
-          alert("Successfully updated your card !!!");
+          console.log("navigating");
 
-          window.location.href =
-            "../../webpage/fundraiser/fundraiser.html?userid=" +
-            user_Id["userid"];
+          location.href = "../../webpage/fundraiser/fundraiser.html";
+          alert("Successfully updated your card !!!");
         } else {
           alert("input can't be left null");
           return;

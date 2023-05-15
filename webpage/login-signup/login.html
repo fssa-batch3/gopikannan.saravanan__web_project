@@ -75,10 +75,6 @@
         let useremail = document.getElementById("email").value;
         let userpwd = document.getElementById("password").value;
         //  if the value is null return the function
-        if (useremail == "" || userpwd == "") {
-          alert("User input cat't be left empty");
-          return;
-        }
 
         let findObj = loginvalue.find(function (find) {
           let mail = find["user_mail"];
@@ -89,7 +85,6 @@
             return true;
           }
         });
-        console.log(findObj);
 
         // variable to store the false boolean value
         let match = false;

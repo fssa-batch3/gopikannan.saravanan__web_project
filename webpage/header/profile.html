@@ -142,12 +142,13 @@
     <script src="../../Assets/js/footer.js"></script>
 
     <script>
+      // to get the usercheck details
       let Check = JSON.parse(window.localStorage.getItem("userCheckdetails"));
       let email_check = Check.user_mail;
-      console.log(email_check);
-      console.log(Check);
+      //  to get the main profile details
       let details = JSON.parse(window.localStorage.getItem("userDetails"));
 
+      // find the object that matches the mail
       let user_ob = details.find(function (objuser) {
         let mailcheck = objuser["user_mail"];
         console.log(mailcheck);
@@ -155,8 +156,8 @@
           return true;
         }
       });
-      console.log(user_ob);
 
+      // Initially to store some value
       let username = (document.getElementById("name").value =
         user_ob["user_name"]);
       let userphno = (document.getElementById("phno").value =
@@ -166,10 +167,13 @@
       let userpwd = (document.getElementById("password").value =
         user_ob["user_pwd"]);
 
+      // to show profile pic
       let profile_pic = document.getElementById("profile");
       profile_pic.setAttribute("src", user_ob["user_pic"]);
 
       let form = document.getElementById("profile_form");
+
+      // to edit the profile details
 
       form.addEventListener("submit", function (event) {
         event.preventDefault();
@@ -221,6 +225,8 @@
         }
       });
 
+      // to show it after editing details
+
       const profilepic = (document.getElementById("pic").value =
         profile_["user_pic"]);
       const user_name = (document.getElementById("name").value =
@@ -242,6 +248,7 @@
 
       console.log(profile_);
 
+      // delete the profile details
       let delete_profile = document.getElementById("delete");
       delete_profile.addEventListener("click", function (event) {
         event.preventDefault();
@@ -258,6 +265,8 @@
           window.location.href = "/index.html";
         }
       });
+
+      // log out function
 
       function logout() {
         window.localStorage.removeItem("userCheckdetails");
