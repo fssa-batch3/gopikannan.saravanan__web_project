@@ -60,7 +60,7 @@ input {
   text-decoration: none;
 }
 .save:hover {
-  background-color: var(--primary-color);
+  filter: drop-shadow(2px 4px 8px #3f3a81);
   text-decoration: none;
   outline: none;
   border: none;
@@ -85,7 +85,7 @@ input {
   cursor: pointer;
 }
 .logout:hover {
-  background-color: var(--primary-color);
+  filter: drop-shadow(2px 4px 8px #3f3a81);
 }
 input[type="email"]:focus:valid {
   border: solid 2px green;

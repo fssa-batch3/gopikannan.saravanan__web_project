@@ -624,8 +624,14 @@ function del(commentid) {
   }
 }
 
-function paymentpage() {
-  window.location.href =
-    "../../webpage/donate/payment1stpage.html?product_id=" +
-    fundraiseDetails["product_id"];
+if (userid == null) {
+  function paymentpage() {
+    window.location.href = "../../webpage/login-signup/login.html";
+  }
+} else {
+  function paymentpage() {
+    window.location.href =
+      "../../webpage/donate/payment1stpage.html?product_id=" +
+      fundraiseDetails["product_id"];
+  }
 }
