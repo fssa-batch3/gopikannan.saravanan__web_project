@@ -59,7 +59,12 @@ header {
     display: none;
   }
   .maincontainer {
+    margin-top: -300px;
     display: block;
+    background-image: url(../images/pinreciept_page-0001.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
   }
   .overallcontainer,
   #txt-box {

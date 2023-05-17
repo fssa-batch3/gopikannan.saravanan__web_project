@@ -16,6 +16,7 @@ let fundraiseDetails = create_card.find(function (event) {
     return true;
   }
 });
+console.log(fundraiseDetails);
 
 let userdetailsfind = userDetails.find(function (user) {
   let userid = user["userid"];
@@ -25,14 +26,22 @@ let userdetailsfind = userDetails.find(function (user) {
 });
 
 let amountRaised = fundraiseDetails["amount_raised"];
-console.log(amountRaised);
 let expected_amount = fundraiseDetails["expected_amt"];
-console.log(expected_amount);
 
 let percentage = Math.floor((amountRaised / expected_amount) * 100);
 
-console.log(fundraiseDetails);
-console.log(userdetailsfind);
+let contri = document.getElementById("Contribution");
+
+contri.addEventListener("keyup", function () {
+  let valuecontri = parseFloat(contri.value);
+  console.log(valuecontri);
+
+  if (valuecontri >= expected_amount) {
+    confirm(
+      "Are you sure you want to donate more than the expected amount by the fundraiser"
+    );
+  }
+});
 
 let paymentarr = [];
 
@@ -59,10 +68,6 @@ function debitcard() {
   const currentDate = `${day}-${month}-${year}`;
 
   console.log(fundraiserUserid);
-
-  if (donaterContribution == "" || donaterContribution == null) {
-    return;
-  }
 
   let paymentContri = {
     fundraiseimg: fundraiseimg,
@@ -97,12 +102,6 @@ function paymentid() {
     const element = payment[payment.length - 1]["paymentId"];
 
     window.localStorage.setItem("paymentid", JSON.stringify(element));
-  }
-
-  const donaterContribution = document.getElementById("Contribution").value;
-  if (donaterContribution == "" || donaterContribution == null) {
-    alert("Fill your contribution for the next process");
-    return;
   }
 
   window.location.href = "../../webpage/fundraiser/debitcard.html";
@@ -178,10 +177,6 @@ function dirdectbank() {
   const currentDate = `${day}-${month}-${year}`;
   console.log(fundraiserUserid);
 
-  if (donaterContribution == "" || donaterContribution == null) {
-    return;
-  }
-
   let paymentContri = {
     fundraiseimg: fundraiseimg,
     fundraiseTitle: fundraiseTitle,
@@ -216,14 +211,34 @@ function paymentDBid() {
     console.log(element);
     window.localStorage.setItem("paymentid", JSON.stringify(element));
   }
-  const donaterContribution = document.getElementById("Contribution").value;
-  if (donaterContribution == "" || donaterContribution == null) {
-    alert("Fill your contribution for the next process");
-    return;
-  }
+
   window.location.href =
     "../../webpage/fundraiser/directbanktransfer.html?fundraiseUserID=" +
     fundraiseDetails["userId"] +
     "&donaterUserId=" +
     userdetailsfind["userid"];
 }
+
+let debitdonate = document.getElementById("debit");
+debitdonate.addEventListener("click", function () {
+  const donatercontribution = document.getElementById("Contribution").value;
+  if (donatercontribution == "" || donatercontribution == null) {
+    alert("Fill your contribution for the next process");
+    return;
+  }
+  debitcard();
+  paymentid();
+  addAmount();
+});
+
+let directBank = document.getElementById("banktransfer");
+directBank.addEventListener("click", function () {
+  const donatercontribution = document.getElementById("Contribution").value;
+  if (donatercontribution == "" || donatercontribution == null) {
+    alert("Fill your contribution for the next process");
+    return;
+  }
+  debitcard();
+  paymentDBid();
+  addAmount();
+});
