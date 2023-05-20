@@ -18,6 +18,7 @@
 .logo {
   width: 65px;
   margin-left: 40px;
+  cursor: pointer;
 }
 header {
   display: flex;
@@ -37,7 +38,6 @@ header {
 .name {
   margin-top: -10px;
   margin-left: 20px;
-
   color: #3f3a81;
   font-weight: bold;
   text-align: center;
@@ -58,17 +58,45 @@ header {
   width: 45px;
   margin-top: -25px;
   border-radius: 50%;
-  border: 2px solid #3f3a81;
+  border: 3px solid #3f3a81;
   position: relative;
   top: 10px;
 }
 .nav a:hover {
-  color: var(--toggle-color);
-  background-color: var(--body-text-color);
+  color: var(--body-text-color);
+  border-bottom: 5px solid #695cfe;
 }
+
 .menudiv {
   display: none;
 }
+
+.profile-opt {
+  display: none;
+  width: 150px;
+  height: 100px;
+  background-color: var(--header-color);
+  position: absolute;
+  right: 0;
+  box-shadow: rgb(180, 193, 255) 4px 4px 4px;
+  margin: auto;
+  text-align: center;
+}
+.profile-opt a {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid #3f3a81;
+  font-weight: bold;
+  width: 100px;
+  margin: auto;
+  height: 30px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
 @media print {
   header {
     display: none;

@@ -31,8 +31,28 @@
     <header></header>
     <!-- header ends -->
 
-    <div class="search">
-      <button id="newFundraise" onclick="newfundraise()" class="donation">
+    <div class="search"></div>
+    <!-- search box sec -->
+
+    <div id="container" class="container"></div>
+
+    <!-- script for refine search button -->
+    <script>
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+
+      window.onclick = function (e) {
+        if (!e.target.matches(".dropbtn")) {
+          var myDropdown = document.getElementById("myDropdown");
+          if (myDropdown.classList.contains("show")) {
+            myDropdown.classList.remove("show");
+          }
+        }
+      };
+
+      let search = document.createElement("div");
+      search.innerHTML = ` <button id="newFundraise" onclick="newfundraise()" class="donation">
         New Fundraise
       </button>
 
@@ -54,26 +74,8 @@
           <a href="#">Education</a>
           <a href="#">Social cause</a>
         </div>
-      </div>
-    </div>
-    <!-- search box sec -->
-
-    <div id="container" class="container"></div>
-
-    <!-- script for refine search button -->
-    <script>
-      function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-      }
-
-      window.onclick = function (e) {
-        if (!e.target.matches(".dropbtn")) {
-          var myDropdown = document.getElementById("myDropdown");
-          if (myDropdown.classList.contains("show")) {
-            myDropdown.classList.remove("show");
-          }
-        }
-      };
+      </div>`;
+      document.querySelector(".search").append(search);
     </script>
     <!-- script ends -->
 

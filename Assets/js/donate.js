@@ -56,9 +56,12 @@ let json = [
 ];
 let create_card = JSON.parse(localStorage.getItem("carddetails"));
 console.log(create_card);
-for (let i = 0; i < create_card.length; i++) {
-  json.push(create_card[i]);
-  console.log(json);
+
+if (create_card != null) {
+  for (let i = 0; i < create_card.length; i++) {
+    json.push(create_card[i]);
+    console.log(json);
+  }
 }
 
 // let searchDiv;
@@ -74,7 +77,7 @@ console.log(getcause);
 
 let anchordrop;
 anchordrop = document.createElement("a");
-anchordrop.setAttribute("href", "../../webpage/donate/My donations.html");
+anchordrop.setAttribute("href", "../../webpage/donate/mydonations.html");
 document.querySelector(".search").append(anchordrop);
 
 let donationBtn;
@@ -82,6 +85,14 @@ donationBtn = document.createElement("button");
 donationBtn.setAttribute("class", "donation");
 donationBtn.innerText = "My Donation";
 anchordrop.append(donationBtn);
+
+let search;
+search = document.createElement("i");
+search.setAttribute("class", "fa fa-search");
+search.setAttribute("width", "20px");
+document.querySelector(".search").append(search);
+
+/* <i class="fa fa-search" width="20px"></i> */
 
 let inputSearch;
 inputSearch = document.createElement("input");
@@ -174,8 +185,6 @@ for (let i = 0; i < json.length; i++) {
   }
 
   if (json[i]["amout"] == "unreach") {
- 
-
     // search div &dropdown
 
     //   <div class="box"></div>
@@ -219,25 +228,30 @@ for (let i = 0; i < json.length; i++) {
 
     //   <b> 20%</b>
 
+    let progress_bar_div;
+    progress_bar_div = document.createElement("div");
+    progress_bar_div.setAttribute("class", "progress_bar_div");
+    progress_div.append(progress_bar_div);
+
     b_tag = document.createElement("b");
     b_tag.innerText = percentage + "%";
-    progress_div.append(b_tag);
+    progress_bar_div.append(b_tag);
 
     //   <progress id="file" value="32" max="100">20%</progress>
     progress_tag = document.createElement("progress");
     progress_tag.setAttribute("id", "file");
     progress_tag.setAttribute("value", percentage);
     progress_tag.setAttribute("max", "100");
-    progress_div.append(progress_tag);
+    progress_bar_div.append(progress_tag);
 
     //span
     progress_span_tag = document.createElement("span");
     progress_span_tag.setAttribute("class", "like");
-    progress_div.append(progress_span_tag);
+    progress_bar_div.append(progress_span_tag);
 
     // img
     image_share = document.createElement("img");
-    image_share.setAttribute("src", "../../Assets/images/share.png");
+    image_share.setAttribute("src", "../../Assets/images/share (1).png");
     image_share.setAttribute("class", "share");
     image_share.setAttribute("alt", "share");
     image_share.setAttribute("width", "30px");
@@ -258,7 +272,7 @@ for (let i = 0; i < json.length; i++) {
     cash = document.createElement("span");
     cash.setAttribute("id", "cash");
 
-    cash.innerHTML = "RS." + json[i]["amount_raised"] + "&nbsp" + "&nbsp";
+    cash.innerHTML = ` RS. <b>${json[i]["amount_raised"]}</b> out of <b>${json[i]["expected_amt"]}</b>`;
 
     amount_sec.append(cash);
 

@@ -5,11 +5,15 @@ let donationdetails = JSON.parse(
   window.localStorage.getItem("donerDonatedetails")
 );
 let create_card = JSON.parse(localStorage.getItem("carddetails"));
+console.log(create_card);
 
-for (let i = 0; i < donationdetails.length; i++) {
-  details.push(donationdetails[i]);
-  console.log(details);
+if (donationdetails != null) {
+  for (let i = 0; i < donationdetails.length; i++) {
+    details.push(donationdetails[i]);
+    console.log(details);
+  }
 }
+console.log(details);
 
 // console.log(details);
 
@@ -47,209 +51,190 @@ let donater_contribution;
 if (userid != null) {
   for (let i = 0; i < details.length; i++) {
     if (userid["userid"] == details[i]["donaterid"]) {
-      let amount =
-        parseInt(details[i]["fundraiseAmountraise"]) +
-        parseInt(details[i]["donaterContribution"]);
-      console.log(amount);
+      for (let j = 0; j < create_card.length; j++) {
+        if (create_card[j].product_id == details[i].fundraiseId) {
+          let amount = parseInt(create_card[j]["amount_raised"]);
 
-      let expected_amount = parseInt(details[i]["fundraiseExpectedamount"]);
-      console.log(expected_amount);
+          console.log(amount);
 
-      let percentage = Math.floor((amount / expected_amount) * 100);
-      console.log(percentage);
-      container = document.createElement("div");
-      container.setAttribute("class", "first-second-box-container");
+          let expected_amount = parseInt(create_card[j]["expected_amt"]);
+          console.log(expected_amount);
 
-      //  <div class="box"></div>
+          let percentage = Math.floor((amount / expected_amount) * 100);
+          console.log(percentage);
+          container = document.createElement("div");
+          container.setAttribute("class", "first-second-box-container");
 
-      box = document.createElement("div");
-      box.setAttribute("class", "box");
-      container.append(box);
+          //  <div class="box"></div>
 
-      //<a href="./Divyam.html" style="text-decoration: none">
+          box = document.createElement("div");
+          box.setAttribute("class", "box");
+          container.append(box);
 
-      anchor = document.createElement("a");
-      anchor.setAttribute(
-        "href",
-        "../../webpage/donate/story.html?product_id=" +
-          details[i]["fundraiseId"] +
-          "&userid=" +
-          details[i]["fundraiserUserid"]
-      );
-      anchor.setAttribute("style", "text-decoration: none");
-      box.append(anchor);
+          //<a href="./Divyam.html" style="text-decoration: none">
 
-      //<span class="linkspanner"></span>;
+          anchor = document.createElement("a");
+          anchor.setAttribute(
+            "href",
+            "../../webpage/donate/story.html?product_id=" +
+              details[i]["fundraiseId"] +
+              "&userid=" +
+              details[i]["fundraiserUserid"]
+          );
+          anchor.setAttribute("style", "text-decoration: none");
+          box.append(anchor);
 
-      first_span_tag = document.createElement("span");
-      first_span_tag.setAttribute("class", "linkspanner");
-      anchor.append(first_span_tag);
+          //<span class="linkspanner"></span>;
 
-      //<img class="image" src="../../Assets/images/baby.jpg" height="255" />
+          first_span_tag = document.createElement("span");
+          first_span_tag.setAttribute("class", "linkspanner");
+          anchor.append(first_span_tag);
 
-      image = document.createElement("img");
-      image.setAttribute("class", "image");
-      image.setAttribute("height", "255");
-      image.setAttribute("src", details[i]["fundraiseimg"]);
-      anchor.append(image);
+          //<img class="image" src="../../Assets/images/baby.jpg" height="255" />
 
-      // <h4>Help Divyam Fight From Leukaemia</h4>
-      h4_tag = document.createElement("h4");
-      h4_tag.innerText = details[i]["fundraiseTitle"];
-      anchor.append(h4_tag);
+          image = document.createElement("img");
+          image.setAttribute("class", "image");
+          image.setAttribute("height", "255");
+          image.setAttribute("src", details[i]["fundraiseimg"]);
+          anchor.append(image);
 
-      // <div class="user">
+          // <h4>Help Divyam Fight From Leukaemia</h4>
+          h4_tag = document.createElement("h4");
+          h4_tag.innerText = details[i]["fundraiseTitle"];
+          anchor.append(h4_tag);
 
-      user_div = document.createElement("div");
-      user_div.setAttribute("class", "user");
-      anchor.append(user_div);
+          // <div class="user">
 
-      //<span class="name-label">Created by</span>
-      span_name = document.createElement("span");
-      span_name.setAttribute("class", "name-label");
-      span_name.innerText = "Created by";
-      user_div.append(span_name);
+          user_div = document.createElement("div");
+          user_div.setAttribute("class", "user");
+          anchor.append(user_div);
 
-      //<span class="name">Ajay </span>
-      span_fundraiser_name = document.createElement("span");
-      span_fundraiser_name.setAttribute("class", "name");
-      span_fundraiser_name.innerText = details[i]["fundraiseName"];
-      user_div.append(span_fundraiser_name);
+          //<span class="name-label">Created by</span>
+          span_name = document.createElement("span");
+          span_name.setAttribute("class", "name-label");
+          span_name.innerText = "Created by";
+          user_div.append(span_name);
 
-      //   <div class="second-box">
-      second_box = document.createElement("div");
-      second_box.setAttribute("class", "second-box");
-      container.append(second_box);
+          //<span class="name">Ajay </span>
+          span_fundraiser_name = document.createElement("span");
+          span_fundraiser_name.setAttribute("class", "name");
+          span_fundraiser_name.innerText = details[i]["fundraiseName"];
+          user_div.append(span_fundraiser_name);
 
-      //<div class="amountdetails">Amount Details</div>
+          //   <div class="second-box">
+          second_box = document.createElement("div");
+          second_box.setAttribute("class", "second-box");
+          container.append(second_box);
 
-      amount_details_head = document.createElement("div");
-      amount_details_head.setAttribute("class", "amountdetails");
-      amount_details_head.innerHTML = "Amount Details";
-      second_box.append(amount_details_head);
+          //<div class="amountdetails">Amount Details</div>
 
-      // <div class="progress-sec">
+          amount_details_head = document.createElement("div");
+          amount_details_head.setAttribute("class", "amountdetails");
+          amount_details_head.innerHTML = "Amount Details";
+          second_box.append(amount_details_head);
 
-      progress_div = document.createElement("div");
-      progress_div.setAttribute("class", "progress-sec");
-      second_box.append(progress_div);
+          // <div class="progress-sec">
 
-      //<p id="percent"> 30%</p>
-      p_tag = document.createElement("p");
-      p_tag.setAttribute("id", "percent");
-      p_tag.innerText = percentage + "%";
-      progress_div.append(p_tag);
+          progress_div = document.createElement("div");
+          progress_div.setAttribute("class", "progress-sec");
+          second_box.append(progress_div);
 
-      //<progress id="file" value="45" max="100">45%</progress>
-      progress_tag = document.createElement("progress");
-      progress_tag.setAttribute("id", "file");
-      progress_tag.setAttribute("value", percentage);
-      progress_tag.setAttribute("max", "100");
-      progress_tag.innerText = "20%";
-      progress_div.append(progress_tag);
+          let progress_bar_div;
+          progress_bar_div = document.createElement("div");
+          progress_bar_div.setAttribute("class", "progress_bar_div");
+          progress_div.append(progress_bar_div);
 
-      //span
-      progress_span_tag = document.createElement("span");
-      progress_span_tag.setAttribute("class", "like");
-      progress_div.append(progress_span_tag);
+          b_tag = document.createElement("b");
+          b_tag.innerText = percentage + "%";
+          progress_bar_div.append(b_tag);
 
-      //   a
-      // a_span_like = document.createElement("a");
-      // a_span_like.setAttribute("href", "#");
-      // progress_span_tag.append(a_span_like);
+          //   <progress id="file" value="32" max="100">20%</progress>
+          progress_tag = document.createElement("progress");
+          progress_tag.setAttribute("id", "file");
+          progress_tag.setAttribute("value", percentage);
+          progress_tag.setAttribute("max", "100");
+          progress_bar_div.append(progress_tag);
 
-      // // img
+          //span
+          progress_span_tag = document.createElement("span");
+          progress_span_tag.setAttribute("class", "like");
+          progress_bar_div.append(progress_span_tag);
 
-      // image_like = document.createElement("img");
-      // image_like.setAttribute(
-      //   "src",
-      //   "../../Assets/images/icons8-favorite-50.png"
-      // );
-      // image_like.setAttribute("alt", "Like");
-      // image_like.setAttribute("class", "icon-like");
-      // image_like.setAttribute("width", "30px");
-      // a_span_like.append(image_like);
+          // img
+          image_share = document.createElement("img");
+          image_share.setAttribute("src", "../../Assets/images/share (1).png");
+          image_share.setAttribute("class", "share");
+          image_share.setAttribute("alt", "share");
+          image_share.setAttribute("width", "30px");
+          progress_span_tag.append(image_share);
 
-      // // a
-      // a_span_share = document.createElement("a");
-      // a_span_share.setAttribute("href", "#");
-      // progress_span_tag.append(a_span_share);
+          // <div class="amount">
+          amount_sec = document.createElement("div");
+          amount_sec.setAttribute("class", "amount");
+          progress_div.append(amount_sec);
 
-      // img
-      image_share = document.createElement("img");
-      image_share.setAttribute("src", "../../Assets/images/share.png");
-      image_share.setAttribute("class", "share");
-      image_share.setAttribute("alt", "share");
-      image_share.setAttribute("width", "30px");
-      progress_span_tag.append(image_share);
+          // <span id="txt-amt"></span>
+          txt_amount = document.createElement("span");
+          txt_amount.setAttribute("id", "txt-amt");
+          txt_amount.innerText = "Raised :";
+          amount_sec.append(txt_amount);
 
-      // <div class="amount">
-      amount_sec = document.createElement("div");
-      amount_sec.setAttribute("class", "amount");
-      progress_div.append(amount_sec);
+          // <span id="cash"></span>
+          cash = document.createElement("span");
+          cash.setAttribute("id", "cash");
+          cash.innerHTML = `RS. <b>${create_card[j].amount_raised}</b> out of <b>${create_card[j].expected_amt}</b>`;
+          amount_sec.append(cash);
 
-      // <span id="txt-amt"></span>
-      txt_amount = document.createElement("span");
-      txt_amount.setAttribute("id", "txt-amt");
-      txt_amount.innerText = "Raised :";
-      amount_sec.append(txt_amount);
+          let download_button;
+          download_button = document.createElement("button");
+          download_button.setAttribute("class", "download");
+          download_button.innerText = "Donation Reciept";
 
-      // <span id="cash"></span>
-      cash = document.createElement("span");
-      cash.setAttribute("id", "cash");
-      cash.innerText =
-        parseInt(details[i]["fundraiseAmountraise"]) +
-        parseInt(details[i]["donaterContribution"]);
-      amount_sec.append(cash);
-      // button
-      let download_button;
-      download_button = document.createElement("button");
-      download_button.setAttribute("class", "download");
-      download_button.innerText = "Donation Reciept";
+          download_button.setAttribute("id", details[i]["paymentId"]);
+          download_button.setAttribute("onclick", "download(this.id)");
+          progress_div.append(download_button);
 
-      download_button.setAttribute("id", details[i]["paymentId"]);
-      download_button.setAttribute("onclick", "download(this.id)");
-      progress_div.append(download_button);
+          //hrtag
+          hr_tag = document.createElement("hr");
+          second_box.append(hr_tag);
 
-      //hrtag
-      hr_tag = document.createElement("hr");
-      second_box.append(hr_tag);
+          //   <div class="contribution">Your Contribution</div>
+          contribution_head = document.createElement("div");
+          contribution_head.setAttribute("class", "contribution");
+          contribution_head.innerText = "Your Contribution";
+          second_box.append(contribution_head);
 
-      //   <div class="contribution">Your Contribution</div>
-      contribution_head = document.createElement("div");
-      contribution_head.setAttribute("class", "contribution");
-      contribution_head.innerText = "Your Contribution";
-      second_box.append(contribution_head);
+          //<div style="display: flex">
 
-      //<div style="display: flex">
+          div_class = document.createElement("div");
+          div_class.setAttribute("style", "display: flex");
+          second_box.append(div_class);
 
-      div_class = document.createElement("div");
-      div_class.setAttribute("style", "display: flex");
-      second_box.append(div_class);
+          //<div class="yourdetails">
+          donater_details = document.createElement("div");
+          donater_details.setAttribute("class", "yourdetails");
+          div_class.append(donater_details);
 
-      //<div class="yourdetails">
-      donater_details = document.createElement("div");
-      donater_details.setAttribute("class", "yourdetails");
-      div_class.append(donater_details);
+          //<img class="donater_img"></>
+          doanter_img = document.createElement("img");
+          doanter_img.setAttribute("class", "donater_img");
+          doanter_img.setAttribute("src", details[i]["donaterpic"]);
+          donater_details.append(doanter_img);
 
-      //<img class="donater_img"></>
-      doanter_img = document.createElement("img");
-      doanter_img.setAttribute("class", "donater_img");
-      doanter_img.setAttribute("src", details[i]["donaterpic"]);
-      donater_details.append(doanter_img);
+          donater_name = document.createElement("div");
+          donater_name.setAttribute("class", "profile-name");
+          donater_name.innerText = details[i]["donaterName"];
+          div_class.append(donater_name);
 
-      donater_name = document.createElement("div");
-      donater_name.setAttribute("class", "profile-name");
-      donater_name.innerText = details[i]["donaterName"];
-      div_class.append(donater_name);
+          donater_contribution = document.createElement("div");
+          donater_contribution.setAttribute("class", "rs");
+          donater_contribution.innerHTML =
+            "RS:" + "&nbsp" + details[i]["donaterContribution"];
+          div_class.append(donater_contribution);
 
-      donater_contribution = document.createElement("div");
-      donater_contribution.setAttribute("class", "rs");
-      donater_contribution.innerHTML =
-        "RS:" + "&nbsp" + details[i]["donaterContribution"];
-      div_class.append(donater_contribution);
-
-      document.querySelector(".overallcontainer").append(container);
+          document.querySelector(".overallcontainer").append(container);
+        }
+      }
     }
   }
 

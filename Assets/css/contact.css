@@ -4,6 +4,10 @@
 
 /* main content */
 
+#contactId {
+  border-bottom: 5px solid #695cfe;
+}
+
 .pin,
 .add,
 .email,

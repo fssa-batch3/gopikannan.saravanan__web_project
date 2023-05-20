@@ -1,4 +1,8 @@
 /* main content style starts */
+#profileid {
+  border: 3px solid #695cfe;
+  /* filter: drop-shadow(2px 4px 8px #3f3a81); */
+}
 .container {
   width: 55%;
   height: fit-content;

@@ -168,13 +168,13 @@ content.append(user1);
 let nameLabel;
 nameLabel = document.createElement("span");
 nameLabel.setAttribute("class", "name-label");
-nameLabel.innerHTML = "Created by" + "&nbsp";
+nameLabel.innerHTML = `Created by `;
 user1.append(nameLabel);
 
 let userName;
 userName = document.createElement("span");
-userName.setAttribute("class", "name");
-userName.innerText = fundraiseDetails["fundraiser"];
+userName.setAttribute("class", "username");
+userName.innerHTML = ` <b>${fundraiseDetails["fundraiser"]}</b>`;
 user1.append(userName);
 
 // UPI box
@@ -262,6 +262,32 @@ imgqr.append(gpay);
 
 document.querySelector(".content-supporter-container").append(content, upibox);
 
+function formatTimeAgo(timestamp) {
+  const now = moment();
+  const commentTime = moment(timestamp);
+  const timeDiff = moment.duration(now.diff(commentTime));
+
+  if (timeDiff.asMonths() >= 1) {
+    return timeDiff.months() === 1
+      ? "a month ago"
+      : timeDiff.months() + " months ago";
+  } else if (timeDiff.asDays() >= 1) {
+    return timeDiff.days() === 1 ? "yesterday" : timeDiff.days() + " days ago";
+  } else if (timeDiff.asHours() >= 1) {
+    return timeDiff.hours() === 1
+      ? "an hour ago"
+      : timeDiff.hours() + " hours ago";
+  } else if (timeDiff.asMinutes() >= 1) {
+    return timeDiff.minutes() === 1
+      ? "a minute ago"
+      : timeDiff.minutes() + " minutes ago";
+  } else {
+    return timeDiff.asSeconds() <= 10
+      ? "just now"
+      : timeDiff.seconds() + " seconds ago";
+  }
+}
+
 // url params user id
 const getuserID = idParams.get("userid");
 
@@ -284,9 +310,16 @@ if (userid == null) {
   let comment = JSON.parse(window.localStorage.getItem("comment"));
 
   for (let i = 0; i < comment.length; i++) {
+    const formattedTimeAgo = formatTimeAgo(comment[i]["time"]);
     if (comment[i]["user_ID"] != null) {
       let commentMsg = document.createElement("div");
       commentMsg.setAttribute("class", "chat-message");
+
+      let imgtxtspan;
+      imgtxtspan = document.createElement("span");
+      imgtxtspan.setAttribute("id", "imgtxtspan");
+      commentMsg.append(imgtxtspan);
+
       let userImg;
       userImg = document.createElement("img");
       userImg.setAttribute("src", comment[i]["userpic"]);
@@ -294,25 +327,29 @@ if (userid == null) {
       userImg.setAttribute("width", "32");
       userImg.setAttribute("height", "32");
       userImg.setAttribute("style", "border-radius: 50%");
-      commentMsg.append(userImg);
+      imgtxtspan.append(userImg);
+
+      let imgtxt;
+      imgtxt = document.createElement("h5");
+      imgtxt.setAttribute("id", "imgtxt");
+      imgtxt.innerText = comment[i]["userName"];
+      imgtxtspan.append(imgtxt);
+
       let msgcontent;
       msgcontent = document.createElement("div");
       msgcontent.setAttribute("class", "chat-message-content");
       commentMsg.append(msgcontent);
-      let spanTime;
-      spanTime = document.createElement("div");
-      spanTime.setAttribute("class", "chat-time");
-      spanTime.innerText = comment[i]["time"];
-      msgcontent.append(spanTime);
-      let heading_user;
-      heading_user = document.createElement("h5");
-      heading_user.innerText = comment[i]["userName"];
-      msgcontent.append(heading_user);
+
       let msg;
       msg = document.createElement("p");
       msg.setAttribute("style", "color: black");
       msg.innerText = comment[i]["msg"];
       msgcontent.append(msg);
+      let spanTime;
+      spanTime = document.createElement("div");
+      spanTime.setAttribute("class", "chat-time");
+      spanTime.innerHTML = `${formattedTimeAgo}  ${comment[i]["txt"]}`;
+      msgcontent.append(spanTime);
       let hr;
       hr = document.createElement("hr");
       document.querySelector(".chat-history").append(commentMsg, hr);
@@ -330,7 +367,6 @@ if (userid == null) {
       return true;
     }
   });
-  console.log(user_id);
 
   let commentArr = [];
 
@@ -338,9 +374,7 @@ if (userid == null) {
   function send() {
     const msginput = document.getElementById("msg").value;
     const coverpic = user_id["user_pic"];
-    const hours = new Date().getHours();
-    const minutes = new Date().getMinutes();
-    const currentTime = `${hours}:${minutes}`;
+    const currentTime = moment();
 
     const Userid = user_id["userid"];
 
@@ -362,6 +396,7 @@ if (userid == null) {
         commentId: commentid,
         time: currentTime,
         msg: msginput,
+        txt: "",
       };
       console.log(commentObj);
       commentArr.push(commentObj);
@@ -377,7 +412,6 @@ if (userid == null) {
   console.log(commentArr);
 
   let commentNewarr = [];
-  let commentnewob = {};
 
   // to show the appropriate fundraise card comment
   // loop to assignit to a new object then push it into the new array and store it in a localstorage
@@ -394,9 +428,15 @@ if (userid == null) {
   // to read the comment by the donater
 
   for (let i = 0; i < comment.length; i++) {
+    const formattedTimeAgo = formatTimeAgo(comment[i]["time"]);
     if (comment[i]["user_ID"] == user_id["userid"]) {
       let commentMsg = document.createElement("div");
       commentMsg.setAttribute("class", "chat-message");
+
+      let imgtxtspan;
+      imgtxtspan = document.createElement("span");
+      imgtxtspan.setAttribute("id", "imgtxtspan");
+      commentMsg.append(imgtxtspan);
 
       let userImg;
       userImg = document.createElement("img");
@@ -405,30 +445,36 @@ if (userid == null) {
       userImg.setAttribute("width", "32");
       userImg.setAttribute("height", "32");
       userImg.setAttribute("style", "border-radius: 50%");
-      commentMsg.append(userImg);
+      imgtxtspan.append(userImg);
+
+      let imgtxt;
+      imgtxt = document.createElement("h5");
+      imgtxt.setAttribute("id", "imgtxt");
+      imgtxt.innerText = comment[i]["userName"];
+      imgtxtspan.append(imgtxt);
 
       let msgcontent;
       msgcontent = document.createElement("div");
       msgcontent.setAttribute("class", "chat-message-content");
       commentMsg.append(msgcontent);
 
-      let spanTime;
-      spanTime = document.createElement("div");
-      spanTime.setAttribute("class", "chat-time");
-      spanTime.innerText = comment[i]["time"];
-      msgcontent.append(spanTime);
-
-      let heading_user;
-      heading_user = document.createElement("h5");
-      heading_user.innerText = comment[i]["userName"];
-      msgcontent.append(heading_user);
+      // let heading_user;
+      // heading_user = document.createElement("h5");
+      // heading_user.innerText = comment[i]["userName"];
+      // msgcontent.append(heading_user);
 
       let msg;
       msg = document.createElement("p");
       msg.setAttribute("style", "color: black");
-      msg.innerText = comment[i]["msg"];
+      msg.innerHTML = `${comment[i]["msg"]} `;
       msg.setAttribute("id", "msg_content");
       msgcontent.append(msg);
+
+      let spanTime;
+      spanTime = document.createElement("div");
+      spanTime.setAttribute("class", "chat-time");
+      spanTime.innerHTML = `${formattedTimeAgo}  ${comment[i]["txt"]}`;
+      msgcontent.append(spanTime);
 
       let editDeldiv;
       editDeldiv = document.createElement("div");
@@ -463,6 +509,12 @@ if (userid == null) {
     } else {
       let commentMsg = document.createElement("div");
       commentMsg.setAttribute("class", "chat-message");
+
+      let imgtxtspan;
+      imgtxtspan = document.createElement("span");
+      imgtxtspan.setAttribute("id", "imgtxtspan");
+      commentMsg.append(imgtxtspan);
+
       let userImg;
       userImg = document.createElement("img");
       userImg.setAttribute("src", comment[i]["userpic"]);
@@ -470,25 +522,29 @@ if (userid == null) {
       userImg.setAttribute("width", "32");
       userImg.setAttribute("height", "32");
       userImg.setAttribute("style", "border-radius: 50%");
-      commentMsg.append(userImg);
+      imgtxtspan.append(userImg);
+
+      let imgtxt;
+      imgtxt = document.createElement("h5");
+      imgtxt.setAttribute("id", "imgtxt");
+      imgtxt.innerText = comment[i]["userName"];
+      imgtxtspan.append(imgtxt);
+
       let msgcontent;
       msgcontent = document.createElement("div");
       msgcontent.setAttribute("class", "chat-message-content");
       commentMsg.append(msgcontent);
-      let spanTime;
-      spanTime = document.createElement("div");
-      spanTime.setAttribute("class", "chat-time");
-      spanTime.innerText = comment[i]["time"];
-      msgcontent.append(spanTime);
-      let heading_user;
-      heading_user = document.createElement("h5");
-      heading_user.innerText = comment[i]["userName"];
-      msgcontent.append(heading_user);
+
       let msg;
       msg = document.createElement("p");
       msg.setAttribute("style", "color: black");
       msg.innerText = comment[i]["msg"];
       msgcontent.append(msg);
+      let spanTime;
+      spanTime = document.createElement("div");
+      spanTime.setAttribute("class", "chat-time");
+      spanTime.innerHTML = `${formattedTimeAgo}  ${comment[i]["txt"]}`;
+      msgcontent.append(spanTime);
       let hr;
       hr = document.createElement("hr");
       document.querySelector(".chat-history").append(commentMsg, hr);
@@ -555,14 +611,28 @@ document.querySelector(".chat-history").append(form);
 
 // to edit the comment
 function edit(id) {
-  console.log(id);
   window.localStorage.setItem("commentId", JSON.stringify(id));
   document.getElementById("editfieldset").classList.toggle("active");
+  let userallComments = JSON.parse(window.localStorage.getItem("commentmain"));
+  let userCommentId = JSON.parse(window.localStorage.getItem("commentId"));
+  if (userCommentId != null) {
+    let Com = userallComments.find(function (comment) {
+      let Comment = parseInt(comment["commentId"]);
+      console.log(Comment);
+
+      if (userCommentId == Comment) {
+        return true;
+      }
+    });
+    console.log(Com);
+
+    let msg;
+    msg = document.getElementById("editinput").value = Com["msg"];
+  }
 }
 
 function deleted(commentid) {
   let commentId = commentid;
-
   window.localStorage.setItem("delId", JSON.stringify(commentId));
 }
 
@@ -578,11 +648,15 @@ function sendedit() {
       return true;
     }
   });
-  console.log(Com);
   let msg = document.getElementById("editinput").value;
+
+  let time = moment();
+  let txt = "(edited)";
 
   let neweditObj = {
     msg,
+    time,
+    txt,
   };
   console.log(neweditObj);
   let merge;
@@ -591,6 +665,7 @@ function sendedit() {
   usereditmsg = userallComments.indexOf(Com);
   userallComments[usereditmsg] = merge;
   window.localStorage.setItem("commentmain", JSON.stringify(userallComments));
+  window.localStorage.removeItem("commentId");
   location.reload();
 }
 
@@ -624,12 +699,10 @@ function del(commentid) {
   }
 }
 
-if (userid == null) {
-  function paymentpage() {
+function paymentpage() {
+  if (userid == null) {
     window.location.href = "../../webpage/login-signup/login.html";
-  }
-} else {
-  function paymentpage() {
+  } else {
     window.location.href =
       "../../webpage/donate/payment1stpage.html?product_id=" +
       fundraiseDetails["product_id"];

@@ -2,10 +2,11 @@ const json = [];
 
 let create_card = JSON.parse(localStorage.getItem("carddetails"));
 
-for (let i = 0; i < create_card.length; i++) {
-  json.push(create_card[i]);
+if (create_card != null) {
+  for (let i = 0; i < create_card.length; i++) {
+    json.push(create_card[i]);
+  }
 }
-
 let user_details = JSON.parse(window.localStorage.getItem("userCheckdetails"));
 
 let newFundraise = document.getElementById("newFundraise");
@@ -77,48 +78,53 @@ if (userid != null) {
       progress_div.setAttribute("class", "progress-sec");
       anchorDonate.append(progress_div);
 
-      let b_tag;
+      let progress_bar_div;
+      progress_bar_div = document.createElement("div");
+      progress_bar_div.setAttribute("class", "progress_bar_div");
+      progress_div.append(progress_bar_div);
+
       b_tag = document.createElement("b");
       b_tag.innerText = percentage + "%";
-      progress_div.append(b_tag);
+      progress_bar_div.append(b_tag);
 
-      let progress_tag;
+      //   <progress id="file" value="32" max="100">20%</progress>
       progress_tag = document.createElement("progress");
       progress_tag.setAttribute("id", "file");
       progress_tag.setAttribute("value", percentage);
       progress_tag.setAttribute("max", "100");
-      progress_div.append(progress_tag);
+      progress_bar_div.append(progress_tag);
 
-      let progress_span_tag;
+      //span
       progress_span_tag = document.createElement("span");
       progress_span_tag.setAttribute("class", "like");
+      progress_bar_div.append(progress_span_tag);
 
-      progress_div.append(progress_span_tag);
+      // img
+      image_share = document.createElement("img");
+      image_share.setAttribute("src", "../../Assets/images/share (1).png");
+      image_share.setAttribute("class", "share");
+      image_share.setAttribute("alt", "share");
+      image_share.setAttribute("width", "30px");
+      progress_span_tag.append(image_share);
 
-      let shareImg;
-      shareImg = document.createElement("img");
-      shareImg.setAttribute("src", "../../Assets/images/share.png");
-      shareImg.setAttribute("alt", "share");
-      shareImg.setAttribute("class", "share");
-      shareImg.setAttribute("width", "30px");
-      progress_span_tag.append(shareImg);
+      // <div class="amount">
+      amount_sec = document.createElement("div");
+      amount_sec.setAttribute("class", "amount");
+      progress_div.append(amount_sec);
 
-      let amount;
-      amount = document.createElement("div");
-      amount.setAttribute("class", "amount");
-      progress_div.append(amount);
+      // <span id="txt-amt"></span>
+      txt_amount = document.createElement("span");
+      txt_amount.setAttribute("id", "txt-amt");
+      txt_amount.innerText = "Raised :";
+      amount_sec.append(txt_amount);
 
-      let textamt;
-      textamt = document.createElement("span");
-      textamt.setAttribute("id", "txt-amt");
-      textamt.innerText = "Raised :";
-      amount.append(textamt);
-
-      let cash;
+      // <span id="cash"></span>
       cash = document.createElement("span");
       cash.setAttribute("id", "cash");
-      cash.innerHTML = "RS." + json[i]["amount_raised"] + "&nbsp" + "&nbsp";
-      amount.append(cash);
+
+      cash.innerHTML = `RS. <b>${json[i]["amount_raised"]}</b> out of <b>${json[i]["expected_amt"]}</b>`;
+
+      amount_sec.append(cash);
 
       let user_div;
       user_div = document.createElement("div");
@@ -229,59 +235,58 @@ if (userid != null) {
       progress_div.setAttribute("class", "progress-sec");
       anchorDonate.append(progress_div);
 
-      let b_tag;
+      let progress_bar_div;
+      progress_bar_div = document.createElement("div");
+      progress_bar_div.setAttribute("class", "progress_bar_div");
+      progress_div.append(progress_bar_div);
+
       b_tag = document.createElement("b");
       b_tag.innerText = percentage + "%";
-      progress_div.append(b_tag);
+      progress_bar_div.append(b_tag);
 
-      let progress_tag;
+      //   <progress id="file" value="32" max="100">20%</progress>
       progress_tag = document.createElement("progress");
       progress_tag.setAttribute("id", "file");
       progress_tag.setAttribute("value", percentage);
       progress_tag.setAttribute("max", "100");
-      progress_div.append(progress_tag);
-
-      let progress_span_tag;
-      progress_span_tag = document.createElement("span");
-      progress_span_tag.setAttribute("class", "like");
-      progress_div.append(progress_span_tag);
+      progress_bar_div.append(progress_tag);
 
       let image_like;
       image_like = document.createElement("img");
       image_like.setAttribute("id", json[i]["product_id"]);
       image_like.setAttribute("class", "icon-like");
       image_like.setAttribute("onclick", "editCard(this.id)");
-      image_like.setAttribute(
-        "src",
-        "../../Assets/images/icons8-edit-60-removebg-preview.png"
-      );
-      image_like.setAttribute("width", "30px");
-      progress_span_tag.append(image_like);
+      image_like.setAttribute("src", "../../Assets/images/draw (1).png");
+      image_like.setAttribute("width", "26px");
+      image_like.setAttribute("height", "26px");
+      progress_bar_div.append(image_like);
 
-      let shareImg;
-      shareImg = document.createElement("img");
-      shareImg.setAttribute("src", "../../Assets/images/share.png");
-      shareImg.setAttribute("alt", "share");
-      shareImg.setAttribute("class", "share");
-      shareImg.setAttribute("width", "30px");
-      progress_span_tag.append(shareImg);
+      // img
+      image_share = document.createElement("img");
+      image_share.setAttribute("src", "../../Assets/images/share (1).png");
+      image_share.setAttribute("class", "share");
+      image_share.setAttribute("alt", "share");
+      image_share.setAttribute("width", "30px");
+      progress_bar_div.append(image_share);
 
-      let amount;
-      amount = document.createElement("div");
-      amount.setAttribute("class", "amount");
-      progress_div.append(amount);
+      // <div class="amount">
+      amount_sec = document.createElement("div");
+      amount_sec.setAttribute("class", "amount");
+      progress_div.append(amount_sec);
 
-      let textamt;
-      textamt = document.createElement("span");
-      textamt.setAttribute("id", "txt-amt");
-      textamt.innerText = "Raised :";
-      amount.append(textamt);
+      // <span id="txt-amt"></span>
+      txt_amount = document.createElement("span");
+      txt_amount.setAttribute("id", "txt-amt");
+      txt_amount.innerText = "Raised :";
+      amount_sec.append(txt_amount);
 
-      let cash;
+      // <span id="cash"></span>
       cash = document.createElement("span");
       cash.setAttribute("id", "cash");
-      cash.innerHTML = "RS." + json[i]["amount_raised"] + "&nbsp" + "&nbsp";
-      amount.append(cash);
+
+      cash.innerHTML = ` RS. <b>${json[i]["amount_raised"]}</b> out of <b>${json[i]["expected_amt"]}</b>`;
+
+      amount_sec.append(cash);
 
       let user_div;
       user_div = document.createElement("div");

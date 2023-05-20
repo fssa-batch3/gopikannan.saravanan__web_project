@@ -105,10 +105,9 @@ progress {
 .viewmore {
   text-align: center;
 }
-.name-label {
+
+.username {
   display: flex;
-  justify-content: center;
-  align-items: center;
 }
 #mybtn {
   background-color: var(--primary-color);
@@ -136,8 +135,9 @@ progress {
   text-align: center;
   padding-top: 20px;
   border-top: 2px solid #3f3a81;
+  display: flex;
   /* margin: 20px 200px; */
-  width: 150px;
+  width: fit-content;
   margin: auto;
   margin-top: 20px;
 }
@@ -237,6 +237,9 @@ progress {
   height: 500px;
   padding: 8px 24px;
 }
+.chat-time {
+  font-size: 13px;
+}
 
 .supporters-box {
   overflow-y: scroll;
@@ -246,7 +249,14 @@ progress {
   border-radius: 10px;
   padding: 0px 20px;
 }
-
+#imgtxtspan {
+  display: flex;
+  gap: 10px;
+}
+#imgtxt {
+  position: relative;
+  top: 8px;
+}
 .supporterhead {
   text-align: center;
   margin: 10px 210px 10px 210px;

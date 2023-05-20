@@ -79,10 +79,22 @@ body {
   font-size: 16px;
   border-bottom: 2px solid #3f3a81;
 }
-.second-box progress {
-  width: 220px;
-  height: 30px;
-  margin-left: 60px;
+
+progress {
+  width: 250px;
+  height: 15px;
+  margin-left: 40px;
+  border: none;
+  border-radius: 100%;
+  background-color: #3f3a81;
+}
+progress::-webkit-progress-value {
+  border-radius: 50px;
+  background-color: #695cfe;
+}
+progress::-webkit-progress-bar {
+  border-radius: 50px;
+  background-color: #f2f2f2;
 }
 .second-box .progress-sec {
   margin: auto;
@@ -94,17 +106,22 @@ body {
 }
 .second-box .amount {
   color: var(--body-text-color);
+  margin-top: 10px;
 }
 
 .second-box .like {
   margin-left: 40px;
   margin-top: -15px;
 }
-
-.count {
-  position: absolute;
-  margin-top: -22px;
-  margin-left: 320px;
+.progress_bar_div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.share {
+  position: relative;
+  top: 5px;
 }
 .box .user {
   margin: auto;

@@ -42,6 +42,7 @@ if (userId != null) {
   logo = document.createElement("img");
   logo.setAttribute("id", "logoid");
   logo.setAttribute("src", "../../Assets/images/business-community.png");
+  logo.setAttribute("onclick", "logo()");
   logo.setAttribute("alt", "group of people");
   logo.setAttribute("class", "logo");
   imgSpan.append(logo);
@@ -114,8 +115,17 @@ if (userId != null) {
   imgProfile.setAttribute("alt", "Profile");
   imgProfile.setAttribute("title", "profile");
   imgProfile.setAttribute("id", "profileid");
-  imgProfile.setAttribute("onclick", "profile()");
+  // imgProfile.setAttribute("onclick", "profile()");
   divSidebar.append(imgProfile);
+
+  let divnav;
+  divnav = document.createElement("div");
+  divnav.setAttribute("class", "profile-opt");
+  divnav.innerHTML = `
+  ${user.user_name}
+  <a href="../../webpage/header/profile.html">Profile</a>
+  <a onclick="logout()" >Logout</a>`;
+  divSidebar.append(divnav);
 } else {
   let spanMenu;
   spanMenu = document.createElement("span");
@@ -231,18 +241,32 @@ if (userId != null) {
   divSidebar.append(login);
 }
 
-// let signupid = document.getElementById("signinId");
-// let loginId = document.getElementById("loginId");
-// let profileid = document.getElementById("profileid");
+function logo() {
+  window.location.href = "/index.html";
+}
 
-// if (userId[0]["loginCheck"] == "yes") {
-//   signupid.style.display = "none";
-//   loginId.style.display = "none";
-// } else {
-//   signupid.style.display = "block";
-//   loginId.style.display = "block";
-//   profileid.style.display = "none";
-// }
-function profile() {
-  window.location.href = "../../webpage/header/profile.html";
+const profilehover = document.querySelector(".profile");
+const profileOptions = document.querySelector(".profile-opt");
+
+profilehover.addEventListener("click", () => {
+  profileOptions.style.display = "block";
+});
+profilehover.addEventListener("mouseout", () => {
+  profileOptions.style.display = "none";
+});
+profileOptions.addEventListener("mouseover", () => {
+  profileOptions.style.display = "block";
+});
+profileOptions.addEventListener("mouseout", () => {
+  profileOptions.style.display = "none";
+});
+
+function logout() {
+  let logoutConfirmation = confirm("Are you sure you want to logout?");
+  if (logoutConfirmation == true) {
+    window.localStorage.removeItem("userCheckdetails");
+    window.location.href = "/index.html";
+  } else {
+    return;
+  }
 }

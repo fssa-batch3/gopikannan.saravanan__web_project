@@ -1,4 +1,10 @@
-.home {
+/* .home {
+  border-bottom: 5px solid #695cfe;
+/* } */
+/* .home:not(.nav a:hover) {
+  border-bottom: 5px solid #695cfe;
+} */
+#homeId {
   border-bottom: 5px solid #695cfe;
 }
 /* main content style starts */
@@ -81,25 +87,41 @@ input[type="text"] {
   padding-bottom: 10px;
 }
 .box .progress-sec {
-  padding-left: 35px;
-
   height: 90px;
 }
-.box progress {
-  width: 190px;
-  height: 30px;
+.progress_bar_div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
 }
-.box .amount {
-  color: var(--body-text-color);
-}
-.box #cash {
-  font-weight: bold;
-}
+
 .box .like {
   margin-left: 10px;
   margin-top: -15px;
 }
+progress {
+  width: 200px;
+  height: 15px;
+  border: none;
+  border-radius: 100%;
+  background-color: #3f3a81;
+}
+progress::-webkit-progress-value {
+  border-radius: 50px;
+  background-color: #695cfe;
+}
+progress::-webkit-progress-bar {
+  border-radius: 50px;
+  background-color: #f2f2f2;
+}
 
+.box .amount {
+  color: var(--body-text-color);
+  display: flex;
+  padding-left: 20px;
+  margin-top: 10px;
+}
 .box .count {
   position: relative;
   left: 75%;
