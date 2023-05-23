@@ -194,6 +194,7 @@
           return true;
         }
       });
+      console.log(card_ob);
 
       const fundraisename = document.getElementById("name");
       const mail = document.getElementById("email");
@@ -209,6 +210,22 @@
       const image_doc = document.getElementById("image_doc");
       const amount = document.getElementById("amount");
       const upi = document.getElementById("upi");
+
+      let check = "";
+      amount.addEventListener("keyup", function () {
+        let valuecontri = parseFloat(amount.value);
+        console.log(valuecontri);
+
+        if (valuecontri < card_ob.expected_amt) {
+          alert(
+            "You cannot edit your amount less than your previously expected amount"
+          );
+          check = "no";
+          return;
+        } else {
+          check = "yes";
+        }
+      });
 
       fundraisename.value = card_ob["fundraiser"];
       mail.value = card_ob["mail"];
@@ -256,7 +273,7 @@
           match = true;
         }
 
-        if (match == true) {
+        if (match == true && check == "yes") {
           let newObject = {
             fundraiser: fundraisename,
             mail: mail,
@@ -287,6 +304,9 @@
 
           location.href = "../../webpage/fundraiser/fundraiser.html";
           alert("Successfully updated your card !!!");
+        } else if (check == "no") {
+          alert("only you can edit amount more");
+          return;
         } else {
           alert("input can't be left null");
           return;

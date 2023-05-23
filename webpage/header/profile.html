@@ -36,7 +36,7 @@
       <form id="profile_form">
         <img alt="userprofile" id="profile" />
         <div class="input-div">
-          <label>ProfilePic:</label
+          <label>ProfilePic</label
           ><input
             id="pic"
             type="url"
@@ -45,7 +45,7 @@
           />
         </div>
         <div class="input-div">
-          <label>Name:</label
+          <label>Name</label
           ><input
             id="name"
             type="text"
@@ -54,7 +54,7 @@
           />
         </div>
         <div class="input-div">
-          <label>Mobile-Number:</label
+          <label>Mobile-Number</label
           ><input
             id="phno"
             type="text"
@@ -64,7 +64,7 @@
           />
         </div>
         <div class="input-div">
-          <label>Email:</label
+          <label>Email</label
           ><input
             id="email"
             type="email"
@@ -73,11 +73,11 @@
           />
         </div>
         <div class="input-div">
-          <label>Password:</label
+          <label>Password</label
           ><input id="password" type="password" required />
         </div>
         <div class="input-div">
-          <label>Address:</label
+          <label>Address</label
           ><input
             id="address"
             type="text"
@@ -87,7 +87,7 @@
           />
         </div>
         <div class="input-div">
-          <label>Account Number:</label
+          <label>Account Number*</label
           ><input
             id="acc"
             type="text"
@@ -97,7 +97,18 @@
           />
         </div>
         <div class="input-div">
-          <label>Bank Name:</label
+          <label> IFSC Code*</label
+          ><input
+            type="text"
+            id="ifc"
+            pattern="[A-Z|a-z]{4}[0][0-9|A-Z|a-z]{6,}"
+            title="Enter valid IFSC code"
+            placeholder="Fill in the details"
+            required
+          />
+        </div>
+        <div class="input-div">
+          <label>Bank Name</label
           ><input
             type="text"
             id="accname"
@@ -107,13 +118,12 @@
           />
         </div>
         <div class="input-div">
-          <label> IFC Code:</label
+          <label>Branch Name</label
           ><input
             type="text"
-            id="ifc"
-            pattern="[A-Z|a-z]{4}[0][0-9|A-Z|a-z]{6}"
-            title="Enter valid IFSC code"
+            id="branchname"
             placeholder="Fill in the details"
+            title="Enter your bank name where you have the account"
           />
         </div>
 
@@ -131,6 +141,7 @@
 
         <!-- form ends -->
       </form>
+      <p id="p"></p>
     </div>
     <!-- Footer  -->
 
@@ -140,6 +151,7 @@
 
     <script src="../../Assets/js/header.js"></script>
     <script src="../../Assets/js/footer.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
     <script>
       // to get the usercheck details
@@ -156,6 +168,7 @@
           return true;
         }
       });
+      console.log(user_ob);
 
       // Initially to store some value
       let username = (document.getElementById("name").value =
@@ -175,6 +188,30 @@
 
       // to edit the profile details
 
+      let bankName = document.getElementById("accname");
+      let branchName = document.getElementById("branchname");
+
+      document
+        .getElementById("ifc")
+        .addEventListener("change", function (event) {
+          const ifscValue = event.target.value;
+
+          fetch(`https://ifsc.razorpay.com/${ifscValue}`)
+            .then((response) => response.json())
+            .then((data) => {
+              bankName.value = data["BANK"];
+              branchName.value = data["BRANCH"];
+            })
+            .catch((error) => {
+              bankName.value = "";
+              branchName.value = "";
+              console.error("Error:", error);
+              alert(
+                "Failed to fetch bank and branch details for the entered IFSC code."
+              );
+            });
+        });
+
       form.addEventListener("submit", function (event) {
         event.preventDefault();
         let user_pic = document.getElementById("pic").value;
@@ -184,8 +221,9 @@
         let user_pwd = document.getElementById("password").value;
         let useraddress = document.getElementById("address").value;
         let useracco = document.getElementById("acc").value;
-        let userbankname = document.getElementById("accname").value;
-        let userifsc = document.getElementById("ifc").value;
+        let user_ifsc = document.getElementById("ifc").value;
+        let bank_name = document.getElementById("accname").value;
+        let branch_name = document.getElementById("branchname").value;
 
         let newobj = {
           user_pic,
@@ -195,8 +233,9 @@
           user_pwd,
           useraddress,
           useracco,
-          userbankname,
-          userifsc,
+          bankname: bank_name,
+          branchname: branch_name,
+          userifsc: user_ifsc,
         };
 
         let merge = Object.assign(user_ob, newobj);
@@ -242,9 +281,11 @@
       const useracco = (document.getElementById("acc").value =
         profile_["useracco"]);
       const userbankname = (document.getElementById("accname").value =
-        profile_["userbankname"]);
+        profile_["bankname"]);
       const userifsc = (document.getElementById("ifc").value =
         profile_["userifsc"]);
+      let branchname = (document.getElementById("branchname").value =
+        profile_["branchname"]);
 
       console.log(profile_);
 

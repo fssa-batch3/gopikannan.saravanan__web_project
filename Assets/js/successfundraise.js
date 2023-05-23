@@ -75,17 +75,6 @@ const causeParams = new URLSearchParams(cause);
 const getcause = causeParams.get("cause");
 console.log(getcause);
 
-let anchordrop;
-anchordrop = document.createElement("a");
-anchordrop.setAttribute("href", "../../webpage/donate/mydonations.html");
-document.querySelector(".search").append(anchordrop);
-
-let donationBtn;
-donationBtn = document.createElement("button");
-donationBtn.setAttribute("class", "donation");
-donationBtn.innerText = "My Donation";
-anchordrop.append(donationBtn);
-
 let search;
 search = document.createElement("i");
 search.setAttribute("class", "fa fa-search");
@@ -179,12 +168,7 @@ for (let i = 0; i < json.length; i++) {
 
   let percentage = Math.floor((amount / expected_amount) * 100);
 
-  // TO CLOSE A CARD WHEN ITS EXPECTED AMOUNT REACHED
-  if (amount == expected_amount || amount >= expected_amount) {
-    json[i]["amout"] = "reached";
-  }
-
-  if (json[i]["amout"] == "unreach") {
+  if (percentage >= 100) {
     // search div &dropdown
 
     //   <div class="box"></div>
@@ -199,13 +183,13 @@ for (let i = 0; i < json.length; i++) {
 
     let a;
     a = document.createElement("a");
-    a.setAttribute(
-      "href",
-      "../../webpage/donate/story.html?product_id=" +
-        json[i]["product_id"] +
-        "&userid=" +
-        json[i]["userId"]
-    );
+    // a.setAttribute(
+    //   "href",
+    //   "../../webpage/donate/story.html?product_id=" +
+    //     json[i]["product_id"] +
+    //     "&userid=" +
+    //     json[i]["userId"]
+    // );
     anchor.append(a);
 
     //   <img class="image" src="../../Assets/images/education.jpg" alt="education" />
@@ -220,6 +204,13 @@ for (let i = 0; i < json.length; i++) {
     h4_tag = document.createElement("h4");
     h4_tag.innerText = json[i]["title"];
     anchor.append(h4_tag);
+    let tick;
+    tick = document.createElement("img");
+    tick.setAttribute("src", "../../Assets/images/check-mark (1).png");
+    tick.setAttribute("class", "tick");
+    tick.setAttribute("alt", "share");
+    tick.setAttribute("width", "30px");
+    a.append(tick);
 
     //   <div class="progress-sec"></div>
     progress_div = document.createElement("div");
@@ -294,7 +285,7 @@ for (let i = 0; i < json.length; i++) {
     user_div.append(nameFundraise);
 
     // console.log(json);
-    document.querySelector(".container").prepend(card_div);
+    document.querySelector(".container").append(card_div);
 
     const cards = document.getElementsByClassName("box");
 
@@ -313,4 +304,8 @@ for (let i = 0; i < json.length; i++) {
       }
     });
   }
+}
+
+function redirect() {
+  alert("This is successfull campaigns");
 }

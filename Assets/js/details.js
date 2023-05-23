@@ -79,7 +79,7 @@ span_like.append(span_anchor);
 let share_img;
 share_img = document.createElement("img");
 share_img.setAttribute("class", "share");
-share_img.setAttribute("src", "../../Assets/images/share.png");
+share_img.setAttribute("src", "../../Assets/images/share (1).png");
 share_img.setAttribute("alt", "share");
 share_img.setAttribute("width", "30px");
 span_anchor.append(share_img);
@@ -98,14 +98,7 @@ amount.append(amount_txt);
 let amount_count;
 amount_count = document.createElement("span");
 amount_count.setAttribute("id", "class");
-amount_count.innerHTML =
-  "Rs." +
-  fundraiseDetails["amount_raised"] +
-  "&nbsp" +
-  "out of" +
-  "&nbsp" +
-  "Rs." +
-  fundraiseDetails["expected_amt"];
+amount_count.innerHTML = ` Rs.<b>${fundraiseDetails["amount_raised"]}</b> out of <b>${fundraiseDetails["expected_amt"]}</b>`;
 
 amount.append(amount_count);
 

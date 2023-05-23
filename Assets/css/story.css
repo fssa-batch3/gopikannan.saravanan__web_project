@@ -47,14 +47,19 @@ h4 {
 }
 .progress-sec {
   margin-top: 20px;
-  margin-left: 60px;
+  /* margin-left: 60px; */
 }
-/* #percent {
-  margin-bottom: -30px;
-} */
+#percent {
+  position: relative;
+  left: 40px;
+}
+.share {
+  position: relative;
+  right: 40px;
+}
 .progressdiv {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   margin: auto;
 }
@@ -63,11 +68,23 @@ h4 {
   font-weight: bolder;
   font-size: 18px;
 }
+
 progress {
-  width: 40%;
-  height: 30px;
-  margin-left: 10px;
+  width: 280px;
+  height: 15px;
+  border: none;
+  border-radius: 100%;
+  background-color: #3f3a81;
 }
+progress::-webkit-progress-value {
+  border-radius: 50px;
+  background-color: #695cfe;
+}
+progress::-webkit-progress-bar {
+  border-radius: 50px;
+  background-color: #f2f2f2;
+}
+
 .like {
   margin-left: 10px;
   cursor: pointer;

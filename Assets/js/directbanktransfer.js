@@ -51,7 +51,7 @@ let paymentGetId = donerDonatedetails.find(function (idPayment) {
 
 // to show the bank details of the fundraiser to the donater
 const fundraiserbankname = document.getElementById("fundraiserbankname");
-fundraiserbankname.innerText = "Bank Name : " + fundraiseuser["userbankname"];
+fundraiserbankname.innerText = "Bank Name : " + fundraiseuser["bankname"];
 
 const fundraiseraccNo = document.getElementById("fundraiseraccNo");
 fundraiseraccNo.innerHTML = "Virtual A/C No : " + fundraiseuser["useracco"];
@@ -67,16 +67,20 @@ const fundraiserPhno = document.getElementById("fundraiserPhno");
 fundraiserPhno.innerHTML = "Mobile No : " + fundraiseuser["user_phno"];
 
 // TO store the donater details with fundraiser details
+const Bankname = (document.getElementById("bankname").value =
+  fundraiseuser["bankname"]);
+const Accno = (document.getElementById("accno").value =
+  fundraiseuser["useracco"]);
+const ifsc = (document.getElementById("ifsc").value =
+  fundraiseuser["userifsc"]);
+const phno = (document.getElementById("phno").value =
+  fundraiseuser["user_phno"]);
 
 function donate() {
   let donaterbankdetailsArr = [];
-  const Bankname = document.getElementById("bankname").value.trim();
-  const Accno = document.getElementById("accno").value.trim();
-  const ifsc = document.getElementById("ifsc").value.trim();
-  const phno = document.getElementById("phno").value.trim();
 
   if (
-    Bankname != fundraiseuser["userbankname"] ||
+    Bankname != fundraiseuser["bankname"] ||
     Accno != fundraiseuser["useracco"] ||
     ifsc != fundraiseuser["userifsc"] ||
     phno != fundraiseuser["user_phno"]
@@ -91,13 +95,13 @@ function donate() {
   }
 
   let donaterbankdetailsOBJ = {
-    From_bankname: donateruser["userbankname"],
+    From_bankname: donateruser["bankname"],
     From_AccholderName: donateruser["user_name"],
     From_ACCNO: donateruser["useracco"],
     From_ifsc: donateruser["userifsc"],
     From_phno: donateruser["user_phno"],
     From_userid: donateruser["userid"],
-    To_bankname: fundraiseuser["userbankname"],
+    To_bankname: fundraiseuser["bankName"],
     To_AccholderName: fundraiseuser["user_name"],
     To_AccNo: fundraiseuser["useracco"],
     To_ifsc: fundraiseuser["userifsc"],

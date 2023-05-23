@@ -167,7 +167,7 @@ if (userid != null) {
 
       box1andbox2.append(supporterbox);
 
-      document.querySelector(".container").append(box1andbox2);
+      document.querySelector(".container").prepend(box1andbox2);
 
       // searchbar feature function to query search
 
@@ -339,7 +339,7 @@ if (userid != null) {
       }
       box1andbox2.append(supporterbox);
 
-      document.querySelector(".container").append(box1andbox2);
+      document.querySelector(".container").prepend(box1andbox2);
 
       // searchbar feature function to query search
 

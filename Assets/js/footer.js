@@ -28,7 +28,7 @@ footmain.innerHTML = `<div class="footerpart">
   <ul>
     <li><a href="#">What is Crowdfunding?</a></li>
     <li><a href="#">Fundraising Tips</a></li>
-    <li><a href="#">Browse fundraiser</a></li>
+    <li><a href="../../webpage/fundraiser/successfullfundraise.html">Browse Successfull fundraise</a></li>
     <li><a href="#">Careers</a></li>
   </ul>
 </div>
