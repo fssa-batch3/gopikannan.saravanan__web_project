@@ -304,6 +304,7 @@ if (userid == null) {
 
   for (let i = 0; i < comment.length; i++) {
     const formattedTimeAgo = formatTimeAgo(comment[i]["time"]);
+    console.log("time", comment[i]["time"]);
     if (comment[i]["user_ID"] != null) {
       let commentMsg = document.createElement("div");
       commentMsg.setAttribute("class", "chat-message");
@@ -450,11 +451,6 @@ if (userid == null) {
       msgcontent = document.createElement("div");
       msgcontent.setAttribute("class", "chat-message-content");
       commentMsg.append(msgcontent);
-
-      // let heading_user;
-      // heading_user = document.createElement("h5");
-      // heading_user.innerText = comment[i]["userName"];
-      // msgcontent.append(heading_user);
 
       let msg;
       msg = document.createElement("p");

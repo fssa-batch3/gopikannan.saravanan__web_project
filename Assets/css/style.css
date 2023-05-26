@@ -1,9 +1,3 @@
-/* .home {
-  border-bottom: 5px solid #695cfe;
-/* } */
-/* .home:not(.nav a:hover) {
-  border-bottom: 5px solid #695cfe;
-} */
 #homeId {
   border-bottom: 5px solid #695cfe;
 }
@@ -145,12 +139,11 @@ progress::-webkit-progress-bar {
 .icon-like {
   z-index: 5;
 }
-/* main content style ends */
+
 .faqs {
   padding: 0px 20px 20px;
 }
 details {
-  /* background: #8CE0E3; */
   padding: 10px 20px;
   border-radius: 7px;
   margin-top: 20px;
@@ -219,9 +212,6 @@ details summary {
     border-radius: 10px;
     cursor: pointer;
     margin-bottom: 40px;
-  }
-
-  .boxes {
   }
 
   @media screen and (max-width: 750px) {

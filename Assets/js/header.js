@@ -115,7 +115,6 @@ if (userId != null) {
   imgProfile.setAttribute("alt", "Profile");
   imgProfile.setAttribute("title", "profile");
   imgProfile.setAttribute("id", "profileid");
-  // imgProfile.setAttribute("onclick", "profile()");
   divSidebar.append(imgProfile);
 
   let divnav;
@@ -126,6 +125,22 @@ if (userId != null) {
   <a href="../../webpage/header/profile.html">Profile</a>
   <a onclick="logout()" >Logout</a>`;
   divSidebar.append(divnav);
+
+  const profilehover = document.querySelector(".profile");
+  const profileOptions = document.querySelector(".profile-opt");
+
+  profilehover.addEventListener("click", () => {
+    profileOptions.style.display = "block";
+  });
+  profilehover.addEventListener("mouseout", () => {
+    profileOptions.style.display = "none";
+  });
+  profileOptions.addEventListener("mouseover", () => {
+    profileOptions.style.display = "block";
+  });
+  profileOptions.addEventListener("mouseout", () => {
+    profileOptions.style.display = "none";
+  });
 } else {
   let spanMenu;
   spanMenu = document.createElement("span");
@@ -159,6 +174,7 @@ if (userId != null) {
   logo = document.createElement("img");
   logo.setAttribute("id", "logoid");
   logo.setAttribute("src", "../../Assets/images/business-community.png");
+  logo.setAttribute("onclick", "logo()");
   logo.setAttribute("alt", "group of people");
   logo.setAttribute("class", "logo");
   imgSpan.append(logo);
@@ -241,26 +257,6 @@ if (userId != null) {
   divSidebar.append(login);
 }
 
-function logo() {
-  window.location.href = "/index.html";
-}
-
-const profilehover = document.querySelector(".profile");
-const profileOptions = document.querySelector(".profile-opt");
-
-profilehover.addEventListener("click", () => {
-  profileOptions.style.display = "block";
-});
-profilehover.addEventListener("mouseout", () => {
-  profileOptions.style.display = "none";
-});
-profileOptions.addEventListener("mouseover", () => {
-  profileOptions.style.display = "block";
-});
-profileOptions.addEventListener("mouseout", () => {
-  profileOptions.style.display = "none";
-});
-
 function logout() {
   let logoutConfirmation = confirm("Are you sure you want to logout?");
   if (logoutConfirmation == true) {
@@ -269,4 +265,8 @@ function logout() {
   } else {
     return;
   }
+}
+
+function logo() {
+  window.location.href = "/index.html";
 }
