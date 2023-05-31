@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PIN(People In Need) My donations</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../Assets/css/donationdownload.css"
+    />
+
+    <link rel="stylesheet" href="../../Assets/css/header.css" />
+    <link rel="stylesheet" href="../../Assets/css/footer.css" />
+    <link rel="stylesheet" href="../../Assets/css/universal.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script type="text/javascript">
+      function togglemenu() {
+        document.getElementById("sidebar").classList.toggle("active");
+      }
+    </script>
+  </head>
+  <body>
+    <!--  header starts-->
+    <header></header>
+    <!-- header ends -->
+
+    <!-- main content starts -->
+
+    <!-- overall container starts -->
+    <div class="maincontainer"></div>
+
+    <button onclick="download()" id="mydonations">My Donations</button>
+
+    <!-- overall container ends -->
+    <!-- Footer  -->
+    <div class="footer"></div>
+    <!-- footer end -->
+    <script src="../../Assets/js/header.js"></script>
+    <script src="../../Assets/js/footer.js"></script>
+    <script>
+      //    url params
+      let donateidurl = window.location.search;
+      let urlParamsId = new URLSearchParams(donateidurl);
+      let donate_Id = urlParamsId.get("donaterId");
+
+      let donateCard = JSON.parse(localStorage.getItem("donerDonatedetails"));
+
+      console.log(donateCard);
+      let donate_find = donateCard.find(function (details) {
+        let id = details["paymentId"];
+
+        if (id == donate_Id) {
+          return true;
+        }
+      });
+
+      console.log(donate_find);
+
+      let doc_container;
+      doc_container = document.createElement("div");
+      doc_container.setAttribute("class", "overallcontainer");
+
+      doc_container.innerHTML = ` <img
+        src="../../Assets/images/pinreciept_page-0001.jpg"
+        alt="doc"
+        id="doc"
+      />
+      <span id="txt-box">
+      <p id="txt">
+       <b> PIN-People In Need </b><br /><br />
+        <b> Address: </b> <br />
+        11&12 Duraiswamy 1st Street, Venkatraman Nagar, Korattur, Chennai <br />
+        Chennai - 600080 <br />
+        6374449159 <br /><br />
+
+        <b> Email: </b> <br />
+        organizationpin@gmail.com<br /><br />
+        <b> Date: </b><br />
+        ${donate_find["dateofdonation"]} <br /><br />
+        <b> To: </b><br />
+        ${donate_find["fundraiseName"]}, <br /><br />
+        Thank you for your generous donation of <b> RS.${donate_find["donaterContribution"]} </b> to <b>${donate_find["fundraiseName"]}</b>. Your contribution will make a real difference in
+        our mission to help the people in need. <br /><br />
+        This letter serves as your official receipt for tax purposes. Our Tax
+        Identification Number (TIN) is ABCTY1234D and we are a registered
+        501(c)3 non profit organization. <br /><br />
+        If you have any questions or concerns about your donation or our
+        organization, please don't hesitate to contact us. <br /><br />
+        Thank you again for your support. <br /><br />
+        <br />
+        Sincerely, <br />
+       <b> Gopikannan Saravanan </b><br />
+        PIN-People In Need
+      </p></span>`;
+
+      document.querySelector(".maincontainer").append(doc_container);
+
+      function download() {
+        window.print();
+      }
+    </script>
+  </body>
+</html>

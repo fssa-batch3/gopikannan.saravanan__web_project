@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../Assets/css/login-signup.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="../header/home.html"></a>
+    <div class="main">
+      <div class="signup">
+        <label>Sign up</label>
+        <form id="form" action="/index.html">
+          <input
+            type="text"
+            id="name"
+            title="Use only alphabets for your name"
+            placeholder="User name"
+            pattern="^(?=.{0,50}$)[A-Za-z]+(?:\s[A-Za-z]+){0,3}$"
+            required
+          />
+          <input
+            type="text"
+            id="mobileno"
+            placeholder="Mobile number"
+            pattern="[6-9]{1}[0-9]{9}"
+            title=" Phone number must have 10 digits"
+            maxlength="10"
+            required
+          />
+
+          <input
+            type="email"
+            id="email"
+            placeholder="Email"
+            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+            title="Enter the correct email"
+            required
+          />
+          <input
+            type="password"
+            id="password"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!]).{8,}"
+            title="Please include at least 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character (@#$%^&+=!)"
+            placeholder="Password"
+            required
+          />
+          <input
+            id="confirmpwd"
+            type="password"
+            placeholder="Confirm password"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!]).{8,}"
+            title="Please include at least 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character (@#$%^&+=!)"
+            required
+          />
+          <button id="log-in" type="submit">Sign up</button>
+        </form>
+      </div>
+    </div>
+    <script>
+      //  starts the eventlistener called submit
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const name = document.getElementById("name").value.trim();
+        const mobileno = document.getElementById("mobileno").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
+        const conpwd = document.getElementById("confirmpwd").value;
+        const user_id = Date.now();
+
+        // array to store obj
+        let user = [];
+
+        // confirm password check
+        if (password != conpwd) {
+          alert("password doesn't match");
+          return;
+        }
+
+        // to get the value from local storage
+        let userdetails = JSON.parse(
+          window.localStorage.getItem("userDetails")
+        );
+
+        // to check if the local storage is null else get the value and store
+        if (userdetails == null) {
+          let objuser = {
+            user_name: name,
+            user_phno: mobileno,
+            user_mail: email,
+            user_pwd: password,
+            userid: user_id,
+            user_pic:
+              "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0PDQ0NDQ0NDQ0NDg0NDQ0NDQ8NDQ0OFREWFhURFRUYHSggGBolGxUVITEhJSkrLi4uFx8zODMsNygtLisBCgoKDg0NFhAQFysdHR4tKy0tLSsrKysrLSsrLSsrLS0rKystLSstKy0rLi0rLS0tKy0tLS0tKy83LTcrLSs3Lf/AABEIAOEA4QMBIgACEQEDEQH/xAAaAAADAQEBAQAAAAAAAAAAAAAAAQIDBQQG/8QAOBAAAgIAAwMKBAUEAwEAAAAAAAECEQMEITFBUQUSIjJSYXGBobFCkcHRYnKC4fAUI0OSFaKyE//EABkBAQEBAQEBAAAAAAAAAAAAAAABAwIEBf/EAB8RAQEAAgICAwEAAAAAAAAAAAABAhEDITFBEiJRMv/aAAwDAQACEQMRAD8A7wDEfWdEKihAQ0S0aNEtEEMlotoTQENEtGhLRBm0S0aNEtAZtEtGjRLREZtEtGjRLQENEtFtCaIM2iWaNEtAQIpoVEE0KixUBAFUIgQDABUMAKPpRDA1VIDACRUUAENEtFtCaIM6E0W0S0BDRLR6cLK4k+rBtcXovmz1Q5Jk+tOK8E5HNsiOW0S0dyPJOHvlN+aS9i/+Mwey3+qRz84PnmiWj6F8mYPZf+0jKfJGE9jmvNNew+cHAaE0dfF5Gl8M0+6Sr1R4cfI4sOtB1xj0l6Dco8jRLRpQmijNolo0aE0BnQqLaFRBNCoqgoCKAqgoCQKoQH0ghgaqQDEAhFCAQqKUW2klbexLedPKcnpdLEpy3R2pePE5tkR4cvkpz16se09/gt50cDI4cN3Olxlr8kesVGVytEiooRwJEU0IBNE0WKgIFRdCog8eZyOFidaNS7UdJfv5nIzfJmJC3Hpx4pdJeKPoqJo6mVg+QoTR9DnuTY4lyjUJ/wDWXj9zh4uFKMnGSaa2pmkuxi0TRpQmijOgouhUFRQUVQUESBVAB3wADRQAwAQRi20krb0SGdbIZXmLnSXTa/1XAmWWoh5TKLDVvWb2vh3I9BQjC3YQiqEQIksQEiopmM8zhrbOPk79hoXQjNZrCf8Akj5uvc2Wuz9hoRQUVQiCaFRQqAijzZ3JxxY09JLqy3r9j1tCA+UxsGUJOMlTXyfejNo+k5QyaxY6aTj1X9H3Hz0otNpqmnTW9M1xu4MqE0aNCaOhnQUXQUBFAXQAdoYAdqBgOMW2ktrdLxA9fJ2X50ue9kdnfI6pGDhKMVFbvV72WYZXdQgGByEIoQCo8+azMcNcZPZH6s2x8RQi5PdsXF7kcLEm5Nyk7b2neGOwY+POfWenZWkV5GNF0KjbSs2i8LFnB3GTXdufkFComh1snnFidF9GfDc/A9VHzytNNaNaprcdzJ4//wBIJ71pJd5lnjruI0oVFiozECouhAQcnljK/wCWK4Kf0f0+R2KJxIKScWrTTT8Cy6o+TaFR6MfBcJyg9sXXitzM6NhnzRUaUFAZ0BpQgOqhiQ0dqZ7OTMK587dFer/jPIdXk2FYd9pt/T6Ezuoj1AMDAADAgQigKObyrPqx8ZP2X1OdR7uU1/cX5V7s8lG+H8wRQqLoVHSoaJo0oVEGbR7OSp1Nx3SXqv4zzUb5Bf3Yfq/8smU6qOvQUUI84mhUXQmiCKEXQqA5HLWDrHEW/ov3X1OXR9Hn8LnYU1wXOXlqfP0bYeBFCotoKOlRQF0AHuQ0JFI7DO7gRqEVwivY4cVsXE+gMuT0gABmQQwGUIBgBz+VMPqy8Yv3X1OfR3cbCUouL3+j4nGxMNxbTVNG2F60MqCi6FR2qKFRdCaAho9fJmHc3LdFer/jMnG9Ervq1tb3HVyuX5kUt71l4meeXSNBUVQUYiKCiqCgIoVF0KgIa3PefNShTa4Nr5H09HBzUaxMT88vc04x5aCjTmhRorOgNKADdDQkUjoXh9aPivc7xwEd9GXJ6QxgBmAYDoCZbCaNKCiCEtPExzGXU1wktjWp6gos6HExsGULtacdqfmZtfY71Gcsthv4I+Sr2NJn+jiUVh4MpPopv0R2FlsNfAvNX7mnNQuY8eWyqhq9ZVt3LwN2tvcrNaCjO7oyY01sNKFRBFCougooihUXQqIJo4ecX92f5md6jh5jWc3+KXuacfkeago0oOabKz5oF80YAikSi0A0dvLSuEH+FfM4qOpyZO4OPZfo/wCM45J0j1jAZiAYDAQwMsfHUFxe5Fk2NJNJW2kuLPLiZ1Lqq+96I8mLiSk7b8FuRFG2PH+jWeaxH8VeCozc5P4pfNhQUaSSKSnLtS+bNI5nEXxN+OpFBQ1B68PPduNd8fseqElJXFpo5NFQk4u06ZneOekdYKMctmVPR6S4bn4G5jZoTQqLoVEEUFF0KgM5aJvgmzhNHZz0qw3+Lo/zyOTRrxzoZ0FGnNFRorOgNKGBgikJFICkenI4nNmuEui/oedFIWbg7ozHK4vPgnvWkvE2PPrSAYDIMsfFUI3vexHNlJttt22Xj4nPk3u2LwIPThjqBUFFBR2pUFDodATQUVQUBNBRdCoCF3HSyuNzlT6y29/eeCh4c3FqS3epxnjuI6tCocWmk1seozziaFRdEYs1GLk93q+AHO5QnclHs7fFnkaNZW229r1ZNHpxmpoZ0FGlBRdKyoDShjQ8aKQkUjkNFISKRR6MpjcyWvVej+51kcNHvyOY2Ql+l/Qzzx9o9yMc7OoVvlp5bzdHhz76UVwV/N/scYTeQ8owSGkelQMKHQCodDABUFDodATQUVQUBNBRVBQHryMtHHhqvBnpPDk3U13pr6nvPPyTWSFRz85i8581dWPqz0ZvGrora9vcjw0d8ePsQ0KjShUaqigouhUBNCLoYHORaJRaOA0UhIpFDSKQIpHQ92UzOyM3rulx7ma5nL8/VaSWnijmo9eXzLjpLVeqMrhZd4owlBp01TCjqdGa3SR58TJ9l+T+5ZyT2PJQFzwpLamvYRptSGAwFQUUFAKgHRUYN7E2TYgai3olbPVh5R/E67ltPRGEYrSkt7OLySeEY5fLc186W3cuAZjH5ui1l7E42ZvSOnfv8jzUczG27yVDFRdBRsIoKKoKAigoqgoCaAqgA5iLRKKRyKRSEikWCkUiUWihoaQIYFwm4u06PXh5vtLzX2PGMlxlR1ITjLY0xSwYPbFeWhzUbQx5r4vnqZXjs8Ueh5SHevMX9Gu0/kQs3Lek/milm/w+pPup/wBGu0/kUspHi35k/wBX+H1JebluS9WPujeOBBfCvPUtySWrSR4pY83vrw0M2x8LfNXT1TzS+FX3vYeac3La/sIDuYyBUMAOgqChgBNAUICaCigoomgKoAOSi0SikQUi0Si0UNFolFIopDEhoBoYIYDQxDIGADIAAAAABgIYDIEA6ABAOgAQigAkBhQCAYwOOi0AFFItABRSKQAUUhoYANFIQAUgACBoYAQAAADBDAgAAAAAAgAAAAAAAYABQAAAf//Z",
+            useraddress: "",
+            useracco: "",
+            bankname: "",
+            userifsc: "",
+            branchname: "",
+          };
+
+          // to store the check user id object
+
+          let objUserCHeck = {
+            user_mail: email,
+            userid: user_id,
+            loginCheck: "yes",
+          };
+
+          user.push(objuser);
+
+          localStorage.setItem("userDetails", JSON.stringify(user));
+          localStorage.setItem(
+            "userCheckdetails",
+            JSON.stringify(objUserCHeck)
+          );
+          alert("User Added");
+          window.location.href = "/index.html";
+        } else {
+          // to check the  mail if the user already exists
+          for (let i = 0; i < userdetails.length; i++) {
+            if (email === userdetails[i]["user_mail"]) {
+              alert("Email is already in use");
+              return;
+            }
+          }
+          if (localStorage.getItem("userDetails") !== null) {
+            user = JSON.parse(localStorage.getItem("userDetails"));
+          }
+
+          let objuser = {
+            user_name: name,
+            user_phno: mobileno,
+            user_mail: email,
+            user_pwd: password,
+            userid: user_id,
+            user_pic:
+              "data:image/jpeg;base64,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",
+            useraddress: "",
+            useracco: "",
+            bankname: "",
+            userifsc: "",
+            branchname: "",
+          };
+          // to store the check user id object
+          let objUserCHeck = {
+            user_mail: email,
+            userid: user_id,
+            loginCheck: "yes",
+          };
+
+          user.push(objuser);
+
+          //  to store it in a local storage 
+          localStorage.setItem("userDetails", JSON.stringify(user));
+          localStorage.setItem(
+            "userCheckdetails",
+            JSON.stringify(objUserCHeck)
+          );
+          alert("User Added");
+          window.location.href = "/index.html";
+        }
+      });
+    </script>
+  </body>
+</html>

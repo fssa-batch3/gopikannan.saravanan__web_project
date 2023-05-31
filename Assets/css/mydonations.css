@@ -79,10 +79,22 @@ body {
   font-size: 16px;
   border-bottom: 2px solid #3f3a81;
 }
-.second-box progress {
-  width: 220px;
-  height: 30px;
-  margin-left: 60px;
+
+progress {
+  width: 250px;
+  height: 15px;
+  margin-left: 40px;
+  border: none;
+  border-radius: 100%;
+  background-color: #3f3a81;
+}
+progress::-webkit-progress-value {
+  border-radius: 50px;
+  background-color: #695cfe;
+}
+progress::-webkit-progress-bar {
+  border-radius: 50px;
+  background-color: #f2f2f2;
 }
 .second-box .progress-sec {
   margin: auto;
@@ -94,17 +106,22 @@ body {
 }
 .second-box .amount {
   color: var(--body-text-color);
+  margin-top: 10px;
 }
 
 .second-box .like {
   margin-left: 40px;
   margin-top: -15px;
 }
-
-.count {
-  position: absolute;
-  margin-top: -22px;
-  margin-left: 320px;
+.progress_bar_div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.share {
+  position: relative;
+  top: 5px;
 }
 .box .user {
   margin: auto;
@@ -157,13 +174,36 @@ body {
 }
 .rs {
   margin-top: 30px;
-  margin-left: 40%;
+  /* margin-left: 40%; */
+  position: relative;
+  left: 30%;
   font-weight: bold;
   font-size: 18px;
 }
 .contribution-box {
   display: flex;
 }
+.download {
+  background-color: #3f3a81;
+  border: none;
+  color: var(--toggle-color);
+  font-weight: bold;
+  font-size: 12px;
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.download:hover {
+  background-color: var(--primary-color);
+}
+
 @media screen and (max-width: 1200px) {
   .first-second-box-container {
     display: flex;
@@ -185,6 +225,12 @@ body {
     justify-content: center;
     align-items: center;
   }
+  .rs {
+    margin-top: 30px;
+    left: 20%;
+    font-weight: bold;
+    font-size: 18px;
+  }
 }
 @media screen and (max-width: 450px) {
   .second-box {
@@ -193,7 +239,7 @@ body {
   }
   .rs {
     margin-top: 30px;
-    margin-left: 29%;
+    left: 20%;
     font-weight: bold;
     font-size: 18px;
   }

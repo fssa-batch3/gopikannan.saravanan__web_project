@@ -1,28 +1,10 @@
-let support_arr;
-
-let json = [
-  {
-    img: "https://cimages.milaap.org/milaap/image/upload/c_fill,h_452,w_603/v1667841206/production/images/campaign/587864/IMG20221009062455_ovmi0x_1667842343.jpg",
-    alt: "education",
-    title: "Help me study to win in life",
-    percent: 20,
-    story_txt:
-      "Pavneeta and Sumeet are supporting an NGO called Shishu Mangal Orphanage in Tellapur, Hyderabad.\n Its run by Dr Sreenivas, a courageous young yoga teacher who manages to light up the life of 37 young minds\n",
-    story_more:
-      "Despite having hardly any resources and is now struggling to pay their school fees.\n Most of the children are girls from nursery to Class X.\n\nThere are so many needs of these children that go unfulfilled and our heart goes out to the solo effort of of one man.\n\n We believe if privileged citizens can fund their school fee, then few of us can work on their health, living hygiene and overall wellbeing.\n\nThey study in a school in Lingampally.\n Average fee per child is INR 36,000/- per annum.\n While any financial support is welcome, We would prefer if you can sponsor one child for a period of two years.\n However, any help is welcome at the stage they are in.\nAttached is the list of children, with names.\n Once you donate, you can write to me the name of child you wish to support and interest to meet up periodically.\n\n Would be happy to organize.\nThank you and God bless,",
-    amount_raised: 600000,
-    expected_amt: 3000000,
-    supporters: 550,
-    fundraiser: "Kumar",
-  },
-];
+let json = [];
 
 const Pid = window.location.search;
 const idParams = new URLSearchParams(Pid);
 const getIDdetails = idParams.get("product_id");
 console.log(getIDdetails);
 let create_card = JSON.parse(localStorage.getItem("carddetails"));
-console.log(create_card);
 
 let fundraiseDetails = create_card.find(function (event) {
   let id = event["product_id"];
@@ -30,529 +12,688 @@ let fundraiseDetails = create_card.find(function (event) {
   console.log(id);
 
   if (getIDdetails == id) {
-    let amountRaised = event["amount_raised"];
-    console.log(amountRaised);
-    let expected_amount = event["expected_amt"];
-    console.log(expected_amount);
-
-    let percentage = Math.floor((amountRaised / expected_amount) * 100);
-
-    console.log(percentage);
-    let content;
-    content = document.createElement("div");
-    content.setAttribute("class", "content");
-    // container.append(content);
-
-    let heading;
-    heading = document.createElement("h4");
-    heading.innerText = event["title"];
-    content.append(heading);
-
-    let image;
-    image = document.createElement("img");
-    image.setAttribute("class", "image");
-    image.setAttribute("src", event["img"]);
-    image.setAttribute("alt", event["alt"]);
-    content.append(image);
-
-    let progress;
-    progress = document.createElement("div");
-    progress.setAttribute("class", "progress-sec");
-    content.append(progress);
-
-    let progress_div;
-    progress_div = document.createElement("div");
-    progress_div.setAttribute("class", "progressdiv");
-    progress.append(progress_div);
-
-    let para;
-    para = document.createElement("p");
-    para.setAttribute("id", "percent");
-    // para.innerText = percentage + "%";
-    progress_div.append(para);
-
-    let b_tag;
-    b_tag = percentage + "%";
-    para.append(b_tag);
-
-    let progress_tag;
-    progress_tag = document.createElement("progress");
-    progress_tag.setAttribute("id", "file");
-    progress_tag.setAttribute("value", percentage);
-    progress_tag.setAttribute("max", "100");
-    progress_div.append(progress_tag);
-
-    let span_like;
-    span_like = document.createElement("span");
-    span_like.setAttribute("class", "like");
-    progress_div.append(span_like);
-
-    let span_anchor;
-    span_anchor = document.createElement("a");
-    span_anchor.setAttribute("href", "#");
-    span_like.append(span_anchor);
-
-    let share_img;
-    share_img = document.createElement("img");
-    share_img.setAttribute("class", "share");
-    share_img.setAttribute("src", "../../Assets/images/share.png");
-    share_img.setAttribute("alt", "share");
-    share_img.setAttribute("width", "30px");
-    span_anchor.append(share_img);
-
-    let amount;
-    amount = document.createElement("div");
-    amount.setAttribute("class", "amount");
-    progress.append(amount);
-
-    let amount_txt;
-    amount_txt = document.createElement("span");
-    amount_txt.setAttribute("id", "txt-amt");
-    amount_txt.innerHTML = "Raised:" + "&nbsp";
-    amount.append(amount_txt);
-
-    let amount_count;
-    amount_count = document.createElement("span");
-    amount_count.setAttribute("id", "class");
-    amount_count.innerHTML =
-      "Rs." +
-      event["amount_raised"] +
-      "&nbsp" +
-      "out of" +
-      "&nbsp" +
-      "Rs." +
-      event["expected_amt"];
-
-    amount.append(amount_count);
-
-    let storybtn;
-    storybtn = document.createElement("div");
-    storybtn.setAttribute("class", "story-btn");
-    storybtn.innerText = "Story";
-    content.append(storybtn);
-
-    let story;
-    story = document.createElement("div");
-    story.setAttribute("class", "story");
-    story.innerHTML = event["storySum"] + "&nbsp" + "&nbsp";
-    content.append(story);
-
-    let story_more;
-    story_more = document.createElement("span");
-    story_more.setAttribute("id", "more");
-    story_more.innerText = event["story"];
-    story.append(story_more);
-
-    let viewmore;
-    viewmore = document.createElement("div");
-    viewmore.setAttribute("class", "viewmore");
-    content.append(viewmore);
-
-    let imgArrow;
-    imgArrow = document.createElement("img");
-    imgArrow.setAttribute(
-      "src",
-      "../../Assets/images/arrow-down-sign-to-navigate.png"
-    );
-    imgArrow.setAttribute("alt", "arrow");
-    imgArrow.setAttribute("class", "arrow");
-    viewmore.append(imgArrow);
-
-    let viewmoreBtn;
-    viewmoreBtn = document.createElement("div");
-    viewmoreBtn.setAttribute("style", "z-index: 5;");
-    viewmore.append(viewmoreBtn);
-
-    let btnview;
-    btnview = document.createElement("button");
-    btnview.setAttribute("id", "mybtn");
-    btnview.setAttribute("onclick", "myFunction()");
-    btnview.innerText = "View More";
-    viewmoreBtn.append(btnview);
-
-    let user;
-    user = document.createElement("div");
-    user.setAttribute("class", "user");
-    content.append(user);
-
-    let nameLabel;
-    nameLabel = document.createElement("span");
-    nameLabel.setAttribute("class", "name-label");
-    nameLabel.innerHTML = "Created by" + "&nbsp";
-    user.append(nameLabel);
-
-    let userName;
-    userName = document.createElement("span");
-    userName.setAttribute("class", "name");
-    userName.innerText = event["fundraiser"];
-    user.append(userName);
-
-    // document.querySelector(".content-supporter-container").append(content);
-
-    // UPI box
-
-    let upibox;
-    upibox = document.createElement("div");
-    upibox.setAttribute("class", "upi-box");
-
-    let upihead;
-    upihead = document.createElement("div");
-    upihead.setAttribute("class", "upi-head");
-    upibox.append(upihead);
-
-    let spanFirsthead;
-    spanFirsthead = document.createElement("span");
-    spanFirsthead.setAttribute("id", "first-head");
-    spanFirsthead.innerText = "Donate";
-    upihead.append(spanFirsthead);
-
-    let spanSecondhead;
-    spanSecondhead = document.createElement("span");
-    spanSecondhead.setAttribute("id", "sec-head");
-    spanSecondhead.innerHTML = "550" + "&nbsp" + "Supporters";
-    upihead.append(spanSecondhead);
-
-    let donateBtn;
-    donateBtn = document.createElement("div");
-    donateBtn.setAttribute("class", "donate-btn-sec");
-    upibox.append(donateBtn);
-
-    let donatebutton;
-    donatebutton = document.createElement("button");
-    donatebutton.setAttribute("class", "donate-btn");
-    donatebutton.setAttribute("onclick", "paymentpage()");
-    donatebutton.innerText = "DONATE NOW";
-    donateBtn.append(donatebutton);
-
-    let carddetail;
-    carddetail = document.createElement("div");
-    carddetail.setAttribute("class", "card-detail");
-    carddetail.innerText = "Donate using Card,netbanking";
-    upibox.append(carddetail);
-
-    let qrimg;
-    qrimg = document.createElement("div");
-    qrimg.setAttribute("class", "qr-img");
-    upibox.append(qrimg);
-
-    let imageqr;
-    imageqr = document.createElement("img");
-    imageqr.setAttribute("src", "../../Assets/images/qr.jpg");
-    imageqr.setAttribute("alt", "Qr");
-    imageqr.setAttribute("id", "qr");
-    qrimg.append(imageqr);
-
-    let upitxt;
-    upitxt = document.createElement("div");
-    upitxt.setAttribute("class", "upi-down-txt");
-    upitxt.innerText = "Or donate using UPI";
-    upibox.append(upitxt);
-
-    let imgqr;
-    imgqr = document.createElement("div");
-    imgqr.setAttribute("class", "img-qr");
-    upibox.append(imgqr);
-
-    let upiimg;
-    upiimg = document.createElement("img");
-    upiimg.setAttribute("class", "qr-img");
-    upiimg.setAttribute("src", "../../Assets/images/upi-icon.png");
-    upiimg.setAttribute("alt", "upiimg");
-    upiimg.setAttribute("width", "60");
-    upiimg.setAttribute("height", "60");
-    imgqr.append(upiimg);
-
-    let gpay;
-    gpay = document.createElement("img");
-    gpay.setAttribute(
-      "src",
-      "../../Assets/images/google-pay-Logo-PNG_awihaa.png"
-    );
-    gpay.setAttribute("alt", "gpay");
-    gpay.setAttribute("width", "30");
-    gpay.setAttribute("height", "40");
-    gpay.setAttribute("class", "gpay");
-    gpay.setAttribute("style", "padding-bottom: -15px");
-    imgqr.append(gpay);
-
-    document
-      .querySelector(".content-supporter-container")
-      .append(content, upibox);
-
     return true;
   }
 });
-console.log(fundraiseDetails);
 
-for (let i = 0; i < create_card.length; i++) {
-  json.push(create_card[i]);
+let amountRaised = fundraiseDetails["amount_raised"];
+console.log(amountRaised);
+let expected_amount = fundraiseDetails["expected_amt"];
+console.log(expected_amount);
+
+let percentage = Math.floor((amountRaised / expected_amount) * 100);
+
+console.log(percentage);
+let content;
+content = document.createElement("div");
+content.setAttribute("class", "content");
+
+let heading;
+heading = document.createElement("h4");
+heading.innerText = fundraiseDetails["title"];
+content.append(heading);
+
+let image;
+image = document.createElement("img");
+image.setAttribute("class", "image");
+image.setAttribute("src", fundraiseDetails["img"]);
+image.setAttribute("alt", fundraiseDetails["alt"]);
+content.append(image);
+
+let progress;
+progress = document.createElement("div");
+progress.setAttribute("class", "progress-sec");
+content.append(progress);
+
+let progress_div;
+progress_div = document.createElement("div");
+progress_div.setAttribute("class", "progressdiv");
+progress.append(progress_div);
+
+let para;
+para = document.createElement("p");
+para.setAttribute("id", "percent");
+progress_div.append(para);
+
+let b_tag;
+b_tag = percentage + "%";
+para.append(b_tag);
+
+let progress_tag;
+progress_tag = document.createElement("progress");
+progress_tag.setAttribute("id", "file");
+progress_tag.setAttribute("value", percentage);
+progress_tag.setAttribute("max", "100");
+progress_div.append(progress_tag);
+
+let span_like;
+span_like = document.createElement("span");
+span_like.setAttribute("class", "like");
+progress_div.append(span_like);
+
+let span_anchor;
+span_anchor = document.createElement("a");
+span_anchor.setAttribute("href", "#");
+span_like.append(span_anchor);
+
+let share_img;
+share_img = document.createElement("img");
+share_img.setAttribute("class", "share");
+share_img.setAttribute("src", "../../Assets/images/share (1).png");
+share_img.setAttribute("alt", "share");
+share_img.setAttribute("width", "30px");
+span_anchor.append(share_img);
+
+let amount;
+amount = document.createElement("div");
+amount.setAttribute("class", "amount");
+progress.append(amount);
+
+let amount_txt;
+amount_txt = document.createElement("span");
+amount_txt.setAttribute("id", "txt-amt");
+amount_txt.innerHTML = "Raised:" + "&nbsp";
+amount.append(amount_txt);
+
+let amount_count;
+amount_count = document.createElement("span");
+amount_count.setAttribute("id", "class");
+amount_count.innerHTML = ` Rs.<b>${fundraiseDetails["amount_raised"]}</b> out of <b>${fundraiseDetails["expected_amt"]}</b>`;
+
+amount.append(amount_count);
+
+let storybtn;
+storybtn = document.createElement("div");
+storybtn.setAttribute("class", "story-btn");
+storybtn.innerText = "Story";
+content.append(storybtn);
+
+let story;
+story = document.createElement("div");
+story.setAttribute("class", "story");
+story.innerHTML = fundraiseDetails["storySum"] + "&nbsp" + "&nbsp";
+content.append(story);
+
+let story_more;
+story_more = document.createElement("span");
+story_more.setAttribute("id", "more");
+story_more.innerText = fundraiseDetails["story"];
+story.append(story_more);
+
+let img_document;
+img_document = document.createElement("img");
+img_document.setAttribute("id", "document");
+img_document.setAttribute("src", fundraiseDetails["image_doc"]);
+story.append(img_document);
+
+let viewmore;
+viewmore = document.createElement("div");
+viewmore.setAttribute("class", "viewmore");
+content.append(viewmore);
+
+let imgArrow;
+imgArrow = document.createElement("img");
+imgArrow.setAttribute(
+  "src",
+  "../../Assets/images/arrow-down-sign-to-navigate.png"
+);
+imgArrow.setAttribute("alt", "arrow");
+imgArrow.setAttribute("class", "arrow");
+viewmore.append(imgArrow);
+
+let viewmoreBtn;
+viewmoreBtn = document.createElement("div");
+viewmoreBtn.setAttribute("style", "z-index: 5;");
+viewmore.append(viewmoreBtn);
+
+let btnview;
+btnview = document.createElement("button");
+btnview.setAttribute("id", "mybtn");
+btnview.setAttribute("onclick", "myFunction()");
+btnview.innerText = "View More";
+viewmoreBtn.append(btnview);
+
+let user1;
+user1 = document.createElement("div");
+user1.setAttribute("class", "user");
+content.append(user1);
+
+let nameLabel;
+nameLabel = document.createElement("span");
+nameLabel.setAttribute("class", "name-label");
+nameLabel.innerHTML = `Created by `;
+user1.append(nameLabel);
+
+let userName;
+userName = document.createElement("span");
+userName.setAttribute("class", "username");
+userName.innerHTML = ` <b>${fundraiseDetails["fundraiser"]}</b>`;
+user1.append(userName);
+
+// UPI box
+
+let upibox;
+upibox = document.createElement("div");
+upibox.setAttribute("class", "upi-box");
+
+let upihead;
+upihead = document.createElement("div");
+upihead.setAttribute("class", "upi-head");
+upibox.append(upihead);
+
+let spanFirsthead;
+spanFirsthead = document.createElement("span");
+spanFirsthead.setAttribute("id", "first-head");
+spanFirsthead.innerText = "Donate";
+upihead.append(spanFirsthead);
+
+let spanSecondhead;
+spanSecondhead = document.createElement("span");
+spanSecondhead.setAttribute("id", "sec-head");
+spanSecondhead.innerHTML = "Support";
+upihead.append(spanSecondhead);
+
+let donateBtn;
+donateBtn = document.createElement("div");
+donateBtn.setAttribute("class", "donate-btn-sec");
+upibox.append(donateBtn);
+
+let donatebutton;
+donatebutton = document.createElement("button");
+donatebutton.setAttribute("class", "donate-btn");
+donatebutton.setAttribute("onclick", "paymentpage()");
+donatebutton.innerText = "DONATE NOW";
+donateBtn.append(donatebutton);
+
+let carddetail;
+carddetail = document.createElement("div");
+carddetail.setAttribute("class", "card-detail");
+carddetail.innerText = "Donate using Card,netbanking";
+upibox.append(carddetail);
+
+let qrimg;
+qrimg = document.createElement("div");
+qrimg.setAttribute("class", "qr-img");
+upibox.append(qrimg);
+
+let imageqr;
+imageqr = document.createElement("img");
+imageqr.setAttribute("src", fundraiseDetails["upiUrl"]);
+imageqr.setAttribute("alt", "Qr");
+imageqr.setAttribute("id", "qr");
+qrimg.append(imageqr);
+
+let upitxt;
+upitxt = document.createElement("div");
+upitxt.setAttribute("class", "upi-down-txt");
+upitxt.innerText = "Or donate using UPI";
+upibox.append(upitxt);
+
+let imgqr;
+imgqr = document.createElement("div");
+imgqr.setAttribute("class", "img-qr");
+upibox.append(imgqr);
+
+let upiimg;
+upiimg = document.createElement("img");
+upiimg.setAttribute("class", "qr-img");
+upiimg.setAttribute("src", "../../Assets/images/upi-icon.png");
+upiimg.setAttribute("alt", "upiimg");
+upiimg.setAttribute("width", "60");
+upiimg.setAttribute("height", "60");
+imgqr.append(upiimg);
+
+let gpay;
+gpay = document.createElement("img");
+gpay.setAttribute("src", "../../Assets/images/google-pay-Logo-PNG_awihaa.png");
+gpay.setAttribute("alt", "gpay");
+gpay.setAttribute("width", "30");
+gpay.setAttribute("height", "40");
+gpay.setAttribute("class", "gpay");
+gpay.setAttribute("style", "padding-bottom: -15px");
+imgqr.append(gpay);
+
+document.querySelector(".content-supporter-container").append(content, upibox);
+
+function formatTimeAgo(timestamp) {
+  const now = moment();
+  const commentTime = moment(timestamp);
+  const timeDiff = moment.duration(now.diff(commentTime));
+
+  if (timeDiff.asMonths() >= 1) {
+    return timeDiff.months() === 1
+      ? "a month ago"
+      : timeDiff.months() + " months ago";
+  } else if (timeDiff.asDays() >= 1) {
+    return timeDiff.days() === 1 ? "yesterday" : timeDiff.days() + " days ago";
+  } else if (timeDiff.asHours() >= 1) {
+    return timeDiff.hours() === 1
+      ? "an hour ago"
+      : timeDiff.hours() + " hours ago";
+  } else if (timeDiff.asMinutes() >= 1) {
+    return timeDiff.minutes() === 1
+      ? "a minute ago"
+      : timeDiff.minutes() + " minutes ago";
+  } else {
+    return timeDiff.asSeconds() <= 10
+      ? "just now"
+      : timeDiff.seconds() + " seconds ago";
+  }
 }
 
-// let container;
-// container = document.createElement("div");
-// container.setAttribute("class", "content-supporter-container");
-// for (let i = 0; i < json.length; i++) {
-// let content;
-// content = document.createElement("div");
-// content.setAttribute("class", "content");
-// // container.append(content);
+// url params user id
+const getuserID = idParams.get("userid");
 
-// let heading;
-// heading = document.createElement("h4");
-// heading.innerText = json["title"];
-// content.append(heading);
+// check and userid and userid in the url
+let userdetails = JSON.parse(window.localStorage.getItem("userDetails"));
+let userid = JSON.parse(window.localStorage.getItem("userCheckdetails"));
 
-// let image;
-// image = document.createElement("img");
-// image.setAttribute("class", "image");
-// image.setAttribute("src", json["img"]);
-// image.setAttribute("alt", json["alt"]);
-// content.append(image);
+if (userid == null) {
+  let commentArr = JSON.parse(window.localStorage.getItem("commentmain"));
+  let commentNewarr = [];
 
-// let progress;
-// progress = document.createElement("div");
-// progress.setAttribute("class", "progress-sec");
-// content.append(progress);
+  for (let i = 0; i < commentArr.length; i++) {
+    if (getIDdetails == commentArr[i]["fundraiseId"]) {
+      commentNewarr.push(commentArr[i]);
+    }
+  }
 
-// let progress_div;
-// progress_div = document.createElement("div");
-// progress_div.setAttribute("class", "progressdiv");
-// progress.append(progress_div);
+  window.localStorage.setItem("comment", JSON.stringify(commentNewarr));
 
-// let para;
-// para = document.createElement("p");
-// para.setAttribute("id", "percent");
-// // para.innerText = percentage + "%";
-// progress_div.append(para);
+  let comment = JSON.parse(window.localStorage.getItem("comment"));
 
-// let b_tag;
-// b_tag = percentage + "%";
-// para.append(b_tag);
+  for (let i = 0; i < comment.length; i++) {
+    const formattedTimeAgo = formatTimeAgo(comment[i]["time"]);
+    console.log("time", comment[i]["time"]);
+    if (comment[i]["user_ID"] != null) {
+      let commentMsg = document.createElement("div");
+      commentMsg.setAttribute("class", "chat-message");
 
-// let progress_tag;
-// progress_tag = document.createElement("progress");
-// progress_tag.setAttribute("id", "file");
-// progress_tag.setAttribute("value", percentage);
-// progress_tag.setAttribute("max", "100");
-// progress_div.append(progress_tag);
+      let imgtxtspan;
+      imgtxtspan = document.createElement("span");
+      imgtxtspan.setAttribute("id", "imgtxtspan");
+      commentMsg.append(imgtxtspan);
 
-// let span_like;
-// span_like = document.createElement("span");
-// span_like.setAttribute("class", "like");
-// progress_div.append(span_like);
+      let userImg;
+      userImg = document.createElement("img");
+      userImg.setAttribute("src", comment[i]["userpic"]);
+      userImg.setAttribute("alt", "profile");
+      userImg.setAttribute("width", "32");
+      userImg.setAttribute("height", "32");
+      userImg.setAttribute("style", "border-radius: 50%");
+      imgtxtspan.append(userImg);
 
-// let span_anchor;
-// span_anchor = document.createElement("a");
-// span_anchor.setAttribute("href", "#");
-// span_like.append(span_anchor);
+      let imgtxt;
+      imgtxt = document.createElement("h5");
+      imgtxt.setAttribute("id", "imgtxt");
+      imgtxt.innerText = comment[i]["userName"];
+      imgtxtspan.append(imgtxt);
 
-// let share_img;
-// share_img = document.createElement("img");
-// share_img.setAttribute("class", "share");
-// share_img.setAttribute("src", "../../Assets/images/share.png");
-// share_img.setAttribute("alt", "share");
-// share_img.setAttribute("width", "30px");
-// span_anchor.append(share_img);
+      let msgcontent;
+      msgcontent = document.createElement("div");
+      msgcontent.setAttribute("class", "chat-message-content");
+      commentMsg.append(msgcontent);
 
-// let amount;
-// amount = document.createElement("div");
-// amount.setAttribute("class", "amount");
-// progress.append(amount);
+      let msg;
+      msg = document.createElement("p");
+      msg.setAttribute("style", "color: black");
+      msg.innerText = comment[i]["msg"];
+      msgcontent.append(msg);
+      let spanTime;
+      spanTime = document.createElement("div");
+      spanTime.setAttribute("class", "chat-time");
+      spanTime.innerHTML = `${formattedTimeAgo}  ${comment[i]["txt"]}`;
+      msgcontent.append(spanTime);
+      let hr;
+      hr = document.createElement("hr");
+      document.querySelector(".chat-history").append(commentMsg, hr);
+    }
+  }
+  function send() {
+    alert("You don't have an account to send a comment");
+    window.location.href = "../../webpage/login-signup/login.html";
+  }
+} else {
+  let user_id = userdetails.find(function (user) {
+    let id_user = user["userid"];
+    console.log(id_user);
+    if (userid["userid"] == id_user) {
+      return true;
+    }
+  });
 
-// let amount_txt;
-// amount_txt = document.createElement("span");
-// amount_txt.setAttribute("id", "txt-amt");
-// amount_txt.innerText = "Raised :";
-// amount.append(amount_txt);
+  let commentArr = [];
 
-// let amount_count;
-// amount_count = document.createElement("span");
-// amount_count.setAttribute("id", "class");
-// amount_count.innerText =
-//   "RS" + json["amount_raised"] + "out of" + "Rs." + json["expected_amt"];
+  // function to send comment and to set in the local storage
+  function send() {
+    const msginput = document.getElementById("msg").value;
+    const coverpic = user_id["user_pic"];
+    const currentTime = moment();
 
-// amount.append(amount_count);
+    const Userid = user_id["userid"];
 
-// let storybtn;
-// storybtn = document.createElement("div");
-// storybtn.setAttribute("class", "story-btn");
-// storybtn.innerText = "Story";
-// content.append(storybtn);
+    const username = user_id["user_name"];
 
-// let story;
-// story = document.createElement("div");
-// story.setAttribute("class", "story");
-// story.innerText = json["story_txt"];
-// content.append(story);
+    const fundraiseid = fundraiseDetails["product_id"];
 
-// let story_more;
-// story_more = document.createElement("span");
-// story_more.setAttribute("id", "more");
-// story_more.innerText = json["story_more"];
-// story.append(story_more);
+    const commentid = Date.now();
 
-// let viewmore;
-// viewmore = document.createElement("div");
-// viewmore.setAttribute("class", "viewmore");
-// content.append(viewmore);
+    if (msginput == "" || msginput == null) {
+      alert("You can't send empty comment");
+      return;
+    } else {
+      let commentObj = {
+        userpic: coverpic,
+        userName: username,
+        user_ID: Userid,
+        fundraiseId: fundraiseid,
+        commentId: commentid,
+        time: currentTime,
+        msg: msginput,
+        txt: "",
+      };
+      console.log(commentObj);
+      commentArr.push(commentObj);
+      window.localStorage.setItem("commentmain", JSON.stringify(commentArr));
+    }
+    location.reload();
+  }
 
-// let imgArrow;
-// imgArrow = document.createElement("img");
-// imgArrow.setAttribute(
-//   "src",
-//   "../../Assets/images/arrow-down-sign-to-navigate.png"
-// );
-// imgArrow.setAttribute("alt", "arrow");
-// imgArrow.setAttribute("class", "arrow");
-// viewmore.append(imgArrow);
+  // not to get value replace in the comment main array in the local storage
+  if (localStorage.getItem("commentmain") !== null) {
+    commentArr = JSON.parse(window.localStorage.getItem("commentmain"));
+  }
+  console.log(commentArr);
 
-// let viewmoreBtn;
-// viewmoreBtn = document.createElement("div");
-// viewmoreBtn.setAttribute("style", "z-index: 5;");
-// viewmore.append(viewmoreBtn);
+  let commentNewarr = [];
 
-// let btnview;
-// btnview = document.createElement("button");
-// btnview.setAttribute("id", "mybtn");
-// btnview.setAttribute("onclick", "myFunction()");
-// btnview.innerText = "View More";
-// viewmoreBtn.append(btnview);
+  // to show the appropriate fundraise card comment
+  // loop to assignit to a new object then push it into the new array and store it in a localstorage
+  for (let i = 0; i < commentArr.length; i++) {
+    if (getIDdetails == commentArr[i]["fundraiseId"]) {
+      commentNewarr.push(commentArr[i]);
+    }
+  }
 
-// let user;
-// user = document.createElement("div");
-// user.setAttribute("class", "user");
-// content.append(user);
+  window.localStorage.setItem("comment", JSON.stringify(commentNewarr));
 
-// let nameLabel;
-// nameLabel = document.createElement("span");
-// nameLabel.setAttribute("class", "name-label");
-// nameLabel.innerText = "Created by";
-// user.append(nameLabel);
+  let comment = JSON.parse(window.localStorage.getItem("comment"));
 
-// let userName;
-// userName = document.createElement("span");
-// userName.setAttribute("class", "name");
-// userName.innerText = json["fundraiser"];
-// user.append(userName);
+  // to read the comment by the donater
 
-// // document.querySelector(".content-supporter-container").append(content);
+  for (let i = 0; i < comment.length; i++) {
+    const formattedTimeAgo = formatTimeAgo(comment[i]["time"]);
+    if (comment[i]["user_ID"] == user_id["userid"]) {
+      let commentMsg = document.createElement("div");
+      commentMsg.setAttribute("class", "chat-message");
 
-// // UPI box
+      let imgtxtspan;
+      imgtxtspan = document.createElement("span");
+      imgtxtspan.setAttribute("id", "imgtxtspan");
+      commentMsg.append(imgtxtspan);
 
-// let upibox;
-// upibox = document.createElement("div");
-// upibox.setAttribute("class", "upi-box");
+      let userImg;
+      userImg = document.createElement("img");
+      userImg.setAttribute("src", comment[i]["userpic"]);
+      userImg.setAttribute("alt", "profile");
+      userImg.setAttribute("width", "32");
+      userImg.setAttribute("height", "32");
+      userImg.setAttribute("style", "border-radius: 50%");
+      imgtxtspan.append(userImg);
 
-// let upihead;
-// upihead = document.createElement("div");
-// upihead.setAttribute("class", "upi-head");
-// upibox.append(upihead);
+      let imgtxt;
+      imgtxt = document.createElement("h5");
+      imgtxt.setAttribute("id", "imgtxt");
+      imgtxt.innerText = comment[i]["userName"];
+      imgtxtspan.append(imgtxt);
 
-// let spanFirsthead;
-// spanFirsthead = document.createElement("span");
-// spanFirsthead.setAttribute("id", "first-head");
-// spanFirsthead.innerText = "Donate";
-// upihead.append(spanFirsthead);
+      let msgcontent;
+      msgcontent = document.createElement("div");
+      msgcontent.setAttribute("class", "chat-message-content");
+      commentMsg.append(msgcontent);
 
-// let spanSecondhead;
-// spanSecondhead = document.createElement("span");
-// spanSecondhead.setAttribute("id", "sec-head");
-// spanSecondhead.innerHTML = "550" + "&nbsp" + "Supporters";
-// upihead.append(spanSecondhead);
+      let msg;
+      msg = document.createElement("p");
+      msg.setAttribute("style", "color: black");
+      msg.innerHTML = `${comment[i]["msg"]} `;
+      msg.setAttribute("id", "msg_content");
+      msgcontent.append(msg);
 
-// let donateBtn;
-// donateBtn = document.createElement("div");
-// donateBtn.setAttribute("class", "donate-btn-sec");
-// upibox.append(donateBtn);
+      let spanTime;
+      spanTime = document.createElement("div");
+      spanTime.setAttribute("class", "chat-time");
+      spanTime.innerHTML = `${formattedTimeAgo}  ${comment[i]["txt"]}`;
+      msgcontent.append(spanTime);
 
-// let donatebutton;
-// donatebutton = document.createElement("button");
-// donatebutton.setAttribute("class", "donate-btn");
-// donatebutton.setAttribute("onclick", "paymentpage()");
-// donatebutton.innerText = "DONATE NOW";
-// donateBtn.append(donatebutton);
+      let editDeldiv;
+      editDeldiv = document.createElement("div");
+      editDeldiv.setAttribute("class", "editdeldiv");
+      commentMsg.append(editDeldiv);
 
-// let carddetail;
-// carddetail = document.createElement("div");
-// carddetail.setAttribute("class", "card-detail");
-// carddetail.innerText = "Donate using Card,netbanking";
-// upibox.append(carddetail);
+      let edit;
+      edit = document.createElement("img");
+      edit.setAttribute("src", "../../Assets/images/draw.png");
+      edit.setAttribute("width", "20");
+      edit.setAttribute("height", "20");
+      edit.setAttribute("onclick", "edit(this.id)");
+      edit.setAttribute("id", comment[i]["commentId"]);
+      edit.setAttribute("class", "edit");
+      edit.setAttribute("style", "cursor:pointer");
+      editDeldiv.append(edit);
 
-// let qrimg;
-// qrimg = document.createElement("div");
-// qrimg.setAttribute("class", "qr-img");
-// upibox.append(qrimg);
+      let del;
+      del = document.createElement("img");
+      del.setAttribute("src", "../../Assets/images/delete.png");
+      del.setAttribute("width", "20");
+      del.setAttribute("height", "20");
+      del.setAttribute("id", comment[i]["commentId"]);
+      del.setAttribute("onclick", "deleted(this.id),del()");
+      del.setAttribute("style", "cursor:pointer");
+      editDeldiv.append(del);
 
-// let imageqr;
-// imageqr = document.createElement("img");
-// imageqr.setAttribute("src", "../../Assets/images/qr.jpg");
-// imageqr.setAttribute("alt", "Qr");
-// imageqr.setAttribute("id", "qr");
-// qrimg.append(imageqr);
+      let hr;
+      hr = document.createElement("hr");
 
-// let upitxt;
-// upitxt = document.createElement("div");
-// upitxt.setAttribute("class", "upi-down-txt");
-// upitxt.innerText = "Or donate using UPI";
-// upibox.append(upitxt);
+      document.querySelector(".chat-history").append(commentMsg, hr);
+    } else {
+      let commentMsg = document.createElement("div");
+      commentMsg.setAttribute("class", "chat-message");
 
-// let imgqr;
-// imgqr = document.createElement("div");
-// imgqr.setAttribute("class", "img-qr");
-// upibox.append(imgqr);
+      let imgtxtspan;
+      imgtxtspan = document.createElement("span");
+      imgtxtspan.setAttribute("id", "imgtxtspan");
+      commentMsg.append(imgtxtspan);
 
-// let upiimg;
-// upiimg = document.createElement("img");
-// upiimg.setAttribute("class", "qr-img");
-// upiimg.setAttribute("src", "../../Assets/images/upi-icon.png");
-// upiimg.setAttribute("alt", "upiimg");
-// upiimg.setAttribute("width", "60");
-// upiimg.setAttribute("height", "60");
-// imgqr.append(upiimg);
+      let userImg;
+      userImg = document.createElement("img");
+      userImg.setAttribute("src", comment[i]["userpic"]);
+      userImg.setAttribute("alt", "profile");
+      userImg.setAttribute("width", "32");
+      userImg.setAttribute("height", "32");
+      userImg.setAttribute("style", "border-radius: 50%");
+      imgtxtspan.append(userImg);
 
-// let gpay;
-// gpay = document.createElement("img");
-// gpay.setAttribute("src", "../../Assets/images/google-pay-Logo-PNG_awihaa.png");
-// gpay.setAttribute("alt", "gpay");
-// gpay.setAttribute("width", "30");
-// gpay.setAttribute("height", "40");
-// gpay.setAttribute("class", "gpay");
-// gpay.setAttribute("style", "padding-bottom: -15px");
-// imgqr.append(gpay);
+      let imgtxt;
+      imgtxt = document.createElement("h5");
+      imgtxt.setAttribute("id", "imgtxt");
+      imgtxt.innerText = comment[i]["userName"];
+      imgtxtspan.append(imgtxt);
 
-// document.querySelector(".content-supporter-container").append(content, upibox);
-1;
+      let msgcontent;
+      msgcontent = document.createElement("div");
+      msgcontent.setAttribute("class", "chat-message-content");
+      commentMsg.append(msgcontent);
 
-// supporter box
+      let msg;
+      msg = document.createElement("p");
+      msg.setAttribute("style", "color: black");
+      msg.innerText = comment[i]["msg"];
+      msgcontent.append(msg);
+      let spanTime;
+      spanTime = document.createElement("div");
+      spanTime.setAttribute("class", "chat-time");
+      spanTime.innerHTML = `${formattedTimeAgo}  ${comment[i]["txt"]}`;
+      msgcontent.append(spanTime);
+      let hr;
+      hr = document.createElement("hr");
+      document.querySelector(".chat-history").append(commentMsg, hr);
+    }
+  }
+}
+let form;
+form = document.createElement("form");
 
-// let supporterbox;
-// supporterbox = document.createElement("div");
-// supporterbox.setAttribute("class", "supporters-box");
+let form2;
+form2 = document.createElement("form");
 
-// let supporterhead;
-// supporterhead = document.createElement("div");
-// supporterhead.setAttribute("class", "supporterhead");
-// supporterhead.innerText = "Supporters";
-// supporterbox.append(supporterhead);
+form.prepend(form2);
 
-// let div_supporter;
-// div_supporter = document.createElement("div");
-// supporterbox.append(div_supporter);
+let fieldset2;
+fieldset2 = document.createElement("fieldset");
+fieldset2.setAttribute("id", "editfieldset");
+form2.append(fieldset2);
 
-// let supportername;
-// supportername = document.createElement("span");
-// supportername.setAttribute("class", "supporter-name");
-// supportername.innerText = json[0]["supporters"][0]["user"];
-// div_supporter.append(supportername);
+let editinput;
+editinput = document.createElement("input");
+editinput.setAttribute("type", "text");
+editinput.setAttribute("autocomplete", "off");
+editinput.setAttribute("id", "editinput");
+editinput.setAttribute("placeholder", "edit Your message");
+fieldset2.append(editinput);
 
-// let contribution;
-// contribution = document.createElement("span");
-// contribution.setAttribute("class", "supporter-name");
-// contribution.innerText = json[0]["supporters"][0]["amount"];
-// div_supporter.append(contribution);
+let sendIcon2;
+sendIcon2 = document.createElement("img");
+sendIcon2.setAttribute("src", "../../Assets/images/send-message.png");
+sendIcon2.setAttribute("alt", "send");
+sendIcon2.setAttribute("class", "send");
+sendIcon2.setAttribute("onclick", "sendedit()");
+sendIcon2.setAttribute("width", "20");
+sendIcon2.setAttribute("height", "20");
+sendIcon2.setAttribute("style", "padding-top: 5px");
+fieldset2.append(sendIcon2);
 
-// document.querySelector(".second-container").append(supporterbox);
+let fieldset;
+fieldset = document.createElement("fieldset");
+form.append(fieldset);
+
+let inputMsg;
+inputMsg = document.createElement("input");
+inputMsg.setAttribute("type", "text");
+inputMsg.setAttribute("autocomplete", "off");
+inputMsg.setAttribute("id", "msg");
+inputMsg.setAttribute("placeholder", "Send your message");
+fieldset.append(inputMsg);
+
+let sendIcon;
+sendIcon = document.createElement("img");
+sendIcon.setAttribute("src", "../../Assets/images/send-message.png");
+sendIcon.setAttribute("alt", "send");
+sendIcon.setAttribute("class", "send");
+sendIcon.setAttribute("onclick", "send()");
+
+sendIcon.setAttribute("width", "20");
+sendIcon.setAttribute("height", "20");
+sendIcon.setAttribute("style", "padding-top: 5px");
+fieldset.append(sendIcon);
+
+document.querySelector(".chat-history").append(form);
+
+// to edit the comment
+function edit(id) {
+  window.localStorage.setItem("commentId", JSON.stringify(id));
+  document.getElementById("editfieldset").classList.toggle("active");
+  let userallComments = JSON.parse(window.localStorage.getItem("commentmain"));
+  let userCommentId = JSON.parse(window.localStorage.getItem("commentId"));
+  if (userCommentId != null) {
+    let Com = userallComments.find(function (comment) {
+      let Comment = parseInt(comment["commentId"]);
+      console.log(Comment);
+
+      if (userCommentId == Comment) {
+        return true;
+      }
+    });
+    console.log(Com);
+
+    let msg;
+    msg = document.getElementById("editinput").value = Com["msg"];
+  }
+}
+
+function deleted(commentid) {
+  let commentId = commentid;
+  window.localStorage.setItem("delId", JSON.stringify(commentId));
+}
+
+function sendedit() {
+  let userallComments = JSON.parse(window.localStorage.getItem("commentmain"));
+  let userCommentId = JSON.parse(window.localStorage.getItem("commentId"));
+  console.log(userCommentId);
+  let Com = userallComments.find(function (comment) {
+    let Comment = parseInt(comment["commentId"]);
+    console.log(Comment);
+
+    if (userCommentId == Comment) {
+      return true;
+    }
+  });
+  let msg = document.getElementById("editinput").value;
+
+  let time = moment();
+  let txt = "(edited)";
+
+  let neweditObj = {
+    msg,
+    time,
+    txt,
+  };
+  console.log(neweditObj);
+  let merge;
+  merge = Object.assign(Com, neweditObj);
+  let usereditmsg;
+  usereditmsg = userallComments.indexOf(Com);
+  userallComments[usereditmsg] = merge;
+  window.localStorage.setItem("commentmain", JSON.stringify(userallComments));
+  window.localStorage.removeItem("commentId");
+  location.reload();
+}
+
+// to delete the comment
+
+function del(commentid) {
+  let userallComments = JSON.parse(window.localStorage.getItem("commentmain"));
+  let userCommentId = JSON.parse(window.localStorage.getItem("delId"));
+  console.log(userCommentId);
+  let Com = userallComments.find(function (comment) {
+    let Comment = parseInt(comment["commentId"]);
+    console.log(Comment);
+
+    if (userCommentId == Comment) {
+      return true;
+    }
+  });
+  console.log(Com);
+
+  let commentINdex = userallComments.indexOf(Com);
+
+  let alertComfirm = confirm("Are you sure you want to delete this comment");
+
+  if (alertComfirm) {
+    window.localStorage.setItem("commentId", JSON.stringify(commentid));
+    userallComments.splice(commentINdex, 1);
+    window.localStorage.setItem("commentmain", JSON.stringify(userallComments));
+    location.reload();
+  } else {
+    return;
+  }
+}
 
 function paymentpage() {
-  window.location.href = "../../webpage/donate/payment1stpage.html";
+  if (userid == null) {
+    window.location.href = "../../webpage/login-signup/login.html";
+  } else {
+    window.location.href =
+      "../../webpage/donate/payment1stpage.html?product_id=" +
+      fundraiseDetails["product_id"];
+  }
 }

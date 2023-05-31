@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PIN(People In Need).in</title>
+    <link rel="stylesheet" href="../../Assets/css/successfullfundraise.css" />
+    <link rel="stylesheet" href="../../Assets/css/header.css" />
+    <link rel="stylesheet" href="../../Assets/css/footer.css" />
+    <link rel="stylesheet" href="../../Assets/css/universal.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="../../Assets/js/donate.js" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script type="text/javascript">
+      function togglemenu() {
+        document.getElementById("sidebar").classList.toggle("active");
+      }
+    </script>
+  </head>
+  <body>
+    <!-- header starts -->
+    <header></header>
+
+    <!-- header end -->
+
+    <!-- search box sec -->
+    <div class="search"></div>
+    <!-- search box sec -->
+
+    <!-- script for refine search button -->
+    <script>
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+
+      window.onclick = function (e) {
+        if (!e.target.matches(".dropbtn")) {
+          let myDropdown = document.getElementById("myDropdown");
+          if (myDropdown.classList.contains("show")) {
+            myDropdown.classList.remove("show");
+          }
+        }
+      };
+    </script>
+    <!-- script ends -->
+    <!-- script ends -->
+    <h2>Successfull Fundraise Campaigns</h2>
+    <div id="container" class="container"></div>
+
+    <!-- end container -->
+
+    <!-- Footer  -->
+    <div class="footer"></div>
+
+    <!-- footer end -->
+
+    <script src="../../Assets/js/successfundraise.js"></script>
+    <script src="../../Assets/js/header.js"></script>
+    <script src="../../Assets/js/footer.js"></script>
+  </body>
+</html>

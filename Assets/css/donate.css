@@ -2,17 +2,28 @@
 .donate:not(.nav a:hover) {
   border-bottom: 5px solid #695cfe;
 }
+#homeId {
+  border: none;
+}
+
+.fa-search {
+  position: relative;
+  left: 23px;
+  top: 15px;
+}
 .search {
   text-align: center;
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 input[type="text"] {
   width: 500px;
   height: 50px;
+  padding-left: 35px;
   border-radius: 20px;
   border: solid rgba(105, 105, 255, 0.411);
+  outline: none;
 }
 button[type="submit"] {
   border: solid rgba(105, 105, 255, 0.411);
@@ -28,7 +39,6 @@ button[type="submit"] {
   border-radius: 5px;
   width: 120px;
   height: 50px;
-  margin-right: 20px;
   font-weight: bold;
   cursor: pointer;
 }
@@ -95,11 +105,13 @@ button[type="submit"] {
   color: var(--toggle-color);
 }
 .container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  gap: 20px;
-  width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
   margin: auto;
+  margin-top: 20px;
 }
 
 .box {
@@ -125,23 +137,43 @@ button[type="submit"] {
   text-align: center;
   padding-bottom: 10px;
 }
+.box .progress_bar_div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
 .box .progress-sec {
-  padding-left: 35px;
-
+  display: flex;
+  flex-direction: column;
   height: 90px;
 }
-.box progress {
-  width: 170px;
-  height: 30px;
-  color: #695cfe;
+progress {
+  width: 200px;
+  height: 15px;
+  border: none;
+  border-radius: 100%;
+  background-color: #3f3a81;
 }
+progress::-webkit-progress-value {
+  border-radius: 50px;
+  background-color: #695cfe;
+}
+progress::-webkit-progress-bar {
+  border-radius: 50px;
+  background-color: #f2f2f2;
+}
+
 .box .amount {
   color: var(--body-text-color);
   display: flex;
+  padding-left: 20px;
+  /* margin-top: 10px; */
 }
-.box #cash {
-  font-weight: bold;
+.box .share {
+  margin-top: 15px;
 }
+
 .box .like {
   margin-left: 10px;
   margin-top: -15px;

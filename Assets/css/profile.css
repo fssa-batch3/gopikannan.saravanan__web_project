@@ -1,4 +1,8 @@
 /* main content style starts */
+#profileid {
+  border: 3px solid #695cfe;
+  /* filter: drop-shadow(2px 4px 8px #3f3a81); */
+}
 .container {
   width: 55%;
   height: fit-content;
@@ -60,10 +64,57 @@ input {
   text-decoration: none;
 }
 .save:hover {
-  background-color: var(--primary-color);
+  filter: drop-shadow(2px 4px 8px #3f3a81);
   text-decoration: none;
   outline: none;
   border: none;
+}
+#profile {
+  float: center;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+  width: 200px;
+  border: 4px solid #3f3a81;
+}
+.buttons {
+  display: flex;
+  width: 345px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.logout {
+  cursor: pointer;
+}
+.logout:hover {
+  filter: drop-shadow(2px 4px 8px #3f3a81);
+}
+input[type="email"]:focus:valid {
+  border: solid 2px green;
+}
+input[type="email"]:focus:invalid {
+  border: solid 2px red;
+}
+
+input[type="text"]:focus:valid {
+  border: solid 2px green;
+}
+input[type="text"]:focus:invalid {
+  border: solid 2px red;
+}
+input[type="number"]:focus:valid {
+  border: solid 2px green;
+}
+input[type="number"]:focus:invalid {
+  border: solid 2px red;
+}
+input[type="url"]:focus:valid {
+  border: solid 2px green;
+}
+input[type="url"]:focus:invalid {
+  border: solid 2px red;
 }
 /* main content style ends */
 @media screen and (max-width: 1200px) {

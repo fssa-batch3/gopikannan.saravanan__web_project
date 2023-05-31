@@ -81,13 +81,23 @@ p {
 .logo-icon:hover {
   filter: drop-shadow(2px 4px 8px #ddd);
 }
+
+@media print {
+  .footer {
+    display: none;
+  }
+  .footmain {
+    display: none;
+  }
+  .foot-last {
+    display: none;
+  }
+}
 /* footer styling ends */
 
 @media screen and (max-width: 1200px) {
   * {
     font-size: 15px;
-  }
-  .footer {
   }
 }
 

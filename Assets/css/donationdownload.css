@@ -1,0 +1,73 @@
+.overallcontainer {
+  position: relative;
+  text-align: left;
+  color: black;
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+}
+#doc {
+  width: 800px;
+  font-size: 35px;
+  height: fit-content;
+}
+
+#txt-box {
+  position: absolute;
+  width: 650px;
+  margin-top: 300px;
+  margin-right: 50px;
+}
+#txt {
+  /* margin-left: 44%; */
+
+  color: black;
+}
+
+#mydonations {
+  background-color: #3f3a81;
+  border: none;
+  color: var(--toggle-color);
+  font-weight: bold;
+  font-size: 18px;
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  align-items: center;
+}
+
+#mydonations:hover {
+  background-color: var(--primary-color);
+}
+header {
+  display: none;
+}
+
+@media print {
+  header {
+    display: none;
+  }
+  .footer,
+  #doc {
+    display: none;
+  }
+  #mydonations {
+    display: none;
+  }
+  .maincontainer {
+    margin-top: -300px;
+    display: block;
+    background-image: url(../images/pinreciept_page-0001.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+  .overallcontainer,
+  #txt-box {
+    display: block;
+  }
+}

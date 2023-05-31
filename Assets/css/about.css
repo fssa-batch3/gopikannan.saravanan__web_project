@@ -1,5 +1,7 @@
 /* main content style for about */
-
+#aboutId {
+  border-bottom: 5px solid #695cfe;
+}
 .container {
   margin: auto;
   display: flex;

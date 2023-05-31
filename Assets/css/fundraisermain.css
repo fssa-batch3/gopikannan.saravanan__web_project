@@ -11,6 +11,8 @@ input[type="text"] {
   height: 50px;
   border-radius: 20px;
   border: solid rgba(105, 105, 255, 0.411);
+  outline: none;
+  padding-left: 35px;
 }
 button[type="submit"] {
   border: solid rgba(105, 105, 255, 0.411);
@@ -26,7 +28,6 @@ button[type="submit"] {
   border-radius: 5px;
   width: 120px;
   height: 50px;
-  margin-right: 20px;
   font-weight: bold;
   cursor: pointer;
 }
@@ -48,7 +49,7 @@ button[type="submit"] {
 .dropbtn {
   margin-left: 20px;
   height: 50px;
-  width: 140px;
+  width: 120px;
   background-color: var(--body-text-color);
   color: var(--toggle-color);
   font-weight: bold;
@@ -92,7 +93,7 @@ button[type="submit"] {
   color: var(--toggle-color);
 }
 
-.box1 {
+.box {
   width: 350px;
   height: 470px;
   background-color: white;
@@ -106,37 +107,62 @@ button[type="submit"] {
   box-shadow: rgb(140, 159, 255) 4px 4px 4px;
 }
 
-h3,
 h4 {
   color: var(--body-text-color);
-  padding-left: 35px;
-  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  text-align: center;
 }
-.progress-sec {
-  padding-left: 35px;
 
+.progress-sec {
+  display: flex;
+  flex-direction: column;
   height: 90px;
 }
 progress {
-  width: 170px;
-  height: 30px;
-  color: #695cfe;
+  position: relative;
+  top: 5px;
+  width: 200px;
+  height: 15px;
+  border: none;
+  border-radius: 100%;
+  background-color: #3f3a81;
+}
+progress::-webkit-progress-value {
+  border-radius: 50px;
+  background-color: #695cfe;
+}
+progress::-webkit-progress-bar {
+  border-radius: 50px;
+  background-color: #f2f2f2;
 }
 .amount {
   color: var(--body-text-color);
-}
-#cash {
-  font-weight: bold;
-}
-.like {
-  margin-left: 10px;
-  margin-top: -15px;
+  padding-left: 15px;
+  /* margin-top: 10px; */
 }
 
-.count {
-  position: absolute;
-  margin-top: -1px;
-  margin-left: 60px;
+.progress_bar_div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 15px;
+}
+
+.icon-like {
+  position: relative;
+  top: -4px;
+}
+.share {
+  position: relative;
+  top: -4px;
+}
+
+.textAmt {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
 }
 .user {
   padding-left: 50px;
@@ -201,6 +227,10 @@ progress {
 .contribution {
   float: right;
   margin-right: 20px;
+}
+.fa-search {
+  position: relative;
+  left: 32px;
 }
 
 /* main content style ends */

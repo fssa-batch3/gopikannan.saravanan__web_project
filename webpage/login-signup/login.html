@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./Assets/css/login-signup.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="../../Assets/css/login-signup.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>PIN login page</title>
+  </head>
+  <body>
+    <div class="h1">Welcome To PIN (People in Need)</div>
+    <div class="h1-txt">India's No 1 Crowdfunding Platform</div>
+
+    <div class="main" style="height: 580px">
+      <div class="login">
+        <form id="form" action="./webpage/login-signup/signup.html">
+          <label>Login</label>
+          <input
+            id="email"
+            type="email"
+            placeholder="Email"
+            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+            required
+          />
+
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!]).{8,}"
+            title="Please include at least 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character (@#$%^&+=!)"
+            required
+          />
+
+          <!-- <a href="./webpage/header/home.html">  -->
+          <button type="submit">Login</button>
+          <span id="submit-error"></span>
+          <!-- </a> -->
+          <br /><br />
+          <a
+            href="../../webpage/login-signup/signup.html"
+            style="padding-left: 30px; color: blueviolet; text-decoration: none"
+            >Don't have an account register here</a
+          >
+        </form>
+      </div>
+    </div>
+    <script>
+      let form = document.getElementById("form");
+
+      // form addeventlistener called submit
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        //  parse from local storage
+        let loginvalue = JSON.parse(localStorage.getItem("userDetails"));
+        console.log(loginvalue);
+        let useremail = document.getElementById("email").value;
+        let userpwd = document.getElementById("password").value;
+
+        //  find the object that returns the object that matches the usermail and userpwd
+        let findObj = loginvalue.find(function (find) {
+          let mail = find["user_mail"];
+          console.log(mail);
+          let pwd = find["user_pwd"];
+          console.log(pwd);
+          if (useremail == mail && userpwd == pwd) {
+            return true;
+          }
+        });
+
+        // variable to store the false boolean value
+        let match = false;
+        // loop and if condition to match the email and password in the signup localstorage make the match true else make the match false
+        for (let i = 0; i < loginvalue.length; i++) {
+          if (
+            useremail == loginvalue[i].user_mail &&
+            userpwd == loginvalue[i].user_pwd
+          ) {
+            match = true;
+
+            let objUserCHeck = {
+              user_mail: findObj["user_mail"],
+              userid: findObj["userid"],
+              loginCheck: "yes",
+            };
+
+            window.localStorage.setItem(
+              "userCheckdetails",
+              JSON.stringify(objUserCHeck)
+            );
+            break;
+          } else {
+            match = false;
+          }
+        }
+        // if match is true give alert and navigate to home page else give alert
+        if (match == true) {
+          alert("SUCCESS");
+          window.history.back();
+        } else {
+          alert("User credential does not match");
+        }
+      });
+    </script>
+  </body>
+</html>

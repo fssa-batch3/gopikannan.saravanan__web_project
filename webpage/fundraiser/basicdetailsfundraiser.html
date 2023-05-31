@@ -30,50 +30,7 @@
   </head>
   <body>
     <!--  header starts-->
-    <header>
-      <span class="menudiv">
-        <a class="menulink" onclick="togglemenu()"
-          ><img
-            class="menu"
-            src="../../Assets/images/menu (2).png"
-            alt="menu"
-            width="25" /></a
-      ></span>
-      <div class="image-txt">
-        <span
-          ><img
-            src="../../Assets/images/business-community.png"
-            alt="groupof people"
-            class="logo"
-        /></span>
-
-        <span class="name">People In Need</span>
-      </div>
-
-      <div class="nav">
-        <div id="sidebar" onclick="togglemenu()">
-          <a href="../../webpage/header/home.html" class="nav-anchor">Home</a>
-          <a href="../../webpage/donate/donate.html" class="nav-anchor donate"
-            >Donate</a
-          >
-          <a href="../../webpage/fundraiser/fundraiser.html" class="nav-anchor"
-            >Fundraise</a
-          >
-          <a href="../../webpage/header/about.html" class="nav-anchor">About</a>
-          <a href="../../webpage/header/contact.html" class="nav-anchor"
-            >Contact</a
-          >
-          <a href="../../webpage/header/profile.html" class="nav-anchor"
-            ><img
-              class="profile"
-              src="../../Assets/images/profile.png"
-              alt="profile"
-              width="30"
-              title="profile"
-          /></a>
-        </div>
-      </div>
-    </header>
+    <header></header>
     <!-- header ends -->
     <div class="details-head">Fundraiser Basic Details</div>
 
@@ -81,18 +38,40 @@
     <div class="container">
       <!-- form start -->
 
-      <form>
+      <form id="form" action="../../webpage/fundraiser/fundraiser.html">
         <div class="input-div">
           <label>Name:</label>
-          <input type="text" id="name" placeholder="Enter your name" />
+          <input
+            type="text"
+            id="name"
+            placeholder="Enter your name"
+            pattern="^(?=.{2,50}$)[A-Za-z]+(?:\s[A-Za-z]+){0,3}$"
+            title="Name must be only in alphabets and First name last name both can be added optional"
+            required
+          />
         </div>
         <div class="input-div">
           <label>Email ID:</label>
-          <input type="email" id="email" placeholder="Enter your email id" />
+          <input
+            type="email"
+            required
+            id="email"
+            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+            placeholder="Enter your email id"
+            title="Enter the correct email"
+          />
         </div>
         <div class="input-div">
           <label>Phone Number:</label>
-          <input type="tel" id="mobileno" placeholder="Enter your Ph no" />
+          <input
+            type="text"
+            id="mobileno"
+            placeholder="Enter your Ph no"
+            pattern="[6-9]{1}[0-9]{9}"
+            maxlength="10"
+            required
+            title=" Phone number must have 10 digits"
+          />
         </div>
         <div class="input-div">
           <label>I am raising fund for:</label>
@@ -103,23 +82,47 @@
           </select>
         </div>
         <div class="input-div">
-          <label>Address:</label><input id="address" type="text" />
+          <label>Address:</label
+          ><input
+            id="address"
+            required
+            type="text"
+            title="Enter your full address where you live"
+            pattern="^(?=.{0,200}$)[A-Za-z0-9!@#$%^&*()_+-={}[\]|\\;:'>,.?/]+[A-Za-z0-9]+(?:\s[A-Za-z0-9\s!@#$%^&*()_+-={}[\]|\\;:'>,.?/]+[A-Za-z0-9]+){0,10}$"
+            required
+          />
         </div>
 
         <div class="input-div">
           <label>Cover Picture:</label>
-          <input id="image" type="text" placeholder="place your image url" />
+
+          <input
+            id="image"
+            type="url"
+            placeholder="place your image url"
+            title="enter only image urls"
+            required
+          />
         </div>
         <div class="input-div">
           <label>Title:</label>
-          <input id="title" type="text" />
+          <input
+            id="title"
+            type="text"
+            title="Enter the title of your card with only alphabets"
+            required
+            pattern="^(?=.{4,100}$)[A-Za-z]+(?:\s[A-Za-z]+){0,10}$"
+          />
         </div>
         <div class="input-div">
           <label>Name:</label>
           <input
             id="name_hos"
             type="text"
+            required
             placeholder="Hospital,School,organization name"
+            title="Enter the input with only alphabets with spaces optional"
+            pattern="^(?=.{4,100}$)[A-Za-z]+(?:\s[A-Za-z]+){0,10}$"
           />
         </div>
         <div class="input-div">
@@ -127,7 +130,10 @@
           <input
             id="location2"
             type="text"
+            required
             placeholder="Hospital,School,organization location"
+            title="Enter the input with only alphabets with spaces optional"
+            pattern="^(?=.{4,100}$)[A-Za-z]+(?:\s[A-Za-z]+){0,10}$"
           />
         </div>
         <div class="input-div">
@@ -135,6 +141,8 @@
           <input
             id="storySum"
             type="text"
+            required
+            title="Enter the summary of your story with alphabets,numbers,special characters"
             placeholder="Write your summary of your story"
           />
         </div>
@@ -144,147 +152,96 @@
             value="Our school..."
             name="story"
             id="story"
+            pattern="^(?=.{10,500}$)[A-Za-z0-9!@#$%^&*()_+-={}[\]|\\;:'>,.?/]+[A-Za-z0-9]+(?:\s[A-Za-z0-9\s!@#$%^&*()_+-={}[\]|\\;:'>,.?/]+[A-Za-z0-9]+){0,50}$"
             rows="5"
+            required
+            title="Enter the details of your story with alphabets,numbers,special characters"
             placeholder="Write about who is this fundraiser for How/Why/When  do you need funds what is the purpose..."
           ></textarea>
         </div>
         <div class="input-div">
           <label>Upload Required Documents :</label>
-          <input id="image_doc" type="text" />
+          <input id="image_doc" type="url" title="enter only image urls" />
         </div>
         <div class="input-div">
           <label>I want to raise the amount Rs:</label>
-          <input id="amount" type="text" />
+          <input
+            id="amount"
+            type="text"
+            placeholder="Expected amount"
+            title="Enter only the amount only in numbers"
+            pattern="[0-9]{5,20}"
+            maxlength="20"
+            required
+          />
         </div>
-        <div class="input-div">
-          <label>I want to raise the amount Rs:</label>
-          <input id="amount_raised" type="text" placeholder="amount_raised" />
-        </div>
+
         <div class="input-div">
           <label>Your UPI url:</label>
-          <input id="upi" type="text" placeholder="paste your upi url" />
+          <input
+            id="upi"
+            type="url"
+            placeholder="paste your upi url"
+            title="enter only image urls"
+          />
         </div>
 
         <!-- <a href="../fundraiser/Fundraiserdetailsform1.html">  -->
-        <button onclick="getinfo()" class="continue">Continue</button>
+        <button type="submit" class="continue">Continue</button>
       </form>
       <!-- </a>  -->
       <!-- form ends -->
     </div>
     <!-- container ends -->
     <!-- Footer  -->
-    <div class="footer">
-      <div class="footmain">
-        <div class="footerpart">
-          <div class="foot-head"><p>Donate now</p></div>
-          <div class="foot-link">
-            <ul>
-              <li>
-                <a href="../../webpage/donate/donate-medical.html">Medical </a>
-              </li>
-              <li>
-                <a href="../../webpage/donate/donate-education.html"
-                  >Education</a
-                >
-              </li>
-              <li>
-                <a href="../../webpage/donate/donate-social.html"
-                  >Social causes
-                </a>
-              </li>
-              `
-            </ul>
-          </div>
-        </div>
-        <div class="footerpart">
-          <div class="foot-head"><p>How it works?</p></div>
-          <div class="foot-link">
-            <ul>
-              <li><a href="#">What is Crowdfunding?</a></li>
-              <li><a href="#">Fundraising Tips</a></li>
-              <li><a href="#">Browse fundraiser</a></li>
-              <li><a href="#">Careers</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="footerpart">
-          <div class="foot-head"><p>Support</p></div>
-          <div class="foot-link">
-            <ul>
-              <li><a href="#">FAQ's & Help Center</a></li>
-              <li><a href="#">Are Pin campaigns Genuine?</a></li>
-              <li><a href="#">Trust & Safety</a></li>
-              <li><a href="#">Featured In</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="foot-last">
-        <div class="foot-end">
-          <img id="mail" src="../../Assets/images/mail.png" alt="mail" />
-          <p>Sign Up for PIN News</p>
-          <button class="subscribe">Subscribe</button>
-        </div>
-        <div class="foot-logo">
-          <p id="logo-txt">Follow PIN</p>
-          <a href="#"
-            ><img
-              class="logo-icon"
-              src="../../Assets/images/fb.png"
-              alt="facebook"
-          /></a>
-          <a href="#"
-            ><img
-              class="logo-icon"
-              src="../../Assets/images/twitter.png"
-              alt="twitter"
-          /></a>
-          <a href="#"
-            ><img
-              class="logo-icon"
-              src="../../Assets/images/insta.png"
-              alt="instagram"
-          /></a>
-          <a href="#"
-            ><img
-              class="logo-icon"
-              src="../../Assets/images/youtube.png"
-              alt="youtube"
-          /></a>
-        </div>
-      </div>
-    </div>
+    <div class="footer"></div>
 
     <!-- footer end -->
 
     <script>
-      function getinfo() {
+      const form = document.getElementById("form");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        let userid = JSON.parse(
+          window.localStorage.getItem("userCheckdetails")
+        );
         let arr = [];
 
         if (localStorage.getItem("carddetails") != null) {
           arr = JSON.parse(localStorage.getItem("carddetails"));
         }
+        console.log(arr);
 
-        const name = document.getElementById("name").value;
-        const mail = document.getElementById("email").value;
+        const name = document.getElementById("name").value.trim();
+        const mail = document.getElementById("email").value.trim();
         const dropDown = document.getElementById("cause").value;
-        const mobileno = document.getElementById("mobileno").value;
-        const address = document.getElementById("address").value;
+        const mobileno = document.getElementById("mobileno").value.trim();
+        const address = document.getElementById("address").value.trim();
         const image = document.getElementById("image").value;
-        const title = document.getElementById("title").value;
-        const name_hosp = document.getElementById("name_hos").value;
-        const location = document.getElementById("location2").value;
-        const storySum = document.getElementById("storySum").value;
-        const story = document.getElementById("story").value;
+        const title = document.getElementById("title").value.trim();
+        const name_hosp = document.getElementById("name_hos").value.trim();
+        const location = document.getElementById("location2").value.trim();
+        const storySum = document.getElementById("storySum").value.trim();
+        const story = document.getElementById("story").value.trim();
         const image_doc = document.getElementById("image_doc").value;
-        const amount = document.getElementById("amount").value;
-        const amount_raised = document.getElementById("amount_raised").value;
-        const upi = document.getElementById("upi").value;
+        const amount = document.getElementById("amount").value.trim();
+        // const amount_raised = document.getElementById("amount_raised").value;
+        const upi = document.getElementById("upi").value.trim();
+
         const product_id = Date.now();
 
-        if (name == "" || name == null) {
+        let match = false;
+
+        if (story === "") {
+          alert("Detail of your story can't be left empty");
           return;
         } else {
+          match = true;
+        }
+
+        if (match == true) {
+          // return;
           let object = {
             fundraiser: name,
             mail: mail,
@@ -299,9 +256,10 @@
             story: story,
             image_doc: image_doc,
             expected_amt: amount,
-            amount_raised: amount_raised,
+            amount_raised: "0",
             product_id: product_id,
             upiUrl: upi,
+            userId: userid["userid"],
             amout: "unreach",
           };
 
@@ -310,8 +268,17 @@
           arr.push(object);
 
           window.localStorage.setItem("carddetails", JSON.stringify(arr));
+          alert("Successfully Added your fundraise card");
+          window.location.href =
+            "../../webpage/fundraiser/fundraiser.html?userid=" +
+            userid["userid"];
+        } else {
+          alert("Your input might doesn't match the pattern");
+          return;
         }
-      }
+      });
     </script>
+    <script src="../../Assets/js/header.js"></script>
+    <script src="../../Assets/js/footer.js"></script>
   </body>
 </html>
