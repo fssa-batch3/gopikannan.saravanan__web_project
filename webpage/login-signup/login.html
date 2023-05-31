@@ -66,16 +66,17 @@
     <script>
       let form = document.getElementById("form");
 
-      // form addeventlistener
+      // form addeventlistener called submit
       form.addEventListener("submit", function (event) {
         event.preventDefault();
 
+        //  parse from local storage
         let loginvalue = JSON.parse(localStorage.getItem("userDetails"));
         console.log(loginvalue);
         let useremail = document.getElementById("email").value;
         let userpwd = document.getElementById("password").value;
-        //  if the value is null return the function
 
+        //  find the object that returns the object that matches the usermail and userpwd
         let findObj = loginvalue.find(function (find) {
           let mail = find["user_mail"];
           console.log(mail);

@@ -180,7 +180,7 @@
       let userpwd = (document.getElementById("password").value =
         user_ob["user_pwd"]);
 
-      // to show profile pic
+      // to show profile pic in the user_ob object
       let profile_pic = document.getElementById("profile");
       profile_pic.setAttribute("src", user_ob["user_pic"]);
 
@@ -190,6 +190,8 @@
 
       let bankName = document.getElementById("accname");
       let branchName = document.getElementById("branchname");
+
+      // event listener called change to make the users ifsc find and fetch from the api razor api
 
       document
         .getElementById("ifc")
@@ -211,6 +213,9 @@
               );
             });
         });
+
+      //form this event listener called submit which start after the user click the submit button
+      //  and assign it in the previously stored obj of the user
 
       form.addEventListener("submit", function (event) {
         event.preventDefault();
@@ -307,7 +312,7 @@
         }
       });
 
-      // log out function
+
     </script>
   </body>
 </html>

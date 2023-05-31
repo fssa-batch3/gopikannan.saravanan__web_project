@@ -72,6 +72,7 @@
       </div>
     </div>
     <script>
+      //  starts the eventlistener called submit
       form.addEventListener("submit", function (event) {
         event.preventDefault();
         const name = document.getElementById("name").value.trim();
@@ -112,6 +113,8 @@
             branchname: "",
           };
 
+          // to store the check user id object
+
           let objUserCHeck = {
             user_mail: email,
             userid: user_id,
@@ -128,6 +131,7 @@
           alert("User Added");
           window.location.href = "/index.html";
         } else {
+          // to check the  mail if the user already exists
           for (let i = 0; i < userdetails.length; i++) {
             if (email === userdetails[i]["user_mail"]) {
               alert("Email is already in use");
@@ -152,7 +156,7 @@
             userifsc: "",
             branchname: "",
           };
-
+          // to store the check user id object
           let objUserCHeck = {
             user_mail: email,
             userid: user_id,
@@ -161,6 +165,7 @@
 
           user.push(objuser);
 
+          //  to store it in a local storage 
           localStorage.setItem("userDetails", JSON.stringify(user));
           localStorage.setItem(
             "userCheckdetails",
